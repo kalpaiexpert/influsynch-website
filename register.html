@@ -6,70 +6,216 @@
   <title>Register - Influsynch</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #5200cc;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5em;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
-    .register-container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
-      width: 320px;
-      text-align: center;
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+
+    .nav-links li a:hover {
+      color: #bb99ff;
+    }
+
+    /* Mobile menu toggle button */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+      display: block;
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .hamburger::before {
+      top: -8px;
+    }
+
+    .hamburger::after {
+      top: 8px;
+    }
+
+    /* Responsive menu */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #5200cc;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav-links.open {
+        max-height: 300px; /* enough to show all links */
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* Register form styles */
+    main {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
     h2 {
+      text-align: center;
       color: #5200cc;
-      margin-bottom: 25px;
     }
-    input[type="text"], input[type="email"], input[type="password"] {
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0 20px;
-      border: 1.5px solid #ccc;
-      border-radius: 8px;
-      font-size: 1em;
+      padding: 8px 10px;
+      box-sizing: border-box;
+      border: 1px solid #aaa;
+      border-radius: 4px;
     }
+
     button {
       background-color: #5200cc;
       color: white;
       border: none;
-      padding: 12px 20px;
-      font-size: 1.1em;
-      border-radius: 30px;
-      cursor: pointer;
+      padding: 12px;
       width: 100%;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #3a0080;
-    }
-    p {
       margin-top: 20px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7b3fff;
+    }
+
+    .login-link {
+      margin-top: 15px;
+      text-align: center;
       font-size: 0.9em;
     }
-    a {
+
+    .login-link a {
       color: #5200cc;
       text-decoration: none;
       font-weight: 600;
     }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="register-container">
-    <h2>Create an Account</h2>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Influsynch</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Register</h2>
     <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
+      <label for="name">Full Name</label>
+      <input id="name" type="text" placeholder="Enter your full name" required />
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Enter your email" required />
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Create a password" required />
       <button type="submit">Register</button>
     </form>
-    <p>Already have an account? <a href="login.html">Login here</a></p>
-  </div>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </main>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
