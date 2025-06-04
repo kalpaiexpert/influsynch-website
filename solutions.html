@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - InfluenceConnect</title>
+    <style>
+        /* Reuse header and footer styles from index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4a6bff;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4a6bff;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline {
+            border: 1px solid #4a6bff;
+            color: #4a6bff;
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: #4a6bff;
+            color: white;
+        }
+        
+        .btn-primary {
+            background: #4a6bff;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #3a5bef;
+        }
+        
+        /* Solutions Hero */
+        .solutions-hero {
+            padding: 8rem 5% 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f6f9ff 0%, #eef2ff 100%);
+        }
+        
+        .solutions-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a237e;
+        }
+        
+        .solutions-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+        
+        /* Solutions Grid */
+        .solutions-grid {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .solutions-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .solution-img {
+            height: 200px;
+            background-color: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4a6bff;
+        }
+        
+        .solution-content {
+            padding: 2rem;
+        }
+        
+        .solution-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .solution-content ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .solution-content ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Industry Solutions */
+        .industry-solutions {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #eef2ff 0%, #f6f9ff 100%);
+        }
+        
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .industry-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .industry-item i {
+            font-size: 2rem;
+            color: #4a6bff;
+            margin-bottom: 1rem;
+        }
+        
+        .industry-item h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a237e;
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background: #4a6bff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #b0b0b0;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">InfluenceConnect</a>
+            <div class="nav-links">
+                <a href="platform.html">Platform</a>
+                <a href="solutions.html" class="active">Solutions</a>
+                <a href="resources.html">Resources</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">Log In</button>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Solutions Hero -->
+    <section class="solutions-hero">
+        <h1>Tailored Solutions for Your Influencer Marketing Needs</h1>
+        <p>Whether you're a startup or enterprise, we have the perfect solution to help you achieve your influencer marketing goals.</p>
+        <button class="btn btn-primary">Get Personalized Recommendations</button>
+    </section>
+
+    <!-- Solutions Grid -->
+    <section class="solutions-grid">
+        <div class="section-title">
+            <h2>Our Solutions</h2>
+            <p>Choose the solution that best fits your business needs and marketing objectives.</p>
+        </div>
+        
+        <div class="solutions-cards">
+            <div class="solution-card">
+                <div class="solution-img">
+                    🔍
+                </div>
+                <div class="solution-content">
+                    <h3>Influencer Discovery</h3>
+                    <p>Find the perfect influencers for your brand with our advanced search and matching technology.</p>
+                    <ul>
+                        <li>AI-powered recommendations</li>
+                        <li>Detailed influencer profiles</li>
+                        <li>Audience demographics analysis</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-img">
+                    📊
+                </div>
+                <div class="solution-content">
+                    <h3>Campaign Management</h3>
+                    <p>Streamline your influencer campaigns from start to finish with our comprehensive tools.</p>
+                    <ul>
+                        <li>Workflow automation</li>
+                        <li>Content approval system</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-img">
+                    🤝
+                </div>
+                <div class="solution-content">
+                    <h3>Relationship Management</h3>
+                    <p>Build and maintain strong relationships with your influencer partners.</p>
+                    <ul>
+                        <li>Centralized communication</li>
+                        <li>Contract management</li>
+                        <li>Payment processing</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Solutions -->
+    <section class="industry-solutions">
+        <div class="section-title">
+            <h2>Industry-Specific Solutions</h2>
+            <p>We understand that different industries have unique needs when it comes to influencer marketing.</p>
+        </div>
+        
+        <div class="industry-grid">
+            <div class="industry-item">
+                <i>👗</i>
+                <h4>Fashion & Apparel</h4>
+                <p>Connect with top fashion influencers and style creators</p>
+            </div>
+            <div class="industry-item">
+                <i>💄</i>
+                <h4>Beauty & Cosmetics</h4>
+                <p>Partner with beauty experts and makeup artists</p>
+            </div>
+            <div class="industry-item">
+                <i>🍽️</i>
+                <h4>Food & Beverage</h4>
+                <p>Collaborate with food bloggers and chefs</p>
+            </div>
+            <div class="industry-item">
+                <i>✈️</i>
+                <h4>Travel & Hospitality</h4>
+                <p>Work with travel influencers and content creators</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>InfluenceConnect</h3>
+                <p>The leading platform for influencer marketing and brand collaborations.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="platform.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Integrations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resources.html">Blog</a></li>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 InfluenceConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>
