@@ -12,20 +12,20 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
         body {
             background-color: #f9fafb;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* === NAVIGATION (MATCHING YOUR SCREENSHOT) === */
+
+        /* === NAVIGATION (WITH MEGA MENU) === */
         nav {
             display: flex;
             justify-content: space-between;
@@ -33,28 +33,90 @@
             padding: 20px 0;
             border-bottom: 1px solid #eee;
             background: white;
+            position: relative;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: bold;
             color: #4CAF50;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 25px;
+            align-items: center;
         }
-        
+
         .nav-links a {
             color: #555;
             font-weight: 500;
             text-decoration: none;
             font-size: 15px;
         }
-        
+
         .nav-links a:hover {
             color: #4CAF50;
+        }
+
+        /* === MEGA MENU DROPDOWN STYLES === */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            color: #e91e63;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 0;
+            display: inline-block;
+        }
+
+        .mega-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+            width: 600px;
+            z-index: 999;
+            border-radius: 10px;
+            display: flex;
+            gap: 60px;
+        }
+
+        .dropdown:hover .mega-menu {
+            display: flex;
+        }
+
+        .mega-menu .column {
+            flex: 1;
+        }
+
+        .mega-menu h4 {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .mega-menu a {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .mega-menu a small {
+            display: block;
+            color: #666;
+            font-weight: normal;
+            font-size: 12px;
         }
 
         /* === HERO SECTION === */
@@ -63,20 +125,20 @@
             padding: 100px 0;
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
         }
-        
+
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 20px;
             color: #222;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             color: #666;
             max-width: 700px;
             margin: 0 auto 40px;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: #4CAF50;
@@ -88,26 +150,26 @@
             margin: 0 10px;
             font-size: 1.1rem;
         }
-        
+
         /* === STUDY SECTION === */
         .study-section {
             padding: 80px 0;
             text-align: center;
             background: white;
         }
-        
+
         .study-section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-        
+
         .regions {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .region-card {
             background: white;
             padding: 20px;
@@ -118,11 +180,28 @@
     </style>
 </head>
 <body>
-    <!-- NAVIGATION (EXACTLY LIKE YOUR SCREENSHOT) -->
+    <!-- NAVIGATION WITH MEGA MENU -->
     <nav class="container">
         <a href="index.html" class="logo">Influencity</a>
         <div class="nav-links">
-            <a href="platform.html">Our Platform</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Our Platform</a>
+                <div class="mega-menu">
+                    <div class="column">
+                        <h4>Products</h4>
+                        <a href="#">🔍 Influencer Discover<br><small>Find the influencers that work for you</small></a>
+                        <a href="#">👤 Influencer Relationship Management<br><small>Your processes in one central hub</small></a>
+                        <a href="#">🗓️ Campaign Manager<br><small>We help your team do more</small></a>
+                        <a href="#">📊 Campaign Reports<br><small>Compile and share key data</small></a>
+                    </div>
+                    <div class="column">
+                        <h4>Channels</h4>
+                        <a href="#">🎵 TikTok Influencers<br><small>+130M TikTok influencers at your fingertips</small></a>
+                        <a href="#">📸 Instagram Influencers<br><small>Filter with AI-powered tools</small></a>
+                        <a href="#">📹 YouTube Influencers<br><small>Find top YouTube influencers in minutes</small></a>
+                    </div>
+                </div>
+            </div>
             <a href="audience.html">Who We Serve</a>
             <a href="features.html">Features</a>
             <a href="about.html">About</a>
@@ -146,7 +225,7 @@
         <div class="container">
             <h2>Influencer Marketing Across Regions</h2>
             <p>Comparative data from three key markets</p>
-            
+
             <div class="regions">
                 <div class="region-card">
                     <h3>USA</h3>
@@ -163,7 +242,5 @@
             </div>
         </div>
     </section>
-
-    <!-- ADD MORE SECTIONS AS NEEDED -->
 </body>
 </html>
