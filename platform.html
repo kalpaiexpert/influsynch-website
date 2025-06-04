@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencity | Our Platform</title>
+    <style>
+        /* === GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* === NAVIGATION === */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            background: white;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links > a {
+            color: #555;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+            padding: 10px 0;
+        }
+        
+        .nav-links > a:hover {
+            color: #4CAF50;
+        }
+        
+        /* === DROPDOWN MENU (Our Platform) === */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            min-width: 800px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 25px;
+            z-index: 1;
+            margin-top: 10px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .dropdown-column h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .dropdown-column ul {
+            list-style: none;
+        }
+        
+        .dropdown-column li {
+            margin-bottom: 12px;
+        }
+        
+        .dropdown-column a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+        
+        .dropdown-column a:hover {
+            color: #4CAF50;
+        }
+        
+        .channel-badge {
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION WITH DROPDOWN -->
+    <nav class="container">
+        <a href="index.html" class="logo">Influencity</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="platform.html">Our Platform</a>
+                <div class="dropdown-content">
+                    <!-- PRODUCTS COLUMN -->
+                    <div class="dropdown-column">
+                        <h3>PRODUCTS</h3>
+                        <ul>
+                            <li><a href="#">Influencer Discover <span class="channel-badge">NEW</span></a></li>
+                            <li><a href="#">Influencer Relationship Management</a></li>
+                            <li><a href="#">Campaign Manager</a></li>
+                            <li><a href="#">Campaign Reports</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- CHANNELS COLUMN -->
+                    <div class="dropdown-column">
+                        <h3>CHANNELS</h3>
+                        <ul>
+                            <li><a href="#">TikTok Influencers <span class="channel-badge">+130M</span></a></li>
+                            <li><a href="#">Instagram Influencers</a></li>
+                            <li><a href="#">YouTube Influencers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- FEATURES COLUMN (optional) -->
+                    <div class="dropdown-column">
+                        <h3>FEATURES</h3>
+                        <ul>
+                            <li><a href="#">AI Matching</a></li>
+                            <li><a href="#">Performance Analytics</a></li>
+                            <li><a href="#">Collaboration Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="audience.html">Who We Serve</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <a href="pricing.html">Pricing</a>
+        </div>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="container" style="padding: 50px 0;">
+        <h1>Our Platform</h1>
+        <p style="margin-top: 20px;">Hover over "Our Platform" in the navigation to see the dropdown menu.</p>
+    </div>
+</body>
+</html>
