@@ -291,3 +291,174 @@
             position: relative;
         }
         
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background: #4a6bff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #b0b0b0;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">InfluenceConnect</a>
+            <div class="nav-links">
+                <a href="platform.html">Platform</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="resources.html" class="active">Resources</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">Log In</button>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Resources Hero -->
+    <section class="resources-hero">
+        <h1>Influencer Marketing Resources</h1>
+        <p>Learn the latest strategies, trends, and best practices to maximize your influencer marketing success.</p>
+    </section>
+
+    <!-- Resources Tabs -->
+    <section class="resources-tabs">
+        <div class="tabs-header">
+            <button class="tab-btn active" data-tab="all">All Resources</button>
+            <button class="tab-btn" data-tab="guides">Guides</button>
+            <button class="tab-btn" data-tab="blog">Blog</button>
+            <button class="tab-btn" data-tab="case-studies">Case Studies</button>
+            <button class="tab-btn" data-tab="webinars">Webinars</button>
+        </div>
+    </section>
+
+    <!-- Resources Content -->
+    <section class="resources-content">
+        <div class="tab-content active" id="all">
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-img">
+                        📖
+                    </div>
+                    <div class="resource-info">
+                        <span class="resource-category">Guide</span>
+                        <h3>The Complete Guide to Influencer Marketing in 2023</h3>
+                        <p>Everything you need to know to launch successful influencer campaigns this year.</p>
+                        <div class="resource-meta">
+                            <span>15 min read</span>
+                            <span>May 15, 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img">
+                        📊
+                    </div>
+                    <div class="resource-info">
+                        <span class="resource-category">Case Study</span>
+                        <h3>How BrandX Increased ROI by 250% With Micro-Influencers</h3>
+                        <p>Discover the strategy behind this successful micro-influencer campaign.</p>
+                        <div class="resource-meta">
+                            <span>10 min read</span>
+                            <span>April 28, 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img">
+                        🎥
+                    </div>
+                    <div class="resource-info">
+                        <span class="resource-category">Webinar</span>
+                        <h3>Mastering TikTok Influencer Marketing</h3>
+                        <p>Learn how to leverage TikTok creators for maximum brand impact.</p>
+                        <div class="resource-meta">
+                            <span>45 min watch</span>
+                            <span>April 15, 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img">
+                        ✍️
+                    </div>
+                    <div class="resource-info">
+                        <span class="resource-category">Blog</span>
+                        <h3>10 Influencer Outreach Templates That Get Responses</h3>
+                        <p>Proven email templates to help you connect with influencers effectively.</p>
+                        <div class="resource-meta">
+                            <span>8 min read</span>
+                            <span>March 30, 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img">
+                        📈
+                    </div>
+                    <div class="resource-info">
+                        <span class="resource-category">Guide</span>
+                        <h3>Measuring Influencer Marketing ROI: A Step-by-Step Framework</h3>
+                        <p>Learn how to accurately measure and report on your influencer campaign performance.</p>
+                        <div class="resource-meta">
+                            <span>12 min read</span>
+                            <span>March 22, 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img">
+                        🎤
+                    </div>
+                    <div class="resource-info">
+                        <span class="resource-category">Podcast</span>
+                        <h3>Interview With Top Beauty Influencer: Behind the Scenes</h3>
+                        <p>Get insights from a top beauty creator on what makes brand collaborations successful.</p>
+                        <div class="resource-meta">
+                            <span>35 min listen</span>
+                            <span>March 10, 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Other tab contents would go here -->
+   
