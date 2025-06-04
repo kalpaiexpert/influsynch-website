@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Creators | InfluenceHub</title>
     <style>
-        /* === GLOBAL STYLES (MATCHED TO INDEX.HTML) === */
+        /* === GLOBAL STYLES === */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +25,7 @@
             padding: 0 20px;
         }
         
-        /* === NAVBAR (EXACT COPY FROM INDEX) === */
+        /* === NAVBAR === */
         nav {
             display: flex;
             justify-content: space-between;
@@ -39,20 +39,22 @@
             font-size: 24px;
             font-weight: bold;
             color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
         }
         
         .nav-links a {
-            margin-left: 25px;
             color: #555;
             font-weight: 500;
+            text-decoration: none;
         }
         
-        .nav-links a:hover {
-            color: #4CAF50;
-        }
-
-        /* Highlight current page (Creators) */
-        .nav-links a[href="creators.html"] {
+        .nav-links a:hover, 
+        .nav-links a.active {
             color: #4CAF50;
         }
 
@@ -74,6 +76,24 @@
             color: #666;
             max-width: 700px;
             margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #3e8e41;
         }
 
         /* === FILTER BAR === */
@@ -131,6 +151,7 @@
         
         .creator-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         .creator-image {
@@ -178,6 +199,12 @@
             border-radius: 4px;
             font-weight: 500;
             margin-top: 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .creator-button:hover {
+            background: #3e8e41;
         }
 
         /* === BENEFITS SECTION === */
@@ -204,15 +231,164 @@
             font-size: 1.3rem;
             margin-bottom: 15px;
         }
+
+        /* === APPLICATION FORM === */
+        #applyForm {
+            display: none;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #applyForm h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        
+        .form-submit {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: #3e8e41;
+        }
+        
+        .file-upload {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .file-upload-label {
+            padding: 10px 15px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .file-upload-label:hover {
+            background: #e0e0e0;
+        }
+        
+        .file-name {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* === LOADING SPINNER === */
+        .spinner {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* === SOCIAL MEDIA VALIDATION === */
+        .social-validation {
+            display: none;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .validation-success {
+            color: #4CAF50;
+        }
+        
+        .validation-error {
+            color: #f44336;
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION (MATCHED TO INDEX.HTML) -->
+    <!-- NAVIGATION -->
     <nav class="container">
         <a href="index.html" class="logo">InfluenceHub</a>
         <div class="nav-links">
             <a href="brands.html">For Brands</a>
-            <a href="creators.html">For Creators</a>
+            <a href="creators.html" class="active">For Creators</a>
             <a href="discover.html">Discover</a>
             <a href="pricing.html">Pricing</a>
             <a href="login.html">Login</a>
@@ -224,7 +400,7 @@
         <div class="container">
             <h1>Grow Your Influence</h1>
             <p>Connect with brands that value your creativity and audience. Get paid for collaborations that matter.</p>
-            <a href="#apply" class="cta-button">Apply as Creator</a>
+            <button class="cta-button" onclick="toggleApplyForm()">Apply as Creator</button>
         </div>
     </section>
 
@@ -233,7 +409,7 @@
         <div class="filter-bar">
             <div class="filter-grid">
                 <div class="filter-group">
-                    <select>
+                    <select id="categoryFilter">
                         <option value="">All Categories</option>
                         <option value="beauty">Beauty & Fashion</option>
                         <option value="tech">Tech</option>
@@ -241,21 +417,21 @@
                     </select>
                 </div>
                 <div class="filter-group">
-                    <select>
+                    <select id="locationFilter">
                         <option value="">All Locations</option>
                         <option value="us">United States</option>
                         <option value="uk">United Kingdom</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <select>
+                    <select id="followersFilter">
                         <option value="">Follower Range</option>
                         <option value="1k-10k">1K-10K</option>
                         <option value="10k-50k">10K-50K</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <input type="text" placeholder="Search creators...">
+                    <input type="text" id="searchInput" placeholder="Search creators...">
                 </div>
             </div>
         </div>
@@ -265,38 +441,8 @@
     <section class="creators-section">
         <div class="container">
             <h2 class="section-title">Featured Creators</h2>
-            <div class="creators-grid">
-                <!-- Creator 1 -->
-                <div class="creator-card">
-                    <div class="creator-image">👩‍🎤</div>
-                    <div class="creator-details">
-                        <h3>Alex Morgan</h3>
-                        <div class="creator-meta">
-                            <span><i>📌</i> Beauty & Fashion</span>
-                            <span><i>📍</i> Los Angeles, USA</span>
-                            <span><i>👥</i> 250K Followers</span>
-                            <span><i>⭐</i> 4.8 Rating</span>
-                        </div>
-                        <a href="#" class="creator-button">View Profile</a>
-                    </div>
-                </div>
-                
-                <!-- Creator 2 -->
-                <div class="creator-card">
-                    <div class="creator-image">👨‍💻</div>
-                    <div class="creator-details">
-                        <h3>Sam Rivera</h3>
-                        <div class="creator-meta">
-                            <span><i>📌</i> Tech Reviews</span>
-                            <span><i>📍</i> London, UK</span>
-                            <span><i>👥</i> 180K Followers</span>
-                            <span><i>⭐</i> 4.9 Rating</span>
-                        </div>
-                        <a href="#" class="creator-button">View Profile</a>
-                    </div>
-                </div>
-                
-                <!-- Add more creator cards as needed -->
+            <div class="creators-grid" id="creatorsGrid">
+                <!-- Creator cards will be loaded dynamically -->
             </div>
         </div>
     </section>
@@ -321,5 +467,285 @@
             </div>
         </div>
     </section>
+
+    <!-- APPLICATION FORM -->
+    <div id="applyForm">
+        <h2>Apply as a Creator</h2>
+        <form id="creatorApplicationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="socialMedia">Primary Social Media Profile (URL) *</label>
+                <input type="url" id="socialMedia" placeholder="https://instagram.com/yourprofile" required>
+                <div id="socialValidation" class="social-validation"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category *</label>
+                <select id="category" required>
+                    <option value="">Select your niche</option>
+                    <option value="beauty">Beauty & Fashion</option>
+                    <option value="tech">Tech</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="followers">Approximate Followers *</label>
+                <select id="followers" required>
+                    <option value="">Select range</option>
+                    <option value="1k-10k">1K-10K</option>
+                    <option value="10k-50k">10K-50K</option>
+                    <option value="50k-100k">50K-100K</option>
+                    <option value="100k+">100K+</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Media Kit (PDF or ZIP) *</label>
+                <div class="file-upload">
+                    <label for="mediaKit" class="file-upload-label">Choose File</label>
+                    <span id="fileName" class="file-name">No file chosen</span>
+                    <input type="file" id="mediaKit" accept=".pdf,.zip" style="display: none;" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="portfolio">Portfolio/Website</label>
+                <input type="url" id="portfolio" placeholder="https://yourportfolio.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="about">Tell us about yourself *</label>
+                <textarea id="about" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="form-submit">
+                <span id="submitText">Submit Application</span>
+                <div id="spinner" class="spinner"></div>
+            </button>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p>&copy; 2024 InfluenceHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample creator data (in a real app, this would come from an API)
+        const creators = [
+            {
+                id: 1,
+                name: "Alex Morgan",
+                category: "beauty",
+                location: "us",
+                followers: "250K",
+                rating: 4.8,
+                emoji: "👩‍🎤"
+            },
+            {
+                id: 2,
+                name: "Sam Rivera",
+                category: "tech",
+                location: "uk",
+                followers: "180K",
+                rating: 4.9,
+                emoji: "👨‍💻"
+            },
+            {
+                id: 3,
+                name: "Priya Patel",
+                category: "lifestyle",
+                location: "in",
+                followers: "350K",
+                rating: 4.7,
+                emoji: "🧘‍♀️"
+            }
+        ];
+
+        // DOM Elements
+        const creatorsGrid = document.getElementById('creatorsGrid');
+        const applyForm = document.getElementById('applyForm');
+        const applicationForm = document.getElementById('creatorApplicationForm');
+        const mediaKitInput = document.getElementById('mediaKit');
+        const fileNameSpan = document.getElementById('fileName');
+        const socialMediaInput = document.getElementById('socialMedia');
+        const socialValidation = document.getElementById('socialValidation');
+        const submitText = document.getElementById('submitText');
+        const spinner = document.getElementById('spinner');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCreators(creators);
+            setupEventListeners();
+        });
+
+        // Render creator cards
+        function renderCreators(creators) {
+            creatorsGrid.innerHTML = '';
+            creators.forEach(creator => {
+                const card = document.createElement('div');
+                card.className = 'creator-card';
+                card.innerHTML = `
+                    <div class="creator-image">${creator.emoji}</div>
+                    <div class="creator-details">
+                        <h3>${creator.name}</h3>
+                        <div class="creator-meta">
+                            <span><i>📌</i> ${getCategoryName(creator.category)}</span>
+                            <span><i>📍</i> ${getLocationName(creator.location)}</span>
+                            <span><i>👥</i> ${creator.followers} Followers</span>
+                            <span><i>⭐</i> ${creator.rating} Rating</span>
+                        </div>
+                        <a href="creator-profile.html?id=${creator.id}" class="creator-button">View Profile</a>
+                    </div>
+                `;
+                creatorsGrid.appendChild(card);
+            });
+        }
+
+        // Helper functions
+        function getCategoryName(category) {
+            const categories = {
+                'beauty': 'Beauty & Fashion',
+                'tech': 'Tech',
+                'lifestyle': 'Lifestyle',
+                'gaming': 'Gaming'
+            };
+            return categories[category] || category;
+        }
+
+        function getLocationName(location) {
+            const locations = {
+                'us': 'United States',
+                'uk': 'United Kingdom',
+                'in': 'India'
+            };
+            return locations[location] || location;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // File upload display
+            mediaKitInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileNameSpan.textContent = this.files[0].name;
+                } else {
+                    fileNameSpan.textContent = 'No file chosen';
+                }
+            });
+
+            // Social media validation
+            socialMediaInput.addEventListener('blur', validateSocialMedia);
+
+            // Form submission
+            applicationForm.addEventListener('submit', handleFormSubmission);
+
+            // Filter functionality
+            document.getElementById('categoryFilter').addEventListener('change', filterCreators);
+            document.getElementById('locationFilter').addEventListener('change', filterCreators);
+            document.getElementById('followersFilter').addEventListener('change', filterCreators);
+            document.getElementById('searchInput').addEventListener('input', filterCreators);
+        }
+
+        // Toggle apply form
+        function toggleApplyForm() {
+            applyForm.style.display = applyForm.style.display === 'none' ? 'block' : 'none';
+            if (applyForm.style.display === 'block') {
+                applyForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Validate social media URL
+        function validateSocialMedia() {
+            const url = socialMediaInput.value.trim();
+            if (!url) return;
+
+            // Simple validation for demo (in reality, use API to verify)
+            if (url.includes('instagram.com') || 
+                url.includes('youtube.com') || 
+                url.includes('tiktok.com')) {
+                socialValidation.textContent = '✓ Valid platform detected';
+                socialValidation.className = 'social-validation validation-success';
+                socialValidation.style.display = 'block';
+            } else {
+                socialValidation.textContent = '⚠ Please provide a valid Instagram, YouTube, or TikTok URL';
+                socialValidation.className = 'social-validation validation-error';
+                socialValidation.style.display = 'block';
+            }
+        }
+
+        // Filter creators
+        function filterCreators() {
+            const category = document.getElementById('categoryFilter').value;
+            const location = document.getElementById('locationFilter').value;
+            const followers = document.getElementById('followersFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+
+            const filtered = creators.filter(creator => {
+                return (!category || creator.category === category) &&
+                       (!location || creator.location === location) &&
+                       (!followers || true) && // In a real app, compare follower ranges
+                       (!search || creator.name.toLowerCase().includes(search));
+            });
+
+            renderCreators(filtered);
+        }
+
+        // Handle form submission
+        function handleFormSubmission(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitText.textContent = 'Processing...';
+            spinner.style.display = 'block';
+            
+            // Simulate API call (replace with actual fetch() to your backend)
+            setTimeout(() => {
+                // Reset form
+                applicationForm.reset();
+                fileNameSpan.textContent = 'No file chosen';
+                
+                // Show success
+                alert('Application submitted successfully! We\'ll review your profile and contact you soon.');
+                
+                // Reset button
+                submitText.textContent = 'Submit Application';
+                spinner.style.display = 'none';
+                
+                // Hide form
+                toggleApplyForm();
+            }, 2000);
+        }
+
+        // In a real implementation, you would add:
+        // 1. Actual API calls to fetch creators
+        // 2. Proper form submission to your backend
+        // 3. More robust validation
+        // 4. Authentication checks
+    </script>
 </body>
 </html>
