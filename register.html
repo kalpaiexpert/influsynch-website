@@ -2,220 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Register - Influsynch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Influencity</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* Navbar styles */
-    .navbar {
-      background-color: #5200cc;
-      color: white;
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
+    body {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+      min-height: 100vh;
+      background-color: #fff;
+    }
+
+    .register-wrapper {
+      width: 100%;
+      max-width: 400px;
+      padding: 40px 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      text-align: center;
     }
 
     .logo {
+      font-size: 28px;
       font-weight: 700;
-      font-size: 1.5em;
-      color: white;
-      text-decoration: none;
+      color: #4CAF50;
+      margin-bottom: 30px;
     }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
+    .register-wrapper h2 {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 20px;
     }
 
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .nav-links li a:hover {
-      color: #bb99ff;
-    }
-
-    /* Mobile menu toggle button */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-      display: block;
-      background-color: white;
-      height: 3px;
-      width: 25px;
-      border-radius: 3px;
-      position: relative;
-    }
-
-    .hamburger::before,
-    .hamburger::after {
-      content: "";
-      position: absolute;
-      left: 0;
-    }
-
-    .hamburger::before {
-      top: -8px;
-    }
-
-    .hamburger::after {
-      top: 8px;
-    }
-
-    /* Responsive menu */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #5200cc;
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      .nav-links.open {
-        max-height: 300px; /* enough to show all links */
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-
-    /* Register form styles */
-    main {
-      max-width: 400px;
-      margin: 50px auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      text-align: center;
-      color: #5200cc;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: 600;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
+    .register-wrapper input {
       width: 100%;
-      padding: 8px 10px;
-      box-sizing: border-box;
-      border: 1px solid #aaa;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: #5200cc;
-      color: white;
-      border: none;
       padding: 12px;
-      width: 100%;
-      margin-top: 20px;
-      font-size: 1em;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
       border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .register-wrapper button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 15px;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
-    button:hover {
-      background-color: #7b3fff;
+    .register-wrapper button:hover {
+      background-color: #388e3c;
     }
 
-    .login-link {
+    .register-wrapper .login-link {
       margin-top: 15px;
-      text-align: center;
-      font-size: 0.9em;
+      display: block;
+      font-size: 14px;
     }
 
-    .login-link a {
-      color: #5200cc;
+    .register-wrapper .login-link a {
+      color: #007bff;
       text-decoration: none;
-      font-weight: 600;
     }
 
-    .login-link a:hover {
+    .register-wrapper .login-link a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Influsynch</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-    </div>
-  </nav>
-
-  <main>
-    <h2>Register</h2>
+  <div class="register-wrapper">
+    <div class="logo">Influencity</div>
+    <h2>Create your account</h2>
     <form>
-      <label for="name">Full Name</label>
-      <input id="name" type="text" placeholder="Enter your full name" required />
-      <label for="email">Email</label>
-      <input id="email" type="email" placeholder="Enter your email" required />
-      <label for="password">Password</label>
-      <input id="password" type="password" placeholder="Create a password" required />
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Create Password" required />
+      <input type="password" placeholder="Confirm Password" required />
       <button type="submit">Register</button>
     </form>
     <div class="login-link">
       Already have an account? <a href="login.html">Login here</a>
     </div>
-  </main>
+  </div>
 
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
