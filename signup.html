@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - InfluenceConnect</title>
+    <style>
+        /* Reuse the header and footer styles from index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header Styles (same as index.html) */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4a6bff;
+        }
+        
+        /* Signup Section */
+        .signup {
+            padding: 8rem 5% 4rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .signup-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .signup-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .signup-title h2 {
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .signup-title p {
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, 
+        .form-group select:focus {
+            border-color: #4a6bff;
+            outline: none;
+        }
+        
+        .account-type {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .account-type-option {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .account-type-option input {
+            display: none;
+        }
+        
+        .account-type-option label {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .account-type-option input:checked + label {
+            border-color: #4a6bff;
+            background: #f6f9ff;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #4a6bff;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #3a5bef;
+        }
+        
+        .signup-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+        
+        .signup-footer a {
+            color: #4a6bff;
+            font-weight: 500;
+        }
+        
+        /* Footer (same as index.html) */
+        footer {
+            background: #1a237e;
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background: #4a6bff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #b0b0b0;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">InfluenceConnect</a>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Signup Section -->
+    <section class="signup">
+        <div class="signup-container">
+            <div class="signup-title">
+                <h2>Create Your Account</h2>
+                <p>Join as a brand or influencer to start collaborating</p>
+            </div>
+            
+            <form>
+                <div class="account-type">
+                    <div class="account-type-option">
+                        <input type="radio" id="brand" name="account-type" value="brand" checked>
+                        <label for="brand">I'm a Brand</label>
+                    </div>
+                    <div class="account-type-option">
+                        <input type="radio" id="influencer" name="account-type" value="influencer">
+                        <label for="influencer">I'm an Influencer</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="industry">Industry/Niche</label>
+                    <select id="industry" name="industry">
+                        <option value="">Select your industry/niche</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="travel">Travel</option>
+                        <option value="fitness">Fitness</option>
+                        <option value="food">Food</option>
+                        <option value="tech">Technology</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="business">Business</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                
+                <div class="signup-footer">
+                    <p>Already have an account? <a href="login.html">Log in</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>InfluenceConnect</h3>
+                <p>The leading platform for influencer marketing and brand collaborations.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="index.html">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Integrations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 InfluenceConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>
