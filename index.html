@@ -1,30 +1,239 @@
-<nav class="container">
-  <a href="index.html" class="logo">Influencity</a>
-  <div class="nav-links">
-    <div class="dropdown">
-      <a href="#" class="dropdown-toggle">Our Platform</a>
-      <div class="mega-menu">
-        <div class="column">
-          <h4>Products</h4>
-          <a href="#discover">🔍 Influencer Discover<br><small>Find the influencers that work for you</small></a>
-          <a href="#irm">👤 Influencer Relationship Management<br><small>Your processes in one hub</small></a>
-          <a href="#manager">🗓️ Campaign Manager<br><small>We help your team do more</small></a>
-          <a href="#reports">📊 Campaign Reports<br><small>Compile and share key data</small></a>
-        </div>
-        <div class="column">
-          <h4>Channels</h4>
-          <a href="#tiktok">🎵 TikTok Influencers<br><small>+130M influencers at your fingertips</small></a>
-          <a href="#instagram">📸 Instagram Influencers<br><small>Filter with AI-powered tools</small></a>
-          <a href="#youtube">📹 YouTube Influencers<br><small>Find top influencers in minutes</small></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Influencity | Influencer Marketing Platform</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      background: white;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #555;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #4CAF50;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      color: #e91e63;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 0;
+      display: inline-block;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+      width: 600px;
+      z-index: 999;
+      border-radius: 10px;
+      gap: 60px;
+    }
+
+    .dropdown:hover .mega-menu {
+      display: flex;
+    }
+
+    .mega-menu .column {
+      flex: 1;
+    }
+
+    .mega-menu h4 {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #555;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .mega-menu a {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #222;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .mega-menu a small {
+      display: block;
+      color: #666;
+      font-weight: normal;
+      font-size: 12px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #388e3c;
+    }
+
+    .cta-button.outline {
+      background: transparent;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+    }
+
+    section {
+      padding: 80px 20px;
+      border-top: 1px solid #eee;
+      background: #fff;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="container">
+    <a href="index.html" class="logo">Influencity</a>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">Our Platform</a>
+        <div class="mega-menu">
+          <div class="column">
+            <h4>Products</h4>
+            <a href="#discover">🔍 Influencer Discover<br><small>Find the influencers that work for you</small></a>
+            <a href="#irm">👤 Influencer Relationship Management<br><small>Your processes in one hub</small></a>
+            <a href="#manager">🗓️ Campaign Manager<br><small>We help your team do more</small></a>
+            <a href="#reports">📊 Campaign Reports<br><small>Compile and share key data</small></a>
+          </div>
+          <div class="column">
+            <h4>Channels</h4>
+            <a href="#tiktok">🎵 TikTok Influencers<br><small>+130M influencers at your fingertips</small></a>
+            <a href="#instagram">📸 Instagram Influencers<br><small>Filter with AI-powered tools</small></a>
+            <a href="#youtube">📹 YouTube Influencers<br><small>Find top influencers in minutes</small></a>
+          </div>
         </div>
       </div>
+      <a href="audience.html">Who We Serve</a>
+      <a href="features.html">Features</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="login.html" style="font-weight: bold; color: #4CAF50;">Login</a>
+      <a href="register.html" style="font-weight: bold; background: #4CAF50; color: white; padding: 6px 12px; border-radius: 4px;">Register</a>
     </div>
-    <a href="audience.html">Who We Serve</a>
-    <a href="features.html">Features</a>
-    <a href="about.html">About</a>
-    <a href="resources.html">Resources</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="login.html" style="font-weight: bold; color: #4CAF50;">Login</a>
-    <a href="register.html" style="font-weight: bold; background: #4CAF50; color: white; padding: 6px 12px; border-radius: 4px;">Register</a>
-  </div>
-</nav>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to Influencity</h1>
+    <p>Powerful Influencer Marketing Tools to Grow Your Brand</p>
+    <div class="hero-buttons">
+      <a href="demo.html" class="cta-button">Request Demo</a>
+      <a href="register.html" class="cta-button outline">Get Started Free</a>
+    </div>
+  </section>
+
+  <!-- Placeholder sections from the dropdown -->
+  <section id="discover"><h2>Influencer Discover</h2><p>Find the influencers that work for you.</p></section>
+  <section id="irm"><h2>Influencer Relationship Management</h2><p>Centralize your influencer communication and workflow.</p></section>
+  <section id="manager"><h2>Campaign Manager</h2><p>Plan, execute, and manage influencer campaigns at scale.</p></section>
+  <section id="reports"><h2>Campaign Reports</h2><p>Measure performance and share insights with your team.</p></section>
+  <section id="tiktok"><h2>TikTok Influencers</h2><p>Reach over 130M creators through TikTok data analysis.</p></section>
+  <section id="instagram"><h2>Instagram Influencers</h2><p>Use AI to discover and filter the best IG creators for your brand.</p></section>
+  <section id="youtube"><h2>YouTube Influencers</h2><p>Quickly find high-performing YouTubers for your niche.</p></section>
+
+</body>
+</html>
