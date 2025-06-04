@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Brands | InfluenceHub</title>
+    <style>
+        /* === GLOBAL STYLES (CONSISTENT ACROSS PAGES) === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* === NAVBAR (MATCHES OTHER PAGES) === */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .nav-links a {
+            margin-left: 25px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        /* Highlight current page */
+        .nav-links a[href="brands.html"] {
+            color: #4CAF50;
+        }
+
+        /* === HERO SECTION (BRAND-FOCUSED) === */
+        .brand-hero {
+            text-align: center;
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+        }
+        
+        .brand-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .brand-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .demo-btn {
+            display: inline-block;
+            background: white;
+            color: #6e8efb;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* === BENEFITS SECTION === */
+        .benefits {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .benefits h2 {
+            font-size: 2rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+        
+        .benefit-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .benefit-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* === CASE STUDIES === */
+        .case-studies {
+            background: #f5f7fa;
+            padding: 80px 0;
+        }
+        
+        .case-studies h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 60px;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .case-image {
+            height: 200px;
+            background: #ddd;
+        }
+        
+        .case-content {
+            padding: 25px;
+        }
+        
+        .case-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .case-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .case-link {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+
+        /* === CTA SECTION === */
+        .brand-cta {
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .brand-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (MATCHES ALL PAGES) -->
+    <nav class="container">
+        <a href="index.html" class="logo">InfluenceHub</a>
+        <div class="nav-links">
+            <a href="brands.html">For Brands</a>
+            <a href="creators.html">For Creators</a>
+            <a href="discover.html">Discover</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <!-- BRAND HERO SECTION -->
+    <section class="brand-hero">
+        <div class="container">
+            <h1>Grow Your Brand With Authentic Influencers</h1>
+            <p>Access 50,000+ vetted creators ready to promote your products</p>
+            <a href="#" class="demo-btn">Request a Demo</a>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Brands Choose InfluenceHub</h2>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Data-Driven Matching</h3>
+                    <p>Our AI finds influencers whose audience matches your ideal customers.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>Transparent Analytics</h3>
+                    <p>Real-time performance tracking for every campaign.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Budget Control</h3>
+                    <p>Set your budget and only pay for measurable results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="case-studies">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-image" style="background: #a2c4c9;"></div>
+                    <div class="case-content">
+                        <h3>Beauty Brand x Micro-Influencers</h3>
+                        <p>Generated 300% ROI with a targeted campaign using 50 nano-influencers.</p>
+                        <a href="#" class="case-link">Read Case Study →</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image" style="background: #b6d7a8;"></div>
+                    <div class="case-content">
+                        <h3>Eco Startup's Viral Campaign</h3>
+                        <p>Reached 2M+ impressions with strategic creator partnerships.</p>
+                        <a href="#" class="case-link">Read Case Study →</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image" style="background: #f9cb9c;"></div>
+                    <div class="case-content">
+                        <h3>Apparel Co. x Lifestyle Creators</h3>
+                        <p>Increased website traffic by 150% in 3 months.</p>
+                        <a href="#" class="case-link">Read Case Study →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="brand-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Marketing?</h2>
+            <a href="pricing.html" class="demo-btn">See Pricing Plans</a>
+        </div>
+    </section>
+</body>
+</html>
