@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfluenceHub | Brands & Creators Connect</title>
+    <title>Influencity | Influencer Marketing Platform</title>
     <style>
         /* === GLOBAL STYLES === */
         * {
@@ -25,7 +25,7 @@
             padding: 0 20px;
         }
         
-        /* === NAVBAR (UPDATED TO MATCH ALL PAGES) === */
+        /* === NAVIGATION (MATCHING YOUR SCREENSHOT) === */
         nav {
             display: flex;
             justify-content: space-between;
@@ -41,18 +41,19 @@
             color: #4CAF50;
         }
         
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
         .nav-links a {
-            margin-left: 25px;
             color: #555;
             font-weight: 500;
+            text-decoration: none;
+            font-size: 15px;
         }
         
         .nav-links a:hover {
-            color: #4CAF50;
-        }
-
-        /* Highlight current page (Home) */
-        .nav-links a[href="index.html"] {
             color: #4CAF50;
         }
 
@@ -83,97 +84,86 @@
             padding: 14px 30px;
             border-radius: 4px;
             font-weight: bold;
+            text-decoration: none;
             margin: 0 10px;
             font-size: 1.1rem;
         }
         
-        .cta-button.outline {
-            background: transparent;
-            border: 2px solid #4CAF50;
-            color: #4CAF50;
-        }
-
-        /* === HOW IT WORKS === */
-        .steps {
+        /* === STUDY SECTION === */
+        .study-section {
             padding: 80px 0;
             text-align: center;
             background: white;
         }
         
-        .steps h2 {
+        .study-section h2 {
             font-size: 2rem;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
         
-        .step-cards {
+        .regions {
             display: flex;
             justify-content: center;
             gap: 30px;
-            flex-wrap: wrap;
+            margin-top: 40px;
         }
         
-        .step-card {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            padding: 30px;
+        .region-card {
             background: white;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-        
-        .step-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #4CAF50;
+            width: 200px;
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION (UPDATED WITH DISCOVER LINK) -->
+    <!-- NAVIGATION (EXACTLY LIKE YOUR SCREENSHOT) -->
     <nav class="container">
-        <a href="index.html" class="logo">InfluenceHub</a>
+        <a href="index.html" class="logo">Influencity</a>
         <div class="nav-links">
-            <a href="brands.html">For Brands</a>
-            <a href="creators.html">For Creators</a>
-            <a href="discover.html">Discover</a>
+            <a href="platform.html">Our Platform</a>
+            <a href="audience.html">Who We Serve</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
             <a href="pricing.html">Pricing</a>
-            <a href="login.html">Login</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1>Where Brands and Creators Collaborate</h1>
-            <p>Discover the perfect partnership to grow your audience and reach.</p>
-            <div>
-                <a href="brands.html" class="cta-button">I'm a Brand</a>
-                <a href="creators.html" class="cta-button outline">I'm a Creator</a>
+            <h1>Discover the Largest Influencer Study</h1>
+            <p>Data-driven insights from the USA, Europe, and Latin America</p>
+            <a href="#study" class="cta-button">View the Study</a>
+            <a href="demo.html" class="cta-button" style="background: transparent; color: #4CAF50; border: 2px solid #4CAF50;">Request Demo</a>
+        </div>
+    </section>
+
+    <!-- STUDY SECTION -->
+    <section class="study-section" id="study">
+        <div class="container">
+            <h2>Influencer Marketing Across Regions</h2>
+            <p>Comparative data from three key markets</p>
+            
+            <div class="regions">
+                <div class="region-card">
+                    <h3>USA</h3>
+                    <p>200K+ influencers analyzed</p>
+                </div>
+                <div class="region-card">
+                    <h3>Europe</h3>
+                    <p>150K+ influencers analyzed</p>
+                </div>
+                <div class="region-card">
+                    <h3>Latin America</h3>
+                    <p>100K+ influencers analyzed</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="steps">
-        <div class="container">
-            <h2>How InfluenceHub Works</h2>
-            <div class="step-cards">
-                <div class="step-card">
-                    <h3>1. Sign Up</h3>
-                    <p>Create your free account in seconds as a brand or creator.</p>
-                </div>
-                <div class="step-card">
-                    <h3>2. Discover</h3>
-                    <p>Use our <a href="discover.html">Discover</a> page to find perfect matches.</p>
-                </div>
-                <div class="step-card">
-                    <h3>3. Collaborate</h3>
-                    <p>Launch campaigns and grow together.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ADD MORE SECTIONS AS NEEDED -->
 </body>
 </html>
