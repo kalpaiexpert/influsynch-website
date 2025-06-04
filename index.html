@@ -49,22 +49,40 @@
       top: 40px;
       left: 0;
       background: #fff;
-      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       z-index: 100;
-      min-width: 200px;
-    }
-
-    .dropdown-content a {
-      display: block;
-      margin-bottom: 10px;
-      color: #333;
-      font-size: 14px;
     }
 
     .nav-item:hover .dropdown-content {
+      display: flex;
+    }
+
+    .mega-menu {
+      display: flex;
+      gap: 60px;
+      padding: 30px 40px;
+      min-width: 500px;
+    }
+
+    .mega-menu strong {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .mega-menu a {
       display: block;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .mega-menu a small {
+      display: block;
+      color: #666;
+      font-size: 12px;
+      font-weight: normal;
     }
 
     .hero {
@@ -157,18 +175,21 @@
         top: 0;
         box-shadow: none;
         padding: 10px 0;
-      }
-
-      .nav-item:hover .dropdown-content {
         display: none;
       }
 
       .nav-item.active .dropdown-content {
-        display: block;
+        display: flex;
+        flex-direction: column;
       }
 
       .hamburger {
         display: block;
+      }
+
+      .mega-menu {
+        flex-direction: column;
+        gap: 20px;
       }
     }
   </style>
@@ -179,45 +200,30 @@
     <a href="index.html" class="logo">Collabverse</a>
     <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="navMenu">
+
       <div class="nav-item">
-        <a href="#">Our Platform</a>
-        <div class="dropdown-content">
-          <a href="discover.html">Influencer Discover</a>
-          <a href="irm.html">IRM</a>
-          <a href="manager.html">Campaign Manager</a>
-          <a href="reports.html">Campaign Reports</a>
+        <a href="#" class="dropdown-toggle">Our Platform</a>
+        <div class="dropdown-content mega-menu">
+          <div>
+            <strong>PRODUCTS</strong><br><br>
+            <a href="discover.html">🔍 <strong>Influencer Discover</strong><br><small>Find the influencers that work for you</small></a>
+            <a href="irm.html">👤 <strong>Influencer Relationship Management</strong><br><small>Your processes in one central hub</small></a>
+            <a href="manager.html">📅 <strong>Campaign Manager</strong><br><small>We help your team do more</small></a>
+            <a href="reports.html">📊 <strong>Campaign Reports</strong><br><small>Compile and share key data</small></a>
+          </div>
+          <div>
+            <strong>CHANNELS</strong><br><br>
+            <a href="tiktok.html">🎵 <strong>TikTok Influencers</strong><br><small>+130M TikTok influencers at your fingertips</small></a>
+            <a href="instagram.html">📸 <strong>Instagram Influencers</strong><br><small>Filter Instagram influencers with AI-powered tools</small></a>
+            <a href="youtube.html">📺 <strong>YouTube Influencers</strong><br><small>Find top YouTube influencers in minutes</small></a>
+          </div>
         </div>
       </div>
-      <div class="nav-item">
-        <a href="#">Who We Serve</a>
-        <div class="dropdown-content">
-          <a href="brands.html">Brands</a>
-          <a href="agencies.html">Agencies</a>
-          <a href="creators.html">Creators</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="#">Features</a>
-        <div class="dropdown-content">
-          <a href="ai-engine.html">AI Engine</a>
-          <a href="campaign-flow.html">Campaign Flow</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="#">Resources</a>
-        <div class="dropdown-content">
-          <a href="blogs.html">Blogs</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="help-center.html">Help Center</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="#">Pricing</a>
-        <div class="dropdown-content">
-          <a href="monthly.html">Monthly</a>
-          <a href="annual.html">Annual</a>
-        </div>
-      </div>
+
+      <a href="#">Who We Serve</a>
+      <a href="#">Features</a>
+      <a href="#">Resources</a>
+      <a href="#">Pricing</a>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
     </div>
