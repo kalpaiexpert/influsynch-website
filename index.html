@@ -3,26 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Influencity</title>
+  <title>Collabverse | The Universe of Influencer Collaboration</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background: #f9fafb;
+      background-color: #f9fafb;
       color: #333;
     }
-    h1 {
+
+    nav {
+      background: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .cta.outline {
+      background: transparent;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h2 {
       font-size: 2rem;
+      margin-bottom: 20px;
       color: #4CAF50;
     }
+
     p {
-      font-size: 1rem;
-      margin-top: 10px;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>Home</h1>
-  <p>This is the Home page. Replace this content as needed.</p>
+
+  <nav>
+    <a href="index.html" class="logo">Collabverse</a>
+    <div class="nav-links">
+      <a href="#">Our Platform</a>
+      <a href="#">Who We Serve</a>
+      <a href="#">Features</a>
+      <a href="#">Resources</a>
+      <a href="#">Pricing</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to Collabverse</h1>
+    <p>The Universe of Influencer Collaboration</p>
+    <a href="register.html" class="cta">Get Started Free</a>
+    <a href="demo.html" class="cta outline">Request a Demo</a>
+  </section>
+
+  <section>
+    <h2>Why Collabverse?</h2>
+    <p>Discover, manage, and measure influencer collaborations with ease. Collabverse brings everything under one roof — so you can go from strategy to execution, faster than ever.</p>
+  </section>
+
+  <section>
+    <h2>Who Uses Collabverse?</h2>
+    <p>Brands, Agencies, and Creators from all over the world collaborate on our platform to launch campaigns that convert.</p>
+  </section>
+
+  <section>
+    <h2>Testimonials</h2>
+    <p>"Collabverse has simplified our influencer marketing by 10x!" – Happy Marketer</p>
+    <p>"The reporting and analytics are top-tier." – Brand Manager</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Collabverse. All rights reserved.
+  </footer>
+
 </body>
 </html>
