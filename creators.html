@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Creators | InfluenceHub</title>
+    <style>
+        /* === GLOBAL STYLES (MATCHED TO INDEX.HTML) === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* === NAVBAR (EXACT COPY FROM INDEX) === */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .nav-links a {
+            margin-left: 25px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        /* Highlight current page (Creators) */
+        .nav-links a[href="creators.html"] {
+            color: #4CAF50;
+        }
+
+        /* === CREATORS HERO === */
+        .creators-hero {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+        
+        .creators-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .creators-hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* === FILTER BAR === */
+        .filter-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .filter-group select, 
+        .filter-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+
+        /* === CREATORS GRID === */
+        .creators-section {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #222;
+        }
+        
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .creator-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+        
+        .creator-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .creator-image {
+            height: 200px;
+            background: #e1f5fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4CAF50;
+            font-size: 3rem;
+        }
+        
+        .creator-details {
+            padding: 20px;
+        }
+        
+        .creator-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .creator-meta {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .creator-meta span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .creator-meta i {
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+        
+        .creator-button {
+            display: block;
+            text-align: center;
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        /* === BENEFITS SECTION === */
+        .benefits {
+            padding: 80px 0;
+            background: #f5f7fa;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-card h3 {
+            color: #4CAF50;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (MATCHED TO INDEX.HTML) -->
+    <nav class="container">
+        <a href="index.html" class="logo">InfluenceHub</a>
+        <div class="nav-links">
+            <a href="brands.html">For Brands</a>
+            <a href="creators.html">For Creators</a>
+            <a href="discover.html">Discover</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <!-- CREATORS HERO -->
+    <section class="creators-hero">
+        <div class="container">
+            <h1>Grow Your Influence</h1>
+            <p>Connect with brands that value your creativity and audience. Get paid for collaborations that matter.</p>
+            <a href="#apply" class="cta-button">Apply as Creator</a>
+        </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="container">
+        <div class="filter-bar">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <select>
+                        <option value="">All Categories</option>
+                        <option value="beauty">Beauty & Fashion</option>
+                        <option value="tech">Tech</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select>
+                        <option value="">All Locations</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select>
+                        <option value="">Follower Range</option>
+                        <option value="1k-10k">1K-10K</option>
+                        <option value="10k-50k">10K-50K</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="text" placeholder="Search creators...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CREATORS GRID -->
+    <section class="creators-section">
+        <div class="container">
+            <h2 class="section-title">Featured Creators</h2>
+            <div class="creators-grid">
+                <!-- Creator 1 -->
+                <div class="creator-card">
+                    <div class="creator-image">👩‍🎤</div>
+                    <div class="creator-details">
+                        <h3>Alex Morgan</h3>
+                        <div class="creator-meta">
+                            <span><i>📌</i> Beauty & Fashion</span>
+                            <span><i>📍</i> Los Angeles, USA</span>
+                            <span><i>👥</i> 250K Followers</span>
+                            <span><i>⭐</i> 4.8 Rating</span>
+                        </div>
+                        <a href="#" class="creator-button">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Creator 2 -->
+                <div class="creator-card">
+                    <div class="creator-image">👨‍💻</div>
+                    <div class="creator-details">
+                        <h3>Sam Rivera</h3>
+                        <div class="creator-meta">
+                            <span><i>📌</i> Tech Reviews</span>
+                            <span><i>📍</i> London, UK</span>
+                            <span><i>👥</i> 180K Followers</span>
+                            <span><i>⭐</i> 4.9 Rating</span>
+                        </div>
+                        <a href="#" class="creator-button">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Add more creator cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Join as a Creator?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Get Paid Collaborations</h3>
+                    <p>Earn money by partnering with brands that align with your content and values.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Grow Your Audience</h3>
+                    <p>Access exclusive brand partnerships that help you reach new followers.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Creative Freedom</h3>
+                    <p>Maintain full control over your content while working with brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
