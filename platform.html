@@ -99,6 +99,36 @@
     display: flex;
   }
 
+  /* Dropdown for other nav items */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background:#fff;
+    padding:10px 0;
+    margin-top:8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    min-width: 180px;
+    z-index: 9999;
+  }
+  .dropdown-content li {
+    list-style: none;
+  }
+  .dropdown-content li a {
+    color:#333;
+    padding:8px 20px;
+    display:block;
+    text-decoration:none;
+    font-weight: 500;
+  }
+  .dropdown-content li a:hover {
+    color:#1abc9c;
+  }
+  /* Show on hover */
+  .nav-links > li:hover > ul.dropdown-content {
+    display: block;
+  }
+
   /* Responsive (basic) */
   @media (max-width: 768px) {
     .navbar {
@@ -119,86 +149,95 @@
       margin-bottom: 20px;
     }
   }
+
+  /* Page content styling */
+  header {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    text-align: center;
+  }
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 14px;
+  }
 </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Influsynch</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">Who We Serve ▾</a>
-        <ul class="dropdown-content" style="display:none; position:absolute; background:#fff; padding:10px 0; margin-top:8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px;">
-          <li><a href="who-we-serve.html" style="color:#333; padding:8px 20px; display:block;">Overview</a></li>
-          <li><a href="#" style="color:#333; padding:8px 20px; display:block;">Brands</a></li>
-          <li><a href="#" style="color:#333; padding:8px 20px; display:block;">Influencers</a></li>
-        </ul>
-      </li>
 
-      <li class="mega-dropdown">
-        <a href="#">Platform ▾</a>
-        <div class="mega-dropdown-content" aria-label="Platform submenu">
-          <div class="column">
-            <h4>Products</h4>
-            <a href="#">Influencer Marketing Platform</a>
-            <a href="#">Influencer Marketing Software</a>
-            <a href="#">Campaign Management</a>
-            <a href="#">Influencer Analytics</a>
-          </div>
-          <div class="column">
-            <h4>Channels</h4>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
-          </div>
+<nav class="navbar">
+  <div class="logo">Influsynch</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <li>
+      <a href="#">Who We Serve ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="who-we-serve.html">Overview</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">Influencers</a></li>
+      </ul>
+    </li>
+
+    <li class="mega-dropdown">
+      <a href="#">Platform ▾</a>
+      <div class="mega-dropdown-content" aria-label="Platform submenu">
+        <div class="column">
+          <h4>Products</h4>
+          <a href="#">Influencer Marketing Platform</a>
+          <a href="#">Influencer Marketing Software</a>
+          <a href="#">Campaign Management</a>
+          <a href="#">Influencer Analytics</a>
         </div>
-      </li>
+        <div class="column">
+          <h4>Channels</h4>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </li>
 
-      <li>
-        <a href="#">Features ▾</a>
-        <ul class="dropdown-content" style="display:none; position:absolute; background:#fff; padding:10px 0; margin-top:8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px;">
-          <li><a href="features.html" style="color:#333; padding:8px 20px; display:block;">Overview</a></li>
-          <li><a href="#" style="color:#333; padding:8px 20px; display:block;">AI Matching</a></li>
-          <li><a href="#" style="color:#333; padding:8px 20px; display:block;">Cross-Platform</a></li>
-        </ul>
-      </li>
+    <li>
+      <a href="#">Features ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="features.html">Overview</a></li>
+        <li><a href="#">AI Matching</a></li>
+        <li><a href="#">Cross-Platform</a></li>
+      </ul>
+    </li>
 
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
 
-  <header style="padding:80px 20px; background: linear-gradient(135deg, #6a11cb, #2575fc); color:#fff; text-align:center;">
-    <h1>Platform</h1>
-    <p>Discover the powerful tools and channels to grow your influencer marketing campaigns.</p>
-  </header>
+<header>
+  <h1>Platform</h1>
+  <p>Discover the powerful tools and channels to grow your influencer marketing campaigns.</p>
+</header>
 
-  <main style="max-width:900px; margin:40px auto; padding:0 20px; text-align:center;">
-    <h2>Our Platform</h2>
-    <p>Influsynch offers a complete suite of tools to manage campaigns, analyze influencers, and reach audiences across multiple social channels.</p>
-  </main>
+<main>
+  <h2>Our Platform</h2>
+  <p>Influsynch offers a complete suite of tools to manage campaigns, analyze influencers, and reach audiences across multiple social channels.</p>
+</main>
 
-  <footer style="background:#2c3e50; color:#fff; text-align:center; padding:20px; margin-top:50px;">
-    &copy; 2025 Influsynch. All rights reserved.
-  </footer>
+<footer>
+  &copy; 2025 Influsynch. All rights reserved.
+</footer>
 
-  <script>
-    // Simple JS to toggle dropdown visibility on hover for non-mega dropdowns
-    const dropdowns = document.querySelectorAll('.nav-links > li:not(.mega-dropdown)');
-    dropdowns.forEach(dropdown => {
-      const subMenu = dropdown.querySelector('ul.dropdown-content');
-      if(subMenu){
-        dropdown.addEventListener('mouseenter', () => {
-          subMenu.style.display = 'block';
-        });
-        dropdown.addEventListener('mouseleave', () => {
-          subMenu.style.display = 'none';
-        });
-      }
-    });
-  </script>
 </body>
 </html>
