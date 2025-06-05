@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Influsynch Platform</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influencer Marketing Platform | Influsynch</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #333; }
     nav {
       background: #2c3e50;
       padding: 1rem 2rem;
@@ -23,11 +18,7 @@
       top: 0;
       z-index: 1000;
     }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+    .logo { font-weight: 700; font-size: 1.5rem; cursor: pointer; }
     ul.nav-links {
       list-style: none;
       display: flex;
@@ -46,16 +37,8 @@
       cursor: pointer;
       transition: color 0.3s ease;
     }
-    ul.nav-links > li > a:hover {
-      color: #1abc9c;
-    }
-
-    /* Dropdown styles */
-    ul.dropdown-content,
-    .mega-dropdown-content {
-      display: none;
-    }
-
+    ul.nav-links > li > a:hover { color: #1abc9c; }
+    ul.dropdown-content, .mega-dropdown-content { display: none; }
     ul.dropdown-content {
       position: absolute;
       background: white;
@@ -66,7 +49,6 @@
       min-width: 180px;
       z-index: 9999;
     }
-
     ul.dropdown-content li a {
       color: #333;
       padding: 10px 20px;
@@ -81,186 +63,64 @@
     ul.nav-links > li:hover > ul.dropdown-content {
       display: block;
     }
-
-    .mega-dropdown {
-      position: relative;
-    }
-
-    .mega-dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      color: #333;
-      padding: 20px 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      z-index: 9999;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      max-width: 800px;
-      width: max-content;
-    }
-
-    .mega-dropdown:hover .mega-dropdown-content {
-      display: grid;
-    }
-
-    .mega-dropdown-content .column h4 {
-      font-weight: 700;
-      margin-bottom: 15px;
-      font-size: 16px;
-      color: #2c3e50;
-    }
-
-    .mega-dropdown-content .column a {
-      font-weight: 500;
-      font-size: 14px;
-      color: #555;
-      text-decoration: none;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .mega-dropdown-content .column a:hover {
-      color: #1abc9c;
-    }
-
     .hero {
       background: #1abc9c;
       color: white;
       padding: 4rem 2rem;
       text-align: center;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
       margin: 0 auto;
     }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-      background: #fff;
-    }
-    .feature {
-      background: #f1f1f1;
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .feature h2 {
+    .section h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
       color: #2c3e50;
     }
-    .feature p {
+    .section p {
+      font-size: 1rem;
+      line-height: 1.6;
       color: #555;
     }
-
     footer {
       background: #2c3e50;
       color: white;
       text-align: center;
       padding: 1rem;
     }
-
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-      }
-      ul.nav-links {
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .mega-dropdown-content {
-        position: static;
-        grid-template-columns: 1fr;
-        width: 100%;
-        box-shadow: none;
-        padding: 15px 0;
-      }
+      nav { flex-wrap: wrap; }
+      ul.nav-links { flex-direction: column; gap: 1rem; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-  <nav role="navigation">
+  <nav>
     <div class="logo">Influsynch</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">Who We Serve ▼</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Brands</a></li>
-          <li><a href="#">Influencers</a></li>
-        </ul>
-      </li>
-      <li class="mega-dropdown">
-        <a href="#">Platform ▼</a>
-        <div class="mega-dropdown-content">
-          <div class="column">
-            <h4>Products</h4>
-            <a href="#">Influencer Marketing Platform</a>
-            <a href="#">Influencer Marketing Software</a>
-            <a href="#">Campaign Management</a>
-            <a href="#">Influencer Analytics</a>
-          </div>
-          <div class="column">
-            <h4>Channels</h4>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <a href="#">Features ▼</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">AI Matching</a></li>
-          <li><a href="#">Cross-Platform</a></li>
-        </ul>
-      </li>
+      <li><a href="#">Who We Serve</a></li>
+      <li><a href="#">Platform</a></li>
+      <li><a href="#">Features</a></li>
       <li><a href="#">Resources</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
       <li><a href="#">Login</a></li>
     </ul>
-  </nav>
-
-  <section class="hero">
-    <h1>Empower Your Brand with Influencer Marketing</h1>
-    <p>Discover an end-to-end influencer marketing solution that helps you recruit talent, build your brand community, and analyze ROI – all within one easy-to-use platform.</p>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <h2>Influencer Discovery</h2>
-      <p>Use advanced filters to find influencers that match your brand's needs across various platforms.</p>
-    </div>
-    <div class="feature">
-      <h2>Campaign Management</h2>
-      <p>Organize and track your influencer marketing campaigns seamlessly with our intuitive tools.</p>
-    </div>
-    <div class="feature">
-      <h2>Performance Analytics</h2>
-      <p>Gain insights with real-time analytics and reports to measure the success of your campaigns.</p>
-    </div>
-    <div class="feature">
-      <h2>Influencer Relationship Management</h2>
-      <p>Maintain and organize influencer partnerships, track interactions, and manage collaborations efficiently.</p>
-    </div>
-  </section>
-
-  <footer>
+  </nav>  <section class="hero">
+    <h1>Influencer Marketing Platform</h1>
+    <p>A complete solution to manage, analyze, and scale your influencer marketing campaigns effectively.</p>
+  </section>  <section class="section">
+    <h2>All-in-One Influencer Solution</h2>
+    <p>Our influencer marketing platform empowers brands to connect with the right influencers, manage campaigns at scale, and measure the true ROI. Designed with both agencies and brands in mind, our tools streamline every step of your workflow — from discovery to payment.</p>
+  </section>  <section class="section">
+    <h2>Features at a Glance</h2>
+    <p>Advanced search filters, real-time analytics, multi-channel tracking, influencer CRM, content approval workflows, and more — all in one centralized platform designed for your success.</p>
+  </section>  <footer>
     <p>&copy; 2025 Influsynch. All rights reserved.</p>
   </footer>
 </body>
