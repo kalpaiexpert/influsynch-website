@@ -6,11 +6,7 @@
   <title>Influsynch Platform</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background: #f8f9fa;
@@ -54,18 +50,23 @@
       color: #1abc9c;
     }
 
-    /* Regular dropdown */
-    ul.dropdown-content {
+    /* Hide both dropdown types by default */
+    ul.dropdown-content,
+    .mega-dropdown-content {
       display: none;
+    }
+
+    ul.dropdown-content {
       position: absolute;
       background: white;
       padding: 10px 0;
-      margin-top: 8px;
+      top: 100%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border-radius: 8px;
       min-width: 180px;
       z-index: 9999;
     }
+
     ul.dropdown-content li a {
       color: #333;
       padding: 10px 20px;
@@ -81,12 +82,10 @@
       display: block;
     }
 
-    /* Mega dropdown hidden by default */
     .mega-dropdown {
       position: relative;
     }
     .mega-dropdown-content {
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -104,7 +103,6 @@
     .mega-dropdown:hover .mega-dropdown-content {
       display: grid;
     }
-
     .mega-dropdown-content .column h4 {
       font-weight: 700;
       margin-bottom: 15px;
@@ -188,19 +186,17 @@
     <div class="logo">Influsynch</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-
       <li>
-        <a href="#" aria-haspopup="true">Who We Serve <span style="font-size: 0.6em;">▼</span></a>
+        <a href="#">Who We Serve ▼</a>
         <ul class="dropdown-content">
           <li><a href="#">Overview</a></li>
           <li><a href="#">Brands</a></li>
           <li><a href="#">Influencers</a></li>
         </ul>
       </li>
-
       <li class="mega-dropdown">
-        <a href="#" aria-haspopup="true">Platform <span style="font-size: 0.6em;">▼</span></a>
-        <div class="mega-dropdown-content" aria-label="Platform submenu">
+        <a href="#">Platform ▼</a>
+        <div class="mega-dropdown-content">
           <div class="column">
             <h4>Products</h4>
             <a href="#">Influencer Marketing Platform</a>
@@ -217,16 +213,14 @@
           </div>
         </div>
       </li>
-
       <li>
-        <a href="#" aria-haspopup="true">Features <span style="font-size: 0.6em;">▼</span></a>
+        <a href="#">Features ▼</a>
         <ul class="dropdown-content">
           <li><a href="#">Overview</a></li>
           <li><a href="#">AI Matching</a></li>
           <li><a href="#">Cross-Platform</a></li>
         </ul>
       </li>
-
       <li><a href="#">Resources</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
