@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Influsynch Navigation</title>
+  <title>Influsynch - Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f8f9fa;
+      background: #f4f6f8;
       color: #333;
     }
-
     nav {
       background: #2c3e50;
       padding: 1rem 2rem;
@@ -29,24 +23,20 @@
       top: 0;
       z-index: 1000;
     }
-
     .logo {
       font-weight: 700;
       font-size: 1.5rem;
       cursor: pointer;
     }
-
     ul.nav-links {
       list-style: none;
       display: flex;
       gap: 1.5rem;
       position: relative;
     }
-
     ul.nav-links > li {
       position: relative;
     }
-
     ul.nav-links > li > a {
       color: white;
       text-decoration: none;
@@ -56,18 +46,21 @@
       cursor: pointer;
       transition: color 0.3s ease;
     }
-
     ul.nav-links > li > a:hover {
       color: #1abc9c;
     }
 
-    ul.dropdown-content {
+    ul.dropdown-content,
+    .mega-dropdown-content {
       display: none;
+    }
+
+    ul.dropdown-content {
       position: absolute;
       background: white;
       padding: 10px 0;
-      margin-top: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      top: 100%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border-radius: 8px;
       min-width: 180px;
       z-index: 9999;
@@ -80,12 +73,10 @@
       text-decoration: none;
       font-weight: 500;
     }
-
     ul.dropdown-content li a:hover {
       background: #f2f2f2;
       color: #1abc9c;
     }
-
     ul.nav-links > li:hover > ul.dropdown-content {
       display: block;
     }
@@ -105,11 +96,14 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       z-index: 9999;
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
       max-width: 800px;
       width: max-content;
+    }
+
+    .mega-dropdown:hover .mega-dropdown-content {
+      display: grid;
     }
 
     .mega-dropdown-content .column h4 {
@@ -132,20 +126,39 @@
       color: #1abc9c;
     }
 
-    .mega-dropdown:hover .mega-dropdown-content {
-      display: grid;
+    .hero {
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
     }
 
     @media (max-width: 768px) {
       nav {
         flex-wrap: wrap;
       }
-
       ul.nav-links {
         flex-wrap: wrap;
         gap: 1rem;
       }
-
       .mega-dropdown-content {
         position: static;
         grid-template-columns: 1fr;
@@ -153,31 +166,25 @@
         box-shadow: none;
         padding: 15px 0;
       }
-
-      .mega-dropdown-content .column {
-        margin-bottom: 20px;
-      }
     }
   </style>
 </head>
 <body>
-  <nav role="navigation">
+  <nav>
     <div class="logo">Influsynch</div>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-
+      <li><a href="index.html">Home</a></li>
       <li>
-        <a href="#" aria-haspopup="true">Who We Serve <span style="font-size: 0.6em;">▼</span></a>
+        <a href="#">Who We Serve ▼</a>
         <ul class="dropdown-content">
           <li><a href="#">Overview</a></li>
           <li><a href="#">Brands</a></li>
           <li><a href="#">Influencers</a></li>
         </ul>
       </li>
-
       <li class="mega-dropdown">
-        <a href="#" aria-haspopup="true">Platform <span style="font-size: 0.6em;">▼</span></a>
-        <div class="mega-dropdown-content" aria-label="Platform submenu">
+        <a href="#">Platform ▼</a>
+        <div class="mega-dropdown-content">
           <div class="column">
             <h4>Products</h4>
             <a href="#">Influencer Marketing Platform</a>
@@ -194,21 +201,28 @@
           </div>
         </div>
       </li>
-
       <li>
-        <a href="#" aria-haspopup="true">Features <span style="font-size: 0.6em;">▼</span></a>
+        <a href="#">Features ▼</a>
         <ul class="dropdown-content">
           <li><a href="#">Overview</a></li>
           <li><a href="#">AI Matching</a></li>
           <li><a href="#">Cross-Platform</a></li>
         </ul>
       </li>
-
       <li><a href="#">Resources</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
       <li><a href="#">Login</a></li>
     </ul>
   </nav>
+
+  <section class="hero">
+    <h1>Welcome to Influsynch</h1>
+    <p>Your AI-powered influencer marketing platform that connects brands with the right creators across Facebook, YouTube, Instagram & more.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Influsynch. All rights reserved.</p>
+  </footer>
 </body>
 </html>
