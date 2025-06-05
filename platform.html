@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Platform | Influsynch</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0; padding: 0;
     }
-
     /* NAVBAR */
     .navbar {
       background-color: #2c3e50;
@@ -31,11 +30,59 @@
       text-decoration: none;
       font-weight: bold;
       padding: 8px 12px;
+      cursor: pointer;
     }
     .dropdown {
       position: relative;
     }
-    .dropdown-content {
+
+    /* Mega Dropdown */
+    .mega-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: white;
+      color: #333;
+      padding: 20px 30px;
+      width: 380px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      z-index: 1000;
+      display: flex;
+      gap: 40px;
+      font-weight: normal;
+    }
+    .mega-dropdown-content .column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 150px;
+    }
+    .mega-dropdown-content .column h4 {
+      margin-bottom: 10px;
+      color: #2c3e50;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .mega-dropdown-content .column a {
+      color: #333;
+      text-decoration: none;
+      padding: 6px 0;
+      font-weight: normal;
+      font-size: 14px;
+    }
+    .mega-dropdown-content .column a:hover {
+      color: #11998e;
+    }
+
+    /* Show on hover */
+    .dropdown:hover .mega-dropdown-content {
+      display: flex;
+    }
+
+    /* Other dropdowns normal */
+    .dropdown:not(.mega) .dropdown-content {
       display: none;
       position: absolute;
       top: 40px;
@@ -47,34 +94,32 @@
       z-index: 1000;
       border-radius: 8px;
     }
-    .dropdown-content a {
+    .dropdown:not(.mega) .dropdown-content a {
       color: #333;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
     }
-    .dropdown-content a:hover {
+    .dropdown:not(.mega) .dropdown-content a:hover {
       background-color: #f0f0f0;
     }
-    .dropdown:hover .dropdown-content {
+    .dropdown:not(.mega):hover .dropdown-content {
       display: block;
     }
 
     /* MAIN CONTENT */
     header {
-      background: linear-gradient(to right, #667eea, #764ba2);
+      background: linear-gradient(to right, #6a11cb, #2575fc);
       color: white;
       padding: 80px 20px;
       text-align: center;
     }
-
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
       text-align: center;
     }
-
     footer {
       background-color: #2c3e50;
       color: white;
@@ -91,6 +136,7 @@
     <div class="navbar">
       <div><strong>Influsynch</strong></div>
       <div class="nav-links">
+
         <div class="dropdown">
           <a href="index.html">Home</a>
         </div>
@@ -104,12 +150,23 @@
           </div>
         </div>
 
-        <div class="dropdown">
+        <div class="dropdown mega">
           <a href="#">Platform ▾</a>
-          <div class="dropdown-content">
-            <a href="platform.html">Overview</a>
-            <a href="#">Campaign Tools</a>
-            <a href="#">Insights</a>
+          <div class="mega-dropdown-content">
+            <div class="column">
+              <h4>Products</h4>
+              <a href="#">Influencer Marketing Platform</a>
+              <a href="#">Influencer Marketing Software</a>
+              <a href="#">Campaign Management</a>
+              <a href="#">Influencer Analytics</a>
+            </div>
+            <div class="column">
+              <h4>Channels</h4>
+              <a href="#">Instagram</a>
+              <a href="#">YouTube</a>
+              <a href="#">Facebook</a>
+              <a href="#">TikTok</a>
+            </div>
           </div>
         </div>
 
@@ -137,23 +194,21 @@
         <div class="dropdown">
           <a href="login.html">Login</a>
         </div>
+
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header>
-    <h1>Platform Overview</h1>
-    <p>Powerful tools to manage influencer campaigns and track your success</p>
+    <h1>Platform</h1>
+    <p>Discover the powerful tools and channels to grow your influencer marketing campaigns.</p>
   </header>
 
   <!-- Main Content -->
   <section>
-    <h2>Campaign Tools</h2>
-    <p>Create, launch, and manage influencer marketing campaigns easily with automated workflows and AI assistance.</p>
-
-    <h2>Insights & Analytics</h2>
-    <p>Get real-time data on campaign performance, audience engagement, and ROI to optimize your marketing efforts.</p>
+    <h2>Our Platform</h2>
+    <p>Influsynch offers a complete suite of tools to manage campaigns, analyze influencers, and reach audiences across multiple social channels.</p>
   </section>
 
   <!-- Footer -->
