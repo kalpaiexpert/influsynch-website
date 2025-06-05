@@ -1,189 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Platform | Influsynch</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #fff;
-    color: #333;
-  }
-
-  /* Navbar */
-  .navbar {
-    background-color: #2c3e50;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-  }
-  .navbar .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    position: relative;
-  }
-  .nav-links > li {
-    list-style: none;
-    position: relative;
-  }
-  .nav-links > li > a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 12px;
-    display: inline-block;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  .nav-links > li > a:hover {
-    color: #1abc9c;
-  }
-
-  /* Mega Dropdown container */
-  .mega-dropdown {
-    position: relative;
-  }
-  /* Dropdown Content */
-  .mega-dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    color: #333;
-    width: 420px;
-    padding: 20px 30px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    border-radius: 8px;
-    z-index: 9999;
-    display: flex;
-    gap: 40px;
-  }
-  .mega-dropdown-content .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .mega-dropdown-content .column h4 {
-    font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #2c3e50;
-  }
-  .mega-dropdown-content .column a {
-    font-weight: 500;
-    font-size: 14px;
-    color: #555;
-    text-decoration: none;
-    margin-bottom: 10px;
-    transition: color 0.2s ease;
-  }
-  .mega-dropdown-content .column a:hover {
-    color: #1abc9c;
-  }
-
-  /* Show mega menu on hover */
-  .mega-dropdown:hover .mega-dropdown-content {
-    display: flex;
-  }
-
-  /* Dropdown for other nav items */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background:#fff;
-    padding:10px 0;
-    margin-top:8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    min-width: 180px;
-    z-index: 9999;
-  }
-  .dropdown-content li {
-    list-style: none;
-  }
-  .dropdown-content li a {
-    color:#333;
-    padding:8px 20px;
-    display:block;
-    text-decoration:none;
-    font-weight: 500;
-  }
-  .dropdown-content li a:hover {
-    color:#1abc9c;
-  }
-  /* Show on hover */
-  .nav-links > li:hover > ul.dropdown-content {
-    display: block;
-  }
-
-  /* Responsive (basic) */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-wrap: wrap;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hover Dropdown Navbar Example</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-    .nav-links {
-      flex-wrap: wrap;
-      gap: 1rem;
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      color: #333;
     }
+    nav {
+      background: #2c3e50;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      position: relative;
+    }
+    ul.nav-links > li {
+      position: relative;
+    }
+    ul.nav-links > li > a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      display: inline-block;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    ul.nav-links > li > a:hover {
+      color: #1abc9c;
+    }
+
+    /* Simple dropdown */
+    ul.dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      padding: 10px 0;
+      margin-top: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      min-width: 180px;
+      z-index: 9999;
+    }
+    ul.dropdown-content li {
+      list-style: none;
+    }
+    ul.dropdown-content li a {
+      color: #333;
+      padding: 8px 20px;
+      display: block;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    ul.dropdown-content li a:hover {
+      color: #1abc9c;
+    }
+
+    /* Show dropdown on hover */
+    ul.nav-links > li:hover > ul.dropdown-content {
+      display: block;
+    }
+
+    /* Mega dropdown container */
+    .mega-dropdown {
+      position: relative;
+    }
+    /* Mega dropdown content */
     .mega-dropdown-content {
-      position: static;
-      width: 100%;
-      flex-direction: column;
-      box-shadow: none;
-      padding: 15px 0;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      color: #333;
+      width: 420px;
+      padding: 20px 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      z-index: 9999;
+      display: flex;
+      gap: 40px;
     }
     .mega-dropdown-content .column {
-      margin-bottom: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
-  }
+    .mega-dropdown-content .column h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #2c3e50;
+    }
+    .mega-dropdown-content .column a {
+      font-weight: 500;
+      font-size: 14px;
+      color: #555;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+    .mega-dropdown-content .column a:hover {
+      color: #1abc9c;
+    }
 
-  /* Page content styling */
-  header {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
-    text-align: center;
-  }
-  main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  footer {
-    background: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    font-size: 14px;
-  }
-</style>
+    /* Show mega dropdown on hover */
+    .mega-dropdown:hover .mega-dropdown-content {
+      display: flex;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      ul.nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .mega-dropdown-content {
+        position: static;
+        width: 100%;
+        flex-direction: column;
+        box-shadow: none;
+        padding: 15px 0;
+      }
+      .mega-dropdown-content .column {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar">
+<nav>
   <div class="logo">Influsynch</div>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-
+    <li><a href="#">Home</a></li>
     <li>
       <a href="#">Who We Serve ▾</a>
       <ul class="dropdown-content">
-        <li><a href="who-we-serve.html">Overview</a></li>
+        <li><a href="#">Overview</a></li>
         <li><a href="#">Brands</a></li>
         <li><a href="#">Influencers</a></li>
       </ul>
@@ -212,32 +189,17 @@
     <li>
       <a href="#">Features ▾</a>
       <ul class="dropdown-content">
-        <li><a href="features.html">Overview</a></li>
+        <li><a href="#">Overview</a></li>
         <li><a href="#">AI Matching</a></li>
         <li><a href="#">Cross-Platform</a></li>
       </ul>
     </li>
-
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="login.html">Login</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Login</a></li>
   </ul>
 </nav>
-
-<header>
-  <h1>Platform</h1>
-  <p>Discover the powerful tools and channels to grow your influencer marketing campaigns.</p>
-</header>
-
-<main>
-  <h2>Our Platform</h2>
-  <p>Influsynch offers a complete suite of tools to manage campaigns, analyze influencers, and reach audiences across multiple social channels.</p>
-</main>
-
-<footer>
-  &copy; 2025 Influsynch. All rights reserved.
-</footer>
 
 </body>
 </html>
