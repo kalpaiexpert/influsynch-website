@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Influsynch - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Influsynch | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f4f6f8;
+      background: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
     nav {
       background: #2c3e50;
@@ -18,21 +19,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     .logo {
-      font-weight: 700;
       font-size: 1.5rem;
-      cursor: pointer;
+      font-weight: 700;
+      color: white;
     }
     ul.nav-links {
       list-style: none;
       display: flex;
       gap: 1.5rem;
-      position: relative;
     }
     ul.nav-links > li {
       position: relative;
@@ -41,31 +40,30 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
-      padding: 12px 18px;
+      padding: 10px 15px;
       display: inline-block;
       cursor: pointer;
-      transition: color 0.3s ease;
     }
     ul.nav-links > li > a:hover {
       color: #1abc9c;
     }
-
     ul.dropdown-content,
     .mega-dropdown-content {
       display: none;
-    }
-
-    ul.dropdown-content {
       position: absolute;
       background: white;
-      padding: 10px 0;
       top: 100%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      left: 0;
       border-radius: 8px;
-      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
       z-index: 9999;
     }
 
+    /* Standard dropdown */
+    ul.dropdown-content {
+      padding: 10px 0;
+      min-width: 180px;
+    }
     ul.dropdown-content li a {
       color: #333;
       padding: 10px 20px;
@@ -81,38 +79,21 @@
       display: block;
     }
 
-    .mega-dropdown {
-      position: relative;
-    }
-
+    /* Mega dropdown */
     .mega-dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      color: #333;
-      padding: 20px 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      z-index: 9999;
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
-      max-width: 800px;
+      padding: 20px 30px;
+      max-width: 700px;
       width: max-content;
     }
-
-    .mega-dropdown:hover .mega-dropdown-content {
-      display: grid;
-    }
-
     .mega-dropdown-content .column h4 {
       font-weight: 700;
       margin-bottom: 15px;
       font-size: 16px;
       color: #2c3e50;
     }
-
     .mega-dropdown-content .column a {
       font-weight: 500;
       font-size: 14px;
@@ -121,27 +102,50 @@
       margin-bottom: 10px;
       display: block;
     }
-
     .mega-dropdown-content .column a:hover {
       color: #1abc9c;
     }
+    .mega-dropdown:hover .mega-dropdown-content {
+      display: grid;
+    }
 
+    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #1abc9c, #16a085);
-      color: white;
       padding: 5rem 2rem;
       text-align: center;
+      background: linear-gradient(to right, #1abc9c, #16a085);
+      color: white;
     }
-
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
     }
-
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: #fff;
+    }
+    .feature {
+      background: #f1f1f1;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .feature h2 {
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .feature p {
+      color: #555;
     }
 
     footer {
@@ -153,23 +157,19 @@
 
     @media (max-width: 768px) {
       nav {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
       }
       ul.nav-links {
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .mega-dropdown-content {
-        position: static;
-        grid-template-columns: 1fr;
-        width: 100%;
-        box-shadow: none;
-        padding: 15px 0;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <div class="logo">Influsynch</div>
     <ul class="nav-links">
@@ -177,9 +177,9 @@
       <li>
         <a href="#">Who We Serve ▼</a>
         <ul class="dropdown-content">
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Brands</a></li>
-          <li><a href="#">Influencers</a></li>
+          <li><a href="overview.html">Overview</a></li>
+          <li><a href="brands.html">Brands</a></li>
+          <li><a href="influencers.html">Influencers</a></li>
         </ul>
       </li>
       <li class="mega-dropdown">
@@ -187,42 +187,58 @@
         <div class="mega-dropdown-content">
           <div class="column">
             <h4>Products</h4>
-            <a href="#">Influencer Marketing Platform</a>
-            <a href="#">Influencer Marketing Software</a>
-            <a href="#">Campaign Management</a>
-            <a href="#">Influencer Analytics</a>
+            <a href="influencer-marketing-platform.html">Influencer Marketing Platform</a>
+            <a href="influencer-software.html">Influencer Marketing Software</a>
+            <a href="campaign-management.html">Campaign Management</a>
+            <a href="influencer-analytics.html">Influencer Analytics</a>
           </div>
           <div class="column">
             <h4>Channels</h4>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
+            <a href="instagram.html">Instagram</a>
+            <a href="youtube.html">YouTube</a>
+            <a href="facebook.html">Facebook</a>
+            <a href="tiktok.html">TikTok</a>
           </div>
         </div>
       </li>
       <li>
         <a href="#">Features ▼</a>
         <ul class="dropdown-content">
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">AI Matching</a></li>
-          <li><a href="#">Cross-Platform</a></li>
+          <li><a href="features-overview.html">Overview</a></li>
+          <li><a href="ai-matching.html">AI Matching</a></li>
+          <li><a href="cross-platform.html">Cross-Platform</a></li>
         </ul>
       </li>
-      <li><a href="#">Resources</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <h1>Welcome to Influsynch</h1>
-    <p>Your AI-powered influencer marketing platform that connects brands with the right creators across Facebook, YouTube, Instagram & more.</p>
+    <h1>Connecting Brands with Influencers</h1>
+    <p>Your all-in-one platform to discover, manage, and grow successful influencer campaigns.</p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>Discover Influencers</h2>
+      <p>Advanced filters and AI tools to match brands with ideal influencers across platforms.</p>
+    </div>
+    <div class="feature">
+      <h2>Manage Campaigns</h2>
+      <p>Track performance, content, and ROI in one place to run efficient influencer programs.</p>
+    </div>
+    <div class="feature">
+      <h2>Analytics & Reporting</h2>
+      <p>Real-time data and customizable dashboards to measure your campaign’s true impact.</p>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Influsynch. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
