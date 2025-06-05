@@ -1,591 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfluenceConnect - Influencer & Business Collaboration Platform</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #4a6bff;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #4a6bff;
-        }
-        
-        .auth-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .btn {
-            padding: 0.6rem 1.2rem;
-            border-radius: 5px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-outline {
-            border: 1px solid #4a6bff;
-            color: #4a6bff;
-            background: transparent;
-        }
-        
-        .btn-outline:hover {
-            background: #4a6bff;
-            color: white;
-        }
-        
-        .btn-primary {
-            background: #4a6bff;
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background: #3a5bef;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 8rem 5% 4rem;
-            text-align: center;
-            background: linear-gradient(135deg, #f6f9ff 0%, #eef2ff 100%);
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #1a237e;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #555;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: #1a237e;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: #4a6bff;
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        /* How It Works Section */
-        .how-it-works {
-            padding: 5rem 5%;
-            background: linear-gradient(135deg, #eef2ff 0%, #f6f9ff 100%);
-        }
-        
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .step {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 30%;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: #4a6bff;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .step h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-content {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            color: #555;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-        
-        .author-info h4 {
-            color: #333;
-        }
-        
-        .author-info p {
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 5rem 5%;
-            text-align: center;
-            background: linear-gradient(135deg, #4a6bff 0%, #3a5bef 100%);
-            color: white;
-        }
-        
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        
-        .btn-white {
-            background: white;
-            color: #4a6bff;
-        }
-        
-        .btn-white:hover {
-            background: #f8f9fa;
-        }
-        
-        .btn-transparent {
-            border: 1px solid white;
-            background: transparent;
-            color: white;
-        }
-        
-        .btn-transparent:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a237e;
-            color: white;
-            padding: 4rem 5% 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 40px;
-            height: 2px;
-            background: #4a6bff;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-column ul li a {
-            color: #b0b0b0;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            .nav-links {
-                margin: 1rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons, .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .steps {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .step {
-                width: 100%;
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Influsynch | Influencer Marketing Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .feature-box {
+      background: #f7f7f7;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">InfluenceConnect</a>
-            <div class="nav-links">
-                <a href="#">Platform</a>
-                <a href="#">Solutions</a>
-                <a href="#">Resources</a>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-            </div>
-            <div class="auth-buttons">
-                <button class="btn btn-outline">Log In</button>
-                <button class="btn btn-primary">Get Started</button>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Connect Brands with the Right Influencers</h1>
-        <p>The all-in-one platform for influencer marketing that helps businesses and creators collaborate seamlessly.</p>
-        <div class="hero-buttons">
-            <button class="btn btn-primary">I'm a Business</button>
-            <button class="btn btn-outline">I'm an Influencer</button>
-        </div>
-        <img src="https://via.placeholder.com/1000x500" alt="Dashboard Preview" class="hero-image">
-    </section>
+  <!-- Navigation -->
+  <nav>
+    <div><strong>Influsynch</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="who-we-serve.html">Who We Serve</a>
+      <a href="platform.html">Platform</a>
+      <a href="features.html">Features</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="section-title">
-            <h2>Powerful Features for Both Sides</h2>
-            <p>Whether you're a brand looking for influencers or a creator seeking collaborations, we've got you covered.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Advanced Search</h3>
-                <p>Find the perfect influencers or brands based on niche, audience demographics, engagement rates, and more.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Analytics Dashboard</h3>
-                <p>Track campaign performance, audience growth, and ROI with our comprehensive analytics tools.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3>Collaboration Tools</h3>
-                <p>Manage campaigns, communicate, and track deliverables all in one place.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <header>
+    <h1>Connect with Top Influencers</h1>
+    <p>Influsynch helps brands and influencers collaborate using AI-powered tools</p>
+  </header>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="section-title">
-            <h2>How It Works</h2>
-            <p>Getting started is simple and straightforward for both brands and influencers.</p>
-        </div>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Create Your Profile</h3>
-                <p>Set up your brand or influencer profile with all the necessary details.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Find Matches</h3>
-                <p>Use our smart matching system to discover perfect collaboration partners.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Start Collaborating</h3>
-                <p>Reach out, negotiate terms, and launch your campaign.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Features Section -->
+  <section>
+    <h2 style="text-align: center;">Why Choose Influsynch?</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>Smart Matching</h3>
+        <p>Our AI finds the perfect influencers for your campaign.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Real Insights</h3>
+        <p>See true engagement metrics before you invest.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Cross-Platform</h3>
+        <p>Work with influencers across Instagram, YouTube & Facebook.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="section-title">
-            <h2>Success Stories</h2>
-            <p>Hear from brands and influencers who've found success with our platform.</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    "This platform helped us find micro-influencers that perfectly matched our target audience, resulting in a 300% ROI on our campaign."
-                </div>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="author-avatar">
-                    <div class="author-info">
-                        <h4>Sarah Johnson</h4>
-                        <p>Marketing Director, EcoLife</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    "As a content creator, I've doubled my income since joining InfluenceConnect. The brand partnerships are relevant and well-paid."
-                </div>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/50" alt="Marcus Lee" class="author-avatar">
-                    <div class="author-info">
-                        <h4>Marcus Lee</h4>
-                        <p>Travel Influencer, 150K followers</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    "The analytics tools saved us countless hours of manual work. We can now measure influencer performance in real-time."
-                </div>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/50" alt="Emily Chen" class="author-avatar">
-                    <div class="author-info">
-                        <h4>Emily Chen</h4>
-                        <p>CEO, StyleHub</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Call to Action -->
+  <section style="text-align: center;">
+    <h2>Ready to Launch Your Campaign?</h2>
+    <p><a href="register.html" style="background:#0072ff;color:white;padding:10px 20px;text-decoration:none;border-radius:6px;">Get Started</a></p>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <h2>Ready to Transform Your Influencer Marketing?</h2>
-        <p>Join thousands of brands and influencers who are already collaborating successfully on our platform.</p>
-        <div class="cta-buttons">
-            <button class="btn btn-white">Start Free Trial</button>
-            <button class="btn btn-transparent">Request Demo</button>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Influsynch. All rights reserved.
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>InfluenceConnect</h3>
-                <p>The leading platform for influencer marketing and brand collaborations.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Integrations</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Guides</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Help Center</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Press</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 InfluenceConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        </div>
-    </footer>
 </body>
 </html>
