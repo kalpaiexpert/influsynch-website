@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influsynch</title>
+    <title>Influsynch - Connecting Influencers and Businesses</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,38 +13,80 @@
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold">Influsynch</a>
             <div class="space-x-4 hidden md:flex items-center">
-                <a href="index.html" class="hover:text-gray-200">Home</a>
-                <a href="about.html" class="hover:text-gray-200">About</a>
+                <!-- Home Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="index.html" class="hover:text-gray-200 flex items-center">Home <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Why Choose Us</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Testimonials</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Mission</a>
+                    </div>
+                </div>
+                <!-- About Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="about.html" class="hover:text-gray-200 flex items-center">About <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Story</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Team</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Values</a>
+                    </div>
+                </div>
+                <!-- Our Platform Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="our-platform.html" class="hover:text-gray-200 flex items-center">Our Platform <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="discover.html" class="block px-4 py-2 hover:bg-gray-100">Discover</a>
+                        <a href="irm-data.html" class="block px-4 py-2 hover:bg-gray-100">IRM & Data</a>
+                        <a href="campaigns.html" class="block px-4 py-2 hover:bg-gray-100">Campaigns</a>
+                        <a href="reports.html" class="block px-4 py-2 hover:bg-gray-100">Reports</a>
+                    </div>
+                </div>
                 <!-- Services Dropdown -->
                 <div class="relative dropdown-parent">
                     <a href="services.html" class="hover:text-gray-200 flex items-center">Services <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                     <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="services.html#influencer-discovery" class="block px-4 py-2 hover:bg-gray-100">Influencer Discovery</a>
-                        <a href="services.html#campaign-management" class="block px-4 py-2 hover:bg-gray-100">Campaign Management</a>
-                        <a href="services.html#analytics-reporting" class="block px-4 py-2 hover:bg-gray-100">Analytics & Reporting</a>
-                        <a href="services.html#business-connections" class="block px-4 py-2 hover:bg-gray-100">Business Connections</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Influencer Discovery</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Campaign Management</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Analytics & Reporting</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Business Connections</a>
                     </div>
                 </div>
                 <!-- Influencers Dropdown -->
                 <div class="relative dropdown-parent">
                     <a href="influencers.html" class="hover:text-gray-200 flex items-center">Influencers <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                     <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="influencers.html#build-profile" class="block px-4 py-2 hover:bg-gray-100">Build Your Profile</a>
-                        <a href="influencers.html#find-opportunities" class="block px-4 py-2 hover:bg-gray-100">Find Opportunities</a>
-                        <a href="influencers.html#earn-more" class="block px-4 py-2 hover:bg-gray-100">Earn More</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Build Your Profile</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Find Opportunities</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earn More</a>
                     </div>
                 </div>
                 <!-- Businesses Dropdown -->
                 <div class="relative dropdown-parent">
                     <a href="businesses.html" class="hover:text-gray-200 flex items-center">Businesses <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                     <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="businesses.html#reach-audiences" class="block px-4 py-2 hover:bg-gray-100">Reach New Audiences</a>
-                        <a href="businesses.html#increase-sales" class="block px-4 py-2 hover:bg-gray-100">Increase Sales</a>
-                        <a href="businesses.html#build-trust" class="block px-4 py-2 hover:bg-gray-100">Build Trust</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Reach New Audiences</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Increase Sales</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Build Trust</a>
                     </div>
                 </div>
-                <a href="contact.html" class="hover:text-gray-200">Contact</a>
-                <a href="login.html" class="hover:text-gray-200">Login</a>
+                <!-- Contact Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="contact.html" class="hover:text-gray-200 flex items-center">Contact <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Support</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Get in Touch</a>
+                    </div>
+                </div>
+                <!-- Login Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="login.html" class="hover:text-gray-200 flex items-center">Login <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign Up</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Forgot Password</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Account Settings</a>
+                    </div>
+                </div>
                 <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
             </div>
             <button id="menu-toggle" class="md:hidden focus:outline-none">
@@ -54,102 +96,161 @@
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
-            <a href="index.html" class="block py-2 hover:text-gray-200">Home</a>
-            <a href="about.html" class="block py-2 hover:text-gray-200">About</a>
+            <!-- Home Mobile Dropdown -->
+            <div>
+                <a href="index.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Home <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="#" class="block py-2 hover:text-gray-200">Why Choose Us</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Testimonials</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Our Mission</a>
+                </div>
+            </div>
+            <!-- About Mobile Dropdown -->
+            <div>
+                <a href="about.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">About <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="#" class="block py-2 hover:text-gray-200">Our Story</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Team</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Values</a>
+                </div>
+            </div>
+            <!-- Our Platform Mobile Dropdown -->
+            <div>
+                <a href="our-platform.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Our Platform <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="discover.html" class="block py-2 hover:text-gray-200">Discover</a>
+                    <a href="irm-data.html" class="block py-2 hover:text-gray-200">IRM & Data</a>
+                    <a href="campaigns.html" class="block py-2 hover:text-gray-200">Campaigns</a>
+                    <a href="reports.html" class="block py-2 hover:text-gray-200">Reports</a>
+                </div>
+            </div>
             <!-- Services Mobile Dropdown -->
             <div>
                 <a href="services.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Services <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                 <div class="mobile-dropdown hidden pl-4">
-                    <a href="services.html#influencer-discovery" class="block py-2 hover:text-gray-200">Influencer Discovery</a>
-                    <a href="services.html#campaign-management" class="block py-2 hover:text-gray-200">Campaign Management</a>
-                    <a href="services.html#analytics-reporting" class="block py-2 hover:text-gray-200">Analytics & Reporting</a>
-                    <a href="services.html#business-connections" class="block py-2 hover:text-gray-200">Business Connections</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Influencer Discovery</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Campaign Management</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Analytics & Reporting</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Business Connections</a>
                 </div>
             </div>
             <!-- Influencers Mobile Dropdown -->
             <div>
                 <a href="influencers.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Influencers <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                 <div class="mobile-dropdown hidden pl-4">
-                    <a href="influencers.html#build-profile" class="block py-2 hover:text-gray-200">Build Your Profile</a>
-                    <a href="influencers.html#find-opportunities" class="block py-2 hover:text-gray-200">Find Opportunities</a>
-                    <a href="influencers.html#earn-more" class="block py-2 hover:text-gray-200">Earn More</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Build Your Profile</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Find Opportunities</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Earn More</a>
                 </div>
             </div>
             <!-- Businesses Mobile Dropdown -->
             <div>
                 <a href="businesses.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Businesses <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                 <div class="mobile-dropdown hidden pl-4">
-                    <a href="businesses.html#reach-audiences" class="block py-2 hover:text-gray-200">Reach New Audiences</a>
-                    <a href="businesses.html#increase-sales" class="block py-2 hover:text-gray-200">Increase Sales</a>
-                    <a href="businesses.html#build-trust" class="block py-2 hover:text-gray-200">Build Trust</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Reach New Audiences</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Increase Sales</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Build Trust</a>
                 </div>
             </div>
-            <a href="contact.html" class="block py-2 hover:text-gray-200">Contact</a>
-            <a href="login.html" class="block py-2 hover:text-gray-200">Login</a>
-            <a href="login.html" class="block py-2 bg-white text-blue-600 px-4 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="bg-cover bg-center h-96 flex items-center justify-center text-white" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Influsynch</h1>
-            <a href="login.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">Start Free Trial</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-blue-600 mb-8">Why Choose Influsynch?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Find Influencers</h3>
-                    <p class="text-gray-600">Discover the perfect influencers for your brand with our easy-to-use platform.</p>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Manage Campaigns</h3>
-                    <p class="text-gray-600">Streamline your influencer campaigns with tools for collaboration and tracking.</p>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Grow Your Brand</h3>
-                    <p class="text-gray-600">Boost sales and visibility with authentic influencer partnerships.</p>
+            <!-- Contact Mobile Dropdown -->
+            <div>
+                <a href="contact.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Contact <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="#" class="block py-2 hover:text-gray-200">Support</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">FAQ</a>
+                    <a href="#" class="block py-2 hover:text-gray-200">Get in Touch</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <!-- Login Mobile Dropdown -->
+            <div>
+                <a href="login.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Login <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 ییر
 
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-blue-600 mb-8">What Our Users Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <p class="text-gray-600 italic">"Influsynch helped us connect with influencers who truly resonate with our audience!"</p>
-                    <p class="mt-4 font-semibold">Jane D., Small Business Owner</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <p class="text-gray-600 italic">"The platform is easy to use and has boosted our campaign results."</p>
-                    <p class="mt-4 font-semibold">Mark S., Marketing Manager</p>
-                </div>
-            </div>
-        </div>
-    </section>
+System: Since the user's message was cut off, I'll proceed with addressing the two issues they mentioned: (1) "Our Platform" not appearing in the navigation bar, and (2) the dropdown menu disappearing when trying to click an option. The user also mentioned they’ve already added `our-platform.html` and updated `styles.css`, but the changes aren’t working as expected. I’ll first resolve the second issue (dropdown disappearing on click attempt) since it’s critical to the user experience, then ensure "Our Platform" is properly integrated by continuing with the updated `index.html`.
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-8">
-        <div class="container mx-auto text-center">
-            <p>© 2025 Influsynch. All rights reserved.</p>
-            <div class="mt-4 space-x-4">
-                <a href="about.html" class="hover:text-gray-200">About</a>
-                <a href="contact.html" class="hover:text-gray-200">Contact</a>
-                <a href="privacy.html" class="hover:text-gray-200">Privacy Policy</a>
-                <a href="https://twitter.com" class="hover:text-gray-200">Twitter</a>
-                <a href="https://instagram.com" class="hover:text-gray-200">Instagram</a>
-            </div>
-        </div>
-    </footer>
+---
 
-    <script src="script.js"></script>
-</body>
-</html>
+### Issue 2: Dropdown Disappears When Trying to Click
+The user reported that when they hover over a dropdown menu (e.g., "Home" or "About"), the menu appears, but as soon as they move the mouse to click an option, the dropdown disappears. This is happening because of how the hover events are handled in `script.js`, combined with the layout of the dropdown.
+
+#### Why This Happens
+- The current `script.js` (artifact ID `165c324f-f921-4575-a4d9-faf1330ff6f0`) uses `mouseenter` and `mouseleave` events on the `.dropdown-parent` element to show/hide the dropdown:
+
+  ```javascript
+  dropdownParents.forEach(parent => {
+      parent.addEventListener('mouseenter', () => {
+          const dropdown = parent.querySelector('.dropdown');
+          dropdown.classList.remove('hidden');
+      });
+
+      parent.addEventListener('mouseleave', () => {
+          const dropdown = parent.querySelector('.dropdown');
+          dropdown.classList.add('hidden');
+      });
+  });
+  ```
+
+- The `.dropdown-parent` element only includes the parent `<a>` tag (e.g., "Our Platform"), but not the dropdown itself. When the mouse moves from the parent `<a>` to the dropdown (`.dropdown`), a `mouseleave` event is triggered on `.dropdown-parent`, hiding the dropdown before the user can click an option.
+- There’s also a small gap between the parent `<a>` and the dropdown due to the `mt-2` (margin-top) class, causing the `mouseleave` event to fire when the mouse crosses that gap.
+
+#### Solution: Fix the Dropdown Behavior
+To fix this, we need to:
+1. **Include the Dropdown in the Hover Area**: Adjust the event listener so the dropdown stays visible as long as the mouse is over either the parent `<a>` or the dropdown itself.
+2. **Remove the Gap**: Eliminate the `mt-2` class to ensure there’s no space between the parent and dropdown, preventing accidental `mouseleave` events.
+3. **Update `styles.css`**: Reinforce the fix by ensuring the dropdown’s positioning doesn’t create unintended gaps.
+
+Let’s update `script.js` to handle the hover events correctly and modify `styles.css` to remove the gap.
+
+##### Updated `script.js`
+<xaiArtifact artifact_id="165c324f-f921-4575-a4d9-faf1330ff6f0" artifact_version_id="08bb6ebf-ad6f-4580-b6db-35009af7a737" title="script.js" contentType="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const dropdownParents = document.querySelectorAll('.dropdown-parent');
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Desktop dropdowns (hover)
+    dropdownParents.forEach(parent => {
+        const dropdown = parent.querySelector('.dropdown');
+
+        // Show dropdown on hover
+        parent.addEventListener('mouseenter', () => {
+            dropdown.classList.remove('hidden');
+        });
+
+        // Hide dropdown when leaving the entire parent (including dropdown)
+        parent.addEventListener('mouseleave', (e) => {
+            // Check if the mouse is moving to an element outside the dropdown-parent
+            const relatedTarget = e.relatedTarget || e.toElement;
+            if (!parent.contains(relatedTarget)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Ensure dropdown stays open if hovering over it
+        dropdown.addEventListener('mouseenter', () => {
+            dropdown.classList.remove('hidden');
+        });
+
+        // Hide dropdown when leaving the dropdown itself
+        dropdown.addEventListener('mouseleave', (e) => {
+            const relatedTarget = e.relatedTarget || e.toElement;
+            if (!parent.contains(relatedTarget)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    });
+
+    // Mobile dropdowns (click)
+    mobileDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const dropdown = toggle.nextElementSibling;
+            dropdown.classList.toggle('hidden');
+        });
+    });
+});
