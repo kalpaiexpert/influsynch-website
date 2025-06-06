@@ -1,101 +1,73 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Browse Influencers | Influsynch</title>
+  <title>Kayra | Influencer Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f5faff;
+      background-color: #f8fbff;
       color: #222;
     }
     header {
-      background: white;
+      background-color: #fff;
       padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
     .logo {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: #007BFF;
     }
-    nav {
-      display: flex;
-      gap: 20px;
-    }
     nav a {
+      margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
     }
-    .container {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-    .filters select {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
+    .profile {
+      max-width: 700px;
+      margin: 40px auto;
       background: white;
+      padding: 30px;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
       text-align: center;
     }
-    .card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
+    .profile img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      margin-bottom: 15px;
+      object-fit: cover;
+      margin-bottom: 20px;
     }
-    .card h4 {
-      margin: 5px 0;
-      font-size: 1.1rem;
+    .profile h2 {
+      margin-bottom: 10px;
+      font-size: 1.8rem;
     }
-    .card p {
-      font-size: 0.95rem;
-      color: #666;
-      margin-bottom: 5px;
+    .profile p {
+      color: #555;
+      font-size: 1rem;
     }
-    .btn-view {
-      margin-top: 10px;
+    .cta-button {
+      margin-top: 30px;
+      display: inline-block;
       background-color: #007BFF;
       color: white;
-      padding: 8px 20px;
-      border-radius: 20px;
-      text-decoration: none;
+      padding: 12px 24px;
       font-weight: 600;
-      transition: background 0.3s;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
-    .btn-view:hover {
-      background-color: #0056d2;
+    .cta-button:hover {
+      background-color: #005fd4;
     }
   </style>
 </head>
@@ -105,66 +77,18 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="influencer-listing.html">Influencers</a>
-      <a href="#">Brands</a>
-      <a href="#">Resources</a>
-      <a href="signup-influencer.html">Sign Up</a>
+      <a href="signup-brand.html">I'm a Business</a>
+      <a href="#">Login</a>
     </nav>
-  </header>  <div class="container">
-    <h2>Browse Influencers</h2><div class="filters">
-  <select>
-    <option>Category</option>
-    <option>Fashion</option>
-    <option>Fitness</option>
-    <option>Tech</option>
-  </select>
-  <select>
-    <option>Platform</option>
-    <option>Instagram</option>
-    <option>YouTube</option>
-    <option>TikTok</option>
-  </select>
-  <select>
-    <option>Location</option>
-    <option>Delhi</option>
-    <option>Mumbai</option>
-    <option>Bangalore</option>
-  </select>
-</div>
+  </header>
 
-<div class="card-grid">
-  <div class="card">
-    <img src="https://via.placeholder.com/80" alt="Kayra.ai" />
-    <h4>Kayra.ai</h4>
-    <p>Fashion | Instagram</p>
-    <p>24 followers</p>
-    <a class="btn-view" href="profile-kayra.html">View Profile</a>
-  </div>
+  <div class="profile">
+    <img src="https://via.placeholder.com/150" alt="Kayra's profile picture">
+    <h2>Kayra Sharma</h2>
+    <p>AI Influencer | Beauty & Fashion | Instagram @its_kayra.ai</p>
+    <p>Followers: 24k | Location: Mumbai</p>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/80" alt="Ishika Jain" />
-    <h4>Ishika Jain</h4>
-    <p>Lifestyle | YouTube</p>
-    <p>87.5k followers</p>
-    <a class="btn-view" href="#">View Profile</a>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/80" alt="Aarav Mehta" />
-    <h4>Aarav Mehta</h4>
-    <p>Fitness | Instagram</p>
-    <p>42.3k followers</p>
-    <a class="btn-view" href="#">View Profile</a>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/80" alt="Nisha Rao" />
-    <h4>Nisha Rao</h4>
-    <p>Beauty | TikTok</p>
-    <p>98.1k followers</p>
-    <a class="btn-view" href="#">View Profile</a>
-  </div>
-</div>
-
+    <a href="invite-form.html" class="cta-button">Invite to Campaign</a>
   </div>
 </body>
 </html>
