@@ -3,254 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influsynch - Connecting Influencers and Businesses</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Connectify - Where Brands Meet Influencers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 font-sans">
-    <!-- Navigation -->
-    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">Influsynch</a>
-            <div class="space-x-4 hidden md:flex items-center">
-                <!-- Home Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="index.html" class="hover:text-gray-200 flex items-center">Home <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Why Choose Us</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Testimonials</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Mission</a>
-                    </div>
-                </div>
-                <!-- About Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="about.html" class="hover:text-gray-200 flex items-center">About <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Story</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Team</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Values</a>
-                    </div>
-                </div>
-                <!-- Our Platform Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="our-platform.html" class="hover:text-gray-200 flex items-center">Our Platform <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="discover.html" class="block px-4 py-2 hover:bg-gray-100">Discover</a>
-                        <a href="irm-data.html" class="block px-4 py-2 hover:bg-gray-100">IRM & Data</a>
-                        <a href="campaigns.html" class="block px-4 py-2 hover:bg-gray-100">Campaigns</a>
-                        <a href="reports.html" class="block px-4 py-2 hover:bg-gray-100">Reports</a>
-                    </div>
-                </div>
-                <!-- Services Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="services.html" class="hover:text-gray-200 flex items-center">Services <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Influencer Discovery</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Campaign Management</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Analytics & Reporting</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Business Connections</a>
-                    </div>
-                </div>
-                <!-- Influencers Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="influencers.html" class="hover:text-gray-200 flex items-center">Influencers <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Build Your Profile</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Find Opportunities</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earn More</a>
-                    </div>
-                </div>
-                <!-- Businesses Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="businesses.html" class="hover:text-gray-200 flex items-center">Businesses <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Reach New Audiences</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Increase Sales</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Build Trust</a>
-                    </div>
-                </div>
-                <!-- Contact Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="contact.html" class="hover:text-gray-200 flex items-center">Contact <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Support</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Get in Touch</a>
-                    </div>
-                </div>
-                <!-- Login Dropdown -->
-                <div class="relative dropdown-parent">
-                    <a href="login.html" class="hover:text-gray-200 flex items-center">Login <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign Up</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Forgot Password</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Account Settings</a>
-                    </div>
-                </div>
-                <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Connectify</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="for-brands.html" class="nav-link">For Brands</a></li>
+                <li class="nav-item"><a href="for-influencers.html" class="nav-link">For Influencers</a></li>
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-secondary">Log In</a>
+                <a href="login.html" class="btn btn-primary">Sign Up</a>
             </div>
-            <button id="menu-toggle" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The Ultimate Influencer Marketing Platform</h1>
+                <p>Discover authentic creators. Manage campaigns effortlessly. Drive real results.</p>
+                <a href="login.html" class="btn btn-primary btn-large">Get Started For Free</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">How It Works</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <h3>1. Discover</h3>
+                    <p>Use our powerful search engine to find the perfect influencers for your brand from our global database.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Connect</h3>
+                    <p>Reach out, negotiate terms, and manage all your communications in one centralized platform.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Analyze</h3>
+                    <p>Track your campaign performance with real-time analytics and detailed reports to measure your ROI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <div class="cta-content">
+                <h2>Ready to Amplify Your Brand?</h2>
+                <p>Join thousands of businesses and creators building successful partnerships on Connectify.</p>
+                <a href="for-brands.html" class="btn btn-light">I'm a Brand</a>
+                <a href="for-influencers.html" class="btn btn-outline">I'm an Influencer</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2024 Connectify. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
-            <!-- Home Mobile Dropdown -->
-            <div>
-                <a href="index.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Home <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="#" class="block py-2 hover:text-gray-200">Why Choose Us</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Testimonials</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Our Mission</a>
-                </div>
-            </div>
-            <!-- About Mobile Dropdown -->
-            <div>
-                <a href="about.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">About <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="#" class="block py-2 hover:text-gray-200">Our Story</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Team</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Values</a>
-                </div>
-            </div>
-            <!-- Our Platform Mobile Dropdown -->
-            <div>
-                <a href="our-platform.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Our Platform <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="discover.html" class="block py-2 hover:text-gray-200">Discover</a>
-                    <a href="irm-data.html" class="block py-2 hover:text-gray-200">IRM & Data</a>
-                    <a href="campaigns.html" class="block py-2 hover:text-gray-200">Campaigns</a>
-                    <a href="reports.html" class="block py-2 hover:text-gray-200">Reports</a>
-                </div>
-            </div>
-            <!-- Services Mobile Dropdown -->
-            <div>
-                <a href="services.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Services <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="#" class="block py-2 hover:text-gray-200">Influencer Discovery</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Campaign Management</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Analytics & Reporting</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Business Connections</a>
-                </div>
-            </div>
-            <!-- Influencers Mobile Dropdown -->
-            <div>
-                <a href="influencers.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Influencers <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="#" class="block py-2 hover:text-gray-200">Build Your Profile</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Find Opportunities</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Earn More</a>
-                </div>
-            </div>
-            <!-- Businesses Mobile Dropdown -->
-            <div>
-                <a href="businesses.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Businesses <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="#" class="block py-2 hover:text-gray-200">Reach New Audiences</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Increase Sales</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Build Trust</a>
-                </div>
-            </div>
-            <!-- Contact Mobile Dropdown -->
-            <div>
-                <a href="contact.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Contact <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
-                <div class="mobile-dropdown hidden pl-4">
-                    <a href="#" class="block py-2 hover:text-gray-200">Support</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">FAQ</a>
-                    <a href="#" class="block py-2 hover:text-gray-200">Get in Touch</a>
-                </div>
-            </div>
-            <!-- Login Mobile Dropdown -->
-            <div>
-                <a href="login.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Login <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 ییر
+    </footer>
 
-System: Since the user's message was cut off, I'll proceed with addressing the two issues they mentioned: (1) "Our Platform" not appearing in the navigation bar, and (2) the dropdown menu disappearing when trying to click an option. The user also mentioned they’ve already added `our-platform.html` and updated `styles.css`, but the changes aren’t working as expected. I’ll first resolve the second issue (dropdown disappearing on click attempt) since it’s critical to the user experience, then ensure "Our Platform" is properly integrated by continuing with the updated `index.html`.
-
----
-
-### Issue 2: Dropdown Disappears When Trying to Click
-The user reported that when they hover over a dropdown menu (e.g., "Home" or "About"), the menu appears, but as soon as they move the mouse to click an option, the dropdown disappears. This is happening because of how the hover events are handled in `script.js`, combined with the layout of the dropdown.
-
-#### Why This Happens
-- The current `script.js` (artifact ID `165c324f-f921-4575-a4d9-faf1330ff6f0`) uses `mouseenter` and `mouseleave` events on the `.dropdown-parent` element to show/hide the dropdown:
-
-  ```javascript
-  dropdownParents.forEach(parent => {
-      parent.addEventListener('mouseenter', () => {
-          const dropdown = parent.querySelector('.dropdown');
-          dropdown.classList.remove('hidden');
-      });
-
-      parent.addEventListener('mouseleave', () => {
-          const dropdown = parent.querySelector('.dropdown');
-          dropdown.classList.add('hidden');
-      });
-  });
-  ```
-
-- The `.dropdown-parent` element only includes the parent `<a>` tag (e.g., "Our Platform"), but not the dropdown itself. When the mouse moves from the parent `<a>` to the dropdown (`.dropdown`), a `mouseleave` event is triggered on `.dropdown-parent`, hiding the dropdown before the user can click an option.
-- There’s also a small gap between the parent `<a>` and the dropdown due to the `mt-2` (margin-top) class, causing the `mouseleave` event to fire when the mouse crosses that gap.
-
-#### Solution: Fix the Dropdown Behavior
-To fix this, we need to:
-1. **Include the Dropdown in the Hover Area**: Adjust the event listener so the dropdown stays visible as long as the mouse is over either the parent `<a>` or the dropdown itself.
-2. **Remove the Gap**: Eliminate the `mt-2` class to ensure there’s no space between the parent and dropdown, preventing accidental `mouseleave` events.
-3. **Update `styles.css`**: Reinforce the fix by ensuring the dropdown’s positioning doesn’t create unintended gaps.
-
-Let’s update `script.js` to handle the hover events correctly and modify `styles.css` to remove the gap.
-
-##### Updated `script.js`
-<xaiArtifact artifact_id="165c324f-f921-4575-a4d9-faf1330ff6f0" artifact_version_id="08bb6ebf-ad6f-4580-b6db-35009af7a737" title="script.js" contentType="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const dropdownParents = document.querySelectorAll('.dropdown-parent');
-    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-
-    // Toggle mobile menu
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    // Desktop dropdowns (hover)
-    dropdownParents.forEach(parent => {
-        const dropdown = parent.querySelector('.dropdown');
-
-        // Show dropdown on hover
-        parent.addEventListener('mouseenter', () => {
-            dropdown.classList.remove('hidden');
-        });
-
-        // Hide dropdown when leaving the entire parent (including dropdown)
-        parent.addEventListener('mouseleave', (e) => {
-            // Check if the mouse is moving to an element outside the dropdown-parent
-            const relatedTarget = e.relatedTarget || e.toElement;
-            if (!parent.contains(relatedTarget)) {
-                dropdown.classList.add('hidden');
-            }
-        });
-
-        // Ensure dropdown stays open if hovering over it
-        dropdown.addEventListener('mouseenter', () => {
-            dropdown.classList.remove('hidden');
-        });
-
-        // Hide dropdown when leaving the dropdown itself
-        dropdown.addEventListener('mouseleave', (e) => {
-            const relatedTarget = e.relatedTarget || e.toElement;
-            if (!parent.contains(relatedTarget)) {
-                dropdown.classList.add('hidden');
-            }
-        });
-    });
-
-    // Mobile dropdowns (click)
-    mobileDropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const dropdown = toggle.nextElementSibling;
-            dropdown.classList.toggle('hidden');
-        });
-    });
-});
+    <script src="script.js"></script>
+</body>
+</html>
