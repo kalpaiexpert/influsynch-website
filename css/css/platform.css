@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 32px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.header-cta {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.btn-outline,
+.btn-filled {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-outline {
+  border: 1px solid #0ebeff;
+  color: #0ebeff;
+}
+
+.btn-filled {
+  background-color: #0ebeff;
+  color: white;
+  border: none;
+}
+
+.hero {
+  text-align: center;
+  background: #fff0f4;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-pink {
+  background: #ff5f89;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-text {
+  color: #ff5f89;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 10px;
+}
+
+.split-feature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 40px;
+}
+
+.split-feature img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.split-feature h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.split-feature p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.features-grid {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fefefe;
+}
+
+.features-grid h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.tool-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tool {
+  background: #f4f9fb;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: left;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
