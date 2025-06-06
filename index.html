@@ -67,11 +67,42 @@
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
+    .join-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f4f9ff;
+    }
+    .join-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .join-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .join-buttons a {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .join-buttons a:hover {
+      background-color: #0056d2;
+    }
     @media (min-width: 768px) {
       .hero h1 {
         font-size: 3rem;
       }
       .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .join-buttons {
         flex-direction: row;
         justify-content: center;
       }
@@ -88,6 +119,13 @@
     </div>
     <div class="hero-video">
       <img src="https://placehold.co/600x350?text=Dashboard+Preview" alt="Dashboard Preview">
+    </div>
+  </section>  <section class="join-section">
+    <h2>Join Influsynch Today</h2>
+    <p>Whether you're an influencer or a business, start building impactful partnerships today.</p>
+    <div class="join-buttons">
+      <a href="signup-influencer.html">I’m an Influencer</a>
+      <a href="signup-business.html">I’m a Business</a>
     </div>
   </section>
 </body>
