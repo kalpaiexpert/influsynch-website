@@ -18,17 +18,49 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
     }
     .logo {
       font-size: 1.4rem;
       font-weight: 700;
       color: #007BFF;
     }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
     nav a {
-      margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      position: relative;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      color: #333;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: #f0f4ff;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
     .hero {
       text-align: center;
@@ -95,10 +127,18 @@
     <div class="logo">Influsynch</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="influencer-listing.html">Influencers</a>
-      <a href="#">Brands</a>
+      <div class="dropdown">
+        <a href="#">Our Platform</a>
+        <div class="dropdown-content">
+          <a href="influencer-listing.html">Browse Influencers</a>
+          <a href="#">Campaign Tools</a>
+          <a href="#">Analytics (Coming Soon)</a>
+        </div>
+      </div>
+      <a href="signup-influencer.html">I'm an Influencer</a>
+      <a href="signup-brand.html">I'm a Business</a>
       <a href="#">Resources</a>
-      <a href="signup-influencer.html">Sign Up</a>
+      <a href="#">Login</a>
     </nav>
   </header>  <section class="hero">
     <h1>Connect with Top Indian Influencers</h1>
@@ -106,14 +146,14 @@
     <a href="influencer-listing.html">Explore Influencers</a>
     <div class="cta-boxes">
       <div class="cta-box">
-        <h3>I'm an Influencer</h3>
-        <p>Join our platform to find brands that match your vibe.</p>
-        <a href="signup-influencer.html">Join Now</a>
+        <h3>I’m an Influencer</h3>
+        <p>Create your profile and get discovered by top brands.</p>
+        <a href="signup-influencer.html">Get Started</a>
       </div>
       <div class="cta-box">
         <h3>I’m a Business</h3>
-        <p>Find talent for your next influencer campaign.</p>
-        <a href="#">Start Hiring</a>
+        <p>Find the perfect creators for your campaigns.</p>
+        <a href="signup-brand.html">Start Hiring</a>
       </div>
     </div>
   </section>  <footer>
