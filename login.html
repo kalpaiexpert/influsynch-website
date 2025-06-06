@@ -3,358 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In - InfluenceConnect</title>
-    <style>
-        /* Reuse the header and footer styles from index.html */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        
-        /* Header Styles (same as index.html) */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #4a6bff;
-        }
-        
-        /* Login Section */
-        .login {
-            padding: 8rem 5% 4rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .login-container {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .login-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .login-title h2 {
-            font-size: 2rem;
-            color: #1a237e;
-            margin-bottom: 0.5rem;
-        }
-        
-        .login-title p {
-            color: #666;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #555;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus {
-            border-color: #4a6bff;
-            outline: none;
-        }
-        
-        .remember-forgot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .remember-me {
-            display: flex;
-            align-items: center;
-        }
-        
-        .remember-me input {
-            margin-right: 0.5rem;
-        }
-        
-        .forgot-password a {
-            color: #4a6bff;
-            font-weight: 500;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-            font-size: 1rem;
-        }
-        
-        .btn-primary {
-            background: #4a6bff;
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background: #3a5bef;
-        }
-        
-        .social-login {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .social-login p {
-            color: #666;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-        
-        .social-login p::before,
-        .social-login p::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 30%;
-            height: 1px;
-            background: #ddd;
-        }
-        
-        .social-login p::before {
-            left: 0;
-        }
-        
-        .social-login p::after {
-            right: 0;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #f1f1f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .social-icon:hover {
-            background: #e1e1e1;
-        }
-        
-        .login-footer {
-            text-align: center;
-            margin-top: 1.5rem;
-            color: #666;
-        }
-        
-        .login-footer a {
-            color: #4a6bff;
-            font-weight: 500;
-        }
-        
-        /* Footer (same as index.html) */
-        footer {
-            background: #1a237e;
-            color: white;
-            padding: 4rem 5% 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 40px;
-            height: 2px;
-            background: #4a6bff;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-column ul li a {
-            color: #b0b0b0;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-    </style>
+    <title>Login - Influencer Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Header/Navigation -->
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">InfluenceConnect</a>
-            <div class="auth-buttons">
-                <a href="signup.html" class="btn btn-outline">Sign Up</a>
+<body class="bg-gray-100 font-sans">
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Influencer Connect</a>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="influencers.html" class="hover:text-gray-200">Influencers</a>
+                <a href="businesses.html" class="hover:text-gray-200">Businesses</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+                <a href="login.html" class="hover:text-gray-200">Login</a>
             </div>
-        </nav>
-    </header>
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
+            <a href="index.html" class="block py-2 hover:text-gray-200">Home</a>
+            <a href="about.html" class="block py-2 hover:text-gray-200">About</a>
+            <a href="services.html" class="block py-2 hover:text-gray-200">Services</a>
+            <a href="influencers.html" class="block py-2 hover:text-gray-200">Influencers</a>
+            <a href="businesses.html" class="block py-2 hover:text-gray-200">Businesses</a>
+            <a href="contact.html" class="block py-2 hover:text-gray-200">Contact</a>
+            <a href="login.html" class="block py-2 hover:text-gray-200">Login</a>
+        </div>
+    </nav>
 
-    <!-- Login Section -->
-    <section class="login">
-        <div class="login-container">
-            <div class="login-title">
-                <h2>Welcome Back</h2>
-                <p>Log in to your InfluenceConnect account</p>
+    <section class="py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-8">Login</h1>
+            <div class="max-w-sm mx-auto">
+                <div class="mb-4">
+                    <input type="email" placeholder="Email" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <div class="mb-4">
+                    <input type="password" placeholder="Password" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <button onclick="alert('Logged in!')" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">Login</button>
+                <p class="mt-4">Don't have an account? <a href="login.html" class="text-blue-600 hover:underline">Sign Up</a></p>
             </div>
-            
-            <form>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                
-                <div class="remember-forgot">
-                    <div class="remember-me">
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember me</label>
-                    </div>
-                    <div class="forgot-password">
-                        <a href="forgot-password.html">Forgot password?</a>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Log In</button>
-                
-                <div class="social-login">
-                    <p>Or log in with</p>
-                    <div class="social-icons">
-                        <div class="social-icon">G</div>
-                        <div class="social-icon">F</div>
-                        <div class="social-icon">I</div>
-                    </div>
-                </div>
-                
-                <div class="login-footer">
-                    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-                </div>
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>InfluenceConnect</h3>
-                <p>The leading platform for influencer marketing and brand collaborations.</p>
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Influencer Connect. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+                <a href="privacy.html" class="hover:text-gray-200">Privacy Policy</a>
             </div>
-            <div class="footer-column">
-                <h3>Platform</h3>
-                <ul>
-                    <li><a href="index.html">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Integrations</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Guides</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Help Center</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Press</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 InfluenceConnect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
