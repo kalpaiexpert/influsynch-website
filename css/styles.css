@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+.navbar {
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+  height: 32px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0ebeff;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 40px;
+  background: #ff5f89;
+  color: white;
+  border-radius: 0 0 30px 30px;
+}
+
+.hero-text {
+  max-width: 50%;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-learn,
+.btn-start {
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.btn-learn {
+  background: white;
+  color: #ff5f89;
+}
+
+.btn-start {
+  color: white;
+  border: 1px solid white;
+}
+
+.hero-image {
+  max-width: 40%;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.hero-image p {
+  font-size: 14px;
+  margin-top: 8px;
+}
