@@ -1,81 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connectify - Where Brands Meet Influencers</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influsynch - Influencer Marketing Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .hero {
+      background: linear-gradient(to right, #007BFF, #00A3FF);
+      color: white;
+      padding: 60px 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1rem;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    .buttons a {
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn-primary {
+      background-color: white;
+      color: #007BFF;
+    }
+    .btn-primary:hover {
+      background-color: #e0eaff;
+    }
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+    .hero-video {
+      margin-top: 30px;
+      max-width: 90%;
+    }
+    .hero-video img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <header class="main-header">
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo">Connectify</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="for-brands.html" class="nav-link">For Brands</a></li>
-                <li class="nav-item"><a href="for-influencers.html" class="nav-link">For Influencers</a></li>
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <a href="login.html" class="btn btn-secondary">Log In</a>
-                <a href="login.html" class="btn btn-primary">Sign Up</a>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>The Ultimate Influencer Marketing Platform</h1>
-                <p>Discover authentic creators. Manage campaigns effortlessly. Drive real results.</p>
-                <a href="login.html" class="btn btn-primary btn-large">Get Started For Free</a>
-            </div>
-        </section>
-
-        <section class="features">
-            <h2 class="section-title">How It Works</h2>
-            <div class="feature-cards">
-                <div class="card">
-                    <h3>1. Discover</h3>
-                    <p>Use our powerful search engine to find the perfect influencers for your brand from our global database.</p>
-                </div>
-                <div class="card">
-                    <h3>2. Connect</h3>
-                    <p>Reach out, negotiate terms, and manage all your communications in one centralized platform.</p>
-                </div>
-                <div class="card">
-                    <h3>3. Analyze</h3>
-                    <p>Track your campaign performance with real-time analytics and detailed reports to measure your ROI.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="call-to-action">
-            <div class="cta-content">
-                <h2>Ready to Amplify Your Brand?</h2>
-                <p>Join thousands of businesses and creators building successful partnerships on Connectify.</p>
-                <a href="for-brands.html" class="btn btn-light">I'm a Brand</a>
-                <a href="for-influencers.html" class="btn btn-outline">I'm an Influencer</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <p>© 2024 Connectify. All Rights Reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <section class="hero">
+    <h1>Empowering Connections: <br>Your Ultimate Influencer Marketing Hub</h1>
+    <p>Maximize your influencer relationship management strategy with seamless communication, rich data, and one powerful platform.</p>
+    <div class="buttons">
+      <a href="#" class="btn-primary">Learn More</a>
+      <a href="#" class="btn-secondary">Start Your Trial →</a>
+    </div>
+    <div class="hero-video">
+      <img src="https://via.placeholder.com/600x350.png?text=Dashboard+Preview" alt="Dashboard Preview">
+    </div>
+  </section>
 </body>
 </html>
