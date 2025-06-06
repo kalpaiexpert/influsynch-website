@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
     <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold">Influencer Connect</a>
-            <div class="space-x-4">
+            <div class="space-x-4 hidden md:flex">
                 <a href="index.html" class="hover:text-gray-200">Home</a>
                 <a href="about.html" class="hover:text-gray-200">About</a>
                 <a href="services.html" class="hover:text-gray-200">Services</a>
@@ -37,25 +38,33 @@
         </div>
     </nav>
 
-    <section class="py-16">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-8">Login</h1>
-            <div class="max-w-sm mx-auto">
-                <div class="mb-4">
-                    <input type="email" placeholder="Email" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
+    <!-- Login Section -->
+    <section class="py-16 flex items-center justify-center min-h-screen">
+        <div class="container mx-auto max-w-md bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Log In to Your Account</h1>
+            <div class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input id="email" type="email" placeholder="Enter your email" class="w-full p-3 mt-1 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
                 </div>
-                <div class="mb-4">
-                    <input type="password" placeholder="Password" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input id="password" type="password" placeholder="Enter your password" class="w-full p-3 mt-1 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
                 </div>
-                <button onclick="alert('Logged in!')" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">Login</button>
-                <p class="mt-4">Don't have an account? <a href="login.html" class="text-blue-600 hover:underline">Sign Up</a></p>
+                <div class="flex items-center">
+                    <input id="remember" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="remember" class="ml-2 text-sm text-gray-600">Remember Me</label>
+                </div>
+                <button onclick="alert('Login successful!')" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700">Log In</button>
+                <p class="text-center text-sm text-gray-600">Don't have an account? <a href="login.html" class="text-blue-600 hover:underline">Sign Up</a></p>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-blue-600 text-white py-8">
         <div class="container mx-auto text-center">
-            <p>&copy; 2025 Influencer Connect. All rights reserved.</p>
+            <p>© 2025 Influencer Connect. All rights reserved.</p>
             <div class="mt-4 space-x-4">
                 <a href="about.html" class="hover:text-gray-200">About</a>
                 <a href="contact.html" class="hover:text-gray-200">Contact</a>
