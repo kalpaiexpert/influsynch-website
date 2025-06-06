@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up as Brand | Influsynch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4faff;
+      color: #222;
+    }
+    header {
+      background: #fff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #007BFF;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #005fd4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Influsynch</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="influencer-listing.html">Influencers</a>
+      <a href="#">Brands</a>
+      <a href="#">Resources</a>
+      <a href="signup-influencer.html">Sign Up</a>
+    </nav>
+  </header>  <div class="container">
+    <h2>Sign Up as a Brand</h2>
+    <form>
+      <label for="brand-name">Brand Name</label>
+      <input type="text" id="brand-name" name="brand-name" placeholder="e.g. GlowSkin Co." required /><label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+  <label for="website">Website</label>
+  <input type="url" id="website" name="website" placeholder="https://yourbrand.com" />
+
+  <label for="industry">Industry</label>
+  <select id="industry" name="industry">
+    <option value="">Select Industry</option>
+    <option value="beauty">Beauty</option>
+    <option value="fashion">Fashion</option>
+    <option value="fitness">Fitness</option>
+    <option value="tech">Tech</option>
+    <option value="food">Food & Beverage</option>
+    <option value="other">Other</option>
+  </select>
+
+  <label for="goal">Campaign Goal</label>
+  <textarea id="goal" name="goal" rows="4" placeholder="Tell us about your campaign or what you're looking for..." required></textarea>
+
+  <button type="submit">Create Brand Account</button>
+</form>
+
+  </div>
+</body>
+</html>
