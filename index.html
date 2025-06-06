@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Influencer Connect</title>
+    <title>Influsynch</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,8 +11,8 @@
     <!-- Navigation -->
     <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">Influencer Connect</a>
-            <div class="space-x-4">
+            <a href="index.html" class="text-2xl font-bold">Influsynch</a>
+            <div class="space-x-4 hidden md:flex items-center">
                 <a href="index.html" class="hover:text-gray-200">Home</a>
                 <a href="about.html" class="hover:text-gray-200">About</a>
                 <a href="services.html" class="hover:text-gray-200">Services</a>
@@ -20,6 +20,7 @@
                 <a href="businesses.html" class="hover:text-gray-200">Businesses</a>
                 <a href="contact.html" class="hover:text-gray-200">Contact</a>
                 <a href="login.html" class="hover:text-gray-200">Login</a>
+                <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
             </div>
             <button id="menu-toggle" class="md:hidden focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,34 +36,51 @@
             <a href="businesses.html" class="block py-2 hover:text-gray-200">Businesses</a>
             <a href="contact.html" class="block py-2 hover:text-gray-200">Contact</a>
             <a href="login.html" class="block py-2 hover:text-gray-200">Login</a>
+            <a href="login.html" class="block py-2 bg-white text-blue-600 px-4 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-blue-500 text-white py-20 text-center">
-        <div class="container mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Connect Influencers with Businesses</h1>
-            <p class="text-lg md:text-xl mb-6">Empowering collaborations that drive growth and engagement.</p>
-            <a href="services.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Explore Services</a>
+    <section class="bg-cover bg-center h-96 flex items-center justify-center text-white" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Influsynch</h1>
+            <a href="login.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">Start Free Trial</a>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">Why Choose Us?</h2>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-8">Why Choose Influsynch?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Find Influencers</h3>
-                    <p>Discover top influencers across platforms to boost your brand.</p>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Find Influencers</h3>
+                    <p class="text-gray-600">Discover the perfect influencers for your brand with our easy-to-use platform.</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Grow Your Reach</h3>
-                    <p>Connect with businesses for impactful collaborations.</p>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Manage Campaigns</h3>
+                    <p class="text-gray-600">Streamline your influencer campaigns with tools for collaboration and tracking.</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Easy Management</h3>
-                    <p>Streamlined tools to manage campaigns and track results.</p>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Grow Your Brand</h3>
+                    <p class="text-gray-600">Boost sales and visibility with authentic influencer partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-8">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 italic">"Influsynch helped us connect with influencers who truly resonate with our audience!"</p>
+                    <p class="mt-4 font-semibold">Jane D., Small Business Owner</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 italic">"The platform is easy to use and has boosted our campaign results."</p>
+                    <p class="mt-4 font-semibold">Mark S., Marketing Manager</p>
                 </div>
             </div>
         </div>
@@ -71,11 +89,13 @@
     <!-- Footer -->
     <footer class="bg-blue-600 text-white py-8">
         <div class="container mx-auto text-center">
-            <p>&copy; 2025 Influencer Connect. All rights reserved.</p>
+            <p>© 2025 Influsynch. All rights reserved.</p>
             <div class="mt-4 space-x-4">
                 <a href="about.html" class="hover:text-gray-200">About</a>
                 <a href="contact.html" class="hover:text-gray-200">Contact</a>
                 <a href="privacy.html" class="hover:text-gray-200">Privacy Policy</a>
+                <a href="https://twitter.com" class="hover:text-gray-200">Twitter</a>
+                <a href="https://instagram.com" class="hover:text-gray-200">Instagram</a>
             </div>
         </div>
     </footer>
