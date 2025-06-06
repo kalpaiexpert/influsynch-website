@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 320 80" fill="none">
+  <text x="0" y="55" font-size="48" font-weight="bold" font-family="Segoe UI, sans-serif" fill="#0ebeff">Collab</text>
+  <text x="160" y="55" font-size="48" font-weight="lighter" font-family="Segoe UI, sans-serif" fill="#111">verse</text>
+  <circle cx="300" cy="20" r="8" fill="#ff5f89" />
+</svg>
