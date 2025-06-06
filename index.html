@@ -3,242 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Influsynch | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Influencity Hero</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    nav {
-      background: #2c3e50;
-      padding: 1rem 2rem;
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #111;
+      background: #fff;
+    }
+
+    /* NAVIGATION */
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: white;
-    }
-    ul.nav-links {
-      list-style: none;
+
+    .navbar .logo {
       display: flex;
-      gap: 1.5rem;
+      align-items: center;
+      font-weight: bold;
+      font-size: 22px;
     }
-    ul.nav-links > li {
-      position: relative;
+
+    .logo img {
+      height: 24px;
+      margin-right: 8px;
     }
-    ul.nav-links > li > a {
-      color: white;
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
       text-decoration: none;
-      font-weight: 600;
-      padding: 10px 15px;
-      display: inline-block;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-actions button,
+    .nav-actions a.button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 2px solid transparent;
       cursor: pointer;
+      font-weight: 500;
     }
-    ul.nav-links > li > a:hover {
-      color: #1abc9c;
-    }
-    ul.dropdown-content,
-    .mega-dropdown-content {
-      display: none;
-      position: absolute;
+
+    .button-outline {
       background: white;
-      top: 100%;
-      left: 0;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-      z-index: 9999;
+      border-color: #0ebeff;
+      color: #0ebeff;
     }
 
-    /* Standard dropdown */
-    ul.dropdown-content {
-      padding: 10px 0;
-      min-width: 180px;
-    }
-    ul.dropdown-content li a {
-      color: #333;
-      padding: 10px 20px;
-      display: block;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    ul.dropdown-content li a:hover {
-      background: #f2f2f2;
-      color: #1abc9c;
-    }
-    ul.nav-links > li:hover > ul.dropdown-content {
-      display: block;
+    .button-primary {
+      background-color: #0ebeff;
+      color: white;
     }
 
-    /* Mega dropdown */
-    .mega-dropdown-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      padding: 20px 30px;
-      max-width: 700px;
-      width: max-content;
-    }
-    .mega-dropdown-content .column h4 {
-      font-weight: 700;
-      margin-bottom: 15px;
-      font-size: 16px;
-      color: #2c3e50;
-    }
-    .mega-dropdown-content .column a {
-      font-weight: 500;
-      font-size: 14px;
-      color: #555;
-      text-decoration: none;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .mega-dropdown-content .column a:hover {
-      color: #1abc9c;
-    }
-    .mega-dropdown:hover .mega-dropdown-content {
-      display: grid;
-    }
-
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
-      padding: 5rem 2rem;
-      text-align: center;
-      background: linear-gradient(to right, #1abc9c, #16a085);
-      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #ff5f89;
+      padding: 80px 40px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
       max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-      background: #fff;
-    }
-    .feature {
-      background: #f1f1f1;
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .feature h2 {
-      margin-bottom: 1rem;
-      color: #2c3e50;
-    }
-    .feature p {
-      color: #555;
-    }
-
-    footer {
-      background: #2c3e50;
       color: white;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons a {
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .btn-learn {
+      background-color: white;
+      color: #ff5f89;
+    }
+
+    .btn-start {
+      background-color: transparent;
+      color: white;
+      border: none;
+    }
+
+    .hero-image {
+      flex: 1;
       text-align: center;
-      padding: 1rem;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-image p {
+      color: white;
+      margin-top: 12px;
+      font-size: 14px;
     }
 
     @media (max-width: 768px) {
-      nav {
+      .hero {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
       }
-      ul.nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-top: 1rem;
+      .nav-links {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">Influsynch</div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Hashtag_icon.svg" alt="Logo" />
+      Influencity
+    </div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">Who We Serve ▼</a>
-        <ul class="dropdown-content">
-          <li><a href="overview.html">Overview</a></li>
-          <li><a href="brands.html">Brands</a></li>
-          <li><a href="influencers.html">Influencers</a></li>
-        </ul>
-      </li>
-      <li class="mega-dropdown">
-        <a href="#">Platform ▼</a>
-        <div class="mega-dropdown-content">
-          <div class="column">
-            <h4>Products</h4>
-            <a href="influencer-marketing-platform.html">Influencer Marketing Platform</a>
-            <a href="influencer-software.html">Influencer Marketing Software</a>
-            <a href="campaign-management.html">Campaign Management</a>
-            <a href="influencer-analytics.html">Influencer Analytics</a>
-          </div>
-          <div class="column">
-            <h4>Channels</h4>
-            <a href="instagram.html">Instagram</a>
-            <a href="youtube.html">YouTube</a>
-            <a href="facebook.html">Facebook</a>
-            <a href="tiktok.html">TikTok</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <a href="#">Features ▼</a>
-        <ul class="dropdown-content">
-          <li><a href="features-overview.html">Overview</a></li>
-          <li><a href="ai-matching.html">AI Matching</a></li>
-          <li><a href="cross-platform.html">Cross-Platform</a></li>
-        </ul>
-      </li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
+      <li><a href="#">Our Platform</a></li>
+      <li><a href="#">Who We Serve</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Pricing</a></li>
     </ul>
+    <div class="nav-actions">
+      <span>🌐 English</span>
+      <span>👤 Login</span>
+      <a href="#" class="button-outline button">Get Your Demo</a>
+      <a href="#" class="button-primary button">Start Your Trial</a>
+    </div>
   </nav>
 
+  <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Connecting Brands with Influencers</h1>
-    <p>Your all-in-one platform to discover, manage, and grow successful influencer campaigns.</p>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <h2>Discover Influencers</h2>
-      <p>Advanced filters and AI tools to match brands with ideal influencers across platforms.</p>
+    <div class="hero-text">
+      <h1>Empowering Connections: Your Ultimate Influencer Marketing Hub</h1>
+      <p>Maximize your influencer relationship management strategy with solid recruitment, key data, and seamless communication – all in one dynamic platform.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-learn">Learn More</a>
+        <a href="#" class="btn-start">Start Your Trial →</a>
+      </div>
     </div>
-    <div class="feature">
-      <h2>Manage Campaigns</h2>
-      <p>Track performance, content, and ROI in one place to run efficient influencer programs.</p>
-    </div>
-    <div class="feature">
-      <h2>Analytics & Reporting</h2>
-      <p>Real-time data and customizable dashboards to measure your campaign’s true impact.</p>
+    <div class="hero-image">
+      <img src="https://i.imgur.com/vwFgMdJ.png" alt="Influencer Dashboard Overview" />
+      <p>Learn what we do in less than 90 secs!</p>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Influsynch. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
