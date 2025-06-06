@@ -1,48 +1,49 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
   color: #111;
 }
 
 .navbar {
-  background: #fff;
-  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 40px;
   border-bottom: 1px solid #ddd;
+  background-color: white;
 }
 
 .logo img {
-  height: 32px;
+  height: 40px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5em;
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #0ebeff;
   font-weight: bold;
+  color: #0ebeff;
 }
 
 .hero {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 60px 40px;
+  justify-content: space-between;
+  align-items: center;
   background: #ff5f89;
   color: white;
-  border-radius: 0 0 30px 30px;
+  padding: 60px 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
 .hero-text {
-  max-width: 50%;
-  min-width: 300px;
+  max-width: 600px;
 }
 
 .hero-text h1 {
@@ -52,46 +53,47 @@ body {
 
 .hero-text p {
   font-size: 18px;
+  line-height: 1.5;
   margin-bottom: 30px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .btn-learn,
 .btn-start {
   text-decoration: none;
-  padding: 12px 20px;
-  font-weight: bold;
-  border-radius: 25px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
   font-size: 16px;
+  display: inline-block;
 }
 
 .btn-learn {
-  background: white;
+  background-color: white;
   color: #ff5f89;
 }
 
 .btn-start {
-  color: white;
   border: 1px solid white;
+  color: white;
 }
 
 .hero-image {
-  max-width: 40%;
   text-align: center;
+  max-width: 500px;
 }
 
 .hero-image img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+  width: 100%;
+  border-radius: 12px;
 }
 
 .hero-image p {
+  margin-top: 10px;
   font-size: 14px;
-  margin-top: 8px;
 }
