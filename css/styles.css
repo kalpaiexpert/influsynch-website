@@ -1,86 +1,26 @@
+/* Custom styles to complement Tailwind */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #111;
-  background: #fff;
+    font-family: 'Inter', sans-serif;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  border-bottom: 1px solid #ddd;
-  background-color: white;
+nav {
+    transition: all 0.3s ease;
 }
 
-.logo img {
-  height: 32px;
+#mobile-menu {
+    transition: all 0.3s ease;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+@media (max-width: 768px) {
+    #mobile-menu.active {
+        display: block;
+    }
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #0ebeff;
+section {
+    min-height: calc(100vh - 200px);
 }
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  background: #ff5f89;
-  color: white;
-  padding: 60px 40px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-.hero-text {
-  max-width: 50%;
-}
-
-.hero-text h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.hero-text p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.btn {
-  text-decoration: none;
-  padding: 12px 24px;
-  font-weight: bold;
-  border-radius: 25px;
-  font-size: 16px;
-  display: inline-block;
-}
-
-.btn-white {
-  background-color: white;
-  color: #ff5f89;
-}
-
-.btn-outline {
-  border: 2px solid white;
-  color: white;
-}
-
-.hero-image img {
-  max-width: 100%;
-  border-radius: 12px;
+button, a {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
