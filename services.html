@@ -15,9 +15,34 @@
             <div class="space-x-4 hidden md:flex items-center">
                 <a href="index.html" class="hover:text-gray-200">Home</a>
                 <a href="about.html" class="hover:text-gray-200">About</a>
-                <a href="services.html" class="hover:text-gray-200">Services</a>
-                <a href="influencers.html" class="hover:text-gray-200">Influencers</a>
-                <a href="businesses.html" class="hover:text-gray-200">Businesses</a>
+                <!-- Services Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="services.html" class="hover:text-gray-200 flex items-center">Services <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="services.html#influencer-discovery" class="block px-4 py-2 hover:bg-gray-100">Influencer Discovery</a>
+                        <a href="services.html#campaign-management" class="block px-4 py-2 hover:bg-gray-100">Campaign Management</a>
+                        <a href="services.html#analytics-reporting" class="block px-4 py-2 hover:bg-gray-100">Analytics & Reporting</a>
+                        <a href="services.html#business-connections" class="block px-4 py-2 hover:bg-gray-100">Business Connections</a>
+                    </div>
+                </div>
+                <!-- Influencers Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="influencers.html" class="hover:text-gray-200 flex items-center">Influencers <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="influencers.html#build-profile" class="block px-4 py-2 hover:bg-gray-100">Build Your Profile</a>
+                        <a href="influencers.html#find-opportunities" class="block px-4 py-2 hover:bg-gray-100">Find Opportunities</a>
+                        <a href="influencers.html#earn-more" class="block px-4 py-2 hover:bg-gray-100">Earn More</a>
+                    </div>
+                </div>
+                <!-- Businesses Dropdown -->
+                <div class="relative dropdown-parent">
+                    <a href="businesses.html" class="hover:text-gray-200 flex items-center">Businesses <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                    <div class="dropdown hidden absolute bg-white text-blue-600 mt-2 rounded-lg shadow-md min-w-[200px]">
+                        <a href="businesses.html#reach-audiences" class="block px-4 py-2 hover:bg-gray-100">Reach New Audiences</a>
+                        <a href="businesses.html#increase-sales" class="block px-4 py-2 hover:bg-gray-100">Increase Sales</a>
+                        <a href="businesses.html#build-trust" class="block px-4 py-2 hover:bg-gray-100">Build Trust</a>
+                    </div>
+                </div>
                 <a href="contact.html" class="hover:text-gray-200">Contact</a>
                 <a href="login.html" class="hover:text-gray-200">Login</a>
                 <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
@@ -31,9 +56,34 @@
         <div id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
             <a href="index.html" class="block py-2 hover:text-gray-200">Home</a>
             <a href="about.html" class="block py-2 hover:text-gray-200">About</a>
-            <a href="services.html" class="block py-2 hover:text-gray-200">Services</a>
-            <a href="influencers.html" class="block py-2 hover:text-gray-200">Influencers</a>
-            <a href="businesses.html" class="block py-2 hover:text-gray-200">Businesses</a>
+            <!-- Services Mobile Dropdown -->
+            <div>
+                <a href="services.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Services <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="services.html#influencer-discovery" class="block py-2 hover:text-gray-200">Influencer Discovery</a>
+                    <a href="services.html#campaign-management" class="block py-2 hover:text-gray-200">Campaign Management</a>
+                    <a href="services.html#analytics-reporting" class="block py-2 hover:text-gray-200">Analytics & Reporting</a>
+                    <a href="services.html#business-connections" class="block py-2 hover:text-gray-200">Business Connections</a>
+                </div>
+            </div>
+            <!-- Influencers Mobile Dropdown -->
+            <div>
+                <a href="influencers.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Influencers <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="influencers.html#build-profile" class="block py-2 hover:text-gray-200">Build Your Profile</a>
+                    <a href="influencers.html#find-opportunities" class="block py-2 hover:text-gray-200">Find Opportunities</a>
+                    <a href="influencers.html#earn-more" class="block py-2 hover:text-gray-200">Earn More</a>
+                </div>
+            </div>
+            <!-- Businesses Mobile Dropdown -->
+            <div>
+                <a href="businesses.html" class="mobile-dropdown-toggle block py-2 hover:text-gray-200 flex items-center">Businesses <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                <div class="mobile-dropdown hidden pl-4">
+                    <a href="businesses.html#reach-audiences" class="block py-2 hover:text-gray-200">Reach New Audiences</a>
+                    <a href="businesses.html#increase-sales" class="block py-2 hover:text-gray-200">Increase Sales</a>
+                    <a href="businesses.html#build-trust" class="block py-2 hover:text-gray-200">Build Trust</a>
+                </div>
+            </div>
             <a href="contact.html" class="block py-2 hover:text-gray-200">Contact</a>
             <a href="login.html" class="block py-2 hover:text-gray-200">Login</a>
             <a href="login.html" class="block py-2 bg-white text-blue-600 px-4 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
@@ -50,19 +100,19 @@
     <section class="py-16">
         <div class="container mx-auto text-center">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-6 bg-white rounded-lg shadow-md">
+                <div id="influencer-discovery" class="p-6 bg-white rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Influencer Discovery</h3>
                     <p>Find the perfect influencers for your brand based on niche, audience, and engagement.</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
+                <div id="campaign-management" class="p-6 bg-white rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Campaign Management</h3>
                     <p>Plan, execute, and track influencer campaigns with ease.</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
+                <div id="analytics-reporting" class="p-6 bg-white rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Analytics & Reporting</h3>
                     <p>Get detailed insights into campaign performance and ROI.</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
+                <div id="business-connections" class="p-6 bg-white rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Business Connections</h3>
                     <p>Connect with brands looking for influencers like you.</p>
                 </div>
