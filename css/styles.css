@@ -1,26 +1,19 @@
-/* Custom styles to complement Tailwind */
+/* Existing styles (do not remove) */
 body {
     font-family: 'Inter', sans-serif;
 }
 
+/* Add these new styles */
+.dropdown {
+    z-index: 20; /* Ensure dropdown is above other elements */
+    pointer-events: auto; /* Ensure clicks are registered */
+}
+
+.dropdown a {
+    pointer-events: auto; /* Ensure links are clickable */
+}
+
+/* Ensure the parent nav doesn’t block the dropdown */
 nav {
-    transition: all 0.3s ease;
-}
-
-#mobile-menu {
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    #mobile-menu.active {
-        display: block;
-    }
-}
-
-section {
-    min-height: calc(100vh - 200px);
-}
-
-button, a {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10;
 }
