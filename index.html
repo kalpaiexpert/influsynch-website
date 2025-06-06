@@ -3,204 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Influencity Hero</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #111;
-      background: #fff;
-    }
-
-    /* NAVIGATION */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .navbar .logo {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      font-size: 22px;
-    }
-
-    .logo img {
-      height: 24px;
-      margin-right: 8px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 500;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .nav-actions button,
-    .nav-actions a.button {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 2px solid transparent;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .button-outline {
-      background: white;
-      border-color: #0ebeff;
-      color: #0ebeff;
-    }
-
-    .button-primary {
-      background-color: #0ebeff;
-      color: white;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      background: #ff5f89;
-      padding: 80px 40px;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-    }
-
-    .hero-text {
-      flex: 1;
-      min-width: 300px;
-      max-width: 600px;
-      color: white;
-    }
-
-    .hero-text h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-
-    .hero-text p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .hero-buttons a {
-      padding: 12px 24px;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .btn-learn {
-      background-color: white;
-      color: #ff5f89;
-    }
-
-    .btn-start {
-      background-color: transparent;
-      color: white;
-      border: none;
-    }
-
-    .hero-image {
-      flex: 1;
-      text-align: center;
-    }
-
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    .hero-image p {
-      color: white;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+  <title>Influencity | Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Hashtag_icon.svg" alt="Logo" />
-      Influencity
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Our Platform</a></li>
-      <li><a href="#">Who We Serve</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Resources</a></li>
-      <li><a href="#">Pricing</a></li>
-    </ul>
-    <div class="nav-actions">
-      <span>🌐 English</span>
-      <span>👤 Login</span>
-      <a href="#" class="button-outline button">Get Your Demo</a>
-      <a href="#" class="button-primary button">Start Your Trial</a>
-    </div>
-  </nav>
+  <!-- Shared Navigation Bar -->
+  <header class="navbar">
+    <div class="logo"><a href="index.html">Influencity</a></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="platform.html">Our Platform</a></li>
+        <li><a href="who-we-serve.html">Who We Serve</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Empowering Connections: Your Ultimate Influencer Marketing Hub</h1>
-      <p>Maximize your influencer relationship management strategy with solid recruitment, key data, and seamless communication – all in one dynamic platform.</p>
-      <div class="hero-buttons">
-        <a href="#" class="btn-learn">Learn More</a>
-        <a href="#" class="btn-start">Start Your Trial →</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://i.imgur.com/vwFgMdJ.png" alt="Influencer Dashboard Overview" />
-      <p>Learn what we do in less than 90 secs!</p>
-    </div>
-  </section>
+  <main class="content">
+    <h1>Welcome to Influencity</h1>
+    <p>Your ultimate influencer marketing hub. Explore our powerful tools to connect, manage, and grow your brand through influencer partnerships.</p>
+  </main>
 
 </body>
 </html>
