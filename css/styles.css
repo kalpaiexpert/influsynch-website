@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
   color: #111;
+  background: #fff;
 }
 
 .navbar {
@@ -32,18 +32,18 @@ body {
 
 .hero {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   background: #ff5f89;
   color: white;
   padding: 60px 40px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .hero-text {
-  max-width: 600px;
+  max-width: 50%;
 }
 
 .hero-text h1 {
@@ -53,47 +53,34 @@ body {
 
 .hero-text p {
   font-size: 18px;
-  line-height: 1.5;
   margin-bottom: 30px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.btn-learn,
-.btn-start {
+.btn {
   text-decoration: none;
   padding: 12px 24px;
-  border-radius: 30px;
-  font-weight: 600;
+  font-weight: bold;
+  border-radius: 25px;
   font-size: 16px;
   display: inline-block;
 }
 
-.btn-learn {
+.btn-white {
   background-color: white;
   color: #ff5f89;
 }
 
-.btn-start {
-  border: 1px solid white;
+.btn-outline {
+  border: 2px solid white;
   color: white;
 }
 
-.hero-image {
-  text-align: center;
-  max-width: 500px;
-}
-
 .hero-image img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 12px;
-}
-
-.hero-image p {
-  margin-top: 10px;
-  font-size: 14px;
 }
