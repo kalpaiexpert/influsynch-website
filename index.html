@@ -12,7 +12,6 @@
       background: #f9f9f9;
     }
 
-    /* NAVIGATION BAR */
     nav {
       background: white;
       padding: 14px 24px;
@@ -29,6 +28,7 @@
       align-items: center;
       font-weight: 500;
       font-size: 15px;
+      position: relative;
     }
 
     .nav-container a {
@@ -56,7 +56,8 @@
       border-radius: 10px;
     }
 
-    .dropdown:hover .dropdown-panel {
+    .dropdown:hover .dropdown-panel,
+    .dropdown:focus-within .dropdown-panel {
       display: flex;
     }
 
@@ -90,7 +91,6 @@
       color: #007BFF;
     }
 
-    /* HERO SECTION */
     .hero {
       background: radial-gradient(circle at top left, #007BFF, #4dabf7);
       color: white;
