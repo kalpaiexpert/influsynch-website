@@ -2,207 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Influsynch | India’s Influencer Collaboration Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-    }
-
-    nav {
-      background: white;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid #eee;
-      z-index: 999;
-      position: relative;
-    }
-
-    .nav-container {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      font-weight: 500;
-      font-size: 15px;
-      position: relative;
-    }
-
-    .nav-container a {
-      text-decoration: none;
-      color: #222;
-      padding: 6px 10px;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-panel {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      width: 600px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      padding: 24px;
-      gap: 40px;
-      z-index: 1000;
-      border-radius: 10px;
-    }
-
-    .dropdown:hover .dropdown-panel,
-    .dropdown:focus-within .dropdown-panel {
-      display: flex;
-    }
-
-    .dropdown-column {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .dropdown-column h4 {
-      margin-bottom: 12px;
-      color: #888;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .dropdown-column a {
-      display: block;
-      padding: 10px 0;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .dropdown-column a span {
-      display: block;
-      font-size: 13px;
-      color: #666;
-      font-weight: 400;
-    }
-
-    .dropdown-column a:hover {
-      color: #007BFF;
-    }
-
-    .hero {
-      background: radial-gradient(circle at top left, #007BFF, #4dabf7);
-      color: white;
-      text-align: center;
-      padding: 100px 20px 60px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .cta-buttons a {
-      background: white;
-      color: #007BFF;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.2s ease;
-      border: 2px solid white;
-    }
-
-    .cta-buttons a:hover {
-      background: #e6f0ff;
-      border-color: #007BFF;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Influencer Marketplace | Home</title>
+  <meta name="description" content="Discover and manage influencer campaigns with our powerful, AI-driven marketplace platform." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2819/2819194.png" />
 </head>
-<body>
+<body class="bg-white text-gray-800">
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-container">
-      <div class="dropdown">
-        <a href="#">Our Platform ▾</a>
-        <div class="dropdown-panel">
-          <div class="dropdown-column">
-            <h4>PRODUCTS</h4>
-            <a href="influencer-discovery.html">
-              🔍 <strong>Influencer Discovery</strong><br/>
-              <span>Find creators that align with your brand</span>
-            </a>
-            <a href="campaign-management.html">
-              📋 <strong>Campaign Management</strong><br/>
-              <span>Launch and manage campaigns easily</span>
-            </a>
-            <a href="relationship-management.html">
-              🤝 <strong>Relationship Management</strong><br/>
-              <span>Track and engage your creator network</span>
-            </a>
-          </div>
-          <div class="dropdown-column">
-            <h4>CHANNELS</h4>
-            <a href="#">
-              🎵 <strong>TikTok Influencers</strong><br/>
-              <span>Explore top TikTok creators</span>
-            </a>
-            <a href="#">
-              📸 <strong>Instagram Influencers</strong><br/>
-              <span>Browse by reach, niche, and city</span>
-            </a>
-            <a href="#">
-              ▶️ <strong>YouTube Influencers</strong><br/>
-              <span>Find creators with high engagement</span>
-            </a>
-          </div>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div class="text-xl font-bold text-indigo-600">Influenz</div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="platform.html" class="hover:text-indigo-600">Platform</a>
+        <a href="features.html" class="hover:text-indigo-600">Features</a>
+        <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
+        <a href="resources.html" class="hover:text-indigo-600">Resources</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-24 bg-gradient-to-br from-indigo-50 via-white to-white px-4 md:px-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <!-- Text -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          Connect with the Right Influencers,<br />
+          Instantly.
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          Discover, manage, and scale your influencer campaigns with AI-powered precision — all in one place.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-4">
+          <a href="pricing.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium text-center">Start Free Trial</a>
+          <a href="platform.html" class="text-indigo-600 font-medium px-6 py-3 border border-indigo-600 rounded-lg text-center">See How It Works</a>
         </div>
       </div>
-      <a href="influencer-listing.html">Influencers</a>
-      <a href="signup-influencer.html">I'm an Influencer</a>
-      <a href="signup-brand.html">I'm a Business</a>
-      <a href="dashboard-brand.html">Dashboard</a>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>India’s Home for Influencer Collaborations</h1>
-    <p>
-      Find, connect & launch authentic campaigns with India’s next-gen creators.<br/>
-      For brands & influencers, made simple.
-    </p>
-    <div class="cta-buttons">
-      <a href="signup-influencer.html">I’m an Influencer</a>
-      <a href="signup-brand.html">I’m a Business</a>
+      <!-- Image -->
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1612640462120-b3e8bba59c2b?auto=format&fit=crop&w=700&q=80" alt="Influencer Platform UI" class="rounded-xl shadow-lg" />
+      </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="mt-20 bg-gray-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <h2 class="font-bold text-indigo-600 text-lg">Influenz</h2>
+        <p class="text-gray-600 mt-2">Empowering brands to connect with the right voices.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Product</h3>
+        <ul class="space-y-1 text-gray-600">
+          <li><a href="platform.html" class="hover:text-indigo-600">Platform</a></li>
+          <li><a href="features.html" class="hover:text-indigo-600">Features</a></li>
+          <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Company</h3>
+        <ul class="space-y-1 text-gray-600">
+          <li><a href="about.html" class="hover:text-indigo-600">About Us</a></li>
+          <li><a href="resources.html" class="hover:text-indigo-600">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Connect</h3>
+        <ul class="space-y-1 text-gray-600">
+          <li><a href="#" class="hover:text-indigo-600">Contact</a></li>
+          <li><a href="#" class="hover:text-indigo-600">LinkedIn</a></li>
+          <li><a href="#" class="hover:text-indigo-600">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-400 mt-8">&copy; 2025 Influenz. All rights reserved.</div>
+  </footer>
 
 </body>
 </html>
