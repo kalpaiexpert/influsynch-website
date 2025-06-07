@@ -3,56 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Influencer Marketplace | Home</title>
-  <meta name="description" content="Discover and manage influencer campaigns with our powerful, AI-driven marketplace platform." />
+  <title>Influenz - Influencer Marketing Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2819/2819194.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
 
   <!-- Navbar -->
-  <header class="bg-white shadow-md fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-      <div class="text-xl font-bold text-indigo-600">Influenz</div>
-      <nav class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-indigo-600">Home</a>
-        <a href="platform.html" class="hover:text-indigo-600">Platform</a>
+  <header class="w-full bg-white shadow-sm fixed z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center gap-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/2819/2819194.png" alt="Logo" class="w-6 h-6">
+        <span class="text-lg font-semibold text-black">Influenz</span>
+      </div>
+      <nav class="hidden lg:flex space-x-6 text-sm font-medium text-gray-700">
+        <a href="platform.html" class="hover:text-indigo-600">Our Platform</a>
+        <a href="who-we-serve.html" class="hover:text-indigo-600">Who We Serve</a>
         <a href="features.html" class="hover:text-indigo-600">Features</a>
-        <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
-        <a href="resources.html" class="hover:text-indigo-600">Resources</a>
         <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="resources.html" class="hover:text-indigo-600">Resources</a>
+        <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
       </nav>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#" class="text-sm text-gray-600 hover:text-black">Login</a>
+        <a href="#" class="border border-blue-400 text-blue-600 hover:bg-blue-50 text-sm px-4 py-2 rounded-full">Get Your Demo</a>
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-full">Start Your Trial</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-24 bg-gradient-to-br from-indigo-50 via-white to-white px-4 md:px-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-      <!-- Text -->
-      <div>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-          Connect with the Right Influencers,<br />
-          Instantly.
-        </h1>
-        <p class="mt-4 text-lg text-gray-600">
-          Discover, manage, and scale your influencer campaigns with AI-powered precision — all in one place.
-        </p>
-        <div class="mt-6 flex flex-col sm:flex-row gap-4">
-          <a href="pricing.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium text-center">Start Free Trial</a>
-          <a href="platform.html" class="text-indigo-600 font-medium px-6 py-3 border border-indigo-600 rounded-lg text-center">See How It Works</a>
-        </div>
+  <section class="pt-32 pb-20 px-6 bg-[#fc507a] text-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Influencer Marketing<br class="hidden sm:block">Solutions for Every Industry
+      </h1>
+      <p class="text-lg sm:text-xl mb-8">
+        An AI-powered platform that helps brands, agencies, and e-commerce companies create influencer marketing campaigns with confidence. Learn how you can accomplish more with less and get better campaign results.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#" class="bg-cyan-400 hover:bg-cyan-500 text-black font-semibold py-3 px-6 rounded-full text-sm">Learn More</a>
+        <a href="platform.html" class="inline-flex items-center text-white font-semibold text-sm hover:underline">
+          Our Platform →
+        </a>
       </div>
+    </div>
+  </section>
 
-      <!-- Image -->
-      <div class="relative">
-        <img src="https://images.unsplash.com/photo-1612640462120-b3e8bba59c2b?auto=format&fit=crop&w=700&q=80" alt="Influencer Platform UI" class="rounded-xl shadow-lg" />
+  <!-- Trusted By Section -->
+  <section class="bg-white py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-sm font-semibold text-gray-500 uppercase mb-6">Trusted by leading brands</h2>
+      <div class="flex flex-wrap justify-center items-center gap-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Myntra_logo.png" alt="Myntra" class="h-10">
+        <img src="https://1000logos.net/wp-content/uploads/2021/06/Nykaa-logo.png" alt="Nykaa" class="h-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Pepsi_logo_2014.svg" alt="Pepsi" class="h-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Unilever_Logo.svg" alt="Unilever" class="h-10">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/HDFC_Bank_Logo.svg" alt="HDFC Bank" class="h-10">
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Overview Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4 text-gray-900">Powerful Tools for Smart Campaigns</h2>
+      <p class="text-gray-600 max-w-xl mx-auto mb-12">
+        Everything you need to plan, launch, and scale influencer campaigns with speed and confidence.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <div class="mb-4 text-indigo-600 text-3xl">🔍</div>
+          <h3 class="font-semibold text-lg mb-2">Influencer Discovery</h3>
+          <p class="text-gray-600">Find the right influencers by niche, engagement, audience type, and more with advanced filters.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <div class="mb-4 text-green-600 text-3xl">📈</div>
+          <h3 class="font-semibold text-lg mb-2">Campaign Builder</h3>
+          <p class="text-gray-600">Create, manage, and optimize your influencer campaigns in one place with real-time tracking.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <div class="mb-4 text-pink-600 text-3xl">💬</div>
+          <h3 class="font-semibold text-lg mb-2">Messaging & Collaboration</h3>
+          <p class="text-gray-600">Chat, negotiate, and brief influencers directly through the platform with complete history.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="mt-20 bg-gray-100 py-10">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+  <footer class="bg-gray-100 py-12">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
       <div>
         <h2 class="font-bold text-indigo-600 text-lg">Influenz</h2>
         <p class="text-gray-600 mt-2">Empowering brands to connect with the right voices.</p>
