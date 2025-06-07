@@ -1,24 +1,22 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Influsynch - Connecting Brands & Influencers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influsynch | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f4faff;
-      color: #222;
+      background-color: #f8fbff;
     }
     header {
-      background: #fff;
+      background-color: #fff;
       padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: relative;
     }
     .logo {
       font-size: 1.4rem;
@@ -28,9 +26,9 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
     }
     nav a {
+      margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -44,29 +42,26 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background: #fff;
-      min-width: 180px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border-radius: 6px;
-      z-index: 1;
+      background-color: #fff;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      z-index: 1000;
     }
     .dropdown-content a {
-      display: block;
       padding: 12px 16px;
-      color: #333;
+      display: block;
       text-decoration: none;
-    }
-    .dropdown-content a:hover {
-      background: #f0f4ff;
+      color: #333;
     }
     .dropdown:hover .dropdown-content {
       display: block;
     }
     .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(to bottom right, #007BFF, #67b3ff);
+      padding: 80px 20px;
+      background: linear-gradient(to right, #007BFF, #66b2ff);
       color: white;
+      text-align: center;
     }
     .hero h1 {
       font-size: 2.5rem;
@@ -76,49 +71,24 @@
       font-size: 1.1rem;
       margin-bottom: 30px;
     }
-    .hero a {
-      background: white;
-      color: #007BFF;
-      padding: 12px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .hero a:hover {
-      background: #e0ecff;
-    }
-    .cta-boxes {
+    .cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       flex-wrap: wrap;
-      margin-top: 50px;
     }
-    .cta-box {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      width: 250px;
-      text-align: center;
-    }
-    .cta-box h3 {
-      margin-bottom: 10px;
-    }
-    .cta-box a {
-      display: inline-block;
-      margin-top: 10px;
+    .cta-buttons a {
+      background-color: white;
       color: #007BFF;
+      padding: 12px 24px;
+      border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f0f4fa;
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 50px;
+    .cta-buttons a:hover {
+      background-color: #f1f6ff;
     }
   </style>
 </head>
@@ -126,38 +96,26 @@
   <header>
     <div class="logo">Influsynch</div>
     <nav>
-      <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#">Our Platform</a>
+        <a href="#">Our Platform ▾</a>
         <div class="dropdown-content">
-          <a href="influencer-listing.html">Browse Influencers</a>
-          <a href="#">Campaign Tools</a>
-          <a href="#">Analytics (Coming Soon)</a>
+          <a href="influencer-discovery.html">Influencer Discovery</a>
+          <a href="campaign-management.html">Campaign Management</a>
+          <a href="relationship-management.html">Relationship Management</a>
         </div>
       </div>
+      <a href="influencer-listing.html">Influencers</a>
       <a href="signup-influencer.html">I'm an Influencer</a>
       <a href="signup-brand.html">I'm a Business</a>
-      <a href="#">Resources</a>
-      <a href="#">Login</a>
+      <a href="dashboard-brand.html">Dashboard</a>
     </nav>
   </header>  <section class="hero">
-    <h1>Connect with Top Indian Influencers</h1>
-    <p>Your AI-powered gateway to digital brand collaborations.</p>
-    <a href="influencer-listing.html">Explore Influencers</a>
-    <div class="cta-boxes">
-      <div class="cta-box">
-        <h3>I’m an Influencer</h3>
-        <p>Create your profile and get discovered by top brands.</p>
-        <a href="signup-influencer.html">Get Started</a>
-      </div>
-      <div class="cta-box">
-        <h3>I’m a Business</h3>
-        <p>Find the perfect creators for your campaigns.</p>
-        <a href="signup-brand.html">Start Hiring</a>
-      </div>
+    <h1>Connect. Collaborate. Create.</h1>
+    <p>India's emerging marketplace for influencers & brands</p>
+    <div class="cta-buttons">
+      <a href="signup-influencer.html">I'm an Influencer</a>
+      <a href="signup-brand.html">I'm a Business</a>
     </div>
-  </section>  <footer>
-    &copy; 2025 Influsynch. All rights reserved.
-  </footer>
+  </section>
 </body>
 </html>
