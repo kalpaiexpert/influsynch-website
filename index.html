@@ -1,124 +1,207 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Influsynch | Influencer Marketplace</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Influsynch | India’s Influencer Collaboration Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9fbfe;
-      color: #222;
-      line-height: 1.6;
+      background: #f9f9f9;
     }
-    header {
-      background-color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 30px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #007BFF;
-    }
+
+    /* NAVIGATION BAR */
     nav {
+      background: white;
+      padding: 14px 24px;
       display: flex;
-      align-items: center;
-    }
-    nav a {
-      text-decoration: none;
-      color: #333;
-      margin-left: 24px;
-      font-weight: 500;
+      justify-content: center;
+      border-bottom: 1px solid #eee;
+      z-index: 999;
       position: relative;
     }
+
+    .nav-container {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .nav-container a {
+      text-decoration: none;
+      color: #222;
+      padding: 6px 10px;
+    }
+
     .dropdown {
       position: relative;
     }
-    .dropdown-content {
+
+    .dropdown-panel {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border-radius: 8px;
-      min-width: 220px;
+      background: #fff;
+      width: 600px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 24px;
+      display: flex;
+      gap: 40px;
       z-index: 1000;
+      border-radius: 10px;
     }
-    .dropdown-content a {
-      padding: 12px 16px;
-      display: block;
-      color: #333;
-      text-decoration: none;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }.hero {
-  background: radial-gradient(circle at 20% 30%, #66b2ff, #007BFF);
-  color: white;
-  padding: 120px 30px 100px;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-.hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.cta-buttons a {
-  background-color: #fff;
-  color: #007BFF;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-.cta-buttons a:hover {
-  background-color: #f0f6ff;
-}
 
+    .dropdown:hover .dropdown-panel {
+      display: flex;
+    }
+
+    .dropdown-column {
+      flex: 1;
+    }
+
+    .dropdown-column h4 {
+      margin-bottom: 12px;
+      color: #888;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .dropdown-column a {
+      display: block;
+      padding: 10px 0;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .dropdown-column a span {
+      display: block;
+      font-size: 13px;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .dropdown-column a:hover {
+      color: #007BFF;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: radial-gradient(circle at top left, #007BFF, #4dabf7);
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons a {
+      background: white;
+      color: #007BFF;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s ease;
+      border: 2px solid white;
+    }
+
+    .cta-buttons a:hover {
+      background: #e6f0ff;
+      border-color: #007BFF;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">Influsynch</div>
-    <nav>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
       <div class="dropdown">
         <a href="#">Our Platform ▾</a>
-        <div class="dropdown-content">
-          <a href="influencer-discovery.html">Influencer Discovery</a>
-          <a href="campaign-management.html">Campaign Management</a>
-          <a href="relationship-management.html">Relationship Management</a>
+        <div class="dropdown-panel">
+          <div class="dropdown-column">
+            <h4>PRODUCTS</h4>
+            <a href="influencer-discovery.html">
+              🔍 <strong>Influencer Discovery</strong><br/>
+              <span>Find creators that align with your brand</span>
+            </a>
+            <a href="campaign-management.html">
+              📋 <strong>Campaign Management</strong><br/>
+              <span>Launch and manage campaigns easily</span>
+            </a>
+            <a href="relationship-management.html">
+              🤝 <strong>Relationship Management</strong><br/>
+              <span>Track and engage your creator network</span>
+            </a>
+          </div>
+          <div class="dropdown-column">
+            <h4>CHANNELS</h4>
+            <a href="#">
+              🎵 <strong>TikTok Influencers</strong><br/>
+              <span>Explore top TikTok creators</span>
+            </a>
+            <a href="#">
+              📸 <strong>Instagram Influencers</strong><br/>
+              <span>Browse by reach, niche, and city</span>
+            </a>
+            <a href="#">
+              ▶️ <strong>YouTube Influencers</strong><br/>
+              <span>Find creators with high engagement</span>
+            </a>
+          </div>
         </div>
       </div>
       <a href="influencer-listing.html">Influencers</a>
       <a href="signup-influencer.html">I'm an Influencer</a>
       <a href="signup-brand.html">I'm a Business</a>
       <a href="dashboard-brand.html">Dashboard</a>
-    </nav>
-  </header>  <section class="hero">
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
     <h1>India’s Home for Influencer Collaborations</h1>
-    <p>Find, connect & launch authentic campaigns with India’s next-gen creators. For brands & influencers, made simple.</p>
+    <p>
+      Find, connect & launch authentic campaigns with India’s next-gen creators.<br/>
+      For brands & influencers, made simple.
+    </p>
     <div class="cta-buttons">
-      <a href="signup-influencer.html">I'm an Influencer</a>
-      <a href="signup-brand.html">I'm a Business</a>
+      <a href="signup-influencer.html">I’m an Influencer</a>
+      <a href="signup-brand.html">I’m a Business</a>
     </div>
   </section>
+
 </body>
 </html>
