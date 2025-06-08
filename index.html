@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConnectIndia - India's Premier Influencer-Business Platform</title>
-    <meta name="description" content="ConnectIndia is India's leading platform connecting influencers with businesses. Join thousands of creators and brands collaborating successfully across India.">
-    
-    <!-- Tailwind CSS -->
+    <meta name="description" content="Improved homepage for ConnectIndia with better color contrast, professional hero section design, and proper GitHub Pages compatibility. Features dual registration system and seamless navigation.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
         * {
             font-family: 'Inter', sans-serif;
@@ -24,19 +17,42 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
         }
         
-        .hover-scale {
-            transition: transform 0.3s ease;
+        .card-hover {
+            transition: all 0.3s ease;
         }
         
-        .hover-scale:hover {
-            transform: scale(1.05);
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            transform: translateY(-1px);
+        }
+        
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
         }
         
         .dropdown:hover .dropdown-menu {
@@ -45,213 +61,156 @@
         
         .dropdown-menu {
             display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 1000;
         }
         
-        .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .stats-counter {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-        
-        @media (max-width: 768px) {
-            .stats-counter {
-                font-size: 2rem;
-            }
+        .stat-number {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4">
+    <!-- Navigation Header -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 border-b border-gray-200">
+        <div class="container mx-auto px-6">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                        <span class="text-white font-bold text-lg">CI</span>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-handshake text-white text-lg"></i>
                     </div>
-                    <span class="text-2xl font-bold gradient-text">ConnectIndia</span>
+                    <span class="text-2xl font-bold text-gray-800">ConnectIndia</span>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
                     <div class="dropdown relative">
-                        <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
-                            Our Platform <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg border p-4">
-                            <div class="grid grid-cols-1 gap-2">
-                                <a href="platform.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Platform Overview</a>
-                                <a href="influencer-search.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Influencer Discovery</a>
-                                <a href="campaign-management.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Campaign Management</a>
-                                <a href="analytics.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Analytics & Reports</a>
-                                <a href="collaboration-tools.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Collaboration Tools</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                            Platform <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="py-2">
+                                <a href="discovery.html" class="block px-4 py-2 hover:bg-gray-50">Discovery</a>
+                                <a href="campaigns.html" class="block px-4 py-2 hover:bg-gray-50">Campaign Management</a>
+                                <a href="analytics.html" class="block px-4 py-2 hover:bg-gray-50">Analytics</a>
+                                <a href="marketplace.html" class="block px-4 py-2 hover:bg-gray-50">Marketplace</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="dropdown relative">
-                        <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
-                            Who We Serve <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg border p-4">
-                            <a href="for-influencers.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">For Influencers</a>
-                            <a href="for-businesses.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">For Businesses</a>
-                            <a href="for-agencies.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">For Agencies</a>
-                        </div>
-                    </div>
-                    
-                    <div class="dropdown relative">
-                        <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
-                            Features <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-lg border p-4">
-                            <div class="mb-3">
-                                <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Discover & Connect</h4>
-                                <a href="influencer-discovery.html" class="block px-3 py-1 text-sm text-gray-700 hover:bg-blue-50 rounded">Influencer Discovery</a>
-                                <a href="business-matching.html" class="block px-3 py-1 text-sm text-gray-700 hover:bg-blue-50 rounded">Business Matching</a>
-                            </div>
-                            <div class="mb-3">
-                                <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Manage & Organize</h4>
-                                <a href="campaign-management.html" class="block px-3 py-1 text-sm text-gray-700 hover:bg-blue-50 rounded">Campaign Management</a>
-                                <a href="collaboration-hub.html" class="block px-3 py-1 text-sm text-gray-700 hover:bg-blue-50 rounded">Collaboration Hub</a>
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Track & Optimize</h4>
-                                <a href="analytics.html" class="block px-3 py-1 text-sm text-gray-700 hover:bg-blue-50 rounded">Analytics Dashboard</a>
-                                <a href="roi-tracking.html" class="block px-3 py-1 text-sm text-gray-700 hover:bg-blue-50 rounded">ROI Tracking</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+                            Solutions <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="py-2">
+                                <a href="for_influencers.html" class="block px-4 py-2 hover:bg-gray-50">For Influencers</a>
+                                <a href="for_businesses.html" class="block px-4 py-2 hover:bg-gray-50">For Businesses</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="dropdown relative">
-                        <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
-                            Resources <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg border p-4">
-                            <a href="blog.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Blog</a>
-                            <a href="case-studies.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Success Stories</a>
-                            <a href="guides.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Guides & eBooks</a>
-                            <a href="webinars.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Webinars</a>
-                            <a href="help-center.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Help Center</a>
-                        </div>
-                    </div>
-                    
+
                     <a href="pricing.html" class="text-gray-700 hover:text-blue-600 font-medium">Pricing</a>
-                    
-                    <div class="dropdown relative">
-                        <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center">
-                            About <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-lg border p-4">
-                            <a href="about.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Company</a>
-                            <a href="testimonials.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Testimonials</a>
-                            <a href="careers.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Careers</a>
-                            <a href="contact.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Contact</a>
-                        </div>
-                    </div>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-medium">Resources</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
                 </div>
-                
-                <!-- Action Buttons -->
-                <div class="hidden lg:flex items-center space-x-4">
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center space-x-4">
                     <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium">Login</a>
-                    <a href="demo-request.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition">Get Demo</a>
+                    <a href="business_signup.html" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">Get Started</a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden text-gray-700" onclick="toggleMobileMenu()">
+                <button class="lg:hidden text-gray-700">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="lg:hidden hidden mt-4 pb-4">
-                <div class="space-y-2">
-                    <a href="for-influencers.html" class="block py-2 text-gray-700">For Influencers</a>
-                    <a href="for-businesses.html" class="block py-2 text-gray-700">For Businesses</a>
-                    <a href="platform.html" class="block py-2 text-gray-700">Platform</a>
-                    <a href="pricing.html" class="block py-2 text-gray-700">Pricing</a>
-                    <a href="about.html" class="block py-2 text-gray-700">About</a>
-                    <div class="pt-4 space-y-2">
-                        <a href="login.html" class="block w-full text-center py-2 border border-gray-300 rounded-lg">Login</a>
-                        <a href="demo-request.html" class="block w-full text-center py-2 bg-blue-600 text-white rounded-lg">Get Demo</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg hero-pattern relative overflow-hidden">
-        <div class="container mx-auto px-4 py-20">
-            <div class="max-w-4xl mx-auto text-center text-white">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    India's Premier<br>
-                    <span class="text-yellow-300">Influencer-Business</span><br>
-                    Connection Platform
-                </h1>
-                <p class="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto">
-                    Connect with authentic Indian influencers and businesses. Build meaningful partnerships that drive real results across India's diverse markets.
-                </p>
-                
-                <!-- Registration Options -->
-                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
-                    <a href="influencer-register.html" class="bg-white text-gray-800 p-8 rounded-xl shadow-xl hover-scale block">
-                        <div class="text-4xl mb-4 text-blue-600">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Join as Influencer</h3>
-                        <p class="text-gray-600 mb-4">Monetize your content and collaborate with top Indian brands</p>
-                        <span class="inline-flex items-center text-blue-600 font-semibold">
-                            Register Now <i class="fas fa-arrow-right ml-2"></i>
-                        </span>
-                    </a>
-                    
-                    <a href="business-register.html" class="bg-white text-gray-800 p-8 rounded-xl shadow-xl hover-scale block">
-                        <div class="text-4xl mb-4 text-purple-600">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Join as Business</h3>
-                        <p class="text-gray-600 mb-4">Find and collaborate with India's top content creators</p>
-                        <span class="inline-flex items-center text-purple-600 font-semibold">
-                            Register Now <i class="fas fa-arrow-right ml-2"></i>
-                        </span>
-                    </a>
+    <section class="hero-gradient pt-24 pb-16 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Main Hero Content -->
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        Bridge the Gap Between<br>
+                        <span class="text-yellow-300">Influencers</span> & 
+                        <span class="text-cyan-300">Businesses</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        India's most comprehensive platform connecting authentic creators with innovative brands. 
+                        No more DM chaos - just seamless collaboration.
+                    </p>
                 </div>
-                
-                <div class="text-blue-100">
-                    <p class="mb-4">Trusted by 50,000+ influencers and 10,000+ businesses across India</p>
-                    <div class="flex justify-center space-x-8 text-sm">
-                        <span><i class="fas fa-check mr-2"></i>Free to Register</span>
-                        <span><i class="fas fa-check mr-2"></i>Verified Profiles</span>
-                        <span><i class="fas fa-check mr-2"></i>Secure Payments</span>
+
+                <!-- Dual Registration Cards -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                    <!-- Influencer Card -->
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 card-hover border border-white/20">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-star text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Join as Influencer</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">
+                                Monetize your content and collaborate with top Indian brands. 
+                                Set your rates, showcase your work, earn authentically.
+                            </p>
+                            <a href="influencer_signup.html" class="btn-secondary text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center">
+                                Register Now <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Business Card -->
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 card-hover border border-white/20">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-cyan-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-building text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Join as Business</h3>
+                            <p class="text-blue-100 mb-6 leading-relaxed">
+                                Find and collaborate with India's top content creators. 
+                                Advanced search, campaign management, and analytics.
+                            </p>
+                            <a href="business_signup.html" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center">
+                                Register Now <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Hero Stats -->
-        <div class="bg-white bg-opacity-10 backdrop-blur-sm border-t border-white border-opacity-20">
-            <div class="container mx-auto px-4 py-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+
+                <!-- Stats Section -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div>
-                        <div class="stats-counter gradient-text">50K+</div>
-                        <p class="text-blue-100">Active Influencers</p>
+                        <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">50K+</div>
+                        <div class="text-blue-200">Active Influencers</div>
                     </div>
                     <div>
-                        <div class="stats-counter gradient-text">10K+</div>
-                        <p class="text-blue-100">Registered Businesses</p>
+                        <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">10K+</div>
+                        <div class="text-blue-200">Businesses</div>
                     </div>
                     <div>
-                        <div class="stats-counter gradient-text">1M+</div>
-                        <p class="text-blue-100">Successful Collaborations</p>
+                        <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">1M+</div>
+                        <div class="text-blue-200">Collaborations</div>
                     </div>
                     <div>
-                        <div class="stats-counter gradient-text">28</div>
-                        <p class="text-blue-100">Indian States Covered</p>
+                        <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">28</div>
+                        <div class="text-blue-200">States Covered</div>
                     </div>
                 </div>
             </div>
@@ -259,69 +218,148 @@
     </section>
 
     <!-- Problem & Solution Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
                         Bridging the Gap Between<br>
-                        <span class="gradient-text">Influencers & Businesses</span>
+                        <span class="text-blue-600">Influencers</span> & <span class="text-orange-500">Businesses</span>
                     </h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        The traditional way of connecting through DMs and emails is broken. We've built India's first comprehensive platform that solves real connection challenges.
+                        The traditional way of connecting through DMs and emails is broken. We've built India's first 
+                        comprehensive platform that solves real connection challenges.
                     </p>
                 </div>
-                
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Problems -->
+
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <!-- Current Challenges -->
                     <div>
-                        <h3 class="text-2xl font-bold text-red-600 mb-6">
-                            <i class="fas fa-times-circle mr-2"></i>
-                            Current Challenges
-                        </h3>
+                        <div class="flex items-center mb-8">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-exclamation-triangle text-red-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Current Challenges</h3>
+                        </div>
                         <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">DMs get lost in the noise - response rates below 5%</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">DMs get lost in the noise - response rates below 5%</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">No standardized pricing or negotiation process</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">No standardized pricing or negotiation process</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Difficulty finding relevant influencers in specific niches</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Difficulty finding relevant influencers in specific niches</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Lack of campaign tracking and ROI measurement</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Lack of campaign tracking and ROI measurement</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Payment delays and disputes</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Payment delays and disputes</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Solutions -->
+
+                    <!-- Our Solutions -->
                     <div>
-                        <h3 class="text-2xl font-bold text-green-600 mb-6">
-                            <i class="fas fa-check-circle mr-2"></i>
-                            Our Solutions
-                        </h3>
+                        <div class="flex items-center mb-8">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Our Solutions</h3>
+                        </div>
                         <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Direct messaging system with 90%+ response rates</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Direct messaging system with 90%+ response rates</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Transparent pricing with built-in negotiation tools</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Transparent pricing with built-in negotiation tools</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Advanced filtering by location, niche, engagement, and audience</p>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Advanced filtering by location, niche, engagement, and audience</span>
                             </div>
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <p class="text-gray-700">Real-ti
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Real-time campaign tracking and comprehensive analytics</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Secure escrow payments with milestone-based releases</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Everything You Need in One Platform
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        From discovery to payment, we've built comprehensive tools to make influencer 
+                        marketing seamless for everyone involved.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Cards -->
+                    <div class="bg-white rounded-xl p-8 card-hover">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-search text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Smart Discovery</h3>
+                        <p class="text-gray-600">AI-powered search to find the perfect influencers based on niche, location, engagement rates, and audience demographics.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 card-hover">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Real-time Analytics</h3>
+                        <p class="text-gray-600">Track campaign performance, ROI, engagement metrics, and audience insights with comprehensive reporting tools.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 card-hover">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-handshake text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Seamless Collaboration</h3>
+                        <p class="text-gray-600">Built-in communication tools, contract management, and milestone tracking for smooth project execution.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 card-hover">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-credit-card text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Secure Payments</h3>
+                        <p class="text-gray-600">Escrow-based payment system with milestone releases, ensuring secure transactions for both parties.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 card-hover">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-tasks text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Campaign Management</h3>
+                        <p class="text-gray-600">End-to-end campaign management with automated workflows, deadline tracking, and performance monitoring.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 card-hover">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-shield-alt text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Verified Profiles</h3>
+                        <p class="text-gray-600">All influencers undergo verification process ensuring authentic followers
