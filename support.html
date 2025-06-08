@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center - ConnectIndia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        .search-focus:focus { box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-link text-3xl text-purple-600 mr-2"></i>
+                        <span class="text-2xl font-bold text-gray-900">ConnectIndia</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors flex items-center">
+                            Platform <i class="fas fa-chevron-down ml-1"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <div class="p-4 grid grid-cols-1 gap-2">
+                                <a href="discovery.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Influencer Discovery</a>
+                                <a href="campaigns.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Campaign Management</a>
+                                <a href="analytics.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Analytics Dashboard</a>
+                                <a href="marketplace.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Marketplace</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors flex items-center">
+                            For Users <i class="fas fa-chevron-down ml-1"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <div class="p-4 grid grid-cols-1 gap-2">
+                                <a href="for_influencers.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">For Influencers</a>
+                                <a href="for_businesses.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">For Businesses</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="pricing.html" class="text-gray-700 hover:text-purple-600 transition-colors">Pricing</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-purple-600 transition-colors">Resources</a>
+                    <a href="about.html" class="text-gray-700 hover:text-purple-600 transition-colors">About</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-700 hover:text-purple-600 transition-colors">Login</a>
+                    <a href="business_signup.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">How Can We Help You?</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Find answers, tutorials, and support resources to get the most out of ConnectIndia</p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto relative">
+                <div class="relative">
+                    <input type="text" placeholder="Search for help articles, tutorials, or FAQs..." 
+                           class="w-full px-6 py-4 pl-14 text-gray-900 rounded-xl search-focus border-0 text-lg">
+                    <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Getting Started</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Campaign Management</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Billing & Payments</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Platform Features</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Cards -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-play text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Video Tutorials</h3>
+                    <p class="text-gray-600 mb-6">Step-by-step video guides to help you master ConnectIndia</p>
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Watch Tutorials</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-comments text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Live Chat Support</h3>
+                    <p class="text-gray-600 mb-6">Get instant help from our support team</p>
+                    <button class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">Start Chat</button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-envelope text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Email Support</h3>
+                    <p class="text-gray-600 mb-6">Send us a detailed message and get personalized assistance</p>
+                    <button class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Categories -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Browse Help Categories</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-rocket text-purple-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Getting Started</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Account Setup</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Profile Creation</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Platform Overview</a></li>
+                        <li><a href="#" class="hover:text-purple-600">First Campaign</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-search text-blue-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Influencer Discovery</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Search Filters</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Audience Analysis</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Verification Process</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Saved Searches</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-bullhorn text-orange-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Campaign Management</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Creating Campaigns</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Collaboration Tools</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Content Approval</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Campaign Tracking</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-chart-bar text-green-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Analytics & Reporting</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Performance Metrics</a></li>
+                        <li><a href="#" class="hover:text-purple-600">ROI Calculation</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Custom Reports</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Export Data</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-credit-card text-indigo-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Billing & Payments</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Subscription Plans</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Payment Methods</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Invoices & Receipts</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-users text-pink-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Account Management</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Profile Settings</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Team Management</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Security Settings</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Data Privacy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-cog text-gray-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Platform Features</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">API Integration</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Mobile App</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Notifications</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Keyboard Shortcuts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <i class="fas fa-question-circle text-yellow-600 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-3">Troubleshooting</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-purple-600">Common Issues</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Browser Support</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Connection Problems</a></li>
+                        <li><a href="#" class="hover:text-purple-600">Bug Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular FAQs -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">How do I get started with ConnectIndia?</h3>
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Getting started is easy! Simply sign up for an account, complete your profile, and you can immediately start discovering influencers or showcasing your services to businesses.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">What are the pricing plans available?</h3>
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-gray-600">We offer flexible pricing plans including a free tier for beginners, professional plans for growing businesses, and enterprise solutions for large organizations. Check our pricing page for detailed information.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">How does the payment system work?</h3>
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Our secure payment system supports multiple Indian payment methods including UPI, net banking, credit/debit cards, and digital wallets. Payments are processed securely and funds are held in escrow until campaign completion.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">How do I verify my influencer profile?</h3>
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Profile verification involves connecting your social media accounts, providing identity documents, and completing an authenticity check. Verified profiles get priority in search results and build more trust with businesses.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Can I use ConnectIndia on mobile devices?</h3>
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-gray-600">Yes! ConnectIndia is fully responsive and works perfectly on mobile devices. We also have dedicated mobile apps for iOS and Android that provide the full platform experience on the go.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="text-purple-600 hover:text-purple-700 font-semibold">View All FAQs <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Videos -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Video Tutorials</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center">
+                        <i class="fas fa-play text-white text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Getting Start
