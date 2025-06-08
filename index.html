@@ -3,268 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influencer Marketing Platform</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>InfluConnect India - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #4F46E5, #9333EA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #FF9933;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            top: 100%;
+            left: 0;
+            border-radius: 8px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .dropdown-content a {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 4px;
+        }
+        .dropdown-content a i {
+            margin-right: 10px;
+            color: #FF9933;
+        }
+        .dropdown-content a:hover {
+            background: #f9f9f9;
+        }
+        .dropdown:hover .dropdown-content {
+            display: grid;
+        }
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1605812860427-3c1a8a86f33f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            margin-top: 70px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
         .cta-button {
-            transition: all 0.3s ease;
+            background: #FF9933;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
         }
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background: #E68A00;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card i {
+            font-size: 2rem;
+            color: #FF9933;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .footer-links li {
+            margin: 0 10px;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+            .dropdown-content {
+                width: 100%;
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
-
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-800">
-                <a href="#">YourLogo</a>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=InfluConnect" alt="InfluConnect India Logo">
             </div>
-            <nav class="hidden lg:flex items-center space-x-8">
-                <a href="#platform" class="text-gray-600 hover:text-indigo-600">Platform</a>
-                <a href="#who-we-serve" class="text-gray-600 hover:text-indigo-600">Who We Serve</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Pricing</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Resources</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Company</a>
-            </nav>
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-indigo-600">Log in</a>
-                <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-md font-semibold cta-button hover:bg-indigo-700">Get Started</a>
-            </div>
-            <button id="mobile-menu-button" class="lg:hidden text-gray-800">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white px-6 pb-4">
-            <a href="#platform" class="block py-2 text-gray-600 hover:text-indigo-600">Platform</a>
-            <a href="#who-we-serve" class="block py-2 text-gray-600 hover:text-indigo-600">Who We Serve</a>
-            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Pricing</a>
-            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Resources</a>
-            <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Company</a>
-            <div class="border-t border-gray-200 mt-4 pt-4">
-                 <a href="#" class="block py-2 text-gray-600 hover:text-indigo-600">Log in</a>
-                 <a href="#" class="block mt-2 bg-indigo-600 text-white text-center px-5 py-2 rounded-md font-semibold cta-button hover:bg-indigo-700">Get Started</a>
-            </div>
-        </div>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="platform.html">Our Platform</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="dropdown">
+                    <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="influencer.html"><i class="fas fa-user"></i> I Am an Influencer</a>
+                        <a href="business.html"><i class="fas fa-briefcase"></i> I Am a Business</a>
+                        <a href="search.html"><i class="fas fa-search"></i> Influencer Search</a>
+                        <a href="campaigns.html"><i class="fas fa-bullhorn"></i> Campaign Management</a>
+                        <a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a>
+                        <a href="social.html"><i class="fas fa-hashtag"></i> Social Listening</a>
+                    </div>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="pt-20">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Connect Influencers & Businesses in India</h1>
+            <p>Join the leading platform to collaborate and grow your brand in Mumbai, Delhi, and beyond.</p>
+            <a href="influencer.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
 
-        <!-- Hero Section -->
-        <section class="py-20 md:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-                    The <span class="gradient-text">End-to-End</span> Influencer<br>Marketing Platform
-                </h1>
-                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    The all-in-one platform to run high-impact influencer marketing campaigns. Find influencers, manage campaigns, and measure ROI.
-                </p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#" class="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg cta-button hover:bg-indigo-700 w-full sm:w-auto">I'm a Business</a>
-                    <a href="#" class="border border-indigo-600 text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg cta-button hover:bg-indigo-50 w-full sm:w-auto">I'm an Influencer</a>
-                </div>
+    <section class="content">
+        <h2>Why Choose InfluConnect?</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Wide Network</h3>
+                <p>Connect with thousands of influencers and businesses across India.</p>
             </div>
-        </section>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Track Performance</h3>
+                <p>Monitor campaigns with real-time analytics and insights.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-handshake"></i>
+                <h3>Easy Collaboration</h3>
+                <p>Seamless communication between influencers and brands.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Trusted By Section -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h3 class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wider">Trusted by the world's leading brands</h3>
-                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                    <!-- Dummy logos -->
-                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=InnovateCo" alt="InnovateCo Logo" class="mx-auto grayscale hover:grayscale-0 transition duration-300" onerror="this.onerror=null;this.src='https://placehold.co/150x50/cccccc/ffffff?text=Brand+A';">
-                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=Quantum" alt="Quantum Logo" class="mx-auto grayscale hover:grayscale-0 transition duration-300" onerror="this.onerror=null;this.src='https://placehold.co/150x50/cccccc/ffffff?text=Brand+B';">
-                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=Apex" alt="Apex Logo" class="mx-auto grayscale hover:grayscale-0 transition duration-300" onerror="this.onerror=null;this.src='https://placehold.co/150x50/cccccc/ffffff?text=Brand+C';">
-                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=Momentum" alt="Momentum Logo" class="mx-auto grayscale hover:grayscale-0 transition duration-300" onerror="this.onerror=null;this.src='https://placehold.co/150x50/cccccc/ffffff?text=Brand+D';">
-                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=Stellar" alt="Stellar Logo" class="mx-auto grayscale hover:grayscale-0 transition duration-300" onerror="this.onerror=null;this.src='https://placehold.co/150x50/cccccc/ffffff?text=Brand+E';">
-                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=Vertex" alt="Vertex Logo" class="mx-auto grayscale hover:grayscale-0 transition duration-300" onerror="this.onerror=null;this.src='https://placehold.co/150x50/cccccc/ffffff?text=Brand+F';">
-                </div>
+    <section class="content" id="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="grid">
+            <div class="card">
+                <p>"InfluConnect helped me find top fashion influencers in Mumbai!"</p>
+                <p>- Priya S., Brand Manager</p>
             </div>
-        </section>
+            <div class="card">
+                <p>"As an influencer, I love how easy it is to connect with brands."</p>
+                <p>- Rohan K., Instagram Influencer</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Platform Features Section -->
-        <section class="py-20" id="platform">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold">The Complete Influencer Marketing Suite</h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">One platform with all the tools you need to build a successful influencer marketing strategy from start to finish.</p>
-                </div>
-                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-                    <!-- Feature 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-search"></i></div>
-                        <h3 class="text-xl font-bold mb-2">Discover</h3>
-                        <p class="text-gray-600">Find the perfect influencers for your brand from a database of over 200M+ profiles.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-chart-bar"></i></div>
-                        <h3 class="text-xl font-bold mb-2">Analyze</h3>
-                        <p class="text-gray-600">Make data-driven decisions with in-depth analytics on any influencer's profile and audience.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-tasks"></i></div>
-                        <h3 class="text-xl font-bold mb-2">Manage</h3>
-                        <p class="text-gray-600">Organize your contacts, and manage your campaigns and content all in one place.</p>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-file-alt"></i></div>
-                        <h3 class="text-xl font-bold mb-2">Measure</h3>
-                        <p class="text-gray-600">Track your campaign performance and measure your ROI with automated reports.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Who We Serve Section -->
-        <section class="py-20 bg-gray-50" id="who-we-serve">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span class="text-indigo-600 font-semibold">FOR BRANDS & BUSINESSES</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mt-2">Tools to grow with your brand</h2>
-                        <p class="mt-4 text-lg text-gray-600">Whether you are just getting started or scaling up your influencer program, our platform supports your strategy every step of the way, helping you save time and get results.</p>
-                        <ul class="mt-6 space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Build a predictable pipeline of high-performing influencers.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Automate tedious tasks and focus on building relationships.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Prove the value of your influencer programs with clear ROI.</span>
-                            </li>
-                        </ul>
-                         <a href="#" class="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold cta-button hover:bg-indigo-700">Learn More for Businesses</a>
-                    </div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Marketing Dashboard" class="rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/E0E7FF/4F46E5?text=Brands+Dashboard';">
-                    </div>
-                </div>
-                 <div class="grid md:grid-cols-2 gap-16 items-center mt-24">
-                    <div class="order-last md:order-first">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Agency Team Collaboration" class="rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/E0E7FF/4F46E5?text=Agencies+Dashboard';">
-                    </div>
-                    <div>
-                        <span class="text-indigo-600 font-semibold">FOR INFLUENCERS & CREATORS</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mt-2">Connect with leading brands</h2>
-                        <p class="mt-4 text-lg text-gray-600">Find and collaborate with top brands that match your style and audience. Manage your partnerships, get paid securely, and grow your personal brand.</p>
-                         <ul class="mt-6 space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Discover partnership opportunities you'll love.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Streamline your communication and contracts.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Showcase your portfolio and analytics to brands.</span>
-                            </li>
-                        </ul>
-                         <a href="#" class="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold cta-button hover:bg-indigo-700">Explore for Influencers</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- CTA Section -->
-        <section class="bg-indigo-700 text-white">
-            <div class="container mx-auto px-6 py-20 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold">Ready to Elevate Your Influence?</h2>
-                 <p class="mt-4 text-lg text-indigo-200 max-w-2xl mx-auto">Whether you're a brand looking for talent or a creator ready to collaborate, join the platform where partnerships happen.</p>
-                 <div class="mt-10">
-                    <a href="#" class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg cta-button hover:bg-gray-100">Get Started Now</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-16">
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <div class="lg:col-span-2">
-                    <h3 class="text-xl font-bold">YourLogo</h3>
-                    <p class="mt-4 text-gray-400">The leading influencer marketing platform for growing brands and agencies.</p>
-                    <div class="mt-6 flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-semibold tracking-wider uppercase">For Business</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Discover</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Analyze</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Manage</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Measure</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-semibold tracking-wider uppercase">For Influencers</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Find Brands</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">My Portfolio</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Payments</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold tracking-wider uppercase">Company</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-semibold tracking-wider uppercase">Resources</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Guides</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Webinars</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
-                <p>&copy; 2024 YourCompany, Inc. All rights reserved.</p>
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 InfluConnect India. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="help.html">Help Center</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    const content = dropdown.querySelector('.dropdown-content');
+                    content.style.display = 'grid';
+                });
+                dropdown.addEventListener('mouseleave', () => {
+                    const content = dropdown.querySelector('.dropdown-content');
+                    content.style.display = 'none';
+                });
+            });
         });
     </script>
 </body>
