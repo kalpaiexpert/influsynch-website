@@ -3,453 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - ConnectIndia</title>
+    <title>Contact Us - ConnectIndia</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .india-gradient { background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .hover-scale { transition: transform 0.3s ease; }
-        .hover-scale:hover { transform: scale(1.05); }
-        .timeline-item::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #667eea; }
-        .timeline-dot { width: 12px; height: 12px; background: #667eea; border-radius: 50%; position: absolute; left: 15px; }
+        .hover-scale:hover { transform: translateY(-5px); }
+        .form-input { transition: all 0.3s ease; }
+        .form-input:focus { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1); }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .btn-primary:hover { background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%); }
+        .office-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .support-card { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .partnership-card { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .nav-dropdown { opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; }
+        .nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-link text-white text-sm"></i>
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <i class="fas fa-link text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">ConnectIndia</span>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="relative nav-item">
+                        <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+                            Our Platform <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl nav-dropdown z-50">
+                            <div class="p-4 grid grid-cols-1 gap-2">
+                                <a href="#" class="p-2 hover:bg-gray-50 rounded text-sm">Influencer Discovery</a>
+                                <a href="#" class="p-2 hover:bg-gray-50 rounded text-sm">Campaign Management</a>
+                                <a href="#" class="p-2 hover:bg-gray-50 rounded text-sm">Analytics Dashboard</a>
+                                <a href="#" class="p-2 hover:bg-gray-50 rounded text-sm">Payment Processing</a>
+                            </div>
                         </div>
-                        <span class="text-xl font-bold text-gray-800">ConnectIndia</span>
+                    </div>
+                    
+                    <div class="relative nav-item">
+                        <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium flex items-center">
+                            Who We Serve <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl nav-dropdown z-50">
+                            <div class="p-4">
+                                <a href="#" class="block p-2 hover:bg-gray-50 rounded text-sm">For Influencers</a>
+                                <a href="#" class="block p-2 hover:bg-gray-50 rounded text-sm">For Businesses</a>
+                                <a href="#" class="block p-2 hover:bg-gray-50 rounded text-sm">For Agencies</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">Pricing</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">Resources</a>
+                    <a href="#" class="text-indigo-600 font-medium">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Login</a>
+                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:scale-105 transition-transform">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Let's Connect & Grow Together
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Have questions about ConnectIndia? Need support with your campaigns? 
+                Want to explore partnership opportunities? We're here to help you succeed.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact-form" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>Send Us a Message
+                </a>
+                <a href="#offices" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-map-marker-alt mr-2"></i>Find Our Offices
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Customer Support -->
+                <div class="text-center p-8 rounded-xl card-shadow hover-scale support-card text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Customer Support</h3>
+                    <p class="mb-6 text-blue-100">
+                        Get instant help with platform features, technical issues, and account management.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <p><i class="fas fa-phone mr-2"></i>+91-800-123-4567</p>
+                        <p><i class="fas fa-envelope mr-2"></i>support@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2"></i>24/7 Support Available</p>
+                    </div>
+                    <a href="#" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Start Live Chat
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium flex items-center">
-                            Our Platform <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                            <div class="p-4 grid gap-2">
-                                <a href="platform.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Platform Overview</a>
-                                <a href="influencer-search.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Influencer Discovery</a>
-                                <a href="campaign-management.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Campaign Management</a>
-                                <a href="analytics.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Analytics & Reporting</a>
+                <!-- Business Partnerships -->
+                <div class="text-center p-8 rounded-xl card-shadow hover-scale partnership-card text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Partnership Inquiries</h3>
+                    <p class="mb-6 text-green-100">
+                        Explore strategic partnerships, integrations, and collaboration opportunities.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <p><i class="fas fa-phone mr-2"></i>+91-800-987-6543</p>
+                        <p><i class="fas fa-envelope mr-2"></i>partnerships@connectindia.com</p>
+                        <p><i class="fas fa-calendar mr-2"></i>Schedule a Meeting</p>
+                    </div>
+                    <a href="#" class="bg-white text-green-600 px-6 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                        Book Meeting
+                    </a>
+                </div>
+
+                <!-- Sales & Demo -->
+                <div class="text-center p-8 rounded-xl card-shadow hover-scale office-card text-white">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Sales & Demo</h3>
+                    <p class="mb-6 text-pink-100">
+                        Book a personalized demo and learn how ConnectIndia can transform your business.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <p><i class="fas fa-phone mr-2"></i>+91-800-456-7890</p>
+                        <p><i class="fas fa-envelope mr-2"></i>sales@connectindia.com</p>
+                        <p><i class="fas fa-video mr-2"></i>Free Demo Available</p>
+                    </div>
+                    <a href="#" class="bg-white text-pink-600 px-6 py-2 rounded-lg font-semibold hover:bg-pink-50 transition-colors">
+                        Book Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Send Us a Message</h2>
+                    <p class="text-xl text-gray-600">
+                        Fill out the form below and our team will get back to you within 24 hours.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl card-shadow p-8">
+                    <form class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">First Name *</label>
+                            <input type="text" class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none" placeholder="Enter your first name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Last Name *</label>
+                            <input type="text" class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none" placeholder="Enter your last name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                            <input type="email" class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none" placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none" placeholder="+91 98765 43210">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Company/Organization</label>
+                            <input type="text" class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none" placeholder="Your company name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Inquiry Type *</label>
+                            <select class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none">
+                                <option>General Inquiry</option>
+                                <option>Platform Demo</option>
+                                <option>Technical Support</option>
+                                <option>Partnership Opportunity</option>
+                                <option>Media & Press</option>
+                                <option>Billing Support</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+                            <textarea rows="6" class="w-full p-4 border border-gray-300 rounded-lg form-input focus:border-indigo-500 focus:outline-none" placeholder="Tell us more about how we can help you..."></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <div class="flex items-center mb-6">
+                                <input type="checkbox" class="mr-3 w-4 h-4 text-indigo-600">
+                                <label class="text-gray-600">
+                                    I agree to receive communications from ConnectIndia and accept the 
+                                    <a href="#" class="text-indigo-600 hover:underline">Privacy Policy</a>
+                                </label>
                             </div>
+                            <button type="submit" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold w-full md:w-auto hover:scale-105 transition-transform">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
                         </div>
-                    </div>
-
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium flex items-center">
-                            Who We Serve <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                            <div class="p-4 grid gap-2">
-                                <a href="for-businesses.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Businesses</a>
-                                <a href="for-influencers.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Influencers</a>
-                                <a href="for-agencies.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Agencies</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="pricing.html" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Pricing</a>
-                    <a href="resources.html" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Resources</a>
-                    <a href="about.html" class="text-purple-600 px-3 py-2 text-sm font-medium">About</a>
-                </div>
-
-                <div class="flex items-center space-x-4">
-                    <a href="login.html" class="text-gray-700 hover:text-purple-600 text-sm font-medium">Login</a>
-                    <a href="business-register.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-6">Revolutionizing Influencer Marketing in India</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">At ConnectIndia, we're building bridges between authentic creators and innovative businesses across the Indian subcontinent, fostering meaningful collaborations that drive real results.</p>
-            <div class="flex justify-center space-x-6 text-lg">
-                <div class="flex items-center">
-                    <i class="fas fa-users mr-2"></i>
-                    <span>50,000+ Influencers</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-building mr-2"></i>
-                    <span>5,000+ Businesses</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
-                    <span>All Indian States</span>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Story</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Born from the understanding that India's diverse digital landscape needed a platform that truly understands local culture, languages, and business dynamics.</p>
+    <!-- Office Locations -->
+    <section id="offices" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Offices Across India</h2>
+                <p class="text-xl text-gray-600">
+                    Visit us at any of our office locations or connect with our regional teams.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Building India's Digital Bridge</h3>
-                    <p class="text-gray-600 mb-6">Founded in 2023 in Mumbai, ConnectIndia emerged from a simple observation: while global platforms existed, none truly understood the nuances of Indian influencer marketing - from regional language preferences to cultural celebrations, from tier-2 city micro-influencers to Bollywood celebrities.</p>
-                    <p class="text-gray-600 mb-6">Our founders, having worked extensively in India's digital marketing space, recognized the gap between authentic Indian creators and businesses looking to connect with diverse audiences across the country's 1.4 billion population.</p>
-                    <p class="text-gray-600">Today, we're proud to be India's fastest-growing influencer marketing platform, trusted by brands from startups to Fortune 500 companies, and creators from metros to tier-3 cities.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mumbai Office -->
+                <div class="bg-white rounded-xl card-shadow p-6 hover-scale border-l-4 border-indigo-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Mumbai Headquarters</h3>
+                            <p class="text-gray-600">Financial Capital</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i>
+                            Tower A, BKC Business Center<br>
+                            Bandra Kurla Complex, Mumbai 400051
+                        </p>
+                        <p><i class="fas fa-phone mr-2 text-indigo-500"></i>+91-22-4567-8900</p>
+                        <p><i class="fas fa-envelope mr-2 text-indigo-500"></i>mumbai@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2 text-indigo-500"></i>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-purple-100 to-blue-100 p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Why India Needed ConnectIndia</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Regional language content creators were underrepresented</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Tier-2 and tier-3 city influencers lacked opportunities</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Businesses struggled with cultural authenticity</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Limited understanding of Indian festivals and trends</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Complex pricing structures unsuited for Indian market</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Timeline -->
-            <div class="relative">
-                <h3 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Journey</h3>
-                <div class="relative">
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q1</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">The Beginning</h4>
-                            <p class="text-gray-600 mt-2">ConnectIndia was founded in Mumbai with a vision to democratize influencer marketing in India. Started with 100 beta users.</p>
+                <!-- Delhi Office -->
+                <div class="bg-white rounded-xl card-shadow p-6 hover-scale border-l-4 border-pink-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">New Delhi Office</h3>
+                            <p class="text-gray-600">National Capital</p>
                         </div>
                     </div>
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q2</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">Regional Expansion</h4>
-                            <p class="text-gray-600 mt-2">Launched support for 8 Indian languages and onboarded creators from 15 states. Reached 5,000 registered users.</p>
+                    <div class="space-y-2 text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-pink-500"></i>
+                            Cyber Hub, Plot 8, DLF Phase 2<br>
+                            Sector 25, Gurugram, Haryana 122002
+                        </p>
+                        <p><i class="fas fa-phone mr-2 text-pink-500"></i>+91-11-4567-8901</p>
+                        <p><i class="fas fa-envelope mr-2 text-pink-500"></i>delhi@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2 text-pink-500"></i>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Bangalore Office -->
+                <div class="bg-white rounded-xl card-shadow p-6 hover-scale border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Bangalore Office</h3>
+                            <p class="text-gray-600">Tech Capital</p>
                         </div>
                     </div>
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q3</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">AI-Powered Matching</h4>
-                            <p class="text-gray-600 mt-2">Introduced AI-powered influencer-brand matching system designed specifically for Indian market dynamics. 25,000+ active users.</p>
+                    <div class="space-y-2 text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-green-500"></i>
+                            UB City Mall, Level 3<br>
+                            Vittal Mallya Road, Bangalore 560001
+                        </p>
+                        <p><i class="fas fa-phone mr-2 text-green-500"></i>+91-80-4567-8902</p>
+                        <p><i class="fas fa-envelope mr-2 text-green-500"></i>bangalore@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2 text-green-500"></i>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Hyderabad Office -->
+                <div class="bg-white rounded-xl card-shadow p-6 hover-scale border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Hyderabad Office</h3>
+                            <p class="text-gray-600">Cyberabad</p>
                         </div>
                     </div>
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q4</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">Major Partnerships</h4>
-                            <p class="text-gray-600 mt-2">Partnered with leading Indian brands and achieved 50,000+ registered influencers and 5,000+ businesses across India.</p>
+                    <div class="space-y-2 text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                            T-Hub 2.0, Raidurg<br>
+                            HITEC City, Hyderabad 500081
+                        </p>
+                        <p><i class="fas fa-phone mr-2 text-blue-500"></i>+91-40-4567-8903</p>
+                        <p><i class="fas fa-envelope mr-2 text-blue-500"></i>hyderabad@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2 text-blue-500"></i>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Chennai Office -->
+                <div class="bg-white rounded-xl card-shadow p-6 hover-scale border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Chennai Office</h3>
+                            <p class="text-gray-600">Gateway to South</p>
                         </div>
                     </div>
-                    <div class="timeline-item relative pl-16">
-                        <div class="timeline-dot bg-green-500"></div>
-                        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg shadow-lg">
-                            <span class="text-green-600 font-bold">2024 & Beyond</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">The Future</h4>
-                            <p class="text-gray-600 mt-2">Expanding to Southeast Asia while remaining India's most trusted influencer marketing platform with 100,000+ creators and advanced analytics.</p>
+                    <div class="space-y-2 text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-purple-500"></i>
+                            Phoenix MarketCity, 3rd Floor<br>
+                            Velachery Main Road, Chennai 600042
+                        </p>
+                        <p><i class="fas fa-phone mr-2 text-purple-500"></i>+91-44-4567-8904</p>
+                        <p><i class="fas fa-envelope mr-2 text-purple-500"></i>chennai@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2 text-purple-500"></i>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Pune Office -->
+                <div class="bg-white rounded-xl card-shadow p-6 hover-scale border-l-4 border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-building text-white"></i>
                         </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Pune Office</h3>
+                            <p class="text-gray-600">IT Hub</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-yellow-500"></i>
+                            Amanora Town Centre, Hadapsar<br>
+                            Pune, Maharashtra 411028
+                        </p>
+                        <p><i class="fas fa-phone mr-2 text-yellow-500"></i>+91-20-4567-8905</p>
+                        <p><i class="fas fa-envelope mr-2 text-yellow-500"></i>pune@connectindia.com</p>
+                        <p><i class="fas fa-clock mr-2 text-yellow-500"></i>Mon-Fri: 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Values -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Makes ConnectIndia Different</h2>
-                <p class="text-xl text-gray-600">Our core values drive everything we do</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-heart text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Authenticity First</h3>
-                    <p class="text-gray-600">We believe in genuine connections. Our platform promotes real engagement over vanity metrics, ensuring authentic brand-creator partnerships.</p>
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-xl text-gray-600">
+                        Quick answers to common questions about ConnectIndia.
+                    </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-globe-asia text-blue-600 text-2xl"></i>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg card-shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">How quickly can I get started with ConnectIndia?</h3>
+                        <p class="text-gray-600">You can create your account and start exploring our platform immediately. For businesses, we recommend scheduling a demo to customize your setup for optimal results.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">India-Centric Design</h3>
-                    <p class="text-gray-600">Built specifically for Indian creators and businesses, understanding regional preferences, cultural nuances, and local market dynamics.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    
+                    <div class="bg-white rounded-lg card-shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Do you provide customer support in regional languages?</h3>
+                        <p class="text-gray-600">Yes! Our support team can assist you in Hindi, English, Tamil, Telugu, Bengali, Marathi, and other major Indian languages.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Data-Driven Insights</h3>
-                    <p class="text-gray-600">Advanced analytics and AI-powered recommendations help brands and creators make informed decisions for maximum campaign impact.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-users text-yellow-600 text-2xl"></i>
+                    
+                    <div class="bg-white rounded-lg card-shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">What is your response time for support queries?</h3>
+                        <p class="text-gray-600">We typically respond to support tickets within 2-4 hours during business hours. For urgent issues, our live chat provides immediate assistance.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Inclusive Community</h3>
-                    <p class="text-gray-600">From mega-influencers to nano-creators, from metros to rural areas - we provide equal opportunities for all genuine content creators.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                    
+                    <div class="bg-white rounded-lg card-shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Can I schedule an in-person meeting?</h3>
+                        <p class="text-gray-600">Absolutely! Contact any of our regional offices to schedule an in-person consultation. We also offer virtual meetings for added convenience.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Trust & Transparency</h3>
-                    <p class="text-gray-600">Secure payments, verified profiles, and transparent pricing ensure both creators and brands can collaborate with confidence.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-rocket text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation Drive</h3>
-                    <p class="text-gray-600">Constantly evolving with new features, integrations, and tools to stay ahead of the dynamic Indian digital marketing landscape.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Team -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Meet Our Leadership</h2>
-                <p class="text-xl text-gray-600">Passionate experts driving India's influencer marketing revolution</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Arjun Sharma</h3>
-                    <p class="text-purple-600 mb-4">Founder & CEO</p>
-                    <p class="text-gray-600 text-sm">Former Marketing Director at top Indian e-commerce company. 8+ years in digital marketing and influencer partnerships across India.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Priya Mehta</h3>
-                    <p class="text-purple-600 mb-4">Co-Founder & CTO</p>
-                    <p class="text-gray-600 text-sm">Ex-Google engineer specializing in AI and machine learning. Expert in building scalable platforms for Indian market dynamics.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Rahul Gupta</h3>
-                    <p class="text-purple-600 mb-4">VP of Operations</p>
-                    <p class="text-gray-600 text-sm">10+ years in operations and business development. Led expansion strategies for major brands across Indian tier-2 and tier-3 cities.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Sneha Patel</h3>
-                    <p class="text-purple-600 mb-4">Head of Creator Relations</p>
-                    <p class="text-gray-600 text-sm">Former influencer manager at leading talent agency. Deep understanding of creator needs and brand collaboration dynamics.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Vikash Kumar</h3>
-                    <p class="text-purple-600 mb-4">Head of Business Development</p>
-                    <p class="text-gray-600 text-sm">MBA from IIM, 7+ years in B2B sales and partnerships. Specialist in building relationships with Indian enterprises and SMEs.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-indigo-400 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ananya Singh</h3>
-                    <p class="text-purple-600 mb-4">VP of Product</p>
-                    <p class="text-gray-600 text-sm">Product management expert with focus on user experience. Previously built consumer apps for Indian market with 10M+ users.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics -->
-    <section class="py-20 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">ConnectIndia by the Numbers</h2>
-                <p class="text-xl">Making a real impact across India's digital landscape</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold mb-2">50,000+</div>
-                    <div class="text-lg">Verified Influencers</div>
-                    <div class="text-sm opacity-80 mt-2">Across all Indian states</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">5,000+</div>
-                    <div class="text-lg">Active Businesses</div>
-                    <div class="text-sm opacity-80 mt-2">From startups to enterprises</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">100,000+</div>
-                    <div class="text-lg">Successful Campaigns</div>
-                    <div class="text-sm opacity-80 mt-2">With measurable ROI</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">₹50Cr+</div>
-                    <div class="text-lg">Creator Earnings</div>
-                    <div class="text-sm opacity-80 mt-2">Paid to Indian creators</div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 text-center mt-12">
-                <div>
-                    <div class="text-3xl font-bold mb-2">22</div>
-                    <div class="text-lg">Indian Languages</div>
-                    <div class="text-sm opacity-80 mt-2">Platform support</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">750+</div>
-                    <div class="text-lg">Cities Covered</div>
-                    <div class="text-sm opacity-80 mt-2">Including tier-3 cities</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">95%</div>
-                    <div class="text-lg">Customer Satisfaction</div>
-                    <div class="text-sm opacity-80 mt-2">Based on user feedback</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Marketing?</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Join thousands of Indian businesses and creators who trust ConnectIndia for authentic, results-driven influencer partnerships.</p>
-            
+    <!-- CTA Section -->
+    <section class="gradient-bg py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Transform Your Influencer Marketing?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join thousands of Indian businesses and influencers who trust ConnectIndia for their collaboration needs.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="business-register.html" class="bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors">
-                    <i class="fas fa-building mr-2"></i>Register as Business
+                <a href="#" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-rocket mr-2"></i>Start Free Trial
                 </a>
-                <a href="influencer-register.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                    <i class="fas fa-star mr-2"></i>Join as Influencer
+                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors">
+                    <i class="fas fa-calendar mr-2"></i>Book a Demo
                 </a>
-            </div>
-
-            <div class="mt-8 text-gray-400">
-                <p>Have questions? <a href="contact.html" class="text-purple-400 hover:text-purple-300">Contact our team</a> for a personalized demo.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-5 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-link text-white text-sm"></i>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <i class="fas fa-link text-white"></i>
                         </div>
                         <span class="text-xl font-bold">ConnectIndia</span>
                     </div>
-                    <p class="text-gray-400 mb-4">India's premier platform connecting authentic influencers with innovative businesses. Built for the Indian market, by Indian experts.</p>
+                    <p class="text-gray-400 mb-4">
+                        India's premier platform connecting authentic influencers with innovative businesses.
+                    </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
-
+                
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Platform</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="platform.html" class="hover:text-white">Overview</a></li>
-                        <li><a href="influencer-search.html" class="hover:text-white">Find Influencers</a></li>
-                        <li><a href="campaign-management.html" class="hover:text-white">Manage Campaigns</a></li>
-                        <li><a href="analytics.html" class="hover:text-white">Analytics</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Influencer Discovery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Campaign Management</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Analytics</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Payment Processing</a></li>
                     </ul>
                 </div>
-
+                
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Who We Serve</h4>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="for-businesses.html" class="hover:text-white">Businesses</a></li>
-                        <li><a href="for-influencers.html" class="hover:text-white">Influencers</a></li>
-                        <li><a href="for-agencies.html" class="hover:text-white">Agencies</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">System Status</a></li>
                     </ul>
                 </div>
-
+                
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="blog.html" class="hover:text-white">Blog</a></li>
-                        <li><a href="case-studies.html" class="hover:text-white">Case Studies</a></li>
-                        <li><a href="help.html" class="hover:text-white">Help Center</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400">&copy; 2024 ConnectIndia. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                    <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
-                    <a href="cookies.html" class="text-gray-400 hover:text-white">Cookie Policy</a>
-                </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Made with ❤️ in India.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hover-scale').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
