@@ -1,35 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pricing | Collabverse</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - ConnectIndia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .popular-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+    </style>
 </head>
-<body>
-
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Hashtag_icon.svg" alt="Collabverse Logo" />
-      </a>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="platform.html">Our Platform</a></li>
-        <li><a href="who-we-serve.html">Who We Serve</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-      </ul>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                            ConnectIndia
+                        </h1>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex items-baseline space-x-8">
+                            <div class="relative group">
+                                <button class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium flex items-center">
+                                    Our Platform <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                                </button>
+                                <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                                    <div class="py-2">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Influencer Discovery</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Campaign Management</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Analytics Dashboard</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Payment Processing</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative group">
+                                <button class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium flex items-center">
+                                    Who We Serve <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                                </button>
+                                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                                    <div class="py-2">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">For Influencers</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">For Businesses</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">For Agencies</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">About</a>
+                            <a href="#" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Resources</a>
+                            <a href="#" class="text-purple-600 px-3 py-2 text-sm font-medium border-b-2 border-purple-600">Pricing</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <select class="text-sm text-gray-600 bg-transparent border-none">
+                        <option>🇮🇳 English</option>
+                        <option>🇮🇳 हिंदी</option>
+                    </select>
+                    <a href="#" class="text-gray-700 hover:text-purple-600 text-sm font-medium">Login</a>
+                    <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors">
+                        Start Free Trial
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="content">
-    <h1>Pricing</h1>
-    <p>Choose the right plan to fit your goals. Collabverse offers flexible pricing for teams of all sizes — from startups to global brands.</p>
-  </main>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-6">Choose Your Perfect Plan</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Flexible pricing designed for businesses of all sizes across India. From startups to enterprises, 
+                find the perfect plan to scale your influencer marketing efforts.
+            </p>
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <span class="text-lg">Monthly</span>
+                <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                    <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                    <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                </div>
+                <span class="text-lg">Annual <span class="bg-green-500 text-white px-2 py-1 rounded-full text-sm ml-2">Save 20%</span></span>
+            </div>
+        </div>
+    </section>
 
+    <!-- Pricing Cards -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Starter Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border-2 border-gray-100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect for small businesses and new creators</p>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">₹2,999</div>
+                        <div class="text-gray-600">/month</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Up to 50 influencer contacts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Basic search filters</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">5 active campaigns</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Email support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Basic analytics</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Start Free Trial
+                    </button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border-2 border-purple-500 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="popular-badge text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-6">Ideal for growing businesses and agencies</p>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">₹7,999</div>
+                        <div class="text-gray-600">/month</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Up to 500 influencer contacts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Advanced search & filtering</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">25 active campaigns</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Detailed analytics & reporting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Campaign management tools</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Start Free Trial
+                    </button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border-2 border-gray-100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Business</h3>
+                        <p class="text-gray-600 mb-6">For established brands and large agencies</p>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">₹15,999</div>
+                        <div class="text-gray-600">/month</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Up to 2,000 influencer contacts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">AI-powered recommendations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">100 active campaigns</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Advanced ROI tracking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">White-label reporting</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Contact Sales
+                    </button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover border-2 border-gray-100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">Custom solutions for large organizations</p>
+                        <div class="text-4xl font-bold text-gray-900 mb-2">Custom</div>
+                        <div class="text-gray-600">Contact us</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Unlimited influencer contacts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Custom integrations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Unlimited campaigns</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">24/7 priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Custom analytics & insights</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">API access</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Compare All Features</h2>
+                <p class="text-xl text-gray-600">See exactly what's included in each plan</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white rounded-lg shadow-lg overflow-hidden">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="text-left p-6 font-semibold text-gray-900">Features</th>
+                            <th class="text-center p-6 font-semibold text-gray-900">Starter</th>
+                            <th class="text-center p-6 font-semibold text-gray-900">Professional</th>
+                            <th class="text-center p-6 font-semibold text-gray-900">Business</th>
+                            <th class="text-center p-6 font-semibold text-gray-900">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-6 font-medium text-gray-900">Influencer Contacts</td>
+                            <td class="p-6 text-center">50</td>
+                            <td class="p-6 text-center">500</td>
+                            <td class="p-6 text-center">2,000</td>
+                            <td class="p-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-6 font-medium text-gray-900">Active Campaigns</td>
+                            <td class="p-6 text-center">5</td>
+                            <td class="p-6 text-center">25</td>
+                            <td class="p-6 text-center">100</td>
+                            <td class="p-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium text-gray-900">Advanced Search</td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-6 font-medium text-gray-900">AI Recommendations</td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium text-gray-900">White-label Reporting</td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-6 font-medium text-gray-900">API Access</td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-times text-red-500"></i></td>
+                            <td class="p-6 text-center"><i class="fas fa-check text-green-500"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Everything you need to know about our pricing</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900">Can I upgrade or downgrade my plan anytime?</h3>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle, and we'll prorate any differences.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900">Is there a free trial available?</h3>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Yes! We offer a 14-day free trial for all our plans. No credit card required to start your trial.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900">What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>We accept all major credit cards, debit cards, UPI, net banking, and bank transfers. All payments are processed securely through our encrypted payment gateway.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you offer discounts for annual plans?</h3>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Yes! Save 20% when you choose annual billing. This discount is automatically applied when you select the annual payment option.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900">Can I cancel my subscription anytime?</h3>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Absolutely! You can cancel your subscription at any time from your account settings. Your access will continue until the end of your current billing period.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-900">Is there setup assistance available?</h3>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Yes! Our customer success team provides onboarding assistance for all plans. Business and Enterprise customers get dedicated setup support and training sessions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">
+                Join thousands of businesses and influencers already using ConnectIndia to build successful partnerships across India.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    Start Free Trial
+                </a>
+                <a href="#" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors">
+                    Schedule Demo
+                </a>
+            </div>
+            <p class="text-sm mt-4 opacity-80">
+                14-day free trial • No credit card required • Cancel anytime
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">ConnectIndia</h3>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        India's premier platform connecting authentic influencers with innovative businesses. 
+                        Building meaningful partnerships across the diverse Indian market.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Influencer Discovery</a></li>
+                        <li><a href="#" class="hover:text-white">Campaign Management</a></li>
+                        <li><a href="#" class="hover:text-white">Analytics</a></li>
+                        <li><a href="#" class="hover:text-white">Payment Processing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">For Influencers</a></li>
+                        <li><a href="#" class="hover:text-white">For Businesses</a></li>
+                        <li><a href="#" class="hover:text-white">For Agencies</a></li>
+                        <li><a href="#" class="hover:text-white">Enterprise</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">API Docs</a></li>
+                        <li><a href="#" class="hover:text-white">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 ConnectIndia. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Toggle switch functionality
+        document.getElementById('toggle').addEventListener('change', function() {
+            const prices = {
+                starter: { monthly: '₹2,999', annual: '₹2,399' },
+                professional: { monthly: '₹7,999', annual: '₹6,399' },
+                business: { monthly: '₹15,999', annual: '₹12,799' }
+            };
+            
+            const isAnnual = this.checked;
+            const priceElements = document.querySelectorAll('.text-4xl');
+            
+            if (isAnnual) {
+                priceElements[0].textContent = prices.starter.annual;
+                priceElements[1].textContent = prices.professional.annual;
+                priceElements[2].textContent = prices.business.annual;
+            } else {
+                priceElements[0].textContent = prices.starter.monthly;
+                priceElements[1].textContent = prices.professional.monthly;
+                priceElements[2].textContent = prices.business.monthly;
+            }
+        });
+    </script>
+
+    <style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #667eea;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #667eea;
+        }
+    </style>
 </body>
 </html>
