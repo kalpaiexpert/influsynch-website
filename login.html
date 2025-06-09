@@ -1,87 +1,315 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Influsynch</title>
+    <title>Login - ConnectIndia</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .indian-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='10' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .custom-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .hover-scale {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .input-focus:focus {
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #667eea;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="gradient-bg indian-pattern min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">Influsynch</a>
-            <div class="space-x-4 hidden md:flex items-center">
-                <a href="index.html" class="hover:text-gray-200">Home</a>
-                <a href="about.html" class="hover:text-gray-200">About</a>
-                <a href="services.html" class="hover:text-gray-200">Services</a>
-                <a href="influencers.html" class="hover:text-gray-200">Influencers</a>
-                <a href="businesses.html" class="hover:text-gray-200">Businesses</a>
-                <a href="contact.html" class="hover:text-gray-200">Contact</a>
-                <a href="login.html" class="hover:text-gray-200">Login</a>
-                <a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
+    <nav class="bg-white shadow-lg relative z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-link text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">ConnectIndia</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="about.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">About</a>
+                    <a href="for_influencers.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">For Influencers</a>
+                    <a href="for_businesses.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">For Businesses</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Contact</a>
+                </div>
             </div>
-            <button id="menu-toggle" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
-            <a href="index.html" class="block py-2 hover:text-gray-200">Home</a>
-            <a href="about.html" class="block py-2 hover:text-gray-200">About</a>
-            <a href="services.html" class="block py-2 hover:text-gray-200">Services</a>
-            <a href="influencers.html" class="block py-2 hover:text-gray-200">Influencers</a>
-            <a href="businesses.html" class="block py-2 hover:text-gray-200">Businesses</a>
-            <a href="contact.html" class="block py-2 hover:text-gray-200">Contact</a>
-            <a href="login.html" class="block py-2 hover:text-gray-200">Login</a>
-            <a href="login.html" class="block py-2 bg-white text-blue-600 px-4 rounded-full font-semibold hover:bg-gray-200">Start Free Trial</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-cover bg-center h-96 flex items-center justify-center text-white" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Log In to Your Account</h1>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Login Card -->
+            <div class="bg-white rounded-2xl custom-shadow p-8">
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Welcome Back!</h2>
+                    <p class="text-gray-600">Login to your ConnectIndia account</p>
+                </div>
 
-    <section class="py-16 flex items-center justify-center">
-        <div class="container mx-auto max-w-md bg-white p-8 rounded-lg shadow-md">
-            <div class="space-y-4">
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input id="email" type="email" placeholder="Enter your email" class="w-full p-3 mt-1 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <!-- Login Form -->
+                <form class="space-y-6" action="#" method="POST">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>Email Address
+                        </label>
+                        <input 
+                            id="email" 
+                            name="email" 
+                            type="email" 
+                            autocomplete="email" 
+                            required 
+                            class="input-focus block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-0 transition-all duration-200"
+                            placeholder="Enter your email"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-lock mr-2 text-gray-400"></i>Password
+                        </label>
+                        <div class="relative">
+                            <input 
+                                id="password" 
+                                name="password" 
+                                type="password" 
+                                autocomplete="current-password" 
+                                required 
+                                class="input-focus block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-0 transition-all duration-200"
+                                placeholder="Enter your password"
+                            >
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center" onclick="togglePassword()">
+                                <i id="password-icon" class="fas fa-eye text-gray-400 hover:text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input 
+                                id="remember-me" 
+                                name="remember-me" 
+                                type="checkbox" 
+                                class="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
+                            >
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-700">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="#" class="text-orange-500 hover:text-orange-600 font-medium">
+                                Forgot password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button 
+                            type="submit" 
+                            class="hover-scale w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all duration-200"
+                        >
+                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Divider -->
+                <div class="mt-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input id="password" type="password" placeholder="Enter your password" class="w-full p-3 mt-1 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-600">
+
+                <!-- Social Login -->
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <button class="hover-scale w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-all duration-200">
+                        <i class="fab fa-google text-red-500 text-lg"></i>
+                        <span class="ml-2">Google</span>
+                    </button>
+                    <button class="hover-scale w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-all duration-200">
+                        <i class="fab fa-facebook text-blue-600 text-lg"></i>
+                        <span class="ml-2">Facebook</span>
+                    </button>
                 </div>
-                <div class="flex items-center">
-                    <input id="remember" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                    <label for="remember" class="ml-2 text-sm text-gray-600">Remember Me</label>
+
+                <!-- Sign Up Links -->
+                <div class="mt-8 space-y-4">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600">Don't have an account?</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        <a href="influencer_signup.html" class="hover-scale w-full inline-flex justify-center py-3 px-4 border-2 border-orange-500 rounded-lg text-sm font-medium text-orange-500 hover:bg-orange-50 transition-all duration-200">
+                            <i class="fas fa-star mr-2"></i>
+                            Join as Influencer
+                        </a>
+                        <a href="business_signup.html" class="hover-scale w-full inline-flex justify-center py-3 px-4 border-2 border-pink-500 rounded-lg text-sm font-medium text-pink-500 hover:bg-pink-50 transition-all duration-200">
+                            <i class="fas fa-building mr-2"></i>
+                            Join as Business
+                        </a>
+                    </div>
                 </div>
-                <button onclick="alert('Login successful!')" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700">Log In</button>
-                <p class="text-center text-sm text-gray-600">Don't have an account? <a href="login.html" class="text-blue-600 hover:underline">Sign Up</a></p>
+            </div>
+
+            <!-- Features Highlight -->
+            <div class="bg-white bg-opacity-90 rounded-2xl p-6 mt-8">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Why ConnectIndia?</h3>
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-shield-alt text-green-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900 text-sm">Secure Platform</h4>
+                        <p class="text-xs text-gray-600 mt-1">Bank-level security for all transactions</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-users text-blue-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900 text-sm">Verified Users</h4>
+                        <p class="text-xs text-gray-600 mt-1">All influencers and businesses verified</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-chart-line text-purple-600"></i>
+                        </div>
+                        <h4 class="font-medium text-gray-900 text-sm">Advanced Analytics</h4>
+                        <p class="text-xs text-gray-600 mt-1">Detailed campaign performance insights</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-8">
-        <div class="container mx-auto text-center">
-            <p>© 2025 Influsynch. All rights reserved.</p>
-            <div class="mt-4 space-x-4">
-                <a href="about.html" class="hover:text-gray-200">About</a>
-                <a href="contact.html" class="hover:text-gray-200">Contact</a>
-                <a href="privacy.html" class="hover:text-gray-200">Privacy Policy</a>
-                <a href="https://twitter.com" class="hover:text-gray-200">Twitter</a>
-                <a href="https://instagram.com" class="hover:text-gray-200">Instagram</a>
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center items-center space-x-2 mb-4">
+                    <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-link text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">ConnectIndia</span>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Connecting authentic Indian creators with innovative businesses</p>
+                <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-gray-700">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-700">Terms of Service</a>
+                    <a href="contact.html" class="hover:text-gray-700">Support</a>
+                </div>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-orange-500">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <p class="text-xs text-gray-400 mt-4">© 2024 ConnectIndia. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const passwordIcon = document.getElementById('password-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Add form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Simulate login process
+            const button = document.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Signing In...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                alert('Login functionality will be implemented with backend integration');
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        });
+
+        // Add smooth animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('scale-105');
+                });
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('scale-105');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDifKFR1jOF9h7Kf2FraPDO9LujId%2BY7KrdZVTLJPKnqK3YuAH9j196tqPvOLiEg6hDN5YSfOgnltfBbBbAODTaSpdGjtUtuJqA%2FnY8dpzuhckJR%2BjBVsrbKFFTit%2B4KUNIbO2K56vu99c6epMrnabHWqKdm8ou1DwBDjsnalZip1rJqoEYtmlLhAJ7uTnc3taokzfQpLzrkYlZnMyWkxSB5ovRx3%2B%2FiG0C98jmu%2Buz0Hc%2F1NxQ%2BKGJ834mBQh3fYdtJYeXbjD40BzvQpMXwKVD7%2Fqj8B3zfWmKZmSRj4uIcmIsA0kzN%2Fuf9SVfngoG4yP2hhGCM0oYulaOzVYZ1q7onlxt1PbJRFlAQ7HAMQUSR6zs%2F%2B7u9zk80AM6AnER8P9jRxUBi2XvrHaVy4ETyZovCcc54nE4usds7rDNAxNQSKXizLG3f%2F5WSaWw3qCT99ZuRs%2FsWqTvt9Q7uQvTerBhqvX27FH%2FZznrgs%2BZF9jC4c";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDifKFR1jOF9h7Kf2FraPDO9LujId+Y7KrdZVTLJPKnqK3YuAH9j196tqPvOLiEg6hDN5YSfOgnltfBbBbAODTaSpdGjtUtuJqA/nY8dpzuhckJR+jBVsrbKFFTit+4KUNIbO2K56vu99c6epMrnabHWqKdm8ou1DwBDjsnalZip1rJqoEYtmlLhAJ7uTnc3taokzfQpLzrkYlZnMyWkxSB5ovRx3+/iG0C98jmu+uz0Hc/1NxQ+KGJ834mBQh3fYdtJYeXbjD40BzvQpMXwKVD7/qj8B3zfWmKZmSRj4uIcmIsA0kzN/uf9SVfngoG4yP2hhGCM0oYulaOzVYZ1q7onlxt1PbJRFlAQ7HAMQUSR6zs/+7u9zk80AM6AnER8P9jRxUBi2XvrHaVy4ETyZovCcc54nE4usds7rDNAxNQSKXizLG3f/5WSaWw3qCT99ZuRs/sWqTvt9Q7uQvTerBhqvX27FH/Zznrgs+ZF9jC4c";
+    </script>
+    
+        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
+        
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
