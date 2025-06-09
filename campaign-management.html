@@ -1,100 +1,472 @@
-<!DOCTYPE html><html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campaign Management | Influsynch</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f4f9ff;
-      color: #222;
-    }
-    header {
-      background-color: #fff;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #007BFF;
-    }
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-    .hero {
-      background: linear-gradient(to right, #007BFF, #66b2ff);
-      color: white;
-      text-align: center;
-      padding: 80px 20px 60px;
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-    }
-    .section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
-    }
-    .card h2 {
-      margin-bottom: 10px;
-      color: #007BFF;
-    }
-    .card p {
-      color: #444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Management - ConnectIndia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: translateY(-5px); }
+        .status-active { background: linear-gradient(45deg, #10b981, #059669); }
+        .status-pending { background: linear-gradient(45deg, #f59e0b, #d97706); }
+        .status-completed { background: linear-gradient(45deg, #8b5cf6, #7c3aed); }
+        .progress-bar { background: linear-gradient(90deg, #10b981 0%, #059669 100%); }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="logo">Influsynch</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="influencer-listing.html">Influencers</a>
-      <a href="invite-form.html">Invite</a>
-      <a href="dashboard-brand.html">Dashboard</a>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-indigo-600">ConnectIndia</h1>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <div class="relative group">
+                                <a href="platform.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium flex items-center">
+                                    Our Platform <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                            <div class="relative group">
+                                <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium flex items-center">
+                                    Who We Serve <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                            <a href="pricing.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                            <a href="blog.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Resources</a>
+                            <a href="about.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-700 hover:text-indigo-600 text-sm font-medium">Login</a>
+                    <a href="business_signup.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Get Started</a>
+                </div>
+            </div>
+        </div>
     </nav>
-  </header>  <div class="hero">
-    <h1>Campaign Management</h1>
-    <p>Manage influencer collaborations and track campaign progress in one place.</p>
-  </div>  <section class="section">
-    <div class="card">
-      <h2>Create New Campaigns</h2>
-      <p>Launch a campaign in minutes by adding your campaign name, goal, timeline, and influencer list.</p>
-    </div><div class="card">
-  <h2>Track Performance</h2>
-  <p>Monitor real-time progress, posts delivered, clicks, engagement metrics and more on your campaign dashboard.</p>
-</div>
 
-<div class="card">
-  <h2>Approve Content Easily</h2>
-  <p>Influencers submit content directly for approval. One-click to accept or request edits before going live.</p>
-</div>
+    <!-- Header Section -->
+    <div class="gradient-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">Campaign Management Dashboard</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">Create, manage, and track your influencer marketing campaigns from inception to completion with our comprehensive campaign management tools.</p>
+            </div>
+        </div>
+    </div>
 
-<div class="card">
-  <h2>Integrated Messaging</h2>
-  <p>Communicate with all your selected influencers directly within the campaign portal to avoid messy inboxes.</p>
-</div>
+    <!-- Quick Stats -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Active Campaigns</p>
+                        <p class="text-3xl font-bold text-indigo-600">12</p>
+                    </div>
+                    <div class="bg-indigo-100 p-3 rounded-full">
+                        <i class="fas fa-rocket text-indigo-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Influencers</p>
+                        <p class="text-3xl font-bold text-green-600">248</p>
+                    </div>
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-users text-green-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Reach</p>
+                        <p class="text-3xl font-bold text-purple-600">2.4M</p>
+                    </div>
+                    <div class="bg-purple-100 p-3 rounded-full">
+                        <i class="fas fa-eye text-purple-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Campaign ROI</p>
+                        <p class="text-3xl font-bold text-orange-600">4.2x</p>
+                    </div>
+                    <div class="bg-orange-100 p-3 rounded-full">
+                        <i class="fas fa-chart-line text-orange-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  </section>
+    <!-- Main Dashboard -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Campaign List -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg card-shadow">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-xl font-semibold text-gray-900">Active Campaigns</h2>
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">
+                                <i class="fas fa-plus mr-2"></i>New Campaign
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <!-- Campaign Item 1 -->
+                        <div class="border border-gray-200 rounded-lg p-4 mb-4 hover-scale">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="status-active text-white px-3 py-1 rounded-full text-xs font-medium">Active</div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Festival Season Beauty Campaign</h3>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-edit"></i></button>
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-eye"></i></button>
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3">
+                                <div>
+                                    <p class="text-sm text-gray-600">Budget</p>
+                                    <p class="font-semibold">₹2,50,000</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Influencers</p>
+                                    <p class="font-semibold">15/20</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Reach</p>
+                                    <p class="font-semibold">850K</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">End Date</p>
+                                    <p class="font-semibold">Dec 15</p>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">75% Complete</p>
+                        </div>
+
+                        <!-- Campaign Item 2 -->
+                        <div class="border border-gray-200 rounded-lg p-4 mb-4 hover-scale">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="status-pending text-white px-3 py-1 rounded-full text-xs font-medium">Pending</div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Tech Product Launch</h3>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-edit"></i></button>
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-eye"></i></button>
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3">
+                                <div>
+                                    <p class="text-sm text-gray-600">Budget</p>
+                                    <p class="font-semibold">₹5,00,000</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Influencers</p>
+                                    <p class="font-semibold">8/25</p>
+                                </div>
+                                <div class="text-gray-400">
+                                    <p class="text-sm text-gray-600">Reach</p>
+                                    <p class="font-semibold">-</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Start Date</p>
+                                    <p class="font-semibold">Dec 20</p>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 32%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">32% Complete</p>
+                        </div>
+
+                        <!-- Campaign Item 3 -->
+                        <div class="border border-gray-200 rounded-lg p-4 mb-4 hover-scale">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="status-completed text-white px-3 py-1 rounded-full text-xs font-medium">Completed</div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Diwali Special Fashion</h3>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-download"></i></button>
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-eye"></i></button>
+                                    <button class="text-gray-400 hover:text-gray-600"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3">
+                                <div>
+                                    <p class="text-sm text-gray-600">Budget</p>
+                                    <p class="font-semibold">₹3,75,000</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Influencers</p>
+                                    <p class="font-semibold">18/18</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Reach</p>
+                                    <p class="font-semibold">1.2M</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">ROI</p>
+                                    <p class="font-semibold text-green-600">4.8x</p>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-2">Campaign Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Campaign Performance Chart -->
+                <div class="bg-white rounded-lg card-shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Campaign Performance</h3>
+                    <div class="h-64">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-lg card-shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button class="w-full bg-indigo-50 text-indigo-700 p-3 rounded-lg text-left font-medium hover:bg-indigo-100 transition-colors">
+                            <i class="fas fa-plus mr-3"></i>Create New Campaign
+                        </button>
+                        <button class="w-full bg-green-50 text-green-700 p-3 rounded-lg text-left font-medium hover:bg-green-100 transition-colors">
+                            <i class="fas fa-search mr-3"></i>Find Influencers
+                        </button>
+                        <button class="w-full bg-purple-50 text-purple-700 p-3 rounded-lg text-left font-medium hover:bg-purple-100 transition-colors">
+                            <i class="fas fa-chart-bar mr-3"></i>View Analytics
+                        </button>
+                        <button class="w-full bg-orange-50 text-orange-700 p-3 rounded-lg text-left font-medium hover:bg-orange-100 transition-colors">
+                            <i class="fas fa-file-download mr-3"></i>Export Reports
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="bg-white rounded-lg card-shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">Campaign approved</p>
+                                <p class="text-xs text-gray-600">Festival Season Beauty - 2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 p-2 rounded-full">
+                                <i class="fas fa-user-plus text-blue-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">New influencer joined</p>
+                                <p class="text-xs text-gray-600">@fashionista_priya - 4 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 p-2 rounded-full">
+                                <i class="fas fa-chart-line text-purple-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">Performance milestone</p>
+                                <p class="text-xs text-gray-600">1M reach achieved - 6 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campaign Creation Modal (Hidden by default) -->
+    <div id="campaignModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg max-w-2xl w-full mx-4 max-h-96 overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">Create New Campaign</h2>
+                    <button class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Campaign Name</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-md p-3" placeholder="Enter campaign name">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Budget</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-md p-3" placeholder="₹ 0">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                            <select class="w-full border border-gray-300 rounded-md p-3">
+                                <option>Fashion & Lifestyle</option>
+                                <option>Technology</option>
+                                <option>Beauty & Cosmetics</option>
+                                <option>Food & Beverage</option>
+                                <option>Travel & Tourism</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
+                            <input type="date" class="w-full border border-gray-300 rounded-md p-3">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">End Date</label>
+                            <input type="date" class="w-full border border-gray-300 rounded-md p-3">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Campaign Description</label>
+                        <textarea class="w-full border border-gray-300 rounded-md p-3 h-24" placeholder="Describe your campaign objectives and requirements"></textarea>
+                    </div>
+                    <div class="flex justify-end space-x-4 pt-4">
+                        <button type="button" class="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">Cancel</button>
+                        <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Create Campaign</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">ConnectIndia</h3>
+                    <p class="text-gray-400 mb-6 max-w-md">India's premier platform connecting authentic influencers with innovative businesses. Build meaningful collaborations that drive real results.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="discovery.html" class="hover:text-white">Discover Influencers</a></li>
+                        <li><a href="campaigns.html" class="hover:text-white">Campaign Management</a></li>
+                        <li><a href="analytics.html" class="hover:text-white">Analytics</a></li>
+                        <li><a href="pricing.html" class="hover:text-white">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="blog.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="#" class="hover:text-white">API Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Made with ❤️ for India's creator economy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Campaign Performance',
+                    data: [12, 19, 15, 25, 22, 30],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const createCampaignBtns = document.querySelectorAll('button');
+            const modal = document.getElementById('campaignModal');
+            
+            createCampaignBtns.forEach(btn => {
+                if (btn.textContent.includes('New Campaign')) {
+                    btn.addEventListener('click', () => {
+                        modal.classList.remove('hidden');
+                    });
+                }
+            });
+
+            // Close modal
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target.closest('.fa-times')) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDpZfYPb59PLegORGN8hKxXV6tV3qiKYnwJMnJMqIVCrGF2XAwqrRmO%2F5BCbVKuSiwgmT5dEskMZDaiAPKs5g7fVeHoyDoB37wMeEXJKoy9cVf2QWQZ%2BxKl8pvHv3bTqD%2Bb88y6S82kZ92XTgh3aeAiewyE5wCG3%2F%2BQOr3Udup8%2F3v7n2GcXp7gX%2BTXeFcdoHaSSuV%2FDPzM1aFLn0F66xMumz5f36JUH8G7RMqS8KqVZwEDjU%2Fkq4wSBxiiwdQesjIeiirS9mNUm4K7litra4j3ciwVbDf7xxV0rNHUDfdLupeS3Z0PVSRsop%2FHMoofqLyKfVXF01Cadhlmei7Ym3qwX9iPlen8StNrjuZLDi2XUh2a8scH3tBv9qoEYeKTOcGWsMEf4eNl5Vj%2BUh3EgjpFSCle08NwxEIR%2FJXhxfmIMbivMJXntY%2F0gSU49uThjjhe%2BR2wWFjzpHTG3MlRoQi87gLPbS1Mb6cOMZadKYbL8wBQy6Z25kXiLG%2BTr41uW62Q%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDpZfYPb59PLegORGN8hKxXV6tV3qiKYnwJMnJMqIVCrGF2XAwqrRmO/5BCbVKuSiwgmT5dEskMZDaiAPKs5g7fVeHoyDoB37wMeEXJKoy9cVf2QWQZ+xKl8pvHv3bTqD+b88y6S82kZ92XTgh3aeAiewyE5wCG3/+QOr3Udup8/3v7n2GcXp7gX+TXeFcdoHaSSuV/DPzM1aFLn0F66xMumz5f36JUH8G7RMqS8KqVZwEDjU/kq4wSBxiiwdQesjIeiirS9mNUm4K7litra4j3ciwVbDf7xxV0rNHUDfdLupeS3Z0PVSRsop/HMoofqLyKfVXF01Cadhlmei7Ym3qwX9iPlen8StNrjuZLDi2XUh2a8scH3tBv9qoEYeKTOcGWsMEf4eNl5Vj+Uh3EgjpFSCle08NwxEIR/JXhxfmIMbivMJXntY/0gSU49uThjjhe+R2wWFjzpHTG3MlRoQi87gLPbS1Mb6cOMZadKYbL8wBQy6Z25kXiLG+Tr41uW62Q==";
+    </script>
+    
+        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
+        
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
