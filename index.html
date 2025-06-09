@@ -62,6 +62,7 @@
             color: #ffd700;
         }
 
+        /* Dropdown styles */
         .dropdown {
             position: relative;
         }
@@ -70,32 +71,84 @@
             display: none;
             position: absolute;
             background: white;
-            min-width: 250px;
+            /* Changed min-width to a larger value for multi-column layout */
+            min-width: 500px; /* Adjust as needed for 2-3 columns */
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 8px;
-            padding: 1rem;
+            padding: 1.5rem; /* Increased padding */
             top: 100%;
-            left: 0;
+            left: 50%; /* Center the dropdown */
+            transform: translateX(-50%); /* Center the dropdown */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         .dropdown:hover .dropdown-content {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
+            /* Default grid: 2 columns for most dropdowns */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; /* Increased gap for better spacing */
+            opacity: 1;
+            visibility: visible;
         }
 
+        /* Specific styles for dropdowns that might need more/fewer columns */
+        .dropdown.platform:hover .dropdown-content,
+        .dropdown.resources:hover .dropdown-content {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        }
+        
+        .dropdown.solutions:hover .dropdown-content {
+            grid-template-columns: 1fr; /* 1 column if content is short */
+            min-width: 250px; /* Smaller width for single column */
+            transform: translateX(-50%); /* Re-center for smaller width */
+        }
+
+        /* Inner link styling within dropdown */
         .dropdown-content a {
             color: #333;
-            padding: 0.5rem;
+            padding: 0.75rem 1rem; /* Increased padding for links */
             text-decoration: none;
             border-radius: 4px;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
+            display: block; /* Make links block level for full clickable area */
+            font-weight: 500; /* Slightly bolder */
         }
 
         .dropdown-content a:hover {
             background: #f0f0f0;
+            color: #667eea; /* Highlight color on hover */
         }
+
+        /* Optional: Add section titles within dropdowns if you want categories */
+        .dropdown-section-title {
+            grid-column: span 2; /* Span across columns if grid is 2-column */
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Responsive menu for smaller screens */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
 
         .auth-buttons {
             display: flex;
@@ -350,9 +403,101 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .dropdown-content {
+                min-width: 400px; /* Adjust for slightly smaller screens */
+            }
+            .dropdown:hover .dropdown-content {
+                grid-template-columns: repeat(2, 1fr); /* Keep 2 columns */
+            }
+            .dropdown-section-title {
+                grid-column: span 2;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
+                display: none; /* Hide main nav links for smaller screens */
+                flex-direction: column;
+                width: 100%;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                position: absolute;
+                top: 60px; /* Below header */
+                left: 0;
+                padding: 1rem 2rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .nav-links li:last-child {
+                margin-bottom: 0;
+            }
+
+            .nav-links a {
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            .dropdown-content {
+                position: static; /* Stack dropdown content vertically */
                 display: none;
+                min-width: unset;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0.5rem 0;
+                background: rgba(255,255,255,0.1); /* Slightly transparent background */
+                transform: translateX(0); /* Remove centering transform */
+                margin-top: 5px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: none; /* Hide on hover for mobile, rely on JS for click */
+            }
+
+            .dropdown.active .dropdown-content {
+                display: grid; /* Display grid on active for mobile */
+                grid-template-columns: 1fr; /* Single column for mobile dropdowns */
+                gap: 0.5rem;
+            }
+
+            .dropdown-content a {
+                padding: 0.5rem 1rem;
+                background: none;
+                color: white; /* Make links white in mobile dropdown */
+                border-bottom: none; /* No inner border for dropdown links */
+            }
+
+            .dropdown-content a:hover {
+                background: rgba(255,255,255,0.2);
+                color: #ffd700;
+            }
+
+            .dropdown-section-title {
+                grid-column: span 1; /* Adjust span for single column */
+                color: #ffd700; /* Highlight section title */
+                margin-top: 1rem;
+                padding-top: 0.5rem;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                border-bottom: none;
+            }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger menu */
+            }
+
+            .auth-buttons {
+                display: none; /* Hide auth buttons on mobile, could integrate into nav-links */
             }
 
             .hero h1 {
@@ -372,6 +517,11 @@
             .stat-number {
                 font-size: 2.5rem;
             }
+
+            .footer-grid {
+                grid-template-columns: 1fr; /* Stack footer sections on smaller screens */
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -382,40 +532,58 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <a href="#" class="logo">ConnectIndia</a>
             
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#">Platform</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-menu">
+                <li class="dropdown platform">
+                    <a href="#">Platform <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
+                        <span class="dropdown-section-title">Core Features</span>
                         <a href="discovery.html">Influencer Discovery</a>
                         <a href="analytics.html">Analytics Dashboard</a>
                         <a href="campaigns.html">Campaign Management</a>
                         <a href="marketplace.html">Marketplace</a>
+                        <a href="reporting.html">Advanced Reporting</a>
+                        <a href="audience_insights.html">Audience Insights</a>
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a href="#">Solutions</a>
+                <li class="dropdown solutions">
+                    <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="for_influencers.html">For Influencers</a>
                         <a href="for_businesses.html">For Businesses</a>
-                        <a href="success_stories.html">Success Stories</a>
+                        <a href="agencies.html">For Agencies</a>
+                        <a href="e_commerce.html">For E-commerce Brands</a>
+                        <a href="sme.html">For SMEs & Startups</a>
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a href="#">Resources</a>
+                <li class="dropdown resources">
+                    <a href="#">Resources <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
+                         <span class="dropdown-section-title">Learn & Grow</span>
                         <a href="blog.html">Blog & Guides</a>
-                        <a href="support.html">Help Center</a>
-                        <a href="success_stories.html">Case Studies</a>
+                        <a href="case_studies.html">Case Studies</a>
+                        <a href="webinars.html">Webinars & Events</a>
+                        <a href="faqs.html">FAQ & Help Center</a>
+                        <a href="community.html">Community Forum</a>
+                        <a href="glossary.html">Glossary</a>
                     </div>
                 </li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="influencer_signup.html" class="btn btn-primary">Get Started</a>
+                </li>
             </ul>
 
             <div class="auth-buttons">
@@ -425,7 +593,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>India's Premier Influencer Marketing Platform</h1>
@@ -438,7 +605,6 @@
         </div>
     </section>
 
-    <!-- Statistics Section - UPDATED WITH PROFESSIONAL COLORS -->
     <section class="stats">
         <div class="stats-container">
             <div class="stats-grid">
@@ -462,7 +628,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <div class="features-container">
             <h2 class="section-title">Why Choose ConnectIndia?</h2>
@@ -507,7 +672,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta">
         <div class="cta-container">
             <h2>Ready to Transform Your Marketing?</h2>
@@ -520,7 +684,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-grid">
@@ -570,5 +733,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle and dropdown functionality
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdowns = document.querySelectorAll('.nav-links .dropdown');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active'); // Optional: for animating hamburger icon
+        });
+
+        // Toggle dropdown on click for mobile
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (event) => {
+                // Only toggle if not clicking on a sub-link in mobile view
+                if (window.innerWidth <= 768 && !event.target.matches('.dropdown-content a')) {
+                    event.preventDefault(); // Prevent default link behavior for the main dropdown trigger
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Optional: Close dropdowns if clicking outside
+        document.addEventListener('click', (event) => {
+            if (window.innerWidth <= 768 && !navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+                navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
