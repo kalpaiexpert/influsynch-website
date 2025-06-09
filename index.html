@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConnectIndia - India's Premier Influencer Marketing Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -32,10 +33,11 @@
         nav {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: center; /* Ensures vertical alignment */
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            min-height: 50px; /* Ensure enough height for alignment */
         }
 
         .logo {
@@ -49,6 +51,9 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center; /* Align items within the nav links too */
+            margin-right: auto; /* Push auth buttons to the right */
+            margin-left: 2rem; /* Add some space between logo and nav */
         }
 
         .nav-links a {
@@ -71,7 +76,6 @@
             display: none;
             position: absolute;
             background: white;
-            /* Changed min-width to a larger value for multi-column layout */
             min-width: 500px; /* Adjust as needed for 2-3 columns */
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 1;
@@ -83,11 +87,11 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            white-space: nowrap; /* Prevent content from wrapping prematurely */
         }
 
         .dropdown:hover .dropdown-content {
             display: grid;
-            /* Default grid: 2 columns for most dropdowns */
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem; /* Increased gap for better spacing */
             opacity: 1;
@@ -115,6 +119,7 @@
             transition: background 0.3s ease, color 0.3s ease;
             display: block; /* Make links block level for full clickable area */
             font-weight: 500; /* Slightly bolder */
+            white-space: normal; /* Allow content to wrap within the link item */
         }
 
         .dropdown-content a:hover {
@@ -133,26 +138,11 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* Responsive menu for smaller screens */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-
-
+        /* Auth Buttons Styling */
         .auth-buttons {
             display: flex;
             gap: 1rem;
+            align-items: center; /* Ensures vertical alignment of buttons */
         }
 
         .btn {
@@ -164,6 +154,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             display: inline-block;
+            text-align: center; /* Center text within buttons */
         }
 
         .btn-outline {
@@ -426,6 +417,8 @@
                 left: 0;
                 padding: 1rem 2rem;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                align-items: flex-start; /* Align mobile menu items to start */
+                margin-left: 0; /* Remove margin from mobile nav links */
             }
 
             .nav-links.active {
@@ -434,7 +427,7 @@
 
             .nav-links li {
                 width: 100%;
-                text-align: center;
+                text-align: left; /* Align text to left in mobile menu */
                 margin-bottom: 10px;
             }
 
@@ -494,10 +487,37 @@
 
             .menu-toggle {
                 display: flex; /* Show hamburger menu */
+                flex-direction: column;
+                cursor: pointer;
+                gap: 5px;
+            }
+
+            .menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background: white;
+                border-radius: 5px;
+                transition: all 0.3s ease-in-out;
             }
 
             .auth-buttons {
-                display: none; /* Hide auth buttons on mobile, could integrate into nav-links */
+                display: none; /* Hide desktop auth buttons on mobile */
+            }
+
+            /* Show mobile auth buttons within the nav-links for mobile menu */
+            .nav-links .mobile-auth-buttons {
+                display: flex; /* Show in mobile nav */
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(255,255,255,0.2);
+            }
+
+            .nav-links .mobile-auth-buttons .btn {
+                width: 100%; /* Make buttons full width in mobile menu */
+                padding: 0.75rem 1.5rem; /* Slightly larger padding */
             }
 
             .hero h1 {
