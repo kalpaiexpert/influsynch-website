@@ -1,467 +1,955 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>About Us - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .india-gradient { background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%); }
-        .hover-scale { transition: transform 0.3s ease; }
-        .hover-scale:hover { transform: scale(1.05); }
-        .timeline-item::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #667eea; }
-        .timeline-dot { width: 12px; height: 12px; background: #667eea; border-radius: 50%; position: absolute; left: 15px; }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-link text-white text-sm"></i>
-                        </div>
-                        <span class="text-xl font-bold text-gray-800">ConnectIndia</span>
-                    </a>
-                </div>
+<body class="about">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium flex items-center">
-                            Our Platform <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                            <div class="p-4 grid gap-2">
-                                <a href="platform.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Platform Overview</a>
-                                <a href="influencer-search.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Influencer Discovery</a>
-                                <a href="campaign-management.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Campaign Management</a>
-                                <a href="analytics.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Analytics & Reporting</a>
-                            </div>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
                         </div>
                     </div>
+                </li>
 
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium flex items-center">
-                            Who We Serve <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-48 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                            <div class="p-4 grid gap-2">
-                                <a href="for-businesses.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Businesses</a>
-                                <a href="for-influencers.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Influencers</a>
-                                <a href="for-agencies.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Agencies</a>
-                            </div>
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
                         </div>
                     </div>
+                </li>
 
-                    <a href="pricing.html" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Pricing</a>
-                    <a href="resources.html" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Resources</a>
-                    <a href="about.html" class="text-purple-600 px-3 py-2 text-sm font-medium">About</a>
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>About ConnectIndia</h1>
+        <p>Building India's most trusted influencer-business connection platform</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Story</h2>
+        <p class="section-subtitle">ConnectIndia was born from a simple observation: authentic connections between influencers and businesses were broken by inefficient DMs and emails. We're here to fix that.</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>To democratize influencer marketing in India by providing a transparent, efficient, and authentic platform that benefits both creators and businesses.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">👁️</div>
+                <h3>Our Vision</h3>
+                <p>To become India's largest and most trusted influencer marketing ecosystem, enabling millions of authentic partnerships.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <h3>Our Values</h3>
+                <p>Transparency, authenticity, fairness, and empowerment of creators while helping businesses achieve measurable results.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">Our Journey</h2>
+        <p class="section-subtitle">From idea to India's premier influencer marketing platform</p>
+
+        <div class="workflow">
+            <div class="workflow-section">
+                <h3>2022: The Beginning</h3>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">💡</div>
+                        <div class="step-content">
+                            <h4>Identified the Problem</h4>
+                            <p>Noticed the inefficiencies in influencer-brand connections through traditional channels</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="flex items-center space-x-4">
-                    <a href="login.html" class="text-gray-700 hover:text-purple-600 text-sm font-medium">Login</a>
-                    <a href="business-register.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors">Get Started</a>
+            <div class="workflow-section">
+                <h3>2023: Building</h3>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">🚀</div>
+                        <div class="step-content">
+                            <h4>Platform Development</h4>
+                            <p>Built our core platform with discovery, communication, and payment systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workflow-section">
+                <h3>2024: Growing</h3>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">📈</div>
+                        <div class="step-content">
+                            <h4>Rapid Expansion</h4>
+                            <p>Reached 50K+ influencers and businesses with 1M+ successful collaborations</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-6">Revolutionizing Influencer Marketing in India</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">At ConnectIndia, we're building bridges between authentic creators and innovative businesses across the Indian subcontinent, fostering meaningful collaborations that drive real results.</p>
-            <div class="flex justify-center space-x-6 text-lg">
-                <div class="flex items-center">
-                    <i class="fas fa-users mr-2"></i>
-                    <span>50,000+ Influencers</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-building mr-2"></i>
-                    <span>5,000+ Businesses</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
-                    <span>All Indian States</span>
-                </div>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Why Choose ConnectIndia?</h2>
+        <p class="section-subtitle">We're not just another platform - we're your partners in success</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🇮🇳</div>
+                <h3>India-First Approach</h3>
+                <p>Built specifically for the Indian market with support for regional languages, local payment methods, and cultural understanding.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Verified Community</h3>
+                <p>Every influencer and business undergoes thorough verification to ensure authenticity and quality.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Transparent pricing with no hidden fees. We succeed when you succeed.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Data-Driven Matching</h3>
+                <p>Our AI-powered system ensures perfect matches based on audience, niche, and campaign goals.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Proven Results</h3>
+                <p>Track record of successful campaigns with measurable ROI and authentic engagement.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>Dedicated Support</h3>
+                <p>24/7 customer support in multiple Indian languages to help you succeed.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Our Story Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Story</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Born from the understanding that India's diverse digital landscape needed a platform that truly understands local culture, languages, and business dynamics.</p>
-            </div>
+<section class="section testimonials">
+    <div class="container">
+        <h2 class="section-title">Join Our Growing Community</h2>
+        <p class="section-subtitle">Be part of India's most authentic influencer marketing platform</p>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Building India's Digital Bridge</h3>
-                    <p class="text-gray-600 mb-6">Founded in 2023 in Mumbai, ConnectIndia emerged from a simple observation: while global platforms existed, none truly understood the nuances of Indian influencer marketing - from regional language preferences to cultural celebrations, from tier-2 city micro-influencers to Bollywood celebrities.</p>
-                    <p class="text-gray-600 mb-6">Our founders, having worked extensively in India's digital marketing space, recognized the gap between authentic Indian creators and businesses looking to connect with diverse audiences across the country's 1.4 billion population.</p>
-                    <p class="text-gray-600">Today, we're proud to be India's fastest-growing influencer marketing platform, trusted by brands from startups to Fortune 500 companies, and creators from metros to tier-3 cities.</p>
+        <div class="hero-buttons">
+            <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+            <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                    </ul>
                 </div>
-                <div class="bg-gradient-to-br from-purple-100 to-blue-100 p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Why India Needed ConnectIndia</h4>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Regional language content creators were underrepresented</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Tier-2 and tier-3 city influencers lacked opportunities</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Businesses struggled with cultural authenticity</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Limited understanding of Indian festivals and trends</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Complex pricing structures unsuited for Indian market</span>
-                        </li>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Timeline -->
-            <div class="relative">
-                <h3 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Journey</h3>
-                <div class="relative">
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q1</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">The Beginning</h4>
-                            <p class="text-gray-600 mt-2">ConnectIndia was founded in Mumbai with a vision to democratize influencer marketing in India. Started with 100 beta users.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q2</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">Regional Expansion</h4>
-                            <p class="text-gray-600 mt-2">Launched support for 8 Indian languages and onboarded creators from 15 states. Reached 5,000 registered users.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q3</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">AI-Powered Matching</h4>
-                            <p class="text-gray-600 mt-2">Introduced AI-powered influencer-brand matching system designed specifically for Indian market dynamics. 25,000+ active users.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item relative pl-16 pb-12">
-                        <div class="timeline-dot"></div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <span class="text-purple-600 font-bold">2023 Q4</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">Major Partnerships</h4>
-                            <p class="text-gray-600 mt-2">Partnered with leading Indian brands and achieved 50,000+ registered influencers and 5,000+ businesses across India.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item relative pl-16">
-                        <div class="timeline-dot bg-green-500"></div>
-                        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg shadow-lg">
-                            <span class="text-green-600 font-bold">2024 & Beyond</span>
-                            <h4 class="text-xl font-bold text-gray-800 mt-2">The Future</h4>
-                            <p class="text-gray-600 mt-2">Expanding to Southeast Asia while remaining India's most trusted influencer marketing platform with 100,000+ creators and advanced analytics.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Values -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Makes ConnectIndia Different</h2>
-                <p class="text-xl text-gray-600">Our core values drive everything we do</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-heart text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Authenticity First</h3>
-                    <p class="text-gray-600">We believe in genuine connections. Our platform promotes real engagement over vanity metrics, ensuring authentic brand-creator partnerships.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-globe-asia text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">India-Centric Design</h3>
-                    <p class="text-gray-600">Built specifically for Indian creators and businesses, understanding regional preferences, cultural nuances, and local market dynamics.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Data-Driven Insights</h3>
-                    <p class="text-gray-600">Advanced analytics and AI-powered recommendations help brands and creators make informed decisions for maximum campaign impact.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-users text-yellow-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Inclusive Community</h3>
-                    <p class="text-gray-600">From mega-influencers to nano-creators, from metros to rural areas - we provide equal opportunities for all genuine content creators.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Trust & Transparency</h3>
-                    <p class="text-gray-600">Secure payments, verified profiles, and transparent pricing ensure both creators and brands can collaborate with confidence.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg hover-scale">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-rocket text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation Drive</h3>
-                    <p class="text-gray-600">Constantly evolving with new features, integrations, and tools to stay ahead of the dynamic Indian digital marketing landscape.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Team -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Meet Our Leadership</h2>
-                <p class="text-xl text-gray-600">Passionate experts driving India's influencer marketing revolution</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Arjun Sharma</h3>
-                    <p class="text-purple-600 mb-4">Founder & CEO</p>
-                    <p class="text-gray-600 text-sm">Former Marketing Director at top Indian e-commerce company. 8+ years in digital marketing and influencer partnerships across India.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Priya Mehta</h3>
-                    <p class="text-purple-600 mb-4">Co-Founder & CTO</p>
-                    <p class="text-gray-600 text-sm">Ex-Google engineer specializing in AI and machine learning. Expert in building scalable platforms for Indian market dynamics.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Rahul Gupta</h3>
-                    <p class="text-purple-600 mb-4">VP of Operations</p>
-                    <p class="text-gray-600 text-sm">10+ years in operations and business development. Led expansion strategies for major brands across Indian tier-2 and tier-3 cities.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Sneha Patel</h3>
-                    <p class="text-purple-600 mb-4">Head of Creator Relations</p>
-                    <p class="text-gray-600 text-sm">Former influencer manager at leading talent agency. Deep understanding of creator needs and brand collaboration dynamics.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Vikash Kumar</h3>
-                    <p class="text-purple-600 mb-4">Head of Business Development</p>
-                    <p class="text-gray-600 text-sm">MBA from IIM, 7+ years in B2B sales and partnerships. Specialist in building relationships with Indian enterprises and SMEs.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gradient-to-br from-indigo-400 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ananya Singh</h3>
-                    <p class="text-purple-600 mb-4">VP of Product</p>
-                    <p class="text-gray-600 text-sm">Product management expert with focus on user experience. Previously built consumer apps for Indian market with 10M+ users.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics -->
-    <section class="py-20 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">ConnectIndia by the Numbers</h2>
-                <p class="text-xl">Making a real impact across India's digital landscape</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold mb-2">50,000+</div>
-                    <div class="text-lg">Verified Influencers</div>
-                    <div class="text-sm opacity-80 mt-2">Across all Indian states</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">5,000+</div>
-                    <div class="text-lg">Active Businesses</div>
-                    <div class="text-sm opacity-80 mt-2">From startups to enterprises</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">100,000+</div>
-                    <div class="text-lg">Successful Campaigns</div>
-                    <div class="text-sm opacity-80 mt-2">With measurable ROI</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">₹50Cr+</div>
-                    <div class="text-lg">Creator Earnings</div>
-                    <div class="text-sm opacity-80 mt-2">Paid to Indian creators</div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 text-center mt-12">
-                <div>
-                    <div class="text-3xl font-bold mb-2">22</div>
-                    <div class="text-lg">Indian Languages</div>
-                    <div class="text-sm opacity-80 mt-2">Platform support</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">750+</div>
-                    <div class="text-lg">Cities Covered</div>
-                    <div class="text-sm opacity-80 mt-2">Including tier-3 cities</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">95%</div>
-                    <div class="text-lg">Customer Satisfaction</div>
-                    <div class="text-sm opacity-80 mt-2">Based on user feedback</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Marketing?</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Join thousands of Indian businesses and creators who trust ConnectIndia for authentic, results-driven influencer partnerships.</p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="business-register.html" class="bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors">
-                    <i class="fas fa-building mr-2"></i>Register as Business
-                </a>
-                <a href="influencer-register.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                    <i class="fas fa-star mr-2"></i>Join as Influencer
-                </a>
-            </div>
-
-            <div class="mt-8 text-gray-400">
-                <p>Have questions? <a href="contact.html" class="text-purple-400 hover:text-purple-300">Contact our team</a> for a personalized demo.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-5 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-link text-white text-sm"></i>
-                        </div>
-                        <span class="text-xl font-bold">ConnectIndia</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">India's premier platform connecting authentic influencers with innovative businesses. Built for the Indian market, by Indian experts.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Platform</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="platform.html" class="hover:text-white">Overview</a></li>
-                        <li><a href="influencer-search.html" class="hover:text-white">Find Influencers</a></li>
-                        <li><a href="campaign-management.html" class="hover:text-white">Manage Campaigns</a></li>
-                        <li><a href="analytics.html" class="hover:text-white">Analytics</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Who We Serve</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="for-businesses.html" class="hover:text-white">Businesses</a></li>
-                        <li><a href="for-influencers.html" class="hover:text-white">Influencers</a></li>
-                        <li><a href="for-agencies.html" class="hover:text-white">Agencies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="blog.html" class="hover:text-white">Blog</a></li>
-                        <li><a href="case-studies.html" class="hover:text-white">Case Studies</a></li>
-                        <li><a href="help.html" class="hover:text-white">Help Center</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400">&copy; 2024 ConnectIndia. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                    <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
-                    <a href="cookies.html" class="text-gray-400 hover:text-white">Cookie Policy</a>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
+    
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDis0%2FrNmOwsH6Xt1mNdGQptQn8W4uES1dp5hFw%2FCUV4%2BHocIc3j%2B9kzaxEUsTNLJ13oQCqBdwx4%2BMtHBqrgczsvPHP0sHfNaE92y%2FU%2BOagb8hWLIPud2zoRUkCP4fR6iIB1q2FrZXDsMHCzT4gZJhmVfkhZw01toJ77292BRMDLxXjCozuWUQv7ASHN8%2BgpzTqDaIc%2BSuoBC9mSs9gkqG46Fg6ifsmdQ9OCG7r5U4UX63O81k1RTHOdVwbCnK3Axf%2BBrjyUcqOiY%2FL%2BRme3zAs2H%2F0KrC5gDvuSDc3WN1QEIwqkL2%2FZG8h0M5TW9InEyCVL70Ebfgn8e9%2FNpNMvhm2ybNEO3OisW8EI%2BW1rm8q8iXy%2FBAe7ffDpo4jc%2BMCoRDUaKkfE6PbE3WH1mETOf4BYYH6q7h2b%2BFJbWRBUmCRvTXRanEgrUFdh5rSBDGUTh4W16hlip0XQSqZgrH52bxdLND5e15Pujbz41UL86%2BwsW";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDis0/rNmOwsH6Xt1mNdGQptQn8W4uES1dp5hFw/CUV4+HocIc3j+9kzaxEUsTNLJ13oQCqBdwx4+MtHBqrgczsvPHP0sHfNaE92y/U+Oagb8hWLIPud2zoRUkCP4fR6iIB1q2FrZXDsMHCzT4gZJhmVfkhZw01toJ77292BRMDLxXjCozuWUQv7ASHN8+gpzTqDaIc+SuoBC9mSs9gkqG46Fg6ifsmdQ9OCG7r5U4UX63O81k1RTHOdVwbCnK3Axf+BrjyUcqOiY/L+Rme3zAs2H/0KrC5gDvuSDc3WN1QEIwqkL2/ZG8h0M5TW9InEyCVL70Ebfgn8e9/NpNMvhm2ybNEO3OisW8EI+W1rm8q8iXy/BAe7ffDpo4jc+MCoRDUaKkfE6PbE3WH1mETOf4BYYH6q7h2b+FJbWRBUmCRvTXRanEgrUFdh5rSBDGUTh4W16hlip0XQSqZgrH52bxdLND5e15Pujbz41UL86+wsW";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
