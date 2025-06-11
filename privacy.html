@@ -1,634 +1,1018 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>Privacy Policy - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .text-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-bold text-gradient">ConnectIndia</h1>
-                    </div>
-                    <div class="hidden md:block ml-10">
-                        <div class="flex items-baseline space-x-4">
-                            <a href="index.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
-                            <a href="about.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
-                            <a href="contact.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
-                            <a href="support.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Support</a>
+<body class="privacy">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
+
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
                         </div>
                     </div>
-                </div>
-                <div class="flex items-center">
-                    <a href="login.html" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Login</a>
-                </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
             </div>
         </nav>
     </header>
+    
 
-    <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Header Section -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-            <p class="text-xl text-gray-600 mb-6">Your privacy and data protection are our top priorities</p>
-            <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-                <p class="text-sm text-indigo-800">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    Last Updated: January 15, 2024 | Effective Date: January 15, 2024
-                </p>
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy and data security are our top priorities at ConnectIndia</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: #F8F9FA; padding: 30px; border-radius: 12px; margin-bottom: 40px;">
+                <h3 style="color: #4F46E5; margin-bottom: 15px;">Last Updated: December 15, 2024</h3>
+                <p style="color: #6B7280;">This Privacy Policy explains how ConnectIndia Technologies Pvt. Ltd. ("we," "us," or "our") collects, uses, and protects your information when you use our platform and services.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">1. Information We Collect</h2>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Personal Information</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Name, email address, phone number</li>
+                    <li>Profile information and bio</li>
+                    <li>Social media handles and links</li>
+                    <li>Company information (for businesses)</li>
+                    <li>Payment and billing information</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Usage Information</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Platform activity and interactions</li>
+                    <li>Campaign performance data</li>
+                    <li>Device information and IP address</li>
+                    <li>Cookies and similar technologies</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Content Information</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Portfolio uploads and samples</li>
+                    <li>Messages and communications</li>
+                    <li>Campaign deliverables and content</li>
+                    <li>Reviews and ratings</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">2. How We Use Your Information</h2>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Platform Services</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Create and manage your account</li>
+                    <li>Facilitate connections between influencers and businesses</li>
+                    <li>Process payments and transactions</li>
+                    <li>Provide customer support</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Improvement & Analytics</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Analyze platform usage and performance</li>
+                    <li>Improve our services and features</li>
+                    <li>Generate insights and recommendations</li>
+                    <li>Conduct research and development</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Communication</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Send important platform updates</li>
+                    <li>Notify about new opportunities</li>
+                    <li>Marketing communications (with consent)</li>
+                    <li>Security and fraud prevention</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">3. Information Sharing</h2>
+
+                <p style="color: #6B7280; margin-bottom: 20px;">We do not sell your personal information. We may share information in the following circumstances:</p>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">With Your Consent</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Profile information visible to potential collaborators</li>
+                    <li>Campaign-related communications</li>
+                    <li>Public portfolio and work samples</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Service Providers</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Payment processing partners</li>
+                    <li>Cloud storage and hosting providers</li>
+                    <li>Analytics and marketing tools</li>
+                    <li>Customer support platforms</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Legal Requirements</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Compliance with applicable laws</li>
+                    <li>Response to legal requests</li>
+                    <li>Protection of rights and safety</li>
+                    <li>Fraud prevention and security</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">4. Data Security</h2>
+
+                <p style="color: #6B7280; margin-bottom: 20px;">We implement comprehensive security measures to protect your information:</p>
+
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li><strong>Encryption:</strong> Data encrypted in transit and at rest</li>
+                    <li><strong>Access Controls:</strong> Strict access limitations and authentication</li>
+                    <li><strong>Monitoring:</strong> 24/7 security monitoring and threat detection</li>
+                    <li><strong>Compliance:</strong> SOC 2 and industry standard compliance</li>
+                    <li><strong>Regular Audits:</strong> Security assessments and penetration testing</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">5. Your Rights and Choices</h2>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Account Control</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Update your profile and preferences</li>
+                    <li>Control visibility of your information</li>
+                    <li>Manage communication preferences</li>
+                    <li>Delete your account at any time</li>
+                </ul>
+
+                <h4 style="color: #4F46E5; margin: 20px 0 10px 0;">Data Rights</h4>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Access your personal information</li>
+                    <li>Request data correction or deletion</li>
+                    <li>Data portability and export</li>
+                    <li>Opt-out of marketing communications</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">6. Cookies and Tracking</h2>
+
+                <p style="color: #6B7280; margin-bottom: 15px;">We use cookies and similar technologies to:</p>
+                <ul style="margin-left: 20px; color: #6B7280; margin-bottom: 20px;">
+                    <li>Remember your preferences and settings</li>
+                    <li>Analyze platform usage and performance</li>
+                    <li>Provide personalized recommendations</li>
+                    <li>Ensure security and prevent fraud</li>
+                </ul>
+
+                <p style="color: #6B7280;">You can control cookies through your browser settings. Some features may not work properly if cookies are disabled.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">7. Data Retention</h2>
+
+                <p style="color: #6B7280; margin-bottom: 15px;">We retain your information for as long as necessary to:</p>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Provide our services to you</li>
+                    <li>Comply with legal obligations</li>
+                    <li>Resolve disputes and enforce agreements</li>
+                    <li>Maintain security and prevent fraud</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">8. Children's Privacy</h2>
+
+                <p style="color: #6B7280;">ConnectIndia is not intended for users under 18 years of age. We do not knowingly collect personal information from children under 18. If you believe we have collected information from a child under 18, please contact us immediately.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                <h2 style="color: #1F2937; margin-bottom: 20px;">9. Updates to This Policy</h2>
+
+                <p style="color: #6B7280;">We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+                <ul style="margin-left: 20px; color: #6B7280;">
+                    <li>Email notification to registered users</li>
+                    <li>Prominent notice on our platform</li>
+                    <li>Update to the "Last Updated" date</li>
+                </ul>
+            </div>
+
+            <div style="background: #4F46E5; color: white; border-radius: 12px; padding: 30px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Contact Us</h2>
+                <p style="margin-bottom: 20px;">If you have questions about this Privacy Policy or our data practices, contact us:</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div>
+                        <strong>Email:</strong><br>
+                        privacy@connectindia.in
+                    </div>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        +91 11 4567 8900
+                    </div>
+                    <div>
+                        <strong>Address:</strong><br>
+                        Cyber City, Gurgaon
+                        Haryana 122002, India
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Privacy Policy Content -->
-        <div class="bg-white rounded-lg shadow-lg p-8 space-y-8">
-            
-            <!-- Introduction -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-shield-alt text-indigo-600 mr-2"></i>Introduction
-                </h2>
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-700 mb-4">
-                        ConnectIndia ("we," "our," or "us") is committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our influencer-business connection platform.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        This policy applies to all users of ConnectIndia, including influencers, businesses, agencies, and visitors to our website. By using our services, you agree to the collection and use of information in accordance with this policy.
-                    </p>
-                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
-                        <p class="text-blue-800">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            <strong>Important:</strong> This Privacy Policy is compliant with the Personal Data Protection Act, 2023 (India), Information Technology Act, 2000, and international standards including GDPR.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Information We Collect -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-database text-indigo-600 mr-2"></i>Information We Collect
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                            <i class="fas fa-user text-indigo-600 mr-2"></i>Personal Information
-                        </h3>
-                        <ul class="text-gray-700 space-y-2">
-                            <li>• Name, email address, phone number</li>
-                            <li>• Profile information and bio</li>
-                            <li>• Business registration details</li>
-                            <li>• Payment and billing information</li>
-                            <li>• Government-issued ID for verification</li>
-                            <li>• Tax identification numbers (PAN, GST)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">
-                            <i class="fas fa-chart-line text-indigo-600 mr-2"></i>Platform Data
-                        </h3>
-                        <ul class="text-gray-700 space-y-2">
-                            <li>• Social media profiles and metrics</li>
-                            <li>• Campaign performance data</li>
-                            <li>• Communication logs and messages</li>
-                            <li>• Usage analytics and behavior</li>
-                            <li>• Device and browser information</li>
-                            <li>• IP address and location data</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                    <h4 class="font-semibold text-yellow-800 mb-2">
-                        <i class="fas fa-link text-yellow-600 mr-2"></i>Third-Party Platform Data
-                    </h4>
-                    <p class="text-yellow-700">
-                        When you connect your social media accounts (Instagram, YouTube, LinkedIn, Twitter), we access publicly available information and analytics data in accordance with each platform's API terms and your authorization.
-                    </p>
-                </div>
-            </section>
-
-            <!-- How We Use Your Information -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-cogs text-indigo-600 mr-2"></i>How We Use Your Information
-                </h2>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg">
-                        <i class="fas fa-handshake text-3xl text-indigo-600 mb-4"></i>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform Services</h3>
-                        <p class="text-gray-600">Facilitate connections between influencers and businesses, manage campaigns, and process payments</p>
-                    </div>
-                    
-                    <div class="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg">
-                        <i class="fas fa-chart-bar text-3xl text-green-600 mb-4"></i>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Analytics & Insights</h3>
-                        <p class="text-gray-600">Provide performance analytics, audience insights, and campaign optimization recommendations</p>
-                    </div>
-                    
-                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
-                        <i class="fas fa-shield-alt text-3xl text-purple-600 mb-4"></i>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Security & Compliance</h3>
-                        <p class="text-gray-600">Verify identities, prevent fraud, ensure platform security, and comply with legal requirements</p>
-                    </div>
-                </div>
-
-                <div class="mt-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Specific Use Cases:</h4>
-                    <ul class="text-gray-700 space-y-2 pl-4">
-                        <li>• Creating and managing user accounts and profiles</li>
-                        <li>• Matching influencers with relevant business opportunities</li>
-                        <li>• Processing payments and maintaining financial records</li>
-                        <li>• Providing customer support and resolving disputes</li>
-                        <li>• Sending important notifications and updates</li>
-                        <li>• Improving our services through data analysis</li>
-                        <li>• Complying with tax reporting and legal obligations</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Data Sharing and Disclosure -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-share-alt text-indigo-600 mr-2"></i>Data Sharing and Disclosure
-                </h2>
-                
-                <div class="space-y-6">
-                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-green-800 mb-3">
-                            <i class="fas fa-check-circle text-green-600 mr-2"></i>When We Share Information
-                        </h3>
-                        <ul class="text-green-700 space-y-2">
-                            <li>• <strong>With Platform Users:</strong> Profile information visible to potential collaborators</li>
-                            <li>• <strong>Service Providers:</strong> Payment processors, analytics tools, and infrastructure providers</li>
-                            <li>• <strong>Legal Requirements:</strong> When required by law, court orders, or government requests</li>
-                            <li>• <strong>Business Transfers:</strong> In case of merger, acquisition, or sale of assets</li>
-                            <li>• <strong>With Consent:</strong> When you explicitly authorize specific sharing</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-red-800 mb-3">
-                            <i class="fas fa-times-circle text-red-600 mr-2"></i>We Never Share
-                        </h3>
-                        <ul class="text-red-700 space-y-2">
-                            <li>• Your personal contact information without permission</li>
-                            <li>• Private messages or communications</li>
-                            <li>• Payment details or financial information</li>
-                            <li>• Information for marketing purposes to third parties</li>
-                            <li>• Data with competitors or unauthorized entities</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Data Security -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-lock text-indigo-600 mr-2"></i>Data Security
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Technical Safeguards</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-key text-indigo-600 mr-3"></i>
-                                <span>256-bit SSL encryption for all data transmission</span>
-                            </div>
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-server text-indigo-600 mr-3"></i>
-                                <span>Secure cloud infrastructure with regular backups</span>
-                            </div>
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-user-shield text-indigo-600 mr-3"></i>
-                                <span>Multi-factor authentication for sensitive accounts</span>
-                            </div>
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-eye text-indigo-600 mr-3"></i>
-                                <span>Continuous monitoring and threat detection</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Operational Safeguards</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-users text-indigo-600 mr-3"></i>
-                                <span>Limited access on need-to-know basis</span>
-                            </div>
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-graduation-cap text-indigo-600 mr-3"></i>
-                                <span>Regular security training for all staff</span>
-                            </div>
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-clipboard-check text-indigo-600 mr-3"></i>
-                                <span>Annual security audits and penetration testing</span>
-                            </div>
-                            <div class="flex items-center text-gray-700">
-                                <i class="fas fa-exclamation-triangle text-indigo-600 mr-3"></i>
-                                <span>Incident response and breach notification procedures</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Your Rights -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-balance-scale text-indigo-600 mr-2"></i>Your Privacy Rights
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-4">
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-blue-900 mb-2">
-                                <i class="fas fa-eye text-blue-600 mr-2"></i>Right to Access
-                            </h4>
-                            <p class="text-blue-700">Request a copy of all personal data we hold about you</p>
-                        </div>
-                        
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-green-900 mb-2">
-                                <i class="fas fa-edit text-green-600 mr-2"></i>Right to Rectification
-                            </h4>
-                            <p class="text-green-700">Correct any inaccurate or incomplete personal information</p>
-                        </div>
-                        
-                        <div class="bg-red-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-red-900 mb-2">
-                                <i class="fas fa-trash text-red-600 mr-2"></i>Right to Erasure
-                            </h4>
-                            <p class="text-red-700">Request deletion of your personal data (with certain limitations)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-purple-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-purple-900 mb-2">
-                                <i class="fas fa-ban text-purple-600 mr-2"></i>Right to Object
-                            </h4>
-                            <p class="text-purple-700">Object to processing for marketing or legitimate interests</p>
-                        </div>
-                        
-                        <div class="bg-yellow-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-yellow-900 mb-2">
-                                <i class="fas fa-download text-yellow-600 mr-2"></i>Right to Portability
-                            </h4>
-                            <p class="text-yellow-700">Receive your data in a structured, machine-readable format</p>
-                        </div>
-                        
-                        <div class="bg-indigo-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-indigo-900 mb-2">
-                                <i class="fas fa-pause text-indigo-600 mr-2"></i>Right to Restrict
-                            </h4>
-                            <p class="text-indigo-700">Limit how we process your personal information</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-6 bg-gray-50 p-6 rounded-lg">
-                    <h4 class="font-semibold text-gray-900 mb-3">How to Exercise Your Rights</h4>
-                    <p class="text-gray-700 mb-3">
-                        To exercise any of these rights, please contact us at <a href="/cdn-cgi/l/email-protection#bdcdcfd4cbdcdec4fdded2d3d3d8dec9d4d3d9d4dc93ded2d0" class="text-indigo-600 hover:underline"><span class="__cf_email__" data-cfemail="7404061d0215170d34171b1a1a1117001d1a101d155a171b19">[email&#160;protected]</span></a> with your request. We will respond within 30 days as required by law.
-                    </p>
-                    <div class="bg-blue-100 border border-blue-300 rounded p-3">
-                        <p class="text-blue-800 text-sm">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            We may require identity verification before processing certain requests to protect your privacy and security.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- International Data Transfers -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-globe text-indigo-600 mr-2"></i>International Data Transfers
-                </h2>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <p class="text-gray-700 mb-4">
-                        Your personal information may be transferred to and processed in countries other than India, including the United States and European Union, where our service providers operate. We ensure adequate protection through:
-                    </p>
-                    <ul class="text-gray-700 space-y-2 pl-4">
-                        <li>• Standard Contractual Clauses approved by relevant authorities</li>
-                        <li>• Adequacy decisions for countries with equivalent protection</li>
-                        <li>• Binding corporate rules for intra-group transfers</li>
-                        <li>• Your explicit consent for specific transfers</li>
-                    </ul>
-                    <div class="mt-4 bg-indigo-100 border border-indigo-300 rounded p-3">
-                        <p class="text-indigo-800 text-sm">
-                            <i class="fas fa-shield-alt mr-2"></i>
-                            All international transfers comply with applicable data protection laws and maintain the same level of security as provided in India.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Data Retention -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-clock text-indigo-600 mr-2"></i>Data Retention
-                </h2>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-blue-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-user-circle text-3xl text-blue-600 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-blue-900 mb-2">Account Data</h3>
-                        <p class="text-blue-700">Retained while account is active plus 3 years after closure</p>
-                    </div>
-                    
-                    <div class="bg-green-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-chart-line text-3xl text-green-600 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-green-900 mb-2">Campaign Data</h3>
-                        <p class="text-green-700">Retained for 7 years for business and tax reporting purposes</p>
-                    </div>
-                    
-                    <div class="bg-orange-50 p-6 rounded-lg text-center">
-                        <i class="fas fa-comments text-3xl text-orange-600 mb-3"></i>
-                        <h3 class="text-lg font-semibold text-orange-900 mb-2">Communication</h3>
-                        <p class="text-orange-700">Support communications retained for 2 years</p>
-                    </div>
-                </div>
-                
-                <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                    <h4 class="font-semibold text-yellow-800 mb-2">Automatic Deletion</h4>
-                    <p class="text-yellow-700">
-                        Data is automatically deleted when retention periods expire, unless longer retention is required by law or for legitimate business purposes such as fraud prevention or dispute resolution.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Children's Privacy -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-child text-indigo-600 mr-2"></i>Children's Privacy
-                </h2>
-                
-                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-                    <div class="flex items-start">
-                        <i class="fas fa-exclamation-triangle text-red-600 text-2xl mr-4 mt-1"></i>
-                        <div>
-                            <h3 class="font-semibold text-red-900 mb-2">Age Restrictions</h3>
-                            <p class="text-red-800 mb-4">
-                                ConnectIndia is not intended for use by individuals under 18 years of age. We do not knowingly collect personal information from children under 18.
-                            </p>
-                            <p class="text-red-700">
-                                If we discover that we have collected information from a child under 18, we will delete such information immediately. Parents or guardians who believe we may have collected information from a child should contact us at <a href="/cdn-cgi/l/email-protection#d0a0a2b9a6b1b3a990b3bfbebeb5b3a4b9beb4b9b1feb3bfbd" class="text-red-600 hover:underline font-semibold"><span class="__cf_email__" data-cfemail="0c7c7e657a6d6f754c6f636262696f78656268656d226f6361">[email&#160;protected]</span></a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Cookies and Tracking -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-cookie-bite text-indigo-600 mr-2"></i>Cookies and Tracking Technologies
-                </h2>
-                
-                <div class="space-y-6">
-                    <div class="grid md:grid-cols-4 gap-4">
-                        <div class="bg-blue-50 p-4 rounded-lg text-center">
-                            <i class="fas fa-cog text-blue-600 text-2xl mb-2"></i>
-                            <h4 class="font-semibold text-blue-900 text-sm">Essential</h4>
-                            <p class="text-blue-700 text-xs">Required for platform functionality</p>
-                        </div>
-                        
-                        <div class="bg-green-50 p-4 rounded-lg text-center">
-                            <i class="fas fa-chart-bar text-green-600 text-2xl mb-2"></i>
-                            <h4 class="font-semibold text-green-900 text-sm">Analytics</h4>
-                            <p class="text-green-700 text-xs">Help us improve our services</p>
-                        </div>
-                        
-                        <div class="bg-purple-50 p-4 rounded-lg text-center">
-                            <i class="fas fa-bullseye text-purple-600 text-2xl mb-2"></i>
-                            <h4 class="font-semibold text-purple-900 text-sm">Marketing</h4>
-                            <p class="text-purple-700 text-xs">Deliver relevant advertisements</p>
-                        </div>
-                        
-                        <div class="bg-orange-50 p-4 rounded-lg text-center">
-                            <i class="fas fa-users text-orange-600 text-2xl mb-2"></i>
-                            <h4 class="font-semibold text-orange-900 text-sm">Social Media</h4>
-                            <p class="text-orange-700 text-xs">Social sharing functionality</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-semibold text-gray-900 mb-3">Cookie Management</h4>
-                        <p class="text-gray-700 mb-3">
-                            You can control cookie preferences through your browser settings or our cookie consent banner. Note that disabling certain cookies may affect platform functionality.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Browser Settings</span>
-                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Opt-out Tools</span>
-                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Cookie Preferences</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Changes to Privacy Policy -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-sync-alt text-indigo-600 mr-2"></i>Changes to This Privacy Policy
-                </h2>
-                
-                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
-                    <p class="text-indigo-800 mb-4">
-                        We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.
-                    </p>
-                    <h4 class="font-semibold text-indigo-900 mb-3">How We Notify You of Changes:</h4>
-                    <ul class="text-indigo-700 space-y-2 pl-4">
-                        <li>• Email notification to registered users for material changes</li>
-                        <li>• Prominent notice on our website for 30 days</li>
-                        <li>• In-platform notifications for active users</li>
-                        <li>• Updated "Last Modified" date at the top of this policy</li>
-                    </ul>
-                    <div class="mt-4 bg-indigo-100 border border-indigo-300 rounded p-3">
-                        <p class="text-indigo-800 text-sm">
-                            <i class="fas fa-calendar-check mr-2"></i>
-                            Continued use of our services after changes constitute acceptance of the updated policy.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Information -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-envelope text-indigo-600 mr-2"></i>Contact Us
-                </h2>
-                
-                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-8 rounded-lg">
-                    <p class="text-gray-700 mb-6">
-                        If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
-                    </p>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-semibold text-gray-900 mb-4">Data Protection Officer</h4>
-                            <div class="space-y-3">
-                                <div class="flex items-center text-gray-700">
-                                    <i class="fas fa-envelope text-indigo-600 mr-3 w-5"></i>
-                                    <a href="/cdn-cgi/l/email-protection#b1c1c3d8c7d0d2c8f1d2dedfdfd4d2c5d8dfd5d8d09fd2dedc" class="text-indigo-600 hover:underline"><span class="__cf_email__" data-cfemail="700002190611130930131f1e1e151304191e1419115e131f1d">[email&#160;protected]</span></a>
-                                </div>
-                                <div class="flex items-center text-gray-700">
-                                    <i class="fas fa-phone text-indigo-600 mr-3 w-5"></i>
-                                    <span>+91-80-4567-8900</span>
-                                </div>
-                                <div class="flex items-start text-gray-700">
-                                    <i class="fas fa-map-marker-alt text-indigo-600 mr-3 w-5 mt-1"></i>
-                                    <span>ConnectIndia Privacy Office<br>
-                                    123 Tech Park, Sector 5<br>
-                                    Salt Lake City, Kolkata - 700091<br>
-                                    West Bengal, India</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold text-gray-900 mb-4">Response Times</h4>
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between bg-white p-3 rounded">
-                                    <span class="text-gray-700">General Inquiries</span>
-                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">2-3 days</span>
-                                </div>
-                                <div class="flex items-center justify-between bg-white p-3 rounded">
-                                    <span class="text-gray-700">Rights Requests</span>
-                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">30 days</span>
-                                </div>
-                                <div class="flex items-center justify-between bg-white p-3 rounded">
-                                    <span class="text-gray-700">Data Breaches</span>
-                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">72 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 bg-white border border-indigo-200 rounded-lg p-4">
-                        <p class="text-indigo-800 text-sm">
-                            <i class="fas fa-info-circle mr-2"></i>
-                            <strong>For EU residents:</strong> You also have the right to lodge a complaint with your local supervisory authority if you believe our processing of your personal data violates applicable law.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Legal Basis -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b-2 border-indigo-100 pb-2">
-                    <i class="fas fa-gavel text-indigo-600 mr-2"></i>Legal Basis for Processing
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-4">
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-blue-900 mb-2">
-                                <i class="fas fa-handshake text-blue-600 mr-2"></i>Contract Performance
-                            </h4>
-                            <p class="text-blue-700 text-sm">Processing necessary to provide our platform services and fulfill our contractual obligations</p>
-                        </div>
-                        
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-green-900 mb-2">
-                                <i class="fas fa-balance-scale text-green-600 mr-2"></i>Legitimate Interests
-                            </h4>
-                            <p class="text-green-700 text-sm">Improving our services, preventing fraud, and ensuring platform security</p>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-purple-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-purple-900 mb-2">
-                                <i class="fas fa-check-square text-purple-600 mr-2"></i>Consent
-                            </h4>
-                            <p class="text-purple-700 text-sm">Marketing communications and non-essential data processing with your explicit consent</p>
-                        </div>
-                        
-                        <div class="bg-orange-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-orange-900 mb-2">
-                                <i class="fas fa-university text-orange-600 mr-2"></i>Legal Compliance
-                            </h4>
-                            <p class="text-orange-700 text-sm">Tax reporting, regulatory compliance, and legal obligations under Indian law</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">ConnectIndia</h3>
-                    <p class="text-gray-300 text-sm">India's premier platform connecting authentic influencers with innovative businesses.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Data Processing Agreement</a></li>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li><a href="support.html" class="hover:text-white">Help Center</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-white">Report Issue</a></li>
-                        <li><a href="#" class="hover:text-white">Security</a></li>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-youtube"></i></a>
-                    </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 text-sm">
-                <p>&copy; 2024 ConnectIndia. All rights reserved. | Made with ❤️ in India</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+    
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
+</body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDib%2BWjyImsBkDn%2FlUJEQLYD2llqURX1AeRhjsQBwxYIXipldRUmgHEUrDewSoQ4cNeB9dkLEUyG7sWfY%2Fdh6a5b1zh5eUyld%2Bz0eUDMpCcyq9Qeow9tK5QYhMOemXYIJ3%2Be0AV0seIyu7Gmb41HJjGEkb7ZuS8vZwoXdI0Y%2BI9yTw%2F7HB3J3xyIWUoHBTc1qgTXTrnrvS5LCI0CBMuLY6WCXqvV2Ee2PRnByGXeW5qCwMwCUIZ%2FI6dYhdctwkVk%2FykHIM%2BzNbivAO%2Fn3u0Glpxf56gmttUFDiSQPeVH4QyCBneMjl7UIk26cg6lNTX6hS4IzXHNirrLJ4%2BFSVzbFWuJ75rIJmLCg6MygiEqiJ%2BemNo16otDxfO7ZHM3ihCwuzixVAPcTN6pXlyWo22SoKq9JEfpr40s7wlvuJ%2FiCa3KC0RMAfLWJlY%2FE7f%2F%2FUTh2aYNMsJG3zHQ0v0Vaj0tJNXLbxmyuHGyMNEavQqo74HaD";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDib+WjyImsBkDn/lUJEQLYD2llqURX1AeRhjsQBwxYIXipldRUmgHEUrDewSoQ4cNeB9dkLEUyG7sWfY/dh6a5b1zh5eUyld+z0eUDMpCcyq9Qeow9tK5QYhMOemXYIJ3+e0AV0seIyu7Gmb41HJjGEkb7ZuS8vZwoXdI0Y+I9yTw/7HB3J3xyIWUoHBTc1qgTXTrnrvS5LCI0CBMuLY6WCXqvV2Ee2PRnByGXeW5qCwMwCUIZ/I6dYhdctwkVk/ykHIM+zNbivAO/n3u0Glpxf56gmttUFDiSQPeVH4QyCBneMjl7UIk26cg6lNTX6hS4IzXHNirrLJ4+FSVzbFWuJ75rIJmLCg6MygiEqiJ+emNo16otDxfO7ZHM3ihCwuzixVAPcTN6pXlyWo22SoKq9JEfpr40s7wlvuJ/iCa3KC0RMAfLWJlY/E7f//UTh2aYNMsJG3zHQ0v0Vaj0tJNXLbxmyuHGyMNEavQqo74HaD";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    

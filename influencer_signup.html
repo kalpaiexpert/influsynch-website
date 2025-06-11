@@ -1,613 +1,992 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>Influencer Registration - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .form-section { background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .step-indicator { transition: all 0.3s ease; }
-        .step-active { background: #667eea; color: white; }
-        .step-completed { background: #10b981; color: white; }
-        .input-focus:focus { border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
-        .custom-checkbox:checked { background-color: #667eea; border-color: #667eea; }
-        .progress-bar { background: linear-gradient(90deg, #667eea, #764ba2); }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-handshake text-2xl text-purple-600 mr-2"></i>
-                        <span class="text-xl font-bold text-gray-900">ConnectIndia</span>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-600 hover:text-purple-600">Home</a>
-                    <a href="for_businesses.html" class="text-gray-600 hover:text-purple-600">For Businesses</a>
-                    <a href="business_signup.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Business Login</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body class="influencer-signup">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
 
-    <!-- Header -->
-    <div class="gradient-bg py-12">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-white mb-4">Join as an Influencer</h1>
-            <p class="text-xl text-purple-100 mb-6">Connect with leading Indian brands and monetize your influence</p>
-            <div class="flex justify-center items-center space-x-4 text-purple-100">
-                <i class="fas fa-users text-lg"></i>
-                <span>50,000+ Active Influencers</span>
-                <span>•</span>
-                <i class="fas fa-building text-lg"></i>
-                <span>2,000+ Partner Brands</span>
-                <span>•</span>
-                <i class="fas fa-rupee-sign text-lg"></i>
-                <span>₹10Cr+ Earned</span>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
             </div>
-        </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>Join as an Influencer</h1>
+        <p>Start earning through authentic brand partnerships. Join thousands of successful creators on ConnectIndia.</p>
     </div>
+</section>
 
-    <!-- Multi-Step Form -->
-    <div class="max-w-4xl mx-auto px-4 py-8">
-        <!-- Progress Indicator -->
-        <div class="mb-8">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center">
-                    <div class="step-indicator step-active w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold mr-3">1</div>
-                    <span class="text-sm font-medium text-gray-700">Personal Info</span>
+<section class="section">
+    <div class="container">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div class="form-container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Create Your Influencer Profile</h2>
+
+                <form>
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <select id="city" name="city" required>
+                                <option value="">Select your city</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="kolkata">Kolkata</option>
+                                <option value="pune">Pune</option>
+                                <option value="ahmedabad">Ahmedabad</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <select id="age" name="age" required>
+                                <option value="">Select age range</option>
+                                <option value="18-24">18-24</option>
+                                <option value="25-34">25-34</option>
+                                <option value="35-44">35-44</option>
+                                <option value="45+">45+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="niche">Primary Niche *</label>
+                        <select id="niche" name="niche" required>
+                            <option value="">Select your niche</option>
+                            <option value="fashion">Fashion & Style</option>
+                            <option value="beauty">Beauty & Skincare</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="food">Food & Cooking</option>
+                            <option value="travel">Travel</option>
+                            <option value="fitness">Fitness & Health</option>
+                            <option value="tech">Technology</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="education">Education</option>
+                            <option value="parenting">Parenting</option>
+                            <option value="business">Business & Finance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="platforms">Social Media Platforms *</label>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 5px;">
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="platforms" value="instagram"> Instagram
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="platforms" value="youtube"> YouTube
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="platforms" value="linkedin"> LinkedIn
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="platforms" value="twitter"> Twitter
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="platforms" value="facebook"> Facebook
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="platforms" value="tiktok"> TikTok
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instagram-handle">Instagram Handle</label>
+                        <input type="text" id="instagram-handle" name="instagram-handle" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="followers">Total Followers *</label>
+                        <select id="followers" name="followers" required>
+                            <option value="">Select follower range</option>
+                            <option value="1k-5k">1K - 5K</option>
+                            <option value="5k-10k">5K - 10K</option>
+                            <option value="10k-50k">10K - 50K</option>
+                            <option value="50k-100k">50K - 100K</option>
+                            <option value="100k-500k">100K - 500K</option>
+                            <option value="500k-1m">500K - 1M</option>
+                            <option value="1m+">1M+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio/Description *</label>
+                        <textarea id="bio" name="bio" placeholder="Tell brands about yourself, your content style, and what makes you unique..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="terms" required>
+                            I agree to the <a href="privacy.html" style="color: #4F46E5;">Terms & Conditions</a> and <a href="privacy.html" style="color: #4F46E5;">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="updates">
+                            I want to receive updates about new collaboration opportunities
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 16px;">Create My Profile</button>
+                </form>
+
+                <div style="text-align: center; margin-top: 20px; color: #6B7280;">
+                    <p>Already have an account? <a href="login.html" style="color: #4F46E5;">Login here</a></p>
                 </div>
-                <div class="flex items-center">
-                    <div class="step-indicator w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold mr-3">2</div>
-                    <span class="text-sm font-medium text-gray-500">Social Profiles</span>
-                </div>
-                <div class="flex items-center">
-                    <div class="step-indicator w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold mr-3">3</div>
-                    <span class="text-sm font-medium text-gray-500">Content & Rates</span>
-                </div>
-                <div class="flex items-center">
-                    <div class="step-indicator w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold mr-3">4</div>
-                    <span class="text-sm font-medium text-gray-500">Verification</span>
-                </div>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-                <div class="progress-bar h-2 rounded-full" style="width: 25%"></div>
             </div>
         </div>
 
-        <!-- Form Steps -->
-        <form id="influencerRegistration" class="form-section p-8">
-            <!-- Step 1: Personal Information -->
-            <div id="step1" class="step-content">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Personal Information</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                        <input type="text" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Enter your first name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                        <input type="text" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Enter your last name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                        <input type="email" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="your.email@example.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                        <input type="tel" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="+91 98765 43210">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
-                        <input type="date" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
-                        <select class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none">
-                            <option>Select Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Non-binary</option>
-                            <option>Prefer not to say</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">City *</label>
-                        <select required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none">
-                            <option>Select City</option>
-                            <option>Mumbai</option>
-                            <option>Delhi</option>
-                            <option>Bangalore</option>
-                            <option>Hyderabad</option>
-                            <option>Chennai</option>
-                            <option>Kolkata</option>
-                            <option>Pune</option>
-                            <option>Ahmedabad</option>
-                            <option>Surat</option>
-                            <option>Jaipur</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">State *</label>
-                        <select required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none">
-                            <option>Select State</option>
-                            <option>Maharashtra</option>
-                            <option>Karnataka</option>
-                            <option>Tamil Nadu</option>
-                            <option>Delhi</option>
-                            <option>Gujarat</option>
-                            <option>Rajasthan</option>
-                            <option>West Bengal</option>
-                            <option>Telangana</option>
-                            <option>Uttar Pradesh</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
+        <div style="margin-top: 60px;">
+            <h2 class="section-title">Why Join ConnectIndia?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Guaranteed Payments</h3>
+                    <p>Secure escrow system ensures you get paid for every completed collaboration</p>
                 </div>
 
-                <div class="mt-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Bio/About Yourself *</label>
-                    <textarea required rows="4" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Tell us about yourself, your interests, and what makes you unique as an influencer..."></textarea>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Quality Brands</h3>
+                    <p>Work with verified businesses that value authentic content and fair partnerships</p>
                 </div>
 
-                <div class="flex justify-end mt-8">
-                    <button type="button" onclick="nextStep()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 font-medium">
-                        Next Step <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Step 2: Social Media Profiles -->
-            <div id="step2" class="step-content hidden">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Social Media Profiles</h2>
-                
-                <div class="space-y-6">
-                    <!-- Instagram -->
-                    <div class="border border-gray-200 rounded-lg p-6">
-                        <div class="flex items-center mb-4">
-                            <i class="fab fa-instagram text-2xl text-pink-500 mr-3"></i>
-                            <h3 class="text-lg font-semibold">Instagram</h3>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Username/Handle</label>
-                                <input type="text" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="@yourusername">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Followers Count</label>
-                                <input type="number" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="10000">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Average Engagement Rate (%)</label>
-                                <input type="number" step="0.01" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="3.5">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Content Type</label>
-                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none">
-                                    <option>Select Type</option>
-                                    <option>Photos</option>
-                                    <option>Reels</option>
-                                    <option>Stories</option>
-                                    <option>Mixed Content</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- YouTube -->
-                    <div class="border border-gray-200 rounded-lg p-6">
-                        <div class="flex items-center mb-4">
-                            <i class="fab fa-youtube text-2xl text-red-500 mr-3"></i>
-                            <h3 class="text-lg font-semibold">YouTube</h3>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Channel Name</label>
-                                <input type="text" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Your Channel Name">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Subscribers Count</label>
-                                <input type="number" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="5000">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Average Views per Video</label>
-                                <input type="number" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="2000">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Upload Frequency</label>
-                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none">
-                                    <option>Select Frequency</option>
-                                    <option>Daily</option>
-                                    <option>3-4 times a week</option>
-                                    <option>Weekly</option>
-                                    <option>Bi-weekly</option>
-                                    <option>Monthly</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Other Platforms -->
-                    <div class="border border-gray-200 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Other Platforms</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fab fa-tiktok text-lg mr-2"></i>TikTok Handle
-                                </label>
-                                <input type="text" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="@yourtiktok">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fab fa-twitter text-lg mr-2"></i>Twitter Handle
-                                </label>
-                                <input type="text" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="@yourtwitter">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fab fa-facebook text-lg mr-2"></i>Facebook Page
-                                </label>
-                                <input type="text" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="Facebook Page URL">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fab fa-linkedin text-lg mr-2"></i>LinkedIn Profile
-                                </label>
-                                <input type="text" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="LinkedIn Profile URL">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-between mt-8">
-                    <button type="button" onclick="prevStep()" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 font-medium">
-                        <i class="fas fa-arrow-left mr-2"></i>Previous
-                    </button>
-                    <button type="button" onclick="nextStep()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 font-medium">
-                        Next Step <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Step 3: Content & Rates -->
-            <div id="step3" class="step-content hidden">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Content Categories & Pricing</h2>
-                
-                <div class="space-y-6">
-                    <!-- Content Categories -->
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">Content Categories (Select all that apply)</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="fashion">
-                                <span class="text-sm">Fashion & Style</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="beauty">
-                                <span class="text-sm">Beauty & Makeup</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="fitness">
-                                <span class="text-sm">Fitness & Health</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="food">
-                                <span class="text-sm">Food & Cooking</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="travel">
-                                <span class="text-sm">Travel & Tourism</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="technology">
-                                <span class="text-sm">Technology</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="lifestyle">
-                                <span class="text-sm">Lifestyle</span>
-                            </label>
-                            <label class="flex items-center space-x-2 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="custom-checkbox" value="entertainment">
-                                <span class="text-sm">Entertainment</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Pricing -->
-                    <div class="border border-gray-200 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Your Rates (in INR)</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Instagram Post</label>
-                                <div class="relative">
-                                    <span class="absolute left-3 top-3 text-gray-500">₹</span>
-                                    <input type="number" class="input-focus w-full pl-8 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="5000">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Instagram Story</label>
-                                <div class="relative">
-                                    <span class="absolute left-3 top-3 text-gray-500">₹</span>
-                                    <input type="number" class="input-focus w-full pl-8 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="2000">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Instagram Reel</label>
-                                <div class="relative">
-                                    <span class="absolute left-3 top-3 text-gray-500">₹</span>
-                                    <input type="number" class="input-focus w-full pl-8 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="8000">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">YouTube Video</label>
-                                <div class="relative">
-                                    <span class="absolute left-3 top-3 text-gray-500">₹</span>
-                                    <input type="number" class="input-focus w-full pl-8 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="15000">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Languages -->
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">Languages You Create Content In</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="hindi">
-                                <span class="text-sm">Hindi</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="english">
-                                <span class="text-sm">English</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="tamil">
-                                <span class="text-sm">Tamil</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="telugu">
-                                <span class="text-sm">Telugu</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="marathi">
-                                <span class="text-sm">Marathi</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="bengali">
-                                <span class="text-sm">Bengali</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="gujarati">
-                                <span class="text-sm">Gujarati</span>
-                            </label>
-                            <label class="flex items-center space-x-2">
-                                <input type="checkbox" class="custom-checkbox" value="punjabi">
-                                <span class="text-sm">Punjabi</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-between mt-8">
-                    <button type="button" onclick="prevStep()" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 font-medium">
-                        <i class="fas fa-arrow-left mr-2"></i>Previous
-                    </button>
-                    <button type="button" onclick="nextStep()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 font-medium">
-                        Next Step <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Step 4: Verification & Agreement -->
-            <div id="step4" class="step-content hidden">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Verification & Agreement</h2>
-                
-                <div class="space-y-6">
-                    <!-- Identity Verification -->
-                    <div class="border border-gray-200 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Identity Verification</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">PAN Number *</label>
-                                <input type="text" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="ABCDE1234F">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Bank Account Number *</label>
-                                <input type="text" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="For payment processing">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">IFSC Code *</label>
-                                <input type="text" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="SBIN0001234">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Account Holder Name *</label>
-                                <input type="text" required class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="As per bank records">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Portfolio Upload -->
-                    <div class="border border-gray-200 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4">Portfolio Showcase</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Upload your best content samples</label>
-                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                                    <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-4"></i>
-                                    <p class="text-gray-600 mb-2">Drag and drop files here or click to upload</p>
-                                    <input type="file" multiple accept="image/*,video/*" class="hidden" id="portfolio-upload">
-                                    <button type="button" onclick="document.getElementById('portfolio-upload').click()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
-                                        Choose Files
-                                    </button>
-                                    <p class="text-xs text-gray-500 mt-2">Max 10 files, 10MB each</p>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Link to your best performing post</label>
-                                <input type="url" class="input-focus w-full p-3 border border-gray-300 rounded-lg focus:outline-none" placeholder="https://instagram.com/p/your-post">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Terms and Conditions -->
-                    <div class="space-y-4">
-                        <label class="flex items-start space-x-3">
-                            <input type="checkbox" required class="custom-checkbox mt-1">
-                            <span class="text-sm text-gray-700">
-                                I confirm that all information provided is accurate and up-to-date. I understand that false information may result in account suspension.
-                            </span>
-                        </label>
-                        <label class="flex items-start space-x-3">
-                            <input type="checkbox" required class="custom-checkbox mt-1">
-                            <span class="text-sm text-gray-700">
-                                I agree to ConnectIndia's <a href="#" class="text-purple-600 hover:underline">Terms of Service</a> and <a href="#" class="text-purple-600 hover:underline">Privacy Policy</a>.
-                            </span>
-                        </label>
-                        <label class="flex items-start space-x-3">
-                            <input type="checkbox" class="custom-checkbox mt-1">
-                            <span class="text-sm text-gray-700">
-                                I would like to receive email updates about new collaboration opportunities and platform features.
-                            </span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="flex justify-between mt-8">
-                    <button type="button" onclick="prevStep()" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 font-medium">
-                        <i class="fas fa-arrow-left mr-2"></i>Previous
-                    </button>
-                    <button type="submit" class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 font-medium">
-                        <i class="fas fa-check mr-2"></i>Complete Registration
-                    </button>
-                </div>
-            </div>
-        </form>
-
-        <!-- Success Message (Hidden initially) -->
-        <div id="successMessage" class="hidden text-center py-12">
-            <div class="max-w-md mx-auto">
-                <div class="bg-green-100 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                    <i class="fas fa-check text-3xl text-green-600"></i>
-                </div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Registration Successful!</h2>
-                <p class="text-gray-600 mb-6">Welcome to ConnectIndia! We'll review your application within 24-48 hours and send you an email with your approval status.</p>
-                <div class="space-y-3">
-                    <a href="index.html" class="block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">
-                        Back to Home
-                    </a>
-                    <p class="text-sm text-gray-500">Check your email for next steps</p>
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h3>Grow Your Reach</h3>
+                    <p>Access tools and insights to grow your audience and improve your content</p>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 mt-16">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center">
-                <div class="flex items-center justify-center mb-4">
-                    <i class="fas fa-handshake text-2xl text-purple-400 mr-2"></i>
-                    <span class="text-xl font-bold">ConnectIndia</span>
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                    </ul>
                 </div>
-                <p class="text-gray-400 mb-6">Connecting authentic creators with innovative businesses across India</p>
-                <div class="flex justify-center space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
                 </div>
-                <div class="border-t border-gray-700 mt-8 pt-6">
-                    <p class="text-gray-400 text-sm">&copy; 2024 ConnectIndia. All rights reserved.</p>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
                 </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
+    
 
     <script>
-        let currentStep = 1;
-        const totalSteps = 4;
-
-        function showStep(step) {
-            // Hide all steps
-            for (let i = 1; i <= totalSteps; i++) {
-                document.getElementById(`step${i}`).classList.add('hidden');
-            }
-            
-            // Show current step
-            document.getElementById(`step${step}`).classList.remove('hidden');
-            
-            // Update progress indicators
-            updateProgressIndicators(step);
-            
-            // Update progress bar
-            const progressPercent = (step / totalSteps) * 100;
-            document.querySelector('.progress-bar').style.width = `${progressPercent}%`;
-        }
-
-        function updateProgressIndicators(currentStep) {
-            for (let i = 1; i <= totalSteps; i++) {
-                const indicator = document.querySelectorAll('.step-indicator')[i-1];
-                if (i < currentStep) {
-                    indicator.className = 'step-indicator step-completed w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold mr-3';
-                } else if (i === currentStep) {
-                    indicator.className = 'step-indicator step-active w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold mr-3';
-                } else {
-                    indicator.className = 'step-indicator w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold mr-3';
-                }
-            }
-        }
-
-        function nextStep() {
-            if (currentStep < totalSteps) {
-                currentStep++;
-                showStep(currentStep);
-            }
-        }
-
-        function prevStep() {
-            if (currentStep > 1) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        }
-
-        // Form submission
-        document.getElementById('influencerRegistration').addEventListener('submit', function(e) {
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Hide form and show success message
-            document.querySelector('.form-section').classList.add('hidden');
-            document.getElementById('successMessage').classList.remove('hidden');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+            e.stopPropagation();
+            return false;
         });
+    });
 
-        // Initialize first step
-        showStep(1);
-    </script>
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDjO92x2LJFuRSVUbVNePq1fFNAJz1T7FeCojDPJw74QcKTR26TqzT9%2FXt6cl1ha%2FDPSKLmtnV56%2Bk3SoaErf%2Bvt5CXlQxwz1DFJI%2Fp1p5rkHdu1Ho1oo06I2KdpI9KHBtaC9drHKHySvBzVNOVODzowhpsJ6N5OnbwfjBzs8xRhGO1h4ANbZ9qyRczTyZGQnPlEXmlQcl4BNvYfBQigN4pbiY91L7QPZ1MLnZYx28bg%2Fpcak7Uy1D4RkSk3jNvMkLWUaNSwDY7NsUDBIz5wmpqlZ7VvOp9Mvy%2FaO78P8xAyEghKWUJ6FmcnqOs5fnf8liQC8cJv3zpRJWl0oyu9KQhTD1cRxPTrTI%2Fr09q4N7xlMMcAkiAUHuZBqP2QqlnmxgILwrIdb%2Btu50cO%2FZjuRUok9VNMVlwXFmA9qHZfvSTDweXdOyxIRhNawaR6lKnem%2BYf7BdoWcQ%2B6GWPj9X4iAwNOWbjFwmyGDZ0rSL0hbrm1LjBZIJTMXJefddZGSc7J9Q%3D%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDjO92x2LJFuRSVUbVNePq1fFNAJz1T7FeCojDPJw74QcKTR26TqzT9/Xt6cl1ha/DPSKLmtnV56+k3SoaErf+vt5CXlQxwz1DFJI/p1p5rkHdu1Ho1oo06I2KdpI9KHBtaC9drHKHySvBzVNOVODzowhpsJ6N5OnbwfjBzs8xRhGO1h4ANbZ9qyRczTyZGQnPlEXmlQcl4BNvYfBQigN4pbiY91L7QPZ1MLnZYx28bg/pcak7Uy1D4RkSk3jNvMkLWUaNSwDY7NsUDBIz5wmpqlZ7VvOp9Mvy/aO78P8xAyEghKWUJ6FmcnqOs5fnf8liQC8cJv3zpRJWl0oyu9KQhTD1cRxPTrTI/r09q4N7xlMMcAkiAUHuZBqP2QqlnmxgILwrIdb+tu50cO/ZjuRUok9VNMVlwXFmA9qHZfvSTDweXdOyxIRhNawaR6lKnem+Yf7BdoWcQ+6GWPj9X4iAwNOWbjFwmyGDZ0rSL0hbrm1LjBZIJTMXJefddZGSc7J9Q==";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    

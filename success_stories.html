@@ -1,489 +1,1073 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>Success Stories - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .hover-lift { transition: transform 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); }
-        .metric-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-        .metric-card-2 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .metric-card-3 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-        .testimonial-bg { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <span class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">ConnectIndia</span>
+<body class="success-stories">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
+
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
+                        </div>
                     </div>
-                    <div class="hidden md:ml-10 md:flex space-x-8">
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Our Platform</button>
-                            <div class="absolute hidden group-hover:block w-64 bg-white shadow-lg rounded-lg mt-2 py-2 z-50">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Influencer Discovery</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Campaign Management</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytics Dashboard</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Payment Processing</a>
-                            </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
                         </div>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Who We Serve</button>
-                            <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg rounded-lg mt-2 py-2 z-50">
-                                <a href="for_influencers.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Influencers</a>
-                                <a href="for_businesses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Businesses</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Agencies</a>
-                            </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
                         </div>
-                        <a href="pricing.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Resources</button>
-                            <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg rounded-lg mt-2 py-2 z-50">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blog</a>
-                                <a href="success_stories.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Success Stories</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Guides</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Webinars</a>
-                            </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
                         </div>
-                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>Success Stories</h1>
+        <p>Real results from Indian brands and influencers achieving remarkable success through ConnectIndia</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Brand Success Stories</h2>
+        <p class="section-subtitle">How leading Indian brands achieved extraordinary results</p>
+
+        <div class="features-grid">
+            <div class="feature" style="text-align: left; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: #4F46E5; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px;">FB</div>
+                    <div>
+                        <h3 style="margin: 0;">FashionBay</h3>
+                        <p style="color: #6B7280; margin: 5px 0 0 0;">Premium Fashion Brand</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="login.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Login</a>
-                    <a href="business_signup.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition duration-300">Get Started</a>
+
+                <h4 style="color: #4F46E5; margin-bottom: 10px;">300% Sales Increase in 3 Months</h4>
+                <p style="color: #374151; margin-bottom: 20px;">FashionBay partnered with 25 fashion influencers across tier-1 and tier-2 cities, resulting in massive growth in brand awareness and sales.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
+                    <div style="text-align: center; padding: 10px; background: #F8F9FA; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #4F46E5;">25</div>
+                        <div style="font-size: 12px; color: #6B7280;">Influencers</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: #F8F9FA; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #4F46E5;">5M+</div>
+                        <div style="font-size: 12px; color: #6B7280;">Total Reach</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: #F8F9FA; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #4F46E5;">6.2x</div>
+                        <div style="font-size: 12px; color: #6B7280;">ROI</div>
+                    </div>
                 </div>
+
+                <blockquote style="border-left: 4px solid #4F46E5; padding-left: 15px; margin: 20px 0; font-style: italic; color: #6B7280;">
+                    "ConnectIndia helped us find the perfect influencers who truly resonated with our brand. The results exceeded all expectations."
+                </blockquote>
+                <div style="font-weight: 600; color: #374151;">- Priya Sharma, Marketing Director</div>
+            </div>
+
+            <div class="feature" style="text-align: left; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: #F59E0B; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px;">TS</div>
+                    <div>
+                        <h3 style="margin: 0;">TechStart</h3>
+                        <p style="color: #6B7280; margin: 5px 0 0 0;">Mobile App Startup</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #F59E0B; margin-bottom: 10px;">100K App Downloads in 30 Days</h4>
+                <p style="color: #374151; margin-bottom: 20px;">TechStart leveraged tech reviewers and gaming influencers to promote their new mobile app, achieving viral growth.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
+                    <div style="text-align: center; padding: 10px; background: #FEF3C7; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #F59E0B;">15</div>
+                        <div style="font-size: 12px; color: #6B7280;">Tech Reviewers</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: #FEF3C7; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #F59E0B;">2M+</div>
+                        <div style="font-size: 12px; color: #6B7280;">Video Views</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: #FEF3C7; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #F59E0B;">8.5x</div>
+                        <div style="font-size: 12px; color: #6B7280;">ROI</div>
+                    </div>
+                </div>
+
+                <blockquote style="border-left: 4px solid #F59E0B; padding-left: 15px; margin: 20px 0; font-style: italic; color: #6B7280;">
+                    "The quality of tech influencers and their honest reviews helped us build trust and drive massive downloads."
+                </blockquote>
+                <div style="font-weight: 600; color: #374151;">- Rohit Kumar, Founder</div>
+            </div>
+
+            <div class="feature" style="text-align: left; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: #10B981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px;">HC</div>
+                    <div>
+                        <h3 style="margin: 0;">HealthyCare</h3>
+                        <p style="color: #6B7280; margin: 5px 0 0 0;">Health Supplements</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #10B981; margin-bottom: 10px;">500% Brand Awareness Growth</h4>
+                <p style="color: #374151; margin-bottom: 20px;">HealthyCare collaborated with fitness influencers and health coaches to build credibility and drive product sales.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
+                    <div style="text-align: center; padding: 10px; background: #ECFDF5; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #10B981;">40</div>
+                        <div style="font-size: 12px; color: #6B7280;">Fitness Influencers</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: #ECFDF5; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #10B981;">8M+</div>
+                        <div style="font-size: 12px; color: #6B7280;">Impressions</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: #ECFDF5; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: #10B981;">4.8x</div>
+                        <div style="font-size: 12px; color: #6B7280;">ROI</div>
+                    </div>
+                </div>
+
+                <blockquote style="border-left: 4px solid #10B981; padding-left: 15px; margin: 20px 0; font-style: italic; color: #6B7280;">
+                    "Working with authentic fitness influencers helped us build trust and credibility in the health supplement market."
+                </blockquote>
+                <div style="font-weight: 600; color: #374151;">- Dr. Anita Verma, CMO</div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-6">Success Stories That Inspire</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Discover how Indian businesses and influencers are achieving remarkable results through authentic collaborations on ConnectIndia</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-6">
-                    <div class="text-3xl font-bold">2,500+</div>
-                    <div class="text-lg">Successful Campaigns</div>
-                </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-6">
-                    <div class="text-3xl font-bold">₹50+ Cr</div>
-                    <div class="text-lg">Revenue Generated</div>
-                </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-6">
-                    <div class="text-3xl font-bold">95%</div>
-                    <div class="text-lg">Client Satisfaction</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">Influencer Success Stories</h2>
+        <p class="section-subtitle">How creators transformed their careers with ConnectIndia</p>
 
-    <!-- Featured Success Stories -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Success Stories</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real results from real businesses and creators across India</p>
-            </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-author">
+                    <div class="author-avatar">MA</div>
+                    <div class="author-name">Maya Agarwal</div>
+                    <div class="author-title">Fashion Influencer • 50K → 200K followers</div>
+                </div>
+                <p class="testimonial-text">"ConnectIndia transformed my influencer journey. I went from earning ₹5,000/month to ₹80,000/month through quality brand partnerships. The platform's support helped me grow from 50K to 200K followers in just 8 months."</p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <!-- Nykaa Case Study -->
-                <div class="card-shadow rounded-lg overflow-hidden hover-lift bg-white">
-                    <div class="h-64 bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-heart text-6xl mb-4"></i>
-                            <h3 class="text-2xl font-bold">Nykaa Beauty</h3>
-                        </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px;">
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">₹80K</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Monthly Earnings</div>
                     </div>
-                    <div class="p-8">
-                        <h4 class="text-2xl font-bold text-gray-900 mb-4">350% Increase in Online Sales</h4>
-                        <p class="text-gray-600 mb-6">India's leading beauty retailer partnered with 150+ micro-influencers across tier-2 and tier-3 cities to promote their new skincare line, resulting in unprecedented regional reach.</p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="metric-card text-white rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold">150+</div>
-                                <div class="text-sm">Influencers</div>
-                            </div>
-                            <div class="metric-card-2 text-white rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold">2.5M</div>
-                                <div class="text-sm">Reach</div>
-                            </div>
-                        </div>
-                        <blockquote class="italic text-gray-700 border-l-4 border-pink-500 pl-4">
-                            "ConnectIndia helped us discover authentic beauty influencers in smaller cities who truly resonated with our target audience."
-                        </blockquote>
-                        <div class="mt-4 text-sm text-gray-500">— Priya Sharma, Digital Marketing Head, Nykaa</div>
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">200K</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Followers</div>
                     </div>
-                </div>
-
-                <!-- Zomato Case Study -->
-                <div class="card-shadow rounded-lg overflow-hidden hover-lift bg-white">
-                    <div class="h-64 bg-gradient-to-r from-red-500 to-orange-600 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-utensils text-6xl mb-4"></i>
-                            <h3 class="text-2xl font-bold">Zomato</h3>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h4 class="text-2xl font-bold text-gray-900 mb-4">500% Boost in App Downloads</h4>
-                        <p class="text-gray-600 mb-6">Food delivery giant collaborated with food bloggers and lifestyle influencers to promote their premium subscription service, achieving remarkable conversion rates.</p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="metric-card-3 text-white rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold">200+</div>
-                                <div class="text-sm">Food Bloggers</div>
-                            </div>
-                            <div class="metric-card text-white rounded-lg p-4 text-center">
-                                <div class="text-2xl font-bold">5.2M</div>
-                                <div class="text-sm">Video Views</div>
-                            </div>
-                        </div>
-                        <blockquote class="italic text-gray-700 border-l-4 border-red-500 pl-4">
-                            "The platform's advanced targeting helped us find food influencers whose audience perfectly matched our customer profile."
-                        </blockquote>
-                        <div class="mt-4 text-sm text-gray-500">— Rahul Verma, Growth Marketing, Zomato</div>
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">25+</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Brand Partners</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Influencer Success Stories -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Influencer Success Stories</h2>
-                <p class="text-xl text-gray-600">How creators are building sustainable businesses through ConnectIndia</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Influencer 1 -->
-                <div class="bg-white rounded-lg card-shadow hover-lift overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-camera text-5xl mb-2"></i>
-                            <h4 class="text-xl font-bold">Priya Lifestyle</h4>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h5 class="text-lg font-bold text-gray-900 mb-2">From 10K to 500K Followers</h5>
-                        <p class="text-gray-600 text-sm mb-4">Fashion and lifestyle influencer from Mumbai who transformed her passion into a full-time career</p>
-                        <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
-                            <div class="bg-blue-100 rounded px-2 py-1 text-center">
-                                <div class="font-bold text-blue-800">₹25L+</div>
-                                <div class="text-blue-600">Annual Earnings</div>
-                            </div>
-                            <div class="bg-green-100 rounded px-2 py-1 text-center">
-                                <div class="font-bold text-green-800">50+</div>
-                                <div class="text-green-600">Brand Partnerships</div>
-                            </div>
-                        </div>
-                        <blockquote class="text-sm italic text-gray-700">
-                            "ConnectIndia's transparent payment system and quality brand matches helped me build a sustainable creator business."
-                        </blockquote>
-                    </div>
+            <div class="testimonial">
+                <div class="testimonial-author">
+                    <div class="author-avatar">VK</div>
+                    <div class="author-name">Vikash Kumar</div>
+                    <div class="author-title">Tech Reviewer • Built from Scratch</div>
                 </div>
+                <p class="testimonial-text">"Started with zero followers and built my tech review channel to 150K subscribers through ConnectIndia partnerships. The platform connected me with tech brands that valued honest reviews, helping me build credibility and income."</p>
 
-                <!-- Influencer 2 -->
-                <div class="bg-white rounded-lg card-shadow hover-lift overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-gamepad text-5xl mb-2"></i>
-                            <h4 class="text-xl font-bold">TechGuru Raj</h4>
-                        </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px;">
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">₹1.2L</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Monthly Earnings</div>
                     </div>
-                    <div class="p-6">
-                        <h5 class="text-lg font-bold text-gray-900 mb-2">Gaming Channel Monetization Success</h5>
-                        <p class="text-gray-600 text-sm mb-4">Tech and gaming content creator from Bangalore who built a thriving community</p>
-                        <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
-                            <div class="bg-purple-100 rounded px-2 py-1 text-center">
-                                <div class="font-bold text-purple-800">1M+</div>
-                                <div class="text-purple-600">Subscribers</div>
-                            </div>
-                            <div class="bg-orange-100 rounded px-2 py-1 text-center">
-                                <div class="font-bold text-orange-800">₹40L+</div>
-                                <div class="text-orange-600">Revenue</div>
-                            </div>
-                        </div>
-                        <blockquote class="text-sm italic text-gray-700">
-                            "The platform connected me with tech brands that aligned perfectly with my audience's interests."
-                        </blockquote>
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">150K</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Subscribers</div>
                     </div>
-                </div>
-
-                <!-- Influencer 3 -->
-                <div class="bg-white rounded-lg card-shadow hover-lift overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-red-500 flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-heart text-5xl mb-2"></i>
-                            <h4 class="text-xl font-bold">Healthy Living</h4>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h5 class="text-lg font-bold text-gray-900 mb-2">Wellness Niche Authority</h5>
-                        <p class="text-gray-600 text-sm mb-4">Health and wellness advocate from Delhi who became a trusted voice in fitness</p>
-                        <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
-                            <div class="bg-teal-100 rounded px-2 py-1 text-center">
-                                <div class="font-bold text-teal-800">750K</div>
-                                <div class="text-teal-600">Engaged Followers</div>
-                            </div>
-                            <div class="bg-pink-100 rounded px-2 py-1 text-center">
-                                <div class="font-bold text-pink-800">35+</div>
-                                <div class="text-pink-600">Health Brands</div>
-                            </div>
-                        </div>
-                        <blockquote class="text-sm italic text-gray-700">
-                            "Found my niche and authentic brand partnerships that my audience actually values and trusts."
-                        </blockquote>
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">40+</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Reviews</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Industry Success Metrics -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Success Across Industries</h2>
-                <p class="text-xl text-gray-600">ConnectIndia delivers results in every sector</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Fashion -->
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-tshirt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Fashion & Lifestyle</h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="font-semibold text-gray-700">Average Campaign ROI: 450%</div>
-                        <div class="text-gray-600">1,200+ Active Influencers</div>
-                        <div class="text-gray-600">₹15 Cr+ Revenue Generated</div>
-                    </div>
+            <div class="testimonial">
+                <div class="testimonial-author">
+                    <div class="author-avatar">SK</div>
+                    <div class="author-name">Sneha Kapoor</div>
+                    <div class="author-title">Food Blogger • Mumbai</div>
                 </div>
+                <p class="testimonial-text">"As a food blogger, finding restaurant partnerships was challenging. ConnectIndia connected me with amazing food brands and restaurants. Now I collaborate with 10+ brands monthly and my content quality has improved dramatically."</p>
 
-                <!-- Food -->
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-utensils text-white text-2xl"></i>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px;">
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">₹45K</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Monthly Earnings</div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Food & Beverage</h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="font-semibold text-gray-700">Average Campaign ROI: 380%</div>
-                        <div class="text-gray-600">800+ Food Bloggers</div>
-                        <div class="text-gray-600">₹12 Cr+ Revenue Generated</div>
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">85K</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Followers</div>
                     </div>
-                </div>
-
-                <!-- Tech -->
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-laptop text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Technology</h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="font-semibold text-gray-700">Average Campaign ROI: 520%</div>
-                        <div class="text-gray-600">600+ Tech Reviewers</div>
-                        <div class="text-gray-600">₹18 Cr+ Revenue Generated</div>
-                    </div>
-                </div>
-
-                <!-- Health -->
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-heartbeat text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Health & Wellness</h3>
-                    <div class="space-y-2 text-sm">
-                        <div class="font-semibold text-gray-700">Average Campaign ROI: 410%</div>
-                        <div class="text-gray-600">900+ Health Advocates</div>
-                        <div class="text-gray-600">₹10 Cr+ Revenue Generated</div>
+                    <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                        <div style="font-weight: bold;">15+</div>
+                        <div style="font-size: 12px; opacity: 0.8;">Monthly Collabs</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Testimonials -->
-    <section class="py-20 testimonial-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4">What Our Community Says</h2>
-                <p class="text-xl text-white opacity-90">Authentic feedback from businesses and creators</p>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Success by Numbers</h2>
+        <p class="section-subtitle">Platform-wide achievements that speak for themselves</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>₹50 Crores+</h3>
+                <p>Total earnings paid to influencers through our secure platform across all campaigns and collaborations</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg p-8 card-shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                            A
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-gray-900">Ankit Sharma</h4>
-                            <p class="text-gray-600 text-sm">CMO, Myntra</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <blockquote class="text-gray-700 italic">
-                        "ConnectIndia transformed our influencer marketing strategy. The quality of creators and the platform's analytics helped us achieve our best-performing campaigns to date."
-                    </blockquote>
-                </div>
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>1 Million+</h3>
+                <p>Successful collaborations completed between brands and influencers with 98% satisfaction rate</p>
+            </div>
 
-                <div class="bg-white rounded-lg p-8 card-shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                            S
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-gray-900">Sneha Patel</h4>
-                            <p class="text-gray-600 text-sm">Beauty Influencer, 2M Followers</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                        <i class="fas fa-star text-yellow-400"></i>
-                    </div>
-                    <blockquote class="text-gray-700 italic">
-                        "Finally, a platform that values creators and ensures fair payments. The brand matching is incredibly accurate, and I've built long-term partnerships here."
-                    </blockquote>
-                </div>
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <h3>4.9/5</h3>
+                <p>Average rating from both brands and influencers for platform experience and support quality</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>85%</h3>
+                <p>Average engagement rate improvement for brands using our influencer discovery and matching system</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>6.2x</h3>
+                <p>Average ROI achieved by brands across all campaign types and industry verticals</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>300%</h3>
+                <p>Average follower growth rate for influencers actively using our platform and resources</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Regional Success -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Success Across India</h2>
-                <p class="text-xl text-gray-600">From metros to tier-3 cities, ConnectIndia delivers results everywhere</p>
-            </div>
+<section class="section testimonials">
+    <div class="container">
+        <h2 class="section-title">Ready to Write Your Success Story?</h2>
+        <p class="section-subtitle">Join thousands of successful brands and influencers on ConnectIndia</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-lg p-6 text-center card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Mumbai & Delhi</h3>
-                    <div class="text-3xl font-bold text-blue-600 mb-2">40%</div>
-                    <p class="text-gray-600">of total campaigns</p>
-                    <div class="mt-4 text-sm text-gray-500">Premium brand collaborations</div>
-                </div>
-
-                <div class="bg-white rounded-lg p-6 text-center card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Bangalore & Hyderabad</h3>
-                    <div class="text-3xl font-bold text-green-600 mb-2">25%</div>
-                    <p class="text-gray-600">of total campaigns</p>
-                    <div class="mt-4 text-sm text-gray-500">Tech & startup focused</div>
-                </div>
-
-                <div class="bg-white rounded-lg p-6 text-center card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Pune & Chennai</h3>
-                    <div class="text-3xl font-bold text-purple-600 mb-2">20%</div>
-                    <p class="text-gray-600">of total campaigns</p>
-                    <div class="mt-4 text-sm text-gray-500">Education & lifestyle</div>
-                </div>
-
-                <div class="bg-white rounded-lg p-6 text-center card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Tier-2 & Tier-3 Cities</h3>
-                    <div class="text-3xl font-bold text-orange-600 mb-2">15%</div>
-                    <p class="text-gray-600">of total campaigns</p>
-                    <div class="mt-4 text-sm text-gray-500">Regional language content</div>
-                </div>
-            </div>
+        <div class="hero-buttons">
+            <a href="business_signup.html" class="btn btn-secondary">Start as Business</a>
+            <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
         </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="gradient-bg text-white py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-6">Ready to Write Your Success Story?</h2>
-            <p class="text-xl mb-8">Join thousands of successful businesses and influencers who are growing with ConnectIndia</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="business_signup.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-                    <i class="fas fa-building mr-2"></i>Register as Business
-                </a>
-                <a href="influencer_signup.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-star mr-2"></i>Register as Influencer
-                </a>
-            </div>
+        <div style="text-align: center; margin-top: 40px; color: #6B7280;">
+            <p>Free to join • Verified community • Secure payments</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">ConnectIndia</h3>
-                    <p class="text-gray-400 mb-4">India's premier platform connecting authentic influencers with innovative businesses.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Platform</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Influencer Discovery</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Campaign Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Analytics</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Payments</a></li>
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="success_stories.html" class="text-gray-400 hover:text-white">Success Stories</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Guides</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Webinars</a></li>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2">
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 ConnectIndia. All rights reserved.</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
+    
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDv3l5s%2BYkk5M4RxOTYuzV49XCemLfiXOGtwmPrS2%2BuHMGWflC2WzS62BGKqUjHTbUXmvUnDq5amh%2BJoAP82hSCcMi0aF8%2FDBO%2FOQwP8yXJd4LW0nI%2BespiH9U8YVsyWvVBmSU44%2BiSaUa%2FoQFrIQFr0kisdpXcsuU5TjtPYpcWduAjezg9ooH%2BLljvAi7QW48JhK3T9SFXTgBklmTe5O0s7gAgW27TksCubXMNNvBL2wpk1AO782kJgs6nCz8%2B1wGlpKS5P%2By6rVRkWEUwdZsoWQPJE8dw9YDq7Sij8aAo639XTCuur3BQFVDLslruIOBcYb%2F0dHJxe9ssZvcyH3VBlhUyULMgz19ulqBymrHMlUXuxuYaVBSQMGVLPREceQhF%2Fe0KEN7VUcfA%2BY%2FbHtlebHaPcz4W0GwpBvZzjf65Tc1zZG2dm%2F0vGFd7us630%2FUPRHQ3Tk6U4PYEKthFroMtJBE4Tq4tU1PO9CswGoZwh4Jk7gGPEbi%2BylCpiqIzepLQ%3D%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDv3l5s+Ykk5M4RxOTYuzV49XCemLfiXOGtwmPrS2+uHMGWflC2WzS62BGKqUjHTbUXmvUnDq5amh+JoAP82hSCcMi0aF8/DBO/OQwP8yXJd4LW0nI+espiH9U8YVsyWvVBmSU44+iSaUa/oQFrIQFr0kisdpXcsuU5TjtPYpcWduAjezg9ooH+LljvAi7QW48JhK3T9SFXTgBklmTe5O0s7gAgW27TksCubXMNNvBL2wpk1AO782kJgs6nCz8+1wGlpKS5P+y6rVRkWEUwdZsoWQPJE8dw9YDq7Sij8aAo639XTCuur3BQFVDLslruIOBcYb/0dHJxe9ssZvcyH3VBlhUyULMgz19ulqBymrHMlUXuxuYaVBSQMGVLPREceQhF/e0KEN7VUcfA+Y/bHtlebHaPcz4W0GwpBvZzjf65Tc1zZG2dm/0vGFd7us630/UPRHQ3Tk6U4PYEKthFroMtJBE4Tq4tU1PO9CswGoZwh4Jk7gGPEbi+ylCpiqIzepLQ==";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    

@@ -1,720 +1,1112 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>Marketplace - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .navbar-blur { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
-        .dropdown:hover .dropdown-menu { display: block; }
-        .dropdown-menu { display: none; }
-        .filter-sidebar { max-height: calc(100vh - 100px); overflow-y: auto; }
-        .star-rating { color: #fbbf24; }
-        .price-badge { background: linear-gradient(45deg, #10b981, #059669); }
-        .verified-badge { background: linear-gradient(45deg, #3b82f6, #1d4ed8); }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 navbar-blur border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <i class="fas fa-link text-2xl text-blue-600 mr-2"></i>
-                        <span class="text-xl font-bold text-gray-800">ConnectIndia</span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <div class="dropdown relative">
-                        <a href="platform.html" class="text-gray-700 hover:text-blue-600 font-medium">Platform</a>
-                        <div class="dropdown-menu absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg py-2 mt-1">
-                            <a href="discovery.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Influencer Discovery</a>
-                            <a href="campaigns.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Campaign Management</a>
-                            <a href="analytics.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Analytics & Reports</a>
-                            <a href="marketplace.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Marketplace</a>
+<body class="marketplace">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
+
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
                         </div>
                     </div>
-                    
-                    <div class="dropdown relative">
-                        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">For Users</a>
-                        <div class="dropdown-menu absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg py-2 mt-1">
-                            <a href="for_influencers.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">For Influencers</a>
-                            <a href="for_businesses.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">For Businesses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
                         </div>
                     </div>
-                    
-                    <a href="pricing.html" class="text-gray-700 hover:text-blue-600 font-medium">Pricing</a>
-                    <a href="success_stories.html" class="text-gray-700 hover:text-blue-600 font-medium">Success Stories</a>
-                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-medium">Resources</a>
-                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium">Login</a>
-                    <a href="business_signup.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Get Started</a>
-                </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>India's Premier<br>Influencer Marketplace</h1>
+        <p>Browse, book, and collaborate with verified influencers through our secure marketplace</p>
+
+        <div class="hero-buttons">
+            <a href="business_signup.html" class="btn btn-secondary">Browse Marketplace</a>
+            <a href="influencer_signup.html" class="btn btn-primary">Join as Creator</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">Active Creators</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">₹500+</span>
+                <span class="stat-label">Starting Prices</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">48hrs</span>
+                <span class="stat-label">Average Response Time</span>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="pt-20 pb-12 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Discover Top Indian Influencers</h1>
-                <p class="text-xl mb-8 text-blue-100">Browse verified creators, compare packages, and book collaborations instantly</p>
-                
-                <!-- Search Bar -->
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-white rounded-lg p-6 shadow-lg">
-                        <div class="flex flex-col md:flex-row gap-4">
-                            <div class="flex-1">
-                                <input type="text" placeholder="Search by name, niche, or keywords..." class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div class="md:w-48">
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:ring-2 focus:ring-blue-500">
-                                    <option>All Categories</option>
-                                    <option>Fashion & Lifestyle</option>
-                                    <option>Tech & Gaming</option>
-                                    <option>Food & Travel</option>
-                                    <option>Fitness & Health</option>
-                                    <option>Beauty & Skincare</option>
-                                </select>
-                            </div>
-                            <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
-                                <i class="fas fa-search mr-2"></i>Search
-                            </button>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">How the Marketplace Works</h2>
+        <p class="section-subtitle">Simple, transparent, and secure influencer booking process</p>
+
+        <div class="workflow">
+            <div class="workflow-section">
+                <h3>For Businesses</h3>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Browse & Filter</h4>
+                            <p>Search influencers by niche, location, price, and audience</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Book Services</h4>
+                            <p>Select packages and book directly through the platform</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Collaborate</h4>
+                            <p>Work together on content creation and approvals</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Receive Content</h4>
+                            <p>Get final content and detailed performance reports</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Main Content -->
-    <section class="py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-8">
-                <!-- Filter Sidebar -->
-                <div class="lg:w-1/4">
-                    <div class="bg-white rounded-lg shadow-lg p-6 filter-sidebar">
-                        <h3 class="text-lg font-semibold mb-4">Filters</h3>
-                        
-                        <!-- Category Filter -->
-                        <div class="mb-6">
-                            <h4 class="font-medium mb-3">Category</h4>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Fashion & Lifestyle</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Tech & Gaming</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Food & Travel</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Fitness & Health</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Beauty & Skincare</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <!-- Location Filter -->
-                        <div class="mb-6">
-                            <h4 class="font-medium mb-3">Location</h4>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Mumbai</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Delhi</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Bangalore</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Chennai</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>Other Cities</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <!-- Follower Range -->
-                        <div class="mb-6">
-                            <h4 class="font-medium mb-3">Followers</h4>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="radio" name="followers" class="mr-2 text-blue-600">
-                                    <span>1K - 10K (Nano)</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="followers" class="mr-2 text-blue-600">
-                                    <span>10K - 100K (Micro)</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="followers" class="mr-2 text-blue-600">
-                                    <span>100K - 1M (Macro)</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="followers" class="mr-2 text-blue-600">
-                                    <span>1M+ (Mega)</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <!-- Price Range -->
-                        <div class="mb-6">
-                            <h4 class="font-medium mb-3">Price Range (INR)</h4>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>₹1,000 - ₹5,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>₹5,000 - ₹25,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>₹25,000 - ₹1,00,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span>₹1,00,000+</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <!-- Rating Filter -->
-                        <div class="mb-6">
-                            <h4 class="font-medium mb-3">Rating</h4>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span class="flex items-center">
-                                        <span class="star-rating">★★★★★</span>
-                                        <span class="ml-2">5 Stars</span>
-                                    </span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span class="flex items-center">
-                                        <span class="star-rating">★★★★</span>
-                                        <span class="ml-2">4+ Stars</span>
-                                    </span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" class="mr-2 text-blue-600">
-                                    <span class="flex items-center">
-                                        <span class="star-rating">★★★</span>
-                                        <span class="ml-2">3+ Stars</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition duration-300">
-                            Clear All Filters
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Influencer Grid -->
-                <div class="lg:w-3/4">
-                    <!-- Sort & Results Info -->
-                    <div class="flex justify-between items-center mb-6">
-                        <div class="text-gray-600">
-                            Showing <span class="font-semibold">1-12</span> of <span class="font-semibold">2,847</span> influencers
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <span class="text-gray-600">Sort by:</span>
-                            <select class="border border-gray-300 rounded-lg px-3 py-2 text-gray-700">
-                                <option>Most Relevant</option>
-                                <option>Highest Rated</option>
-                                <option>Most Followers</option>
-                                <option>Lowest Price</option>
-                                <option>Highest Price</option>
-                                <option>Recently Active</option>
-                            </select>
+            <div class="workflow-section">
+                <h3>For Influencers</h3>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Create Profile</h4>
+                            <p>Showcase your work and create service packages</p>
                         </div>
                     </div>
-                    
-                    <!-- Influencer Cards Grid -->
-                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                        <!-- Influencer Card 1 -->
-                        <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
-                            <div class="relative">
-                                <div class="h-48 bg-gradient-to-r from-pink-400 to-purple-500"></div>
-                                <div class="absolute -bottom-8 left-6">
-                                    <div class="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg"></div>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="verified-badge text-white px-2 py-1 rounded-full text-xs font-medium">
-                                        <i class="fas fa-check mr-1"></i>Verified
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6 pt-10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <h3 class="text-lg font-semibold">Priya Sharma</h3>
-                                    <div class="flex items-center">
-                                        <span class="star-rating text-sm">★★★★★</span>
-                                        <span class="text-gray-600 text-sm ml-1">(4.9)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">Fashion & Lifestyle • Mumbai</p>
-                                <div class="flex items-center text-sm text-gray-500 mb-4">
-                                    <i class="fab fa-instagram mr-2"></i>
-                                    <span>245K followers • 4.8% engagement</span>
-                                </div>
-                                
-                                <!-- Service Packages -->
-                                <div class="border-t pt-4">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Instagram Post</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹15,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Instagram Story</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹8,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Reel + Post</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹25,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex space-x-2 mt-4">
-                                    <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
-                                        Book Now
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-share"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Influencer Card 2 -->
-                        <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
-                            <div class="relative">
-                                <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-500"></div>
-                                <div class="absolute -bottom-8 left-6">
-                                    <div class="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg"></div>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="verified-badge text-white px-2 py-1 rounded-full text-xs font-medium">
-                                        <i class="fas fa-check mr-1"></i>Verified
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6 pt-10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <h3 class="text-lg font-semibold">Arjun Tech</h3>
-                                    <div class="flex items-center">
-                                        <span class="star-rating text-sm">★★★★★</span>
-                                        <span class="text-gray-600 text-sm ml-1">(4.8)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">Tech & Gaming • Bangalore</p>
-                                <div class="flex items-center text-sm text-gray-500 mb-4">
-                                    <i class="fab fa-youtube mr-2"></i>
-                                    <span>180K subscribers • 6.2% engagement</span>
-                                </div>
-                                
-                                <div class="border-t pt-4">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">YouTube Review</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹45,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Instagram Post</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹20,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Tech Tutorial</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹65,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex space-x-2 mt-4">
-                                    <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
-                                        Book Now
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-share"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Influencer Card 3 -->
-                        <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
-                            <div class="relative">
-                                <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500"></div>
-                                <div class="absolute -bottom-8 left-6">
-                                    <div class="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg"></div>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="verified-badge text-white px-2 py-1 rounded-full text-xs font-medium">
-                                        <i class="fas fa-check mr-1"></i>Verified
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6 pt-10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <h3 class="text-lg font-semibold">Foodie Meera</h3>
-                                    <div class="flex items-center">
-                                        <span class="star-rating text-sm">★★★★☆</span>
-                                        <span class="text-gray-600 text-sm ml-1">(4.7)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">Food & Travel • Delhi</p>
-                                <div class="flex items-center text-sm text-gray-500 mb-4">
-                                    <i class="fab fa-instagram mr-2"></i>
-                                    <span>120K followers • 5.5% engagement</span>
-                                </div>
-                                
-                                <div class="border-t pt-4">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Restaurant Review</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹12,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Food Reel</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹18,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Story + Post</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹15,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex space-x-2 mt-4">
-                                    <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
-                                        Book Now
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-share"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Influencer Card 4 -->
-                        <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
-                            <div class="relative">
-                                <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500"></div>
-                                <div class="absolute -bottom-8 left-6">
-                                    <div class="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg"></div>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="verified-badge text-white px-2 py-1 rounded-full text-xs font-medium">
-                                        <i class="fas fa-check mr-1"></i>Verified
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6 pt-10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <h3 class="text-lg font-semibold">Beauty Guru Kavya</h3>
-                                    <div class="flex items-center">
-                                        <span class="star-rating text-sm">★★★★★</span>
-                                        <span class="text-gray-600 text-sm ml-1">(4.9)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">Beauty & Skincare • Chennai</p>
-                                <div class="flex items-center text-sm text-gray-500 mb-4">
-                                    <i class="fab fa-instagram mr-2"></i>
-                                    <span>320K followers • 7.1% engagement</span>
-                                </div>
-                                
-                                <div class="border-t pt-4">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Product Review</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹22,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Tutorial Reel</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹28,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">GRWM Video</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹35,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex space-x-2 mt-4">
-                                    <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
-                                        Book Now
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-share"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Influencer Card 5 -->
-                        <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
-                            <div class="relative">
-                                <div class="h-48 bg-gradient-to-r from-red-400 to-yellow-500"></div>
-                                <div class="absolute -bottom-8 left-6">
-                                    <div class="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg"></div>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="verified-badge text-white px-2 py-1 rounded-full text-xs font-medium">
-                                        <i class="fas fa-check mr-1"></i>Verified
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6 pt-10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <h3 class="text-lg font-semibold">Fitness Raj</h3>
-                                    <div class="flex items-center">
-                                        <span class="star-rating text-sm">★★★★★</span>
-                                        <span class="text-gray-600 text-sm ml-1">(4.8)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">Fitness & Health • Pune</p>
-                                <div class="flex items-center text-sm text-gray-500 mb-4">
-                                    <i class="fab fa-youtube mr-2"></i>
-                                    <span>95K subscribers • 8.3% engagement</span>
-                                </div>
-                                
-                                <div class="border-t pt-4">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Workout Video</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹30,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Instagram Post</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹12,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Transformation Story</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹40,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex space-x-2 mt-4">
-                                    <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
-                                        Book Now
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-share"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Influencer Card 6 -->
-                        <div class="bg-white rounded-lg shadow-lg card-hover overflow-hidden">
-                            <div class="relative">
-                                <div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-500"></div>
-                                <div class="absolute -bottom-8 left-6">
-                                    <div class="w-16 h-16 bg-white rounded-full border-4 border-white shadow-lg"></div>
-                                </div>
-                                <div class="absolute top-4 right-4">
-                                    <span class="verified-badge text-white px-2 py-1 rounded-full text-xs font-medium">
-                                        <i class="fas fa-check mr-1"></i>Verified
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6 pt-10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <h3 class="text-lg font-semibold">Comedy King Rohit</h3>
-                                    <div class="flex items-center">
-                                        <span class="star-rating text-sm">★★★★★</span>
-                                        <span class="text-gray-600 text-sm ml-1">(4.9)</span>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">Comedy & Entertainment • Mumbai</p>
-                                <div class="flex items-center text-sm text-gray-500 mb-4">
-                                    <i class="fab fa-instagram mr-2"></i>
-                                    <span>520K followers • 9.2% engagement</span>
-                                </div>
-                                
-                                <div class="border-t pt-4">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Comedy Reel</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹35,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Brand Integration</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹50,000</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm">Live Session</span>
-                                            <span class="price-badge text-white px-2 py-1 rounded text-sm font-medium">₹25,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex space-x-2 mt-4">
-                                    <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
-                                        Book Now
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                        <i class="fas fa-share"></i>
-                                    </button>
-                                </div>
-                            </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Get Booked</h4>
+                            <p>Receive bookings from interested brands</p>
                         </div>
                     </div>
-                    
-                    <!-- Pagination -->
-                    <div class="flex justify-center mt-12">
-                        <div class="flex items-center space-x-2">
-                            <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="px-3 py-2 bg-blue-600 text-white rounded-lg">1</button>
-                            <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">2</button>
-                            <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">3</button>
-                            <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">4</button>
-                            <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">5</button>
-                            <button class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Create Content</h4>
+                            <p>Produce authentic content as per requirements</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Get Paid</h4>
+                            <p>Receive secure payments upon content delivery</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-5 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-link text-2xl text-blue-400 mr-2"></i>
-                        <span class="text-xl font-bold">ConnectIndia</span>
-                    </div>
-                    <p class="text-gray-300 mb-6">India's premier platform connecting authentic influencers with innovative businesses. Build meaningful collaborations that drive real results.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
-                            <i class="fab fa-facebook-f text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                    </div>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Popular Service Categories</h2>
+        <p class="section-subtitle">Find the perfect content format for your brand</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Instagram Posts</h3>
+                <p>High-quality feed posts with professional photography and engaging captions starting from ₹2,000</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📖</div>
+                <h3>Instagram Stories</h3>
+                <p>Authentic story content with swipe-ups, polls, and interactive elements starting from ₹800</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎥</div>
+                <h3>Video Content</h3>
+                <p>Reels, IGTV, and YouTube videos with creative storytelling starting from ₹5,000</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <h3>Blog Posts</h3>
+                <p>SEO-optimized blog content and product reviews on personal websites starting from ₹3,000</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Brand Partnerships</h3>
+                <p>Long-term ambassador programs and exclusive collaborations starting from ₹10,000</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎪</div>
+                <h3>Event Coverage</h3>
+                <p>Live event coverage, product launches, and behind-the-scenes content starting from ₹15,000</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">Featured Influencers</h2>
+        <p class="section-subtitle">Top-rated creators across different categories</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-author">
+                    <div class="author-avatar">MA</div>
+                    <div class="author-name">Maya Agarwal</div>
+                    <div class="author-title">Fashion & Lifestyle • 250K Followers</div>
                 </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Platform</h4>
-                    <ul class="space-y-2">
-                        <li><a href="discovery.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Discover Influencers</a></li>
-                        <li><a href="campaigns.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Campaign Management</a></li>
-                        <li><a href="analytics.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Analytics</a></li>
-                        <li><a href="marketplace.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Marketplace</a></li>
+                <p class="testimonial-text">"Specializing in sustainable fashion and lifestyle content. Worked with 50+ brands including major fashion houses. Average engagement: 8.5%"</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <span style="color: #4F46E5; font-weight: 600;">Starting ₹3,500/post</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-author">
+                    <div class="author-avatar">VK</div>
+                    <div class="author-name">Vikash Kumar</div>
+                    <div class="author-title">Tech Reviews • 150K Followers</div>
+                </div>
+                <p class="testimonial-text">"Honest tech reviews and unboxings. Expertise in smartphones, laptops, and gadgets. Trusted by top tech brands. Average engagement: 12%"</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <span style="color: #4F46E5; font-weight: 600;">Starting ₹8,000/video</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-author">
+                    <div class="author-avatar">AS</div>
+                    <div class="author-name">Arjun Sethi</div>
+                    <div class="author-title">Food & Travel • 180K Followers</div>
+                </div>
+                <p class="testimonial-text">"Exploring Indian cuisine and hidden gems across the country. Food photography and travel storytelling. Average engagement: 9.2%"</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <span style="color: #4F46E5; font-weight: 600;">Starting ₹4,500/post</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Marketplace Benefits</h2>
+        <p class="section-subtitle">Why choose ConnectIndia's marketplace over other platforms</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">✅</div>
+                <h3>Verified Profiles</h3>
+                <p>All influencers are verified for authenticity, engagement quality, and professional standards</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Transparent Pricing</h3>
+                <p>Clear package pricing with no hidden fees. See exactly what you're paying for</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Payments</h3>
+                <p>Escrow system protects both parties. Payments released only after content delivery</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Performance Guarantee</h3>
+                <p>Detailed analytics and performance reports included with every collaboration</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Direct Communication</h3>
+                <p>Built-in messaging system for seamless communication throughout the project</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Quality Control</h3>
+                <p>Content approval system ensures deliverables meet your brand standards</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section testimonials">
+    <div class="container">
+        <h2 class="section-title">Marketplace Success Stories</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p class="testimonial-text">"The marketplace made it so easy to find and book influencers. We completed our campaign in just 5 days with amazing results and transparent pricing."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PG</div>
+                    <div class="author-name">Pooja Gupta</div>
+                    <div class="author-title">Brand Manager, StyleHub</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">"As an influencer, the marketplace gives me consistent bookings and fair pricing. The escrow system ensures I always get paid on time."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">NK</div>
+                    <div class="author-name">Nikhil Khurana</div>
+                    <div class="author-title">Fitness Influencer, 80K Followers</div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">"The quality of influencers and the booking process is seamless. We've moved all our influencer sourcing to ConnectIndia's marketplace."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RM</div>
+                    <div class="author-name">Rohit Mehta</div>
+                    <div class="author-title">Marketing Director, TechCorp</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Ready to Start?</h2>
+        <p class="section-subtitle">Join India's most trusted influencer marketplace today</p>
+
+        <div class="hero-buttons">
+            <a href="business_signup.html" class="btn btn-secondary">Find Influencers</a>
+            <a href="influencer_signup.html" class="btn btn-primary">Become a Creator</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; color: #6B7280;">
+            <p>Free to browse • Secure payments • Quality guarantee</p>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">For Users</h4>
-                    <ul class="space-y-2">
-                        <li><a href="for_influencers.html" class="text-gray-300 hover:text-blue-400 transition duration-300">For Influencers</a></li>
-                        <li><a href="for_businesses.html" class="text-gray-300 hover:text-blue-400 transition duration-300">For Businesses</a></li>
-                        <li><a href="pricing.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Pricing</a></li>
-                        <li><a href="success_stories.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Success Stories</a></li>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2">
-                        <li><a href="blog.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Blog</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-blue-400 transition duration-300">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Help Center</a></li>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300">© 2024 ConnectIndia. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Terms of Service</a>
-                    <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Cookie Policy</a>
-                </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
+    
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDr%2BdRJrcZ9ITnmp78amLlLcISAGkl4VfEAKcl%2FTvNmbTyz8HdaFBirN4Hat1a%2F1TxTyI%2B7U%2BFavD0EulYQWaqA9gqJ2oQMw7uUY5rlePy1Hx4X4STCfUvy8CQsWjiLoNQApVWBp%2FR4b45Xx9vbmVn02%2BFRhaS%2BeY8XCHMGvzlwioaecg3mmDv9UYKdR80Xsg5MHsvw%2F50WltZ%2Ftz3NBy0JrLRP7I0rKsOTtd9IVHjC4TUmEYPIAapwGwWfLhdwqnrOjkHe0%2B5Ob7dQJZNl78eX3K6cOfDvBcbFP03qtHHUysDCSzHEb5vIP5yHQHKux7f41yi9dr8Nrvz7ufJ1l9hFb7Mzdn1Ad%2FyuuSZzYTaprPBDcthp6HWhDXC37GhHWQ9fkE5oFxiVcI%2BBojirWbsDgMp%2FYe6lgi5%2BJUOyF10JsQvAPvj2Y5xFH2HRBqNoKhpuY8w3BMotO3az4cFLPGLG9jvLC66lsCzleoC8XXCn0A9CpOoGXuZlTYsCyDnqLXXQ%3D%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDr+dRJrcZ9ITnmp78amLlLcISAGkl4VfEAKcl/TvNmbTyz8HdaFBirN4Hat1a/1TxTyI+7U+FavD0EulYQWaqA9gqJ2oQMw7uUY5rlePy1Hx4X4STCfUvy8CQsWjiLoNQApVWBp/R4b45Xx9vbmVn02+FRhaS+eY8XCHMGvzlwioaecg3mmDv9UYKdR80Xsg5MHsvw/50WltZ/tz3NBy0JrLRP7I0rKsOTtd9IVHjC4TUmEYPIAapwGwWfLhdwqnrOjkHe0+5Ob7dQJZNl78eX3K6cOfDvBcbFP03qtHHUysDCSzHEb5vIP5yHQHKux7f41yi9dr8Nrvz7ufJ1l9hFb7Mzdn1Ad/yuuSZzYTaprPBDcthp6HWhDXC37GhHWQ9fkE5oFxiVcI+BojirWbsDgMp/Ye6lgi5+JUOyF10JsQvAPvj2Y5xFH2HRBqNoKhpuY8w3BMotO3az4cFLPGLG9jvLC66lsCzleoC8XXCn0A9CpOoGXuZlTYsCyDnqLXXQ==";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    

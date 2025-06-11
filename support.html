@@ -1,536 +1,1067 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>Support Center - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-        .search-focus:focus { box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-link text-3xl text-purple-600 mr-2"></i>
-                        <span class="text-2xl font-bold text-gray-900">ConnectIndia</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors">Home</a>
-                    <div class="relative group">
-                        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors flex items-center">
-                            Platform <i class="fas fa-chevron-down ml-1"></i>
-                        </a>
-                        <div class="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <div class="p-4 grid grid-cols-1 gap-2">
-                                <a href="discovery.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Influencer Discovery</a>
-                                <a href="campaigns.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Campaign Management</a>
-                                <a href="analytics.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Analytics Dashboard</a>
-                                <a href="marketplace.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">Marketplace</a>
-                            </div>
+<body class="support">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
+
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
                         </div>
                     </div>
-                    <div class="relative group">
-                        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors flex items-center">
-                            For Users <i class="fas fa-chevron-down ml-1"></i>
-                        </a>
-                        <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <div class="p-4 grid grid-cols-1 gap-2">
-                                <a href="for_influencers.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">For Influencers</a>
-                                <a href="for_businesses.html" class="text-sm text-gray-700 hover:text-purple-600 py-2">For Businesses</a>
-                            </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
                         </div>
                     </div>
-                    <a href="pricing.html" class="text-gray-700 hover:text-purple-600 transition-colors">Pricing</a>
-                    <a href="blog.html" class="text-gray-700 hover:text-purple-600 transition-colors">Resources</a>
-                    <a href="about.html" class="text-gray-700 hover:text-purple-600 transition-colors">About</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="login.html" class="text-gray-700 hover:text-purple-600 transition-colors">Login</a>
-                    <a href="business_signup.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Get Started</a>
-                </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>Help & Support Center</h1>
+        <p>Get help, find answers, and learn how to make the most of ConnectIndia</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 30px;">What can we help you with?</h2>
+            <form style="display: flex; gap: 10px;">
+                <input type="text" placeholder="Search for help articles, guides, or FAQs..." style="flex: 1; padding: 15px; border: 2px solid #E5E7EB; border-radius: 8px; font-size: 16px;">
+                <button type="submit" class="btn btn-primary" style="padding: 15px 25px;">Search</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Quick Help</h2>
+        <p class="section-subtitle">Get instant assistance with these popular topics</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Getting Started</h3>
+                <p>New to ConnectIndia? Learn how to set up your profile and start collaborating</p>
+                <a href="#getting-started" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Payments & Billing</h3>
+                <p>Understanding payments, invoices, and billing cycles on the platform</p>
+                <a href="#payments" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Campaign Management</h3>
+                <p>How to create, manage, and optimize your influencer marketing campaigns</p>
+                <a href="#campaigns" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Account Security</h3>
+                <p>Keeping your account secure and managing privacy settings</p>
+                <a href="#security" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>Analytics & Reports</h3>
+                <p>Understanding performance metrics and generating reports</p>
+                <a href="#analytics" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>Best Practices</h3>
+                <p>Tips and strategies for successful influencer marketing campaigns</p>
+                <a href="#best-practices" class="btn btn-outline" style="margin-top: 15px;">Learn More</a>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">How Can We Help You?</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Find answers, tutorials, and support resources to get the most out of ConnectIndia</p>
-            
-            <!-- Search Bar -->
-            <div class="max-w-2xl mx-auto relative">
-                <div class="relative">
-                    <input type="text" placeholder="Search for help articles, tutorials, or FAQs..." 
-                           class="w-full px-6 py-4 pl-14 text-gray-900 rounded-xl search-focus border-0 text-lg">
-                    <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
-                </div>
-                <div class="mt-4 flex flex-wrap justify-center gap-2">
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Getting Started</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Campaign Management</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Billing & Payments</span>
-                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Platform Features</span>
-                </div>
+<section class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Answers to the most common questions</p>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden;">
+                <details style="border-bottom: 1px solid #E5E7EB;">
+                    <summary style="padding: 20px; cursor: pointer; background: #F9FAFB; font-weight: 600;">How do I get started as an influencer?</summary>
+                    <div style="padding: 20px;">
+                        <p>Getting started is simple:</p>
+                        <ol style="margin: 10px 0; padding-left: 20px;">
+                            <li>Sign up with your email and create your profile</li>
+                            <li>Add your social media links and portfolio</li>
+                            <li>Complete verification to build trust</li>
+                            <li>Browse opportunities or wait for brand invitations</li>
+                            <li>Start collaborating and earning!</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details style="border-bottom: 1px solid #E5E7EB;">
+                    <summary style="padding: 20px; cursor: pointer; background: #F9FAFB; font-weight: 600;">How do brands find influencers on the platform?</summary>
+                    <div style="padding: 20px;">
+                        <p>Brands can discover influencers through:</p>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Advanced search filters (niche, location, follower count)</li>
+                            <li>AI-powered recommendations based on campaign goals</li>
+                            <li>Browse by categories and content types</li>
+                            <li>View verified profiles with performance metrics</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details style="border-bottom: 1px solid #E5E7EB;">
+                    <summary style="padding: 20px; cursor: pointer; background: #F9FAFB; font-weight: 600;">How are payments handled on ConnectIndia?</summary>
+                    <div style="padding: 20px;">
+                        <p>Our secure payment system includes:</p>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Escrow system that protects both parties</li>
+                            <li>Payments released upon deliverable approval</li>
+                            <li>Support for UPI, bank transfers, and digital wallets</li>
+                            <li>Automated invoicing and tax documentation</li>
+                            <li>24-48 hour payment processing</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details style="border-bottom: 1px solid #E5E7EB;">
+                    <summary style="padding: 20px; cursor: pointer; background: #F9FAFB; font-weight: 600;">What are the platform fees?</summary>
+                    <div style="padding: 20px;">
+                        <p>Our transparent fee structure:</p>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Free for influencers to join and create profiles</li>
+                            <li>15% platform fee on completed collaborations</li>
+                            <li>Monthly subscription plans for businesses starting at ₹9,999</li>
+                            <li>No hidden fees or surprise charges</li>
+                            <li>Enterprise solutions with custom pricing</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details style="border-bottom: 1px solid #E5E7EB;">
+                    <summary style="padding: 20px; cursor: pointer; background: #F9FAFB; font-weight: 600;">How long does the verification process take?</summary>
+                    <div style="padding: 20px;">
+                        <p>Verification typically takes:</p>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>24-48 hours for basic profile verification</li>
+                            <li>Social media account verification within 24 hours</li>
+                            <li>Business verification may take 2-3 business days</li>
+                            <li>Priority verification available for premium accounts</li>
+                            <li>Email notifications sent for each step</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary style="padding: 20px; cursor: pointer; background: #F9FAFB; font-weight: 600;">What support is available if I face issues?</summary>
+                    <div style="padding: 20px;">
+                        <p>We offer comprehensive support:</p>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>24/7 chat support for urgent issues</li>
+                            <li>Email support with 4-hour response time</li>
+                            <li>Video tutorials and knowledge base</li>
+                            <li>Dedicated account managers for enterprise clients</li>
+                            <li>Community forums and peer support</li>
+                        </ul>
+                    </div>
+                </details>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Quick Access Cards -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-play text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Video Tutorials</h3>
-                    <p class="text-gray-600 mb-6">Step-by-step video guides to help you master ConnectIndia</p>
-                    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Watch Tutorials</button>
-                </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-comments text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Live Chat Support</h3>
-                    <p class="text-gray-600 mb-6">Get instant help from our support team</p>
-                    <button class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">Start Chat</button>
-                </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-envelope text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Email Support</h3>
-                    <p class="text-gray-600 mb-6">Send us a detailed message and get personalized assistance</p>
-                    <button class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">Contact Us</button>
-                </div>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Contact Support</h2>
+        <p class="section-subtitle">Still need help? Get in touch with our support team</p>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Live Chat</h3>
+                <p>Get instant help from our support team. Available 24/7 for urgent issues.</p>
+                <a href="#" class="btn btn-primary" style="margin-top: 15px;">Start Chat</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✉️</div>
+                <h3>Email Support</h3>
+                <p>Send us an email and we'll respond within 4 hours during business days.</p>
+                <a href="mailto:support@connectindia.in" class="btn btn-outline" style="margin-top: 15px;">Send Email</a>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📞</div>
+                <h3>Phone Support</h3>
+                <p>Talk to our support team directly. Available Monday to Friday, 9 AM to 7 PM IST.</p>
+                <a href="tel:+911145678900" class="btn btn-outline" style="margin-top: 15px;">Call Now</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Help Categories -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Browse Help Categories</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-rocket text-purple-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Getting Started</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Account Setup</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Profile Creation</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Platform Overview</a></li>
-                        <li><a href="#" class="hover:text-purple-600">First Campaign</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-search text-blue-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Influencer Discovery</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Search Filters</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Audience Analysis</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Verification Process</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Saved Searches</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-bullhorn text-orange-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Campaign Management</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Creating Campaigns</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Collaboration Tools</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Content Approval</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Campaign Tracking</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-chart-bar text-green-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Analytics & Reporting</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Performance Metrics</a></li>
-                        <li><a href="#" class="hover:text-purple-600">ROI Calculation</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Custom Reports</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Export Data</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-credit-card text-indigo-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Billing & Payments</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Subscription Plans</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Payment Methods</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Invoices & Receipts</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Refund Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-users text-pink-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Account Management</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Profile Settings</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Team Management</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Security Settings</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Data Privacy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-cog text-gray-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Platform Features</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">API Integration</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Mobile App</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Notifications</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Keyboard Shortcuts</a></li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <i class="fas fa-question-circle text-yellow-600 text-3xl mb-4"></i>
-                    <h3 class="text-lg font-bold mb-3">Troubleshooting</h3>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-purple-600">Common Issues</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Browser Support</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Connection Problems</a></li>
-                        <li><a href="#" class="hover:text-purple-600">Bug Reports</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">Video Tutorials</h2>
+        <p class="section-subtitle">Learn through step-by-step video guides</p>
 
-    <!-- Popular FAQs -->
-    <section class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            
-            <div class="space-y-4">
-                <div class="bg-white rounded-lg shadow-md">
-                    <button class="w-full text-left p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-lg font-semibold">How do I get started with ConnectIndia?</h3>
-                            <i class="fas fa-chevron-down text-gray-400"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-6 pb-6">
-                        <p class="text-gray-600">Getting started is easy! Simply sign up for an account, complete your profile, and you can immediately start discovering influencers or showcasing your services to businesses.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md">
-                    <button class="w-full text-left p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-lg font-semibold">What are the pricing plans available?</h3>
-                            <i class="fas fa-chevron-down text-gray-400"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-6 pb-6">
-                        <p class="text-gray-600">We offer flexible pricing plans including a free tier for beginners, professional plans for growing businesses, and enterprise solutions for large organizations. Check our pricing page for detailed information.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md">
-                    <button class="w-full text-left p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-lg font-semibold">How does the payment system work?</h3>
-                            <i class="fas fa-chevron-down text-gray-400"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-6 pb-6">
-                        <p class="text-gray-600">Our secure payment system supports multiple Indian payment methods including UPI, net banking, credit/debit cards, and digital wallets. Payments are processed securely and funds are held in escrow until campaign completion.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md">
-                    <button class="w-full text-left p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-lg font-semibold">How do I verify my influencer profile?</h3>
-                            <i class="fas fa-chevron-down text-gray-400"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-6 pb-6">
-                        <p class="text-gray-600">Profile verification involves connecting your social media accounts, providing identity documents, and completing an authenticity check. Verified profiles get priority in search results and build more trust with businesses.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md">
-                    <button class="w-full text-left p-6 focus:outline-none">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-lg font-semibold">Can I use ConnectIndia on mobile devices?</h3>
-                            <i class="fas fa-chevron-down text-gray-400"></i>
-                        </div>
-                    </button>
-                    <div class="hidden px-6 pb-6">
-                        <p class="text-gray-600">Yes! ConnectIndia is fully responsive and works perfectly on mobile devices. We also have dedicated mobile apps for iOS and Android that provide the full platform experience on the go.</p>
+        <div class="features-grid">
+            <div class="feature" style="text-align: left; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden;">
+                <div style="height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">▶️</div>
+                <div style="padding: 20px;">
+                    <h3>Getting Started Guide</h3>
+                    <p style="color: #6B7280; margin: 10px 0;">Complete walkthrough for new users - from signup to first collaboration</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        <span style="color: #4F46E5; font-size: 14px;">8 min video</span>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Watch Now</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-8">
-                <a href="#" class="text-purple-600 hover:text-purple-700 font-semibold">View All FAQs <i class="fas fa-arrow-right ml-1"></i></a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Tutorial Videos -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Video Tutorials</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center">
-                        <i class="fas fa-play text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Getting Started with ConnectIndia</h3>
-                        <p class="text-gray-600 text-sm mb-4">Complete walkthrough of platform basics and account setup</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">8:30 min</span>
-                            <button class="text-purple-600 hover:text-purple-700 font-semibold text-sm">Watch Now</button>
-                        </div>
+            <div class="feature" style="text-align: left; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden;">
+                <div style="height: 180px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">▶️</div>
+                <div style="padding: 20px;">
+                    <h3>Campaign Creation</h3>
+                    <p style="color: #6B7280; margin: 10px 0;">How to create and launch your first influencer marketing campaign</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        <span style="color: #4F46E5; font-size: 14px;">12 min video</span>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Watch Now</a>
                     </div>
                 </div>
-                
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-400 flex items-center justify-center">
-                        <i class="fas fa-play text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Finding the Right Influencers</h3>
-                        <p class="text-gray-600 text-sm mb-4">Advanced search techniques and filtering options</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">12:15 min</span>
-                            <button class="text-purple-600 hover:text-purple-700 font-semibold text-sm">Watch Now</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-r from-green-400 to-blue-400 flex items-center justify-center">
-                        <i class="fas fa-play text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Campaign Management 101</h3>
-                        <p class="text-gray-600 text-sm mb-4">Create, manage, and track successful campaigns</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">15:45 min</span>
-                            <button class="text-purple-600 hover:text-purple-700 font-semibold text-sm">Watch Now</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center">
-                        <i class="fas fa-play text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Analytics Dashboard Overview</h3>
-                        <p class="text-gray-600 text-sm mb-4">Understanding metrics and measuring campaign success</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">10:20 min</span>
-                            <button class="text-purple-600 hover:text-purple-700 font-semibold text-sm">Watch Now</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-r from-pink-400 to-red-400 flex items-center justify-center">
-                        <i class="fas fa-play text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Influencer Profile Optimization</h3>
-                        <p class="text-gray-600 text-sm mb-4">Tips to create an attractive and effective profile</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">7:55 min</span>
-                            <button class="text-purple-600 hover:text-purple-700 font-semibold text-sm">Watch Now</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-400 flex items-center justify-center">
-                        <i class="fas fa-play text-white text-4xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Payment & Billing Guide</h3>
-                        <p class="text-gray-600 text-sm mb-4">Everything you need to know about payments and invoicing</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">9:10 min</span>
-                            <button class="text-purple-600 hover:text-purple-700 font-semibold text-sm">Watch Now</button>
-                        </div>
+            </div>
+
+            <div class="feature" style="text-align: left; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden;">
+                <div style="height: 180px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">▶️</div>
+                <div style="padding: 20px;">
+                    <h3>Analytics Dashboard</h3>
+                    <p style="color: #6B7280; margin: 10px 0;">Understanding metrics and generating reports for your campaigns</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        <span style="color: #4F46E5; font-size: 14px;">15 min video</span>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Watch Now</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Support -->
-    <section class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-2xl shadow-xl p-8">
-                <h2 class="text-3xl font-bold text-center mb-8">Still Need Help?</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-headset text-blue-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">24/7 Live Chat</h3>
-                        <p class="text-gray-600 mb-6">Get instant help from our support team anytime, anywhere</p>
-                        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Start Live Chat</button>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-envelope text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Email Support</h3>
-                        <p class="text-gray-600 mb-6">Send us detailed questions and get comprehensive answers</p>
-                        <a href="contact.html" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block">Contact Form</a>
-                    </div>
-                </div>
-                
-                <div class="mt-12 text-center">
-                    <h3 class="text-lg font-semibold mb-4">Other Ways to Reach Us</h3>
-                    <div class="flex justify-center space-x-8">
-                        <div class="text-center">
-                            <i class="fas fa-phone text-purple-600 text-xl mb-2"></i>
-                            <p class="text-sm text-gray-600">+91 80 4567 8900</p>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-clock text-purple-600 text-xl mb-2"></i>
-                            <p class="text-sm text-gray-600">Mon-Fri, 9AM-6PM IST</p>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-map-marker-alt text-purple-600 text-xl mb-2"></i>
-                            <p class="text-sm text-gray-600">Mumbai, India</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="section testimonials">
+    <div class="container">
+        <h2 class="section-title">Need More Help?</h2>
+        <p class="section-subtitle">Explore our comprehensive resources or get personalized assistance</p>
+
+        <div class="hero-buttons">
+            <a href="blog.html" class="btn btn-primary">Browse Resources</a>
+            <a href="contact.html" class="btn btn-outline">Contact Support</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-link text-3xl text-purple-400 mr-3"></i>
-                        <span class="text-2xl font-bold">ConnectIndia</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md">India's premier platform connecting authentic influencers with innovative businesses. Building meaningful partnerships that drive real results.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Platform</h3>
-                    <ul class="space-y-3">
-                        <li><a href="discovery.html" class="text-gray-400 hover:text-white transition-colors">Influencer Discovery</a></li>
-                        <li><a href="campaigns.html" class="text-gray-400 hover:text-white transition-colors">Campaign Management</a></li>
-                        <li><a href="analytics.html" class="text-gray-400 hover:text-white transition-colors">Analytics</a></li>
-                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white transition-colors">Marketplace</a></li>
+    </main>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Support</h3>
-                    <ul class="space-y-3">
-                        <li><a href="support.html" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">System Status</a></li>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2024 ConnectIndia. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
-                </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Live Chat Widget -->
-    <div class="chat-widget">
-        <button class="bg-purple-600 text-white w-14 h-14 rounded-full shadow-lg hover:bg-purple-700 transition-colors flex items-center justify-center">
-            <i class="fas fa-comments text-xl"></i>
-        </button>
-    </div>
+    
 
     <script>
-        // FAQ Toggle
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.nextElementSibling && this.nextElementSibling.classList.contains('hidden')) {
-                    this.nextElementSibling.classList.remove('hidden');
-                    this.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
-                } else if (this.nextElementSibling) {
-                    this.nextElementSibling.classList.add('hidden');
-                    this.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
-                }
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
         });
+    });
 
-        // Search functionality
-        document.querySelector('input[type="text"]').addEventListener('input', function() {
-            // Add search functionality here
-            console.log('Searching for:', this.value);
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
         });
+    });
 
-        // Live chat widget
-        document.querySelector('.chat-widget button').addEventListener('click', function() {
-            alert('Live chat feature would open here');
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
-    </script>
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDgnQG4GnMjDA0NC%2Bgplqvm4stwwXjuFEO8n0FQJ2%2BvqrGUrnIMPLsjS%2BkNc03%2BhUQw2QoUPHZiVrDBhv672GsK1Egm6LsyIWB%2FFDrw4VO1alVKcx6jRpJM06gjdkrN5MY9yv9w%2FwQf4yEDrllbk%2B0gi5iWSf1xXDtiw2EwrvaFkx7X9tHQ7MGc38wObzQqhZuE%2FgbVy1OB3BTQmHhs7zcOAzvOISMi3JuJRBqA0fizcenOfPx%2FaVwAo9lC4b3UW2HPHdOTNFfv57%2B8VmnnVKiNYe6l9nfSL6iwBY5dfRddf%2FfXtaL3iDQx8hlwQAcS3nlpXcLi%2B%2FnpFQ9hSQiHuDL9Gkon%2FtVNCzuyMZmK4%2B82t2Wt7yTESRDl4p7MkeyIl56OAVJiu3%2FohF0eDyKwUjUorv%2F8PfgmHZfTz4I9j4tms6wqVALYChDQrR6ID%2FmTp5uKCbqUQhuTPZcZTM%2B%2BXrNe5mzELXn67qAkRKjLehfDWO";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDgnQG4GnMjDA0NC+gplqvm4stwwXjuFEO8n0FQJ2+vqrGUrnIMPLsjS+kNc03+hUQw2QoUPHZiVrDBhv672GsK1Egm6LsyIWB/FDrw4VO1alVKcx6jRpJM06gjdkrN5MY9yv9w/wQf4yEDrllbk+0gi5iWSf1xXDtiw2EwrvaFkx7X9tHQ7MGc38wObzQqhZuE/gbVy1OB3BTQmHhs7zcOAzvOISMi3JuJRBqA0fizcenOfPx/aVwAo9lC4b3UW2HPHdOTNFfv57+8VmnnVKiNYe6l9nfSL6iwBY5dfRddf/fXtaL3iDQx8hlwQAcS3nlpXcLi+/npFQ9hSQiHuDL9Gkon/tVNCzuyMZmK4+82t2Wt7yTESRDl4p7MkeyIl56OAVJiu3/ohF0eDyKwUjUorv/8PfgmHZfTz4I9j4tms6wqVALYChDQrR6ID/mTp5uKCbqUQhuTPZcZTM++XrNe5mzELXn67qAkRKjLehfDWO";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
