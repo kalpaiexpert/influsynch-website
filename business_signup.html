@@ -1,486 +1,1015 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectIndia - India's premier platform connecting authentic influencers with innovative businesses. Build meaningful partnerships that drive real results.">
+    <meta name="keywords" content="influencer marketing, India, creators, businesses, collaboration, social media, digital marketing">
     <title>Business Registration - ConnectIndia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .form-container { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .feature-card { transition: all 0.3s ease; transform: translateY(0); }
-        .feature-card:hover { transform: translateY(-5px); }
-        .input-group { position: relative; }
-        .input-group input:focus + label, .input-group input:not(:placeholder-shown) + label { 
-            transform: translateY(-120%) scale(0.8); color: #667eea; 
-        }
-        .input-group label { 
-            position: absolute; left: 12px; top: 50%; transform: translateY(-50%); 
-            transition: all 0.3s ease; pointer-events: none; background: white; padding: 0 4px;
-        }
-        .custom-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px; }
-    </style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F46E5;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item > a:hover {
+    color: #4F46E5;
+}
+
+.nav-item .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #F8F9FA;
+    color: #4F46E5;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3B37D1;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #F59E0B;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.btn-outline:hover {
+    background: #4F46E5;
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1F2937;
+}
+
+.feature p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* How it Works */
+.how-it-works {
+    background: #F9FAFB;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.workflow-section h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1F2937;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1F2937;
+}
+
+.step-content p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #1F2937;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial {
+    background: #374151;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: #4F46E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.author-title {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #1F2937;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #F9FAFB;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4F46E5;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    border-color: #4F46E5;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #4F46E5;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F46E5;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1F2937;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4F46E5;
+    margin-bottom: 5px;
+}
+
+.pricing-period {
+    color: #6B7280;
+    margin-bottom: 30px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 8px 0;
+    color: #6B7280;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #10B981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-link text-white text-lg"></i>
+<body class="business-signup">
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">ConnectIndia</a>
+
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="discovery.html" class="dropdown-item">Discovery</a>
+                            <a href="analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="campaigns.html" class="dropdown-item">Campaign Management</a>
+                            <a href="marketplace.html" class="dropdown-item">Marketplace</a>
                         </div>
-                        <span class="text-2xl font-bold text-gray-800">ConnectIndia</span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <div class="relative group">
-                        <button class="flex items-center space-x-1 text-gray-700 hover:text-purple-600 font-medium">
-                            <span>Platform</span>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
                     </div>
-                    <div class="relative group">
-                        <button class="flex items-center space-x-1 text-gray-700 hover:text-purple-600 font-medium">
-                            <span>Solutions</span>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Who We Serve <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="for_influencers.html" class="dropdown-item">For Influencers</a>
+                            <a href="for_businesses.html" class="dropdown-item">For Businesses</a>
+                        </div>
                     </div>
-                    <a href="pricing.html" class="text-gray-700 hover:text-purple-600 font-medium">Pricing</a>
-                    <a href="about.html" class="text-gray-700 hover:text-purple-600 font-medium">About</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-purple-600 font-medium">Contact</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-purple-600 font-medium">Login</a>
-                    <a href="influencer_signup.html" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition duration-200">Join as Influencer</a>
-                </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="success_stories.html" class="dropdown-item">Success Stories</a>
+                            <a href="support.html" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Company <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-grid">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="privacy.html" class="dropdown-item">Privacy Policy</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="influencer_signup.html" class="btn btn-primary">Join as Influencer</a>
+                <a href="business_signup.html" class="btn btn-secondary">Join as Business</a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    
 
-    <!-- Hero Section -->
-    <section class="gradient-bg py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                    Register Your Business
-                </h1>
-                <p class="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-                    Join thousands of successful businesses connecting with authentic Indian influencers. 
-                    Access our comprehensive platform and start scaling your brand today.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                    <div class="flex items-center space-x-3 text-white">
-                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-users text-xl"></i>
+    <main>
+        
+<section class="hero">
+    <div class="hero-container">
+        <h1>Join as a Business</h1>
+        <p>Connect with authentic Indian influencers and scale your brand through powerful partnerships.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div class="form-container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Create Your Business Account</h2>
+
+                <form>
+                    <div class="form-group">
+                        <label for="company-name">Company/Brand Name *</label>
+                        <input type="text" id="company-name" name="company-name" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="contact-name">Contact Person Name *</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
                         </div>
-                        <div>
-                            <div class="text-2xl font-bold">50,000+</div>
-                            <div class="text-purple-100">Verified Influencers</div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation *</label>
+                            <input type="text" id="designation" name="designation" placeholder="e.g. Marketing Manager" required>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-3 text-white">
-                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-chart-line text-xl"></i>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="email">Business Email *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        <div>
-                            <div class="text-2xl font-bold">300%</div>
-                            <div class="text-purple-100">Average ROI</div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-3 text-white">
-                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold">28</div>
-                            <div class="text-purple-100">States Covered</div>
-                        </div>
+
+                    <div class="form-group">
+                        <label for="website">Company Website</label>
+                        <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Registration Form Section -->
-    <section class="py-16 -mt-8 relative z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="form-container rounded-2xl shadow-2xl p-8 md:p-12">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Create Your Business Account</h2>
-                    <p class="text-gray-600">Fill out the form below to get started with ConnectIndia</p>
-                </div>
-
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Company Information -->
-                        <div class="md:col-span-2">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-building text-purple-600 mr-2"></i>
-                                Company Information
-                            </h3>
-                        </div>
-                        
-                        <div class="input-group">
-                            <input type="text" id="company_name" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="company_name" class="text-gray-500 font-medium">Company Name *</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="email" id="company_email" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="company_email" class="text-gray-500 font-medium">Business Email *</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="text" id="website" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200">
-                            <label for="website" class="text-gray-500 font-medium">Company Website</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="tel" id="phone" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="phone" class="text-gray-500 font-medium">Phone Number *</label>
-                        </div>
-
-                        <div class="md:col-span-2">
-                            <label for="industry" class="block text-gray-700 font-medium mb-2">Industry *</label>
-                            <select id="industry" class="custom-select w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="industry">Industry *</label>
+                            <select id="industry" name="industry" required>
                                 <option value="">Select your industry</option>
-                                <option value="fashion">Fashion & Lifestyle</option>
+                                <option value="fashion">Fashion & Apparel</option>
                                 <option value="beauty">Beauty & Cosmetics</option>
                                 <option value="food">Food & Beverage</option>
-                                <option value="tech">Technology</option>
-                                <option value="travel">Travel & Hospitality</option>
-                                <option value="fitness">Health & Fitness</option>
+                                <option value="technology">Technology</option>
+                                <option value="health">Health & Fitness</option>
+                                <option value="travel">Travel & Tourism</option>
+                                <option value="automotive">Automotive</option>
                                 <option value="finance">Finance & Banking</option>
                                 <option value="education">Education</option>
-                                <option value="automotive">Automotive</option>
-                                <option value="ecommerce">E-commerce</option>
+                                <option value="real-estate">Real Estate</option>
                                 <option value="entertainment">Entertainment</option>
+                                <option value="sports">Sports</option>
+                                <option value="retail">Retail & E-commerce</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
 
-                        <!-- Contact Person -->
-                        <div class="md:col-span-2 mt-8">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-user text-purple-600 mr-2"></i>
-                                Primary Contact
-                            </h3>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="text" id="first_name" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="first_name" class="text-gray-500 font-medium">First Name *</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="text" id="last_name" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="last_name" class="text-gray-500 font-medium">Last Name *</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="text" id="designation" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="designation" class="text-gray-500 font-medium">Job Title *</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="email" id="contact_email" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="contact_email" class="text-gray-500 font-medium">Your Email *</label>
-                        </div>
-
-                        <!-- Company Details -->
-                        <div class="md:col-span-2 mt-8">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-chart-bar text-purple-600 mr-2"></i>
-                                Business Details
-                            </h3>
-                        </div>
-
-                        <div>
-                            <label for="company_size" class="block text-gray-700 font-medium mb-2">Company Size *</label>
-                            <select id="company_size" class="custom-select w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
+                        <div class="form-group">
+                            <label for="company-size">Company Size *</label>
+                            <select id="company-size" name="company-size" required>
                                 <option value="">Select company size</option>
-                                <option value="1-10">1-10 employees</option>
-                                <option value="11-50">11-50 employees</option>
-                                <option value="51-200">51-200 employees</option>
-                                <option value="201-500">201-500 employees</option>
-                                <option value="501-1000">501-1000 employees</option>
-                                <option value="1000+">1000+ employees</option>
+                                <option value="startup">Startup (1-10 employees)</option>
+                                <option value="small">Small Business (11-50 employees)</option>
+                                <option value="medium">Medium Business (51-200 employees)</option>
+                                <option value="large">Large Enterprise (200+ employees)</option>
+                                <option value="agency">Marketing Agency</option>
                             </select>
                         </div>
+                    </div>
 
-                        <div>
-                            <label for="monthly_budget" class="block text-gray-700 font-medium mb-2">Monthly Marketing Budget *</label>
-                            <select id="monthly_budget" class="custom-select w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="form-group">
+                            <label for="budget">Monthly Marketing Budget *</label>
+                            <select id="budget" name="budget" required>
                                 <option value="">Select budget range</option>
                                 <option value="under-50k">Under ₹50,000</option>
-                                <option value="50k-1l">₹50,000 - ₹1 Lakh</option>
-                                <option value="1l-5l">₹1 Lakh - ₹5 Lakh</option>
-                                <option value="5l-10l">₹5 Lakh - ₹10 Lakh</option>
-                                <option value="10l-25l">₹10 Lakh - ₹25 Lakh</option>
-                                <option value="25l+">₹25 Lakh+</option>
+                                <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+                                <option value="1l-5l">₹1,00,000 - ₹5,00,000</option>
+                                <option value="5l-10l">₹5,00,000 - ₹10,00,000</option>
+                                <option value="10l-25l">₹10,00,000 - ₹25,00,000</option>
+                                <option value="25l+">₹25,00,000+</option>
                             </select>
                         </div>
 
-                        <div class="md:col-span-2">
-                            <label for="target_audience" class="block text-gray-700 font-medium mb-2">Target Audience</label>
-                            <textarea id="target_audience" rows="3" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" placeholder="Describe your target audience (demographics, interests, location, etc.)"></textarea>
+                        <div class="form-group">
+                            <label for="primary-goal">Primary Goal *</label>
+                            <select id="primary-goal" name="primary-goal" required>
+                                <option value="">Select primary goal</option>
+                                <option value="brand-awareness">Brand Awareness</option>
+                                <option value="lead-generation">Lead Generation</option>
+                                <option value="sales">Sales & Conversions</option>
+                                <option value="engagement">Engagement</option>
+                                <option value="product-launch">Product Launch</option>
+                                <option value="reputation">Reputation Management</option>
+                            </select>
                         </div>
+                    </div>
 
-                        <div class="md:col-span-2">
-                            <label for="campaign_goals" class="block text-gray-700 font-medium mb-2">Campaign Goals</label>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2">
-                                <label class="flex items-center space-x-2 cursor-pointer">
-                                    <input type="checkbox" name="goals" value="brand_awareness" class="text-purple-600 rounded focus:ring-purple-500">
-                                    <span class="text-sm text-gray-700">Brand Awareness</span>
-                                </label>
-                                <label class="flex items-center space-x-2 cursor-pointer">
-                                    <input type="checkbox" name="goals" value="lead_generation" class="text-purple-600 rounded focus:ring-purple-500">
-                                    <span class="text-sm text-gray-700">Lead Generation</span>
-                                </label>
-                                <label class="flex items-center space-x-2 cursor-pointer">
-                                    <input type="checkbox" name="goals" value="sales" class="text-purple-600 rounded focus:ring-purple-500">
-                                    <span class="text-sm text-gray-700">Sales</span>
-                                </label>
-                                <label class="flex items-center space-x-2 cursor-pointer">
-                                    <input type="checkbox" name="goals" value="engagement" class="text-purple-600 rounded focus:ring-purple-500">
-                                    <span class="text-sm text-gray-700">Engagement</span>
-                                </label>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="target-audience">Target Audience *</label>
+                        <textarea id="target-audience" name="target-audience" placeholder="Describe your target audience (age, gender, interests, location, etc.)" required></textarea>
+                    </div>
 
-                        <!-- Password -->
-                        <div class="md:col-span-2 mt-8">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-lock text-purple-600 mr-2"></i>
-                                Account Security
-                            </h3>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="password" id="password" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="password" class="text-gray-500 font-medium">Password *</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="password" id="confirm_password" placeholder=" " class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition duration-200" required>
-                            <label for="confirm_password" class="text-gray-500 font-medium">Confirm Password *</label>
-                        </div>
-
-                        <!-- Terms and Conditions -->
-                        <div class="md:col-span-2 mt-6">
-                            <label class="flex items-start space-x-3 cursor-pointer">
-                                <input type="checkbox" required class="mt-1 text-purple-600 rounded focus:ring-purple-500">
-                                <span class="text-sm text-gray-600">
-                                    I agree to ConnectIndia's <a href="#" class="text-purple-600 hover:underline">Terms of Service</a> 
-                                    and <a href="#" class="text-purple-600 hover:underline">Privacy Policy</a>. 
-                                    I consent to receive marketing communications.
-                                </span>
+                    <div class="form-group">
+                        <label for="campaign-types">Preferred Campaign Types *</label>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 5px;">
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="campaign-types" value="sponsored-posts"> Sponsored Posts
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="campaign-types" value="product-reviews"> Product Reviews
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="campaign-types" value="brand-ambassador"> Brand Ambassador
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="campaign-types" value="event-coverage"> Event Coverage
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="campaign-types" value="giveaways"> Giveaways & Contests
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" name="campaign-types" value="video-content"> Video Content
                             </label>
                         </div>
-
-                        <div class="md:col-span-2">
-                            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition duration-200 transform hover:scale-105 shadow-lg">
-                                <i class="fas fa-rocket mr-2"></i>
-                                Create Business Account
-                            </button>
-                        </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="experience">Influencer Marketing Experience *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select your experience</option>
+                            <option value="beginner">Beginner (First time)</option>
+                            <option value="some">Some Experience (1-5 campaigns)</option>
+                            <option value="experienced">Experienced (5+ campaigns)</option>
+                            <option value="expert">Expert (Regular campaigns)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="terms" required>
+                            I agree to the <a href="privacy.html" style="color: #4F46E5;">Terms & Conditions</a> and <a href="privacy.html" style="color: #4F46E5;">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="updates">
+                            I want to receive updates about new features and influencer recommendations
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary" style="width: 100%; padding: 15px; font-size: 16px;">Start Free Trial</button>
                 </form>
 
-                <div class="text-center mt-8 pt-6 border-t border-gray-200">
-                    <p class="text-gray-600">
-                        Already have an account? 
-                        <a href="#" class="text-purple-600 hover:underline font-semibold">Sign in here</a>
-                    </p>
+                <div style="text-align: center; margin-top: 20px; color: #6B7280;">
+                    <p>Already have an account? <a href="login.html" style="color: #4F46E5;">Login here</a></p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose ConnectIndia?</h2>
-                <p class="text-xl text-gray-600">Everything you need to succeed with influencer marketing in India</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="feature-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-search text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Advanced Discovery</h3>
-                    <p class="text-gray-600">Find perfect influencers using our AI-powered search with 50+ filters including location, language, audience demographics, and engagement rates.</p>
+        <div style="margin-top: 60px;">
+            <h2 class="section-title">Why Choose ConnectIndia?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Quality Influencers</h3>
+                    <p>Access to 50K+ verified influencers across all niches and locations in India</p>
                 </div>
 
-                <div class="feature-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Verified Profiles</h3>
-                    <p class="text-gray-600">All influencers undergo strict verification process. Real followers, authentic engagement, and genuine content creators only.</p>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Comprehensive reporting and ROI tracking for all your campaigns</p>
                 </div>
 
-                <div class="feature-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-2xl text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Real-time Analytics</h3>
-                    <p class="text-gray-600">Track campaign performance with detailed analytics, ROI measurement, and comprehensive reporting tools.</p>
-                </div>
-
-                <div class="feature-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-handshake text-2xl text-yellow-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Campaign Management</h3>
-                    <p class="text-gray-600">Streamlined workflow from discovery to payment. Manage multiple campaigns, track deliverables, and communicate seamlessly.</p>
-                </div>
-
-                <div class="feature-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-credit-card text-2xl text-red-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Secure Payments</h3>
-                    <p class="text-gray-600">Automated payment processing with multiple payment methods. Transparent pricing and secure transactions for all parties.</p>
-                </div>
-
-                <div class="feature-card bg-white p-8 rounded-xl shadow-lg">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-headset text-2xl text-indigo-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Dedicated Support</h3>
-                    <p class="text-gray-600">24/7 customer support in multiple Indian languages. Account managers for enterprise clients and campaign optimization guidance.</p>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Platform</h3>
+                    <p>Escrow payments and verified profiles ensure safe and successful collaborations</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="gradient-bg py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">Ready to Transform Your Marketing?</h2>
-            <p class="text-xl text-purple-100 mb-8">Join thousands of successful businesses already using ConnectIndia</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition duration-200">
-                    Schedule Demo
-                </a>
-                <a href="influencer_signup.html" class="border-2 border-white text-white hover:bg-white hover:text-purple-600 font-semibold py-3 px-8 rounded-lg transition duration-200">
-                    Join as Influencer
-                </a>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-link text-white"></i>
-                        </div>
-                        <span class="text-xl font-bold">ConnectIndia</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">India's premier platform connecting authentic influencers with innovative businesses.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Platform</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Influencer Discovery</a></li>
-                        <li><a href="#" class="hover:text-white">Campaign Management</a></li>
-                        <li><a href="#" class="hover:text-white">Analytics</a></li>
-                        <li><a href="#" class="hover:text-white">Payment Processing</a></li>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="discovery.html">Discovery</a></li>
+                        <li><a href="analytics.html">Analytics</a></li>
+                        <li><a href="campaigns.html">Campaign Management</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Solutions</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="for_businesses.html" class="hover:text-white">For Businesses</a></li>
-                        <li><a href="for_influencers.html" class="hover:text-white">For Influencers</a></li>
-                        <li><a href="#" class="hover:text-white">For Agencies</a></li>
-                        <li><a href="#" class="hover:text-white">Enterprise</a></li>
+
+                <div class="footer-section">
+                    <h3>Who We Serve</h3>
+                    <ul>
+                        <li><a href="for_influencers.html">For Influencers</a></li>
+                        <li><a href="for_businesses.html">For Businesses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Support</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Help Center</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-white">API Documentation</a></li>
-                        <li><a href="#" class="hover:text-white">Status</a></li>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success_stories.html">Success Stories</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400">&copy; 2024 ConnectIndia. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
-                </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ConnectIndia. All rights reserved. Connecting authentic Indian influencers with innovative businesses.</p>
             </div>
         </div>
     </footer>
+    
 
     <script>
-        // Form validation and interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form');
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirm_password');
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                if (passwordInput.value !== confirmPasswordInput.value) {
-                    alert('Passwords do not match!');
-                    return;
-                }
-                
-                alert('Registration successful! Welcome to ConnectIndia.');
-            });
-
-            // Password validation
-            confirmPasswordInput.addEventListener('input', function() {
-                if (this.value && this.value !== passwordInput.value) {
-                    this.setCustomValidity('Passwords do not match');
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    // Prevent footer links from jumping to top
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
         });
-    </script>
+    });
+
+    // Handle navigation links that point to #
+    const navLinks = document.querySelectorAll('nav a[href="#"], .nav-item a[href="#"], .dropdown-item[href="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDuCygc9U%2Fltqa%2FmviQrPpK12T4%2BWm6n%2B3TBzB0SWF15N6Wpqy%2FuHWurJ9NmxzFtzdVHy2i4XHGG%2BfWGNrCkaSdmbHyEyyJAx9DNelawwJcMpLhmhqpSCeD0OcjA%2Fh8gezBNKXdCvyi8kAnt2pYDcd8uW2PueEBXvlNlUMnnjqmf9GgHL54RaEHRSeIY2EhicnGOUdqdD3UHG%2BHkRoykgLTaGSRcnfTuZbHThMjarOTtIclCuhxhMG7TBkdFGwHAaZQVV%2FsS37H0V6CCjbjyLwtvJaF7bwx28hfEsbFsofVGi5tPbMGXbh%2FJivyxdrMV%2BWsDwwmogWy5uxvwi0Lj6cVD6VTcrws2qXaNihhydgvjOO6je6OZfa9aq8YVVO9WAdX8h2vEhTSVQ807I05qF%2B7kZNcWlLtRFKs4i7nazoX8pGjhc63H4yribAQSHXaH7m%2BqJd8ku5eNWmhIWP3zREbe8qDJL6la708Ft9G8NDiGa23ww2Z1ksCbQVNq3CZ0GQw%3D%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDuCygc9U/ltqa/mviQrPpK12T4+Wm6n+3TBzB0SWF15N6Wpqy/uHWurJ9NmxzFtzdVHy2i4XHGG+fWGNrCkaSdmbHyEyyJAx9DNelawwJcMpLhmhqpSCeD0OcjA/h8gezBNKXdCvyi8kAnt2pYDcd8uW2PueEBXvlNlUMnnjqmf9GgHL54RaEHRSeIY2EhicnGOUdqdD3UHG+HkRoykgLTaGSRcnfTuZbHThMjarOTtIclCuhxhMG7TBkdFGwHAaZQVV/sS37H0V6CCjbjyLwtvJaF7bwx28hfEsbFsofVGi5tPbMGXbh/JivyxdrMV+WsDwwmogWy5uxvwi0Lj6cVD6VTcrws2qXaNihhydgvjOO6je6OZfa9aq8YVVO9WAdX8h2vEhTSVQ807I05qF+7kZNcWlLtRFKs4i7nazoX8pGjhc63H4yribAQSHXaH7m+qJd8ku5eNWmhIWP3zREbe8qDJL6la708Ft9G8NDiGa23ww2Z1ksCbQVNq3CZ0GQw==";
-    </script>
-    
-        <script id="html_badge_script2" src="https://www.genspark.ai/html_badge.js"></script>
-        
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
